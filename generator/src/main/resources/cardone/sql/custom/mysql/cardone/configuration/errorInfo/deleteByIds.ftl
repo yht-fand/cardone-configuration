@@ -1,0 +1,1 @@
+DELETE FROM t_error_info WHERE INSTR(:ids, ID) > 0

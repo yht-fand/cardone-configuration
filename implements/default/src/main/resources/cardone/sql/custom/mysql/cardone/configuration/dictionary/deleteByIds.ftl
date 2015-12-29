@@ -1,0 +1,1 @@
+DELETE FROM t_dictionary WHERE INSTR(:ids, ID) > 0

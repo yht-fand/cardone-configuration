@@ -1,0 +1,1 @@
+UPDATE t_error_info SET END_DATE = NOW() WHERE INSTR(:ids, ID) > 0
