@@ -12,7 +12,7 @@ public class I18nInfo implements java.io.Serializable {
     /**
      * 版本号
      */
-    private static final long serialVersionUID = 878208029046950391L;
+    private static final long serialVersionUID = 429181812137655473L;
 
     /**
      * 开始时间

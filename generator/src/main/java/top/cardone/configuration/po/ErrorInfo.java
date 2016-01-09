@@ -12,7 +12,7 @@ public class ErrorInfo implements java.io.Serializable {
     /**
      * 版本号
      */
-    private static final long serialVersionUID = 847180809142962290L;
+    private static final long serialVersionUID = 885385968313516996L;
 
     /**
      * 开始时间
