@@ -2,7 +2,7 @@ package top.cardone.configuration.service.impl;
 
 import top.cardone.configuration.dao.DictionaryTypeDao;
 import org.springframework.transaction.annotation.Transactional;
-import top.cardone.data.service.SimpleDefaultService;
+import top.cardone.data.service.impl.PageServiceImpl;
 
 /**
  * 字典类别服务
@@ -10,5 +10,5 @@ import top.cardone.data.service.SimpleDefaultService;
  * @author yao hai tao
  */
 @Transactional(readOnly = true)
-public class DictionaryTypeServiceImpl extends SimpleDefaultService<DictionaryTypeDao> implements top.cardone.configuration.service.DictionaryTypeService {
+public class DictionaryTypeServiceImpl extends PageServiceImpl<DictionaryTypeDao> implements top.cardone.configuration.service.DictionaryTypeService {
 }

@@ -1,1 +1,0 @@
-UPDATE t_dictionary_type SET END_DATE = NOW() WHERE INSTR(:ids, ID) > 0

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-lazy-init="true">
+    <!-- 字典 -->
+    <bean id="top.cardone.configuration.dao.DictionaryDao"
+          class="top.cardone.configuration.dao.impl.DictionaryDaoImpl">
+        <property name="configTable">
+            <map>
+                <entry key="config">
+                    <map>
+                        <entry key="sqlFileRoot" value="/cardone/configuration/dictionary/"/>
+                        <entry key="pks" value="dictionaryId"/>
+                        <entry key="codes" value="dictionaryId"/>
+                    </map>
+                </entry>
+                <entry key="insert">
+                    <map>
+                        <entry key="dictionaryId" value="getRandomUUIDFunc"/>
+                        <entry key="createdByCode" value="readCreatedByCodeFunc"/>
+                        <entry key="createdDate" value="readCreatedDateFunc"/>
+                    </map>
+                </entry>
+                <entry key="update">
+                    <map>
+                        <entry key="lastModifiedByCode" value="readLastModifiedByCodeFunc"/>
+                        <entry key="lastModifiedDate" value="readLastModifiedDateFunc"/>
+                    </map>
+                </entry>
+            </map>
+        </property>
+    </bean>
+
+    <!-- 字典 -->
+    <bean id="top.cardone.configuration.service.DictionaryService"
+          class="top.cardone.configuration.service.impl.DictionaryServiceImpl">
+        <property name="dao" ref="top.cardone.configuration.dao.DictionaryDao"/>
+    </bean>
+</beans>

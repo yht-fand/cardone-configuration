@@ -1,11 +1,11 @@
 package top.cardone.configuration.service;
 
-import top.cardone.data.service.SimpleService;
+import top.cardone.data.service.PageService;
 
 /**
  * 错误信息服务
  *
  * @author yao hai tao
  */
-public interface ErrorInfoService extends SimpleService {
+public interface ErrorInfoService extends PageService {
 }
