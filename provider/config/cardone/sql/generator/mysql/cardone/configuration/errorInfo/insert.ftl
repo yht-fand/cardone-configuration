@@ -5,6 +5,10 @@ INTO t_error_info
 ${prefixName} `BEGIN_DATE`
 <#assign prefixName = ','>
 </#if>
+<#if (insert_content??) && (insert_content_value??)>
+${prefixName} `CONTENT`
+<#assign prefixName = ','>
+</#if>
 <#if (insert_createdByCode??) && (insert_createdByCode_value??)>
 ${prefixName} `CREATED_BY_CODE`
 <#assign prefixName = ','>
@@ -41,10 +45,6 @@ ${prefixName} `LAST_MODIFIED_BY_CODE`
 ${prefixName} `LAST_MODIFIED_DATE`
 <#assign prefixName = ','>
 </#if>
-<#if (insert_message??) && (insert_message_value??)>
-${prefixName} `MESSAGE`
-<#assign prefixName = ','>
-</#if>
 <#if (insert_orgCode??) && (insert_orgCode_value??)>
 ${prefixName} `ORG_CODE`
 <#assign prefixName = ','>
@@ -61,6 +61,10 @@ ${prefixName} `ROLE_CODES`
 ${prefixName} `STATE_CODE`
 <#assign prefixName = ','>
 </#if>
+<#if (insert_typeCode??) && (insert_typeCode_value??)>
+${prefixName} `TYPE_CODE`
+<#assign prefixName = ','>
+</#if>
 <#if (insert_version??) && (insert_version_value??)>
 ${prefixName} `VERSION_`
 <#assign prefixName = ','>
@@ -74,6 +78,10 @@ VALUES
 (<#assign prefixName = ' '>
 <#if (insert_beginDate??) && (insert_beginDate_value??)>
 ${prefixName} :insert_beginDate_value
+<#assign prefixName = ','>
+</#if>
+<#if (insert_content??) && (insert_content_value??)>
+${prefixName} :insert_content_value
 <#assign prefixName = ','>
 </#if>
 <#if (insert_createdByCode??) && (insert_createdByCode_value??)>
@@ -112,10 +120,6 @@ ${prefixName} :insert_lastModifiedByCode_value
 ${prefixName} :insert_lastModifiedDate_value
 <#assign prefixName = ','>
 </#if>
-<#if (insert_message??) && (insert_message_value??)>
-${prefixName} :insert_message_value
-<#assign prefixName = ','>
-</#if>
 <#if (insert_orgCode??) && (insert_orgCode_value??)>
 ${prefixName} :insert_orgCode_value
 <#assign prefixName = ','>
@@ -130,6 +134,10 @@ ${prefixName} :insert_roleCodes_value
 </#if>
 <#if (insert_stateCode??) && (insert_stateCode_value??)>
 ${prefixName} :insert_stateCode_value
+<#assign prefixName = ','>
+</#if>
+<#if (insert_typeCode??) && (insert_typeCode_value??)>
+${prefixName} :insert_typeCode_value
 <#assign prefixName = ','>
 </#if>
 <#if (insert_version??) && (insert_version_value??)>

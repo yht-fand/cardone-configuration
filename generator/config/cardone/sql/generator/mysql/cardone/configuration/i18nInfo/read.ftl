@@ -3,6 +3,9 @@ SELECT
 <#case "beginDate">
 BEGIN_DATE AS beginDate
 <#break>
+<#case "content">
+CONTENT AS content
+<#break>
 <#case "createdByCode">
 CREATED_BY_CODE AS createdByCode
 <#break>

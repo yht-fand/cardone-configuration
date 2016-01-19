@@ -13,7 +13,7 @@
     <groupId>top.cardone.configuration</groupId>
     <artifactId>cardone-configuration-implements</artifactId>
     <version>${project.parent.version}</version>
-    <name>cardone configuration implements</name>
+    <name>${project.artifactId}</name>
     <description>cardone configuration implements</description>
     <packaging>pom</packaging>
 

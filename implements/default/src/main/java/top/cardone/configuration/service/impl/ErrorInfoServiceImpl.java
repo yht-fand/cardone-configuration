@@ -5,7 +5,7 @@ import org.springframework.transaction.annotation.Transactional;
 import top.cardone.data.service.impl.PageServiceImpl;
 
 /**
- * 错误信息服务
+ * ErrorInfo服务
  *
  * @author yao hai tao
  */

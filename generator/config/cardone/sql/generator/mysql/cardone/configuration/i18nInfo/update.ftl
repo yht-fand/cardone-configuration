@@ -6,6 +6,12 @@ ${prefixName} `BEGIN_DATE` = :update_beginDate_value
 </#if>
 <#assign prefixName = ','>
 </#if>
+<#if (update_content??)>
+<#if (update_content_value??)>
+${prefixName} `CONTENT` = :update_content_value
+</#if>
+<#assign prefixName = ','>
+</#if>
 <#if (update_createdByCode??)>
 <#if (update_createdByCode_value??)>
 ${prefixName} `CREATED_BY_CODE` = :update_createdByCode_value

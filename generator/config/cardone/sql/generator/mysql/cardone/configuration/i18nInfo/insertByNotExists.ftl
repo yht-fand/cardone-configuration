@@ -6,6 +6,10 @@ t_i18n_info
 ${prefixName} `BEGIN_DATE`
 <#assign prefixName = ','>
 </#if>
+<#if (insert_content??) && (insert_content_value??)>
+${prefixName} `CONTENT`
+<#assign prefixName = ','>
+</#if>
 <#if (insert_createdByCode??) && (insert_createdByCode_value??)>
 ${prefixName} `CREATED_BY_CODE`
 <#assign prefixName = ','>
@@ -75,6 +79,10 @@ ${prefixName} `WF_ID`
 <#assign prefixName = ' '>
 <#if (insert_beginDate??) && (insert_beginDate_value??)>
 ${prefixName} :insert_beginDate_value
+<#assign prefixName = ','>
+</#if>
+<#if (insert_content??) && (insert_content_value??)>
+${prefixName} :insert_content_value
 <#assign prefixName = ','>
 </#if>
 <#if (insert_createdByCode??) && (insert_createdByCode_value??)>
@@ -148,6 +156,17 @@ FROM DUAL WHERE NOT EXISTS (SELECT 1 FROM t_i18n_info E
 ${prefixName} E.BEGIN_DATE = :where_and_eq_beginDate_value
 <#else>
 ${prefixName} E.BEGIN_DATE IS NULL
+</#if>
+<#assign prefixName = ''>
+</#if>
+<#if (prefixName!) != 'WHERE'>
+<#assign prefixName = 'AND'>
+</#if>
+<#if (where_and_eq_content??)>
+<#if (where_and_eq_content_value??)>
+${prefixName} E.CONTENT = :where_and_eq_content_value
+<#else>
+${prefixName} E.CONTENT IS NULL
 </#if>
 <#assign prefixName = ''>
 </#if>

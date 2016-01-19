@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 错误信息 - 查询
+ * ErrorInfo - 查询
  */
 @Component("/web-api/v1/configuration/errorInfo/r0004.json")
 public class R0004Func implements Func1<Map<String, Object>, Map<String, Object>> {
@@ -33,23 +33,6 @@ public class R0004Func implements Func1<Map<String, Object>, Map<String, Object>
     private Map<String, Object> toMap(ErrorInfoDto errorInfoDto) {
         Map<String, Object> map = Maps.newHashMap();
 
-        map.put("beginDate", errorInfoDto.getBeginDate());
-        map.put("createdByCode", errorInfoDto.getCreatedByCode());
-        map.put("createdDate", errorInfoDto.getCreatedDate());
-        map.put("dataStateCode", errorInfoDto.getDataStateCode());
-        map.put("departmentCode", errorInfoDto.getDepartmentCode());
-        map.put("endDate", errorInfoDto.getEndDate());
-        map.put("errorInfoCode", errorInfoDto.getErrorInfoCode());
-        map.put("errorInfoId", errorInfoDto.getErrorInfoId());
-        map.put("lastModifiedByCode", errorInfoDto.getLastModifiedByCode());
-        map.put("lastModifiedDate", errorInfoDto.getLastModifiedDate());
-        map.put("message", errorInfoDto.getMessage());
-        map.put("orgCode", errorInfoDto.getOrgCode());
-        map.put("permissionCodes", errorInfoDto.getPermissionCodes());
-        map.put("roleCodes", errorInfoDto.getRoleCodes());
-        map.put("stateCode", errorInfoDto.getStateCode());
-        map.put("version", errorInfoDto.getVersion());
-        map.put("wfId", errorInfoDto.getWfId());
 
         return map;
     }

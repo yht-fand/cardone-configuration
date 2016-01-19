@@ -12,7 +12,7 @@ public class I18nInfo implements java.io.Serializable {
     /**
      * 版本号
      */
-    private static final long serialVersionUID = 401758848065562315L;
+    private static final long serialVersionUID = 829225786834276751L;
 
     /**
      * 开始时间
@@ -20,6 +20,13 @@ public class I18nInfo implements java.io.Serializable {
     @lombok.Getter
     @lombok.Setter
     protected Date beginDate;
+
+    /**
+     * 正文
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String content;
 
     /**
      * 创建人代码
@@ -55,13 +62,6 @@ public class I18nInfo implements java.io.Serializable {
     @lombok.Getter
     @lombok.Setter
     protected Date endDate;
-
-    /**
-     * 国际化信息代码
-     */
-    @lombok.Getter
-    @lombok.Setter
-    protected String i18nInfoCode;
 
     /**
      * 国际化信息标识

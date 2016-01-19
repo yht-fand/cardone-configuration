@@ -6,6 +6,12 @@ ${prefixName} `BEGIN_DATE` = :update_beginDate_value
 </#if>
 <#assign prefixName = ','>
 </#if>
+<#if (update_content??)>
+<#if (update_content_value??)>
+${prefixName} `CONTENT` = :update_content_value
+</#if>
+<#assign prefixName = ','>
+</#if>
 <#if (update_createdByCode??)>
 <#if (update_createdByCode_value??)>
 ${prefixName} `CREATED_BY_CODE` = :update_createdByCode_value
@@ -33,12 +39,6 @@ ${prefixName} `DEPARTMENT_CODE` = :update_departmentCode_value
 <#if (update_endDate??)>
 <#if (update_endDate_value??)>
 ${prefixName} `END_DATE` = :update_endDate_value
-</#if>
-<#assign prefixName = ','>
-</#if>
-<#if (update_i18nInfoCode??)>
-<#if (update_i18nInfoCode_value??)>
-${prefixName} `I18N_INFO_CODE` = :update_i18nInfoCode_value
 </#if>
 <#assign prefixName = ','>
 </#if>

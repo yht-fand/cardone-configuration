@@ -6,7 +6,7 @@ import top.cardone.core.util.func.Func1;
 import java.util.Map;
 
 /**
- * 错误信息 - 修改
+ * ErrorInfo - 修改
  */
 @Component("/web-api/v1/configuration/errorInfo/u0004.json")
 public class U0004Func implements Func1<Map<String, Object>, Map<String, Object>> {

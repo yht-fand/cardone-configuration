@@ -13,7 +13,7 @@
     <groupId>top.cardone.configuration</groupId>
     <artifactId>cardone-configuration-provider</artifactId>
     <version>${project.parent.version}</version>
-    <name>cardone configuration provider</name>
+    <name>${project.artifactId}</name>
     <description>cardone configuration provider</description>
     <packaging>jar</packaging>
 
@@ -26,6 +26,11 @@
         <dependency>
             <groupId>top.cardone</groupId>
             <artifactId>cardone-cache-implements-default</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>top.cardone</groupId>
+            <artifactId>cardone-beans-api</artifactId>
         </dependency>
 
         <dependency>

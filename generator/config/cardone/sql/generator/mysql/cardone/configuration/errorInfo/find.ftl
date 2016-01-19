@@ -4,6 +4,10 @@ SELECT
 ${prefixName} `BEGIN_DATE`
 <#assign prefixName = ','>
 </#if>
+<#if (select_content??)>
+${prefixName} `CONTENT`
+<#assign prefixName = ','>
+</#if>
 <#if (select_createdByCode??)>
 ${prefixName} `CREATED_BY_CODE`
 <#assign prefixName = ','>
@@ -40,10 +44,6 @@ ${prefixName} `LAST_MODIFIED_BY_CODE`
 ${prefixName} `LAST_MODIFIED_DATE`
 <#assign prefixName = ','>
 </#if>
-<#if (select_message??)>
-${prefixName} `MESSAGE`
-<#assign prefixName = ','>
-</#if>
 <#if (select_orgCode??)>
 ${prefixName} `ORG_CODE`
 <#assign prefixName = ','>
@@ -60,6 +60,10 @@ ${prefixName} `ROLE_CODES`
 ${prefixName} `STATE_CODE`
 <#assign prefixName = ','>
 </#if>
+<#if (select_typeCode??)>
+${prefixName} `TYPE_CODE`
+<#assign prefixName = ','>
+</#if>
 <#if (select_version??)>
 ${prefixName} `VERSION_`
 <#assign prefixName = ','>
@@ -70,6 +74,7 @@ ${prefixName} `WF_ID`
 </#if>
 <#if prefixName ==  ' '>
   `BEGIN_DATE`
+, `CONTENT`
 , `CREATED_BY_CODE`
 , `CREATED_DATE`
 , `DATA_STATE_CODE`
@@ -79,11 +84,11 @@ ${prefixName} `WF_ID`
 , `ERROR_INFO_ID`
 , `LAST_MODIFIED_BY_CODE`
 , `LAST_MODIFIED_DATE`
-, `MESSAGE`
 , `ORG_CODE`
 , `PERMISSION_CODES`
 , `ROLE_CODES`
 , `STATE_CODE`
+, `TYPE_CODE`
 , `VERSION_`
 , `WF_ID`
 </#if>
@@ -92,6 +97,10 @@ FROM t_error_info
 <#assign prefixName = 'ORDER BY'>
 <#if (order_by_beginDate??)>
 ${prefixName} `BEGIN_DATE` ${order_by_beginDate_value!}
+<#assign prefixName = ','>
+</#if>
+<#if (order_by_content??)>
+${prefixName} `CONTENT` ${order_by_content_value!}
 <#assign prefixName = ','>
 </#if>
 <#if (order_by_createdByCode??)>
@@ -130,10 +139,6 @@ ${prefixName} `LAST_MODIFIED_BY_CODE` ${order_by_lastModifiedByCode_value!}
 ${prefixName} `LAST_MODIFIED_DATE` ${order_by_lastModifiedDate_value!}
 <#assign prefixName = ','>
 </#if>
-<#if (order_by_message??)>
-${prefixName} `MESSAGE` ${order_by_message_value!}
-<#assign prefixName = ','>
-</#if>
 <#if (order_by_orgCode??)>
 ${prefixName} `ORG_CODE` ${order_by_orgCode_value!}
 <#assign prefixName = ','>
@@ -148,6 +153,10 @@ ${prefixName} `ROLE_CODES` ${order_by_roleCodes_value!}
 </#if>
 <#if (order_by_stateCode??)>
 ${prefixName} `STATE_CODE` ${order_by_stateCode_value!}
+<#assign prefixName = ','>
+</#if>
+<#if (order_by_typeCode??)>
+${prefixName} `TYPE_CODE` ${order_by_typeCode_value!}
 <#assign prefixName = ','>
 </#if>
 <#if (order_by_version??)>

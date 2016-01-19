@@ -64,6 +64,68 @@ ${prefixName} `BEGIN_DATE` like :where_or_like_beginDate_value
 <#if (prefixName!) != 'WHERE'>
 <#assign prefixName = 'AND'>
 </#if>
+<#if (where_and_eq_content??)>
+<#if (where_and_eq_content_value??)>
+${prefixName} `CONTENT` = :where_and_eq_content_value
+<#else>
+${prefixName} `CONTENT` IS NULL
+</#if>
+<#assign prefixName = ''>
+</#if>
+<#if (where_and_nq_content??)>
+<#if (prefixName!) != 'WHERE'>
+<#assign prefixName = 'AND'>
+</#if>
+<#if (where_and_nq_content_value??)>
+${prefixName} `CONTENT` <> :where_and_nq_content_value
+<#else>
+${prefixName} `CONTENT` IS NOT NULL
+</#if>
+<#assign prefixName = ''>
+</#if>
+<#if (where_and_like_content??)>
+<#if (prefixName!) != 'WHERE'>
+<#assign prefixName = 'AND'>
+</#if>
+<#if (where_and_like_content_value??)>
+${prefixName} `CONTENT` <> :where_and_like_content_value
+</#if>
+<#assign prefixName = ''>
+</#if>
+<#if (where_or_eq_content??)>
+<#if (prefixName!) != 'WHERE'>
+<#assign prefixName = 'OR'>
+</#if>
+<#if (where_or_eq_content_value??)>
+${prefixName} `CONTENT` = :where_or_eq_content_value
+<#else>
+${prefixName} `CONTENT` IS NULL
+</#if>
+<#assign prefixName = ''>
+</#if>
+<#if (where_or_nq_content??)>
+<#if (prefixName!) != 'WHERE'>
+<#assign prefixName = 'OR'>
+</#if>
+<#if (where_or_nq_content_value??)>
+${prefixName} `CONTENT` <> :where_or_nq_content_value
+<#else>
+${prefixName} `CONTENT` IS NOT NULL
+</#if>
+<#assign prefixName = ''>
+</#if>
+<#if (where_or_like_content??)>
+<#if (prefixName!) != 'WHERE'>
+<#assign prefixName = 'OR'>
+</#if>
+<#if (where_or_like_content_value??)>
+${prefixName} `CONTENT` like :where_or_like_content_value
+</#if>
+<#assign prefixName = ''>
+</#if>
+<#if (prefixName!) != 'WHERE'>
+<#assign prefixName = 'AND'>
+</#if>
 <#if (where_and_eq_createdByCode??)>
 <#if (where_and_eq_createdByCode_value??)>
 ${prefixName} `CREATED_BY_CODE` = :where_and_eq_createdByCode_value
@@ -368,68 +430,6 @@ ${prefixName} `END_DATE` IS NOT NULL
 </#if>
 <#if (where_or_like_endDate_value??)>
 ${prefixName} `END_DATE` like :where_or_like_endDate_value
-</#if>
-<#assign prefixName = ''>
-</#if>
-<#if (prefixName!) != 'WHERE'>
-<#assign prefixName = 'AND'>
-</#if>
-<#if (where_and_eq_i18nInfoCode??)>
-<#if (where_and_eq_i18nInfoCode_value??)>
-${prefixName} `I18N_INFO_CODE` = :where_and_eq_i18nInfoCode_value
-<#else>
-${prefixName} `I18N_INFO_CODE` IS NULL
-</#if>
-<#assign prefixName = ''>
-</#if>
-<#if (where_and_nq_i18nInfoCode??)>
-<#if (prefixName!) != 'WHERE'>
-<#assign prefixName = 'AND'>
-</#if>
-<#if (where_and_nq_i18nInfoCode_value??)>
-${prefixName} `I18N_INFO_CODE` <> :where_and_nq_i18nInfoCode_value
-<#else>
-${prefixName} `I18N_INFO_CODE` IS NOT NULL
-</#if>
-<#assign prefixName = ''>
-</#if>
-<#if (where_and_like_i18nInfoCode??)>
-<#if (prefixName!) != 'WHERE'>
-<#assign prefixName = 'AND'>
-</#if>
-<#if (where_and_like_i18nInfoCode_value??)>
-${prefixName} `I18N_INFO_CODE` <> :where_and_like_i18nInfoCode_value
-</#if>
-<#assign prefixName = ''>
-</#if>
-<#if (where_or_eq_i18nInfoCode??)>
-<#if (prefixName!) != 'WHERE'>
-<#assign prefixName = 'OR'>
-</#if>
-<#if (where_or_eq_i18nInfoCode_value??)>
-${prefixName} `I18N_INFO_CODE` = :where_or_eq_i18nInfoCode_value
-<#else>
-${prefixName} `I18N_INFO_CODE` IS NULL
-</#if>
-<#assign prefixName = ''>
-</#if>
-<#if (where_or_nq_i18nInfoCode??)>
-<#if (prefixName!) != 'WHERE'>
-<#assign prefixName = 'OR'>
-</#if>
-<#if (where_or_nq_i18nInfoCode_value??)>
-${prefixName} `I18N_INFO_CODE` <> :where_or_nq_i18nInfoCode_value
-<#else>
-${prefixName} `I18N_INFO_CODE` IS NOT NULL
-</#if>
-<#assign prefixName = ''>
-</#if>
-<#if (where_or_like_i18nInfoCode??)>
-<#if (prefixName!) != 'WHERE'>
-<#assign prefixName = 'OR'>
-</#if>
-<#if (where_or_like_i18nInfoCode_value??)>
-${prefixName} `I18N_INFO_CODE` like :where_or_like_i18nInfoCode_value
 </#if>
 <#assign prefixName = ''>
 </#if>

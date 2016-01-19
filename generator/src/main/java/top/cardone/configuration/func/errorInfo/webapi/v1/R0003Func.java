@@ -34,6 +34,7 @@ public class R0003Func implements Func1<Map<String, Object>, Map<String, Object>
         Map<String, Object> map = Maps.newHashMap();
 
         map.put("beginDate", errorInfoDto.getBeginDate());
+        map.put("content", errorInfoDto.getContent());
         map.put("createdByCode", errorInfoDto.getCreatedByCode());
         map.put("createdDate", errorInfoDto.getCreatedDate());
         map.put("dataStateCode", errorInfoDto.getDataStateCode());
@@ -43,11 +44,11 @@ public class R0003Func implements Func1<Map<String, Object>, Map<String, Object>
         map.put("errorInfoId", errorInfoDto.getErrorInfoId());
         map.put("lastModifiedByCode", errorInfoDto.getLastModifiedByCode());
         map.put("lastModifiedDate", errorInfoDto.getLastModifiedDate());
-        map.put("message", errorInfoDto.getMessage());
         map.put("orgCode", errorInfoDto.getOrgCode());
         map.put("permissionCodes", errorInfoDto.getPermissionCodes());
         map.put("roleCodes", errorInfoDto.getRoleCodes());
         map.put("stateCode", errorInfoDto.getStateCode());
+        map.put("typeCode", errorInfoDto.getTypeCode());
         map.put("version", errorInfoDto.getVersion());
         map.put("wfId", errorInfoDto.getWfId());
 

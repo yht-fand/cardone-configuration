@@ -12,7 +12,7 @@ public class Dictionary implements java.io.Serializable {
     /**
      * 版本号
      */
-    private static final long serialVersionUID = 637045402406693858L;
+    private static final long serialVersionUID = 377188822288143188L;
 
     /**
      * 开始时间

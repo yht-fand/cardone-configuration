@@ -34,12 +34,12 @@ public class R0003Func implements Func1<Map<String, Object>, Map<String, Object>
         Map<String, Object> map = Maps.newHashMap();
 
         map.put("beginDate", i18nInfoDto.getBeginDate());
+        map.put("content", i18nInfoDto.getContent());
         map.put("createdByCode", i18nInfoDto.getCreatedByCode());
         map.put("createdDate", i18nInfoDto.getCreatedDate());
         map.put("dataStateCode", i18nInfoDto.getDataStateCode());
         map.put("departmentCode", i18nInfoDto.getDepartmentCode());
         map.put("endDate", i18nInfoDto.getEndDate());
-        map.put("i18nInfoCode", i18nInfoDto.getI18nInfoCode());
         map.put("i18nInfoId", i18nInfoDto.getI18nInfoId());
         map.put("lastModifiedByCode", i18nInfoDto.getLastModifiedByCode());
         map.put("lastModifiedDate", i18nInfoDto.getLastModifiedDate());

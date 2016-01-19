@@ -4,6 +4,10 @@ SELECT
 ${prefixName} `BEGIN_DATE`
 <#assign prefixName = ','>
 </#if>
+<#if (select_content??)>
+${prefixName} `CONTENT`
+<#assign prefixName = ','>
+</#if>
 <#if (select_createdByCode??)>
 ${prefixName} `CREATED_BY_CODE`
 <#assign prefixName = ','>
@@ -22,10 +26,6 @@ ${prefixName} `DEPARTMENT_CODE`
 </#if>
 <#if (select_endDate??)>
 ${prefixName} `END_DATE`
-<#assign prefixName = ','>
-</#if>
-<#if (select_i18nInfoCode??)>
-${prefixName} `I18N_INFO_CODE`
 <#assign prefixName = ','>
 </#if>
 <#if (select_i18nInfoId??)>
@@ -70,12 +70,12 @@ ${prefixName} `WF_ID`
 </#if>
 <#if prefixName ==  ' '>
   `BEGIN_DATE`
+, `CONTENT`
 , `CREATED_BY_CODE`
 , `CREATED_DATE`
 , `DATA_STATE_CODE`
 , `DEPARTMENT_CODE`
 , `END_DATE`
-, `I18N_INFO_CODE`
 , `I18N_INFO_ID`
 , `LAST_MODIFIED_BY_CODE`
 , `LAST_MODIFIED_DATE`
@@ -92,6 +92,10 @@ FROM t_i18n_info
 <#assign prefixName = 'ORDER BY'>
 <#if (order_by_beginDate??)>
 ${prefixName} `BEGIN_DATE` ${order_by_beginDate_value!}
+<#assign prefixName = ','>
+</#if>
+<#if (order_by_content??)>
+${prefixName} `CONTENT` ${order_by_content_value!}
 <#assign prefixName = ','>
 </#if>
 <#if (order_by_createdByCode??)>
@@ -112,10 +116,6 @@ ${prefixName} `DEPARTMENT_CODE` ${order_by_departmentCode_value!}
 </#if>
 <#if (order_by_endDate??)>
 ${prefixName} `END_DATE` ${order_by_endDate_value!}
-<#assign prefixName = ','>
-</#if>
-<#if (order_by_i18nInfoCode??)>
-${prefixName} `I18N_INFO_CODE` ${order_by_i18nInfoCode_value!}
 <#assign prefixName = ','>
 </#if>
 <#if (order_by_i18nInfoId??)>

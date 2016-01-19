@@ -13,7 +13,7 @@
     <groupId>top.cardone.configuration</groupId>
     <artifactId>cardone-configuration-implements-default</artifactId>
     <version>${project.parent.version}</version>
-    <name>cardone configuration implements default</name>
+    <name>${project.artifactId}</name>
     <description>cardone configuration implements default</description>
     <packaging>jar</packaging>
 

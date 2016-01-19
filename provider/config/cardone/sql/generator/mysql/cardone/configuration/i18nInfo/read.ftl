@@ -3,6 +3,9 @@ SELECT
 <#case "beginDate">
 BEGIN_DATE AS beginDate
 <#break>
+<#case "content">
+CONTENT AS content
+<#break>
 <#case "createdByCode">
 CREATED_BY_CODE AS createdByCode
 <#break>
@@ -17,9 +20,6 @@ DEPARTMENT_CODE AS departmentCode
 <#break>
 <#case "endDate">
 END_DATE AS endDate
-<#break>
-<#case "i18nInfoCode">
-I18N_INFO_CODE AS i18nInfoCode
 <#break>
 <#case "i18nInfoId">
 I18N_INFO_ID AS i18nInfoId

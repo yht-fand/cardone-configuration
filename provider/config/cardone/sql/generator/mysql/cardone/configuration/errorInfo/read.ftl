@@ -3,6 +3,9 @@ SELECT
 <#case "beginDate">
 BEGIN_DATE AS beginDate
 <#break>
+<#case "content">
+CONTENT AS content
+<#break>
 <#case "createdByCode">
 CREATED_BY_CODE AS createdByCode
 <#break>
@@ -30,9 +33,6 @@ LAST_MODIFIED_BY_CODE AS lastModifiedByCode
 <#case "lastModifiedDate">
 LAST_MODIFIED_DATE AS lastModifiedDate
 <#break>
-<#case "message">
-MESSAGE AS message
-<#break>
 <#case "orgCode">
 ORG_CODE AS orgCode
 <#break>
@@ -44,6 +44,9 @@ ROLE_CODES AS roleCodes
 <#break>
 <#case "stateCode">
 STATE_CODE AS stateCode
+<#break>
+<#case "typeCode">
+TYPE_CODE AS typeCode
 <#break>
 <#case "version">
 VERSION_ AS version

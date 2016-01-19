@@ -5,6 +5,10 @@ INTO t_i18n_info
 ${prefixName} `BEGIN_DATE`
 <#assign prefixName = ','>
 </#if>
+<#if (insert_content??) && (insert_content_value??)>
+${prefixName} `CONTENT`
+<#assign prefixName = ','>
+</#if>
 <#if (insert_createdByCode??) && (insert_createdByCode_value??)>
 ${prefixName} `CREATED_BY_CODE`
 <#assign prefixName = ','>
@@ -23,10 +27,6 @@ ${prefixName} `DEPARTMENT_CODE`
 </#if>
 <#if (insert_endDate??) && (insert_endDate_value??)>
 ${prefixName} `END_DATE`
-<#assign prefixName = ','>
-</#if>
-<#if (insert_i18nInfoCode??) && (insert_i18nInfoCode_value??)>
-${prefixName} `I18N_INFO_CODE`
 <#assign prefixName = ','>
 </#if>
 <#if (insert_i18nInfoId??) && (insert_i18nInfoId_value??)>
@@ -76,6 +76,10 @@ VALUES
 ${prefixName} :insert_beginDate_value
 <#assign prefixName = ','>
 </#if>
+<#if (insert_content??) && (insert_content_value??)>
+${prefixName} :insert_content_value
+<#assign prefixName = ','>
+</#if>
 <#if (insert_createdByCode??) && (insert_createdByCode_value??)>
 ${prefixName} :insert_createdByCode_value
 <#assign prefixName = ','>
@@ -94,10 +98,6 @@ ${prefixName} :insert_departmentCode_value
 </#if>
 <#if (insert_endDate??) && (insert_endDate_value??)>
 ${prefixName} :insert_endDate_value
-<#assign prefixName = ','>
-</#if>
-<#if (insert_i18nInfoCode??) && (insert_i18nInfoCode_value??)>
-${prefixName} :insert_i18nInfoCode_value
 <#assign prefixName = ','>
 </#if>
 <#if (insert_i18nInfoId??) && (insert_i18nInfoId_value??)>

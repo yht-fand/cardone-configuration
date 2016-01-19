@@ -6,6 +6,10 @@ t_i18n_info
 ${prefixName} `BEGIN_DATE`
 <#assign prefixName = ','>
 </#if>
+<#if (insert_content??) && (insert_content_value??)>
+${prefixName} `CONTENT`
+<#assign prefixName = ','>
+</#if>
 <#if (insert_createdByCode??) && (insert_createdByCode_value??)>
 ${prefixName} `CREATED_BY_CODE`
 <#assign prefixName = ','>
@@ -24,10 +28,6 @@ ${prefixName} `DEPARTMENT_CODE`
 </#if>
 <#if (insert_endDate??) && (insert_endDate_value??)>
 ${prefixName} `END_DATE`
-<#assign prefixName = ','>
-</#if>
-<#if (insert_i18nInfoCode??) && (insert_i18nInfoCode_value??)>
-${prefixName} `I18N_INFO_CODE`
 <#assign prefixName = ','>
 </#if>
 <#if (insert_i18nInfoId??) && (insert_i18nInfoId_value??)>
@@ -77,6 +77,10 @@ ${prefixName} `WF_ID`
 ${prefixName} :insert_beginDate_value
 <#assign prefixName = ','>
 </#if>
+<#if (insert_content??) && (insert_content_value??)>
+${prefixName} :insert_content_value
+<#assign prefixName = ','>
+</#if>
 <#if (insert_createdByCode??) && (insert_createdByCode_value??)>
 ${prefixName} :insert_createdByCode_value
 <#assign prefixName = ','>
@@ -95,10 +99,6 @@ ${prefixName} :insert_departmentCode_value
 </#if>
 <#if (insert_endDate??) && (insert_endDate_value??)>
 ${prefixName} :insert_endDate_value
-<#assign prefixName = ','>
-</#if>
-<#if (insert_i18nInfoCode??) && (insert_i18nInfoCode_value??)>
-${prefixName} :insert_i18nInfoCode_value
 <#assign prefixName = ','>
 </#if>
 <#if (insert_i18nInfoId??) && (insert_i18nInfoId_value??)>
@@ -154,6 +154,17 @@ ${prefixName} E.BEGIN_DATE IS NULL
 <#if (prefixName!) != 'WHERE'>
 <#assign prefixName = 'AND'>
 </#if>
+<#if (where_and_eq_content??)>
+<#if (where_and_eq_content_value??)>
+${prefixName} E.CONTENT = :where_and_eq_content_value
+<#else>
+${prefixName} E.CONTENT IS NULL
+</#if>
+<#assign prefixName = ''>
+</#if>
+<#if (prefixName!) != 'WHERE'>
+<#assign prefixName = 'AND'>
+</#if>
 <#if (where_and_eq_createdByCode??)>
 <#if (where_and_eq_createdByCode_value??)>
 ${prefixName} E.CREATED_BY_CODE = :where_and_eq_createdByCode_value
@@ -203,17 +214,6 @@ ${prefixName} E.DEPARTMENT_CODE IS NULL
 ${prefixName} E.END_DATE = :where_and_eq_endDate_value
 <#else>
 ${prefixName} E.END_DATE IS NULL
-</#if>
-<#assign prefixName = ''>
-</#if>
-<#if (prefixName!) != 'WHERE'>
-<#assign prefixName = 'AND'>
-</#if>
-<#if (where_and_eq_i18nInfoCode??)>
-<#if (where_and_eq_i18nInfoCode_value??)>
-${prefixName} E.I18N_INFO_CODE = :where_and_eq_i18nInfoCode_value
-<#else>
-${prefixName} E.I18N_INFO_CODE IS NULL
 </#if>
 <#assign prefixName = ''>
 </#if>

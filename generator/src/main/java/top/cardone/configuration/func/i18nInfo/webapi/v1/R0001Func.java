@@ -34,6 +34,7 @@ public class R0001Func implements Func1<Map<String, Object>, Map<String, Object>
         Map<String, Object> map = Maps.newHashMap();
 
         map.put("beginDate", i18nInfoDto.getBeginDate());
+        map.put("content", i18nInfoDto.getContent());
         map.put("createdByCode", i18nInfoDto.getCreatedByCode());
         map.put("createdDate", i18nInfoDto.getCreatedDate());
         map.put("dataStateCode", i18nInfoDto.getDataStateCode());

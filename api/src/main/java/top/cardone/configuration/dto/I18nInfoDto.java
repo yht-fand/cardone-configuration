@@ -12,5 +12,5 @@ public class I18nInfoDto extends I18nInfo {
     /**
      * 版本号
      */
-    private static final long serialVersionUID = 419520052264560153L;
+    private static final long serialVersionUID = 261650535671927896L;
 }

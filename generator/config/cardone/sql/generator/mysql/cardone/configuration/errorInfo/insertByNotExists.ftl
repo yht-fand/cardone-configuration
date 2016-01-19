@@ -6,6 +6,10 @@ t_error_info
 ${prefixName} `BEGIN_DATE`
 <#assign prefixName = ','>
 </#if>
+<#if (insert_content??) && (insert_content_value??)>
+${prefixName} `CONTENT`
+<#assign prefixName = ','>
+</#if>
 <#if (insert_createdByCode??) && (insert_createdByCode_value??)>
 ${prefixName} `CREATED_BY_CODE`
 <#assign prefixName = ','>
@@ -42,10 +46,6 @@ ${prefixName} `LAST_MODIFIED_BY_CODE`
 ${prefixName} `LAST_MODIFIED_DATE`
 <#assign prefixName = ','>
 </#if>
-<#if (insert_message??) && (insert_message_value??)>
-${prefixName} `MESSAGE`
-<#assign prefixName = ','>
-</#if>
 <#if (insert_orgCode??) && (insert_orgCode_value??)>
 ${prefixName} `ORG_CODE`
 <#assign prefixName = ','>
@@ -62,6 +62,10 @@ ${prefixName} `ROLE_CODES`
 ${prefixName} `STATE_CODE`
 <#assign prefixName = ','>
 </#if>
+<#if (insert_typeCode??) && (insert_typeCode_value??)>
+${prefixName} `TYPE_CODE`
+<#assign prefixName = ','>
+</#if>
 <#if (insert_version??) && (insert_version_value??)>
 ${prefixName} `VERSION_`
 <#assign prefixName = ','>
@@ -75,6 +79,10 @@ ${prefixName} `WF_ID`
 <#assign prefixName = ' '>
 <#if (insert_beginDate??) && (insert_beginDate_value??)>
 ${prefixName} :insert_beginDate_value
+<#assign prefixName = ','>
+</#if>
+<#if (insert_content??) && (insert_content_value??)>
+${prefixName} :insert_content_value
 <#assign prefixName = ','>
 </#if>
 <#if (insert_createdByCode??) && (insert_createdByCode_value??)>
@@ -113,10 +121,6 @@ ${prefixName} :insert_lastModifiedByCode_value
 ${prefixName} :insert_lastModifiedDate_value
 <#assign prefixName = ','>
 </#if>
-<#if (insert_message??) && (insert_message_value??)>
-${prefixName} :insert_message_value
-<#assign prefixName = ','>
-</#if>
 <#if (insert_orgCode??) && (insert_orgCode_value??)>
 ${prefixName} :insert_orgCode_value
 <#assign prefixName = ','>
@@ -131,6 +135,10 @@ ${prefixName} :insert_roleCodes_value
 </#if>
 <#if (insert_stateCode??) && (insert_stateCode_value??)>
 ${prefixName} :insert_stateCode_value
+<#assign prefixName = ','>
+</#if>
+<#if (insert_typeCode??) && (insert_typeCode_value??)>
+${prefixName} :insert_typeCode_value
 <#assign prefixName = ','>
 </#if>
 <#if (insert_version??) && (insert_version_value??)>
@@ -148,6 +156,17 @@ FROM DUAL WHERE NOT EXISTS (SELECT 1 FROM t_error_info E
 ${prefixName} E.BEGIN_DATE = :where_and_eq_beginDate_value
 <#else>
 ${prefixName} E.BEGIN_DATE IS NULL
+</#if>
+<#assign prefixName = ''>
+</#if>
+<#if (prefixName!) != 'WHERE'>
+<#assign prefixName = 'AND'>
+</#if>
+<#if (where_and_eq_content??)>
+<#if (where_and_eq_content_value??)>
+${prefixName} E.CONTENT = :where_and_eq_content_value
+<#else>
+${prefixName} E.CONTENT IS NULL
 </#if>
 <#assign prefixName = ''>
 </#if>
@@ -253,17 +272,6 @@ ${prefixName} E.LAST_MODIFIED_DATE IS NULL
 <#if (prefixName!) != 'WHERE'>
 <#assign prefixName = 'AND'>
 </#if>
-<#if (where_and_eq_message??)>
-<#if (where_and_eq_message_value??)>
-${prefixName} E.MESSAGE = :where_and_eq_message_value
-<#else>
-${prefixName} E.MESSAGE IS NULL
-</#if>
-<#assign prefixName = ''>
-</#if>
-<#if (prefixName!) != 'WHERE'>
-<#assign prefixName = 'AND'>
-</#if>
 <#if (where_and_eq_orgCode??)>
 <#if (where_and_eq_orgCode_value??)>
 ${prefixName} E.ORG_CODE = :where_and_eq_orgCode_value
@@ -302,6 +310,17 @@ ${prefixName} E.ROLE_CODES IS NULL
 ${prefixName} E.STATE_CODE = :where_and_eq_stateCode_value
 <#else>
 ${prefixName} E.STATE_CODE IS NULL
+</#if>
+<#assign prefixName = ''>
+</#if>
+<#if (prefixName!) != 'WHERE'>
+<#assign prefixName = 'AND'>
+</#if>
+<#if (where_and_eq_typeCode??)>
+<#if (where_and_eq_typeCode_value??)>
+${prefixName} E.TYPE_CODE = :where_and_eq_typeCode_value
+<#else>
+${prefixName} E.TYPE_CODE IS NULL
 </#if>
 <#assign prefixName = ''>
 </#if>

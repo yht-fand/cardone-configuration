@@ -13,7 +13,7 @@
     <groupId>top.cardone.configuration</groupId>
     <artifactId>cardone-configuration-api</artifactId>
     <version>${project.parent.version}</version>
-    <name>cardone configuration api</name>
+    <name>${project.artifactId}</name>
     <description>cardone configuration api</description>
     <packaging>jar</packaging>
 

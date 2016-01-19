@@ -6,6 +6,12 @@ ${prefixName} `BEGIN_DATE` = :update_beginDate_value
 </#if>
 <#assign prefixName = ','>
 </#if>
+<#if (update_content??)>
+<#if (update_content_value??)>
+${prefixName} `CONTENT` = :update_content_value
+</#if>
+<#assign prefixName = ','>
+</#if>
 <#if (update_createdByCode??)>
 <#if (update_createdByCode_value??)>
 ${prefixName} `CREATED_BY_CODE` = :update_createdByCode_value
@@ -60,12 +66,6 @@ ${prefixName} `LAST_MODIFIED_DATE` = :update_lastModifiedDate_value
 </#if>
 <#assign prefixName = ','>
 </#if>
-<#if (update_message??)>
-<#if (update_message_value??)>
-${prefixName} `MESSAGE` = :update_message_value
-</#if>
-<#assign prefixName = ','>
-</#if>
 <#if (update_orgCode??)>
 <#if (update_orgCode_value??)>
 ${prefixName} `ORG_CODE` = :update_orgCode_value
@@ -87,6 +87,12 @@ ${prefixName} `ROLE_CODES` = :update_roleCodes_value
 <#if (update_stateCode??)>
 <#if (update_stateCode_value??)>
 ${prefixName} `STATE_CODE` = :update_stateCode_value
+</#if>
+<#assign prefixName = ','>
+</#if>
+<#if (update_typeCode??)>
+<#if (update_typeCode_value??)>
+${prefixName} `TYPE_CODE` = :update_typeCode_value
 </#if>
 <#assign prefixName = ','>
 </#if>
