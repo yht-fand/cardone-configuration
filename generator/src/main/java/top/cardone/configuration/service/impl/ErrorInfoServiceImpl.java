@@ -1,7 +1,7 @@
 package top.cardone.configuration.service.impl;
 
-import top.cardone.configuration.dao.ErrorInfoDao;
 import org.springframework.transaction.annotation.Transactional;
+import top.cardone.configuration.dao.ErrorInfoDao;
 import top.cardone.data.service.impl.PageServiceImpl;
 
 /**

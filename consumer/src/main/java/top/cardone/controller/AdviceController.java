@@ -65,6 +65,6 @@ public class AdviceController {
             log.error(e.getMessage(), e);
         }
 
-        return null;
+        return "error";
     }
 }

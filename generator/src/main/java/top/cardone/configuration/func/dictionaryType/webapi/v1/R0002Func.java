@@ -1,11 +1,10 @@
 package top.cardone.configuration.func.dictionaryType.webapi.vi;
 
-import org.springframework.stereotype.Component;
-import top.cardone.core.util.func.Func1;
-
-import top.cardone.configuration.dto.DictionaryTypeDto;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import org.springframework.stereotype.Component;
+import top.cardone.configuration.dto.DictionaryTypeDto;
+import top.cardone.core.util.func.Func1;
 
 import java.util.List;
 import java.util.Map;

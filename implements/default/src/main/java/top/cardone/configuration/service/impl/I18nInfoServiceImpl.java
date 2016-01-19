@@ -1,7 +1,7 @@
 package top.cardone.configuration.service.impl;
 
-import top.cardone.configuration.dao.I18nInfoDao;
 import org.springframework.transaction.annotation.Transactional;
+import top.cardone.configuration.dao.I18nInfoDao;
 import top.cardone.data.service.impl.PageServiceImpl;
 
 /**

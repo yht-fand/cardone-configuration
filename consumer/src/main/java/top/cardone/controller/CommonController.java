@@ -17,6 +17,9 @@ import java.util.Map;
  */
 @Controller
 public class CommonController {
+    @Value("${application.message:Hello World}")
+    private String message = "Hello World";
+
     /**
      * 所有json文件
      *
@@ -28,9 +31,6 @@ public class CommonController {
     public Object allJson(HttpServletRequest request) throws IOException {
         return ApplicationContextHolder.func(FuncBindSupport.class, funcBindSupport -> funcBindSupport.func(request));
     }
-
-    @Value("${application.message:Hello World}")
-    private String message = "Hello World";
 
     @RequestMapping("/")
     public String welcome(Map<String, Object> model) {
