@@ -30,6 +30,11 @@
 
         <dependency>
             <groupId>top.cardone</groupId>
+            <artifactId>cardone-template-implements-default</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>top.cardone</groupId>
             <artifactId>cardone-beans-api</artifactId>
         </dependency>
 
@@ -59,8 +64,13 @@
         </dependency>
 
         <dependency>
-            <groupId>org.quartz-scheduler</groupId>
-            <artifactId>quartz</artifactId>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
         </dependency>
     </dependencies>
 

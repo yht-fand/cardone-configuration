@@ -9,10 +9,10 @@ mkdir dist\production\provider
 xcopy provider\config dist\production\provider\config /Y/E/C/R/I
 xcopy provider\config-production dist\production\provider\config /Y/E/C/R/I
 xcopy provider\run*.bat dist\production\provider /Y/C/R/I
-xcopy provider\target\superstring-sync-provider-*.jar dist\production\provider /Y/C/R/I
+xcopy provider\target\cardone*-provider-*.jar dist\production\provider /Y/C/R/I
 mkdir dist\production\consumer
 xcopy consumer\config dist\production\consumer\config /Y/E/C/R/I
 xcopy consumer\config-production dist\production\consumer\config /Y/E/C/R/I
 xcopy consumer\run*.bat dist\production\consumer /Y/C/R/I
-xcopy consumer\target\superstring-sync-consumer-*.jar dist\production\consumer /Y/C/R/I
+xcopy consumer\target\cardone*-consumer-*.jar dist\production\consumer /Y/C/R/I
 pause
