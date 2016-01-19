@@ -2,6 +2,7 @@ package top.cardone;
 
 import lombok.extern.log4j.Log4j2;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.freemarker.FreeMarkerAutoConfiguration;
 import org.springframework.boot.autoconfigure.web.*;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Import;
@@ -12,7 +13,6 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
  *
  * @author yao hai tao
  */
-@Log4j2
 @Import({
         DispatcherServletAutoConfiguration.class,
         EmbeddedServletContainerAutoConfiguration.class,
@@ -21,6 +21,7 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
         HttpMessageConvertersAutoConfiguration.class,
         MultipartAutoConfiguration.class,
         ServerPropertiesAutoConfiguration.class,
+        FreeMarkerAutoConfiguration.class,
         WebMvcAutoConfiguration.class
 })
 @ComponentScan
