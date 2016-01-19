@@ -1,8 +1,9 @@
 package top.cardone;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.freemarker.FreeMarkerAutoConfiguration;
-import org.springframework.boot.autoconfigure.web.*;
+import org.springframework.boot.autoconfigure.web.DispatcherServletAutoConfiguration;
+import org.springframework.boot.autoconfigure.web.EmbeddedServletContainerAutoConfiguration;
+import org.springframework.boot.autoconfigure.web.ServerPropertiesAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.ImportResource;
@@ -12,7 +13,7 @@ import org.springframework.context.annotation.ImportResource;
  *
  * @author yao hai tao
  */
-@ImportResource(locations = {"file:/${app.root}/config/applicationContext.xml"})
+@ImportResource({"file:/${app.root}/config/applicationContext.xml"})
 @Import({
         ServerPropertiesAutoConfiguration.class,
         DispatcherServletAutoConfiguration.class,
