@@ -12,5 +12,5 @@ public class ErrorInfoDto extends ErrorInfo {
     /**
      * 版本号
      */
-    private static final long serialVersionUID = 471244945035267824L;
+    private static final long serialVersionUID = 255869310259604544L;
 }

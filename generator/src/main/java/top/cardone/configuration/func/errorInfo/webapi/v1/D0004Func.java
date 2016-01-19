@@ -1,4 +1,4 @@
-package top.cardone.configuration.func.errorInfo.webapi.vi;
+package top.cardone.configuration.func.errorInfo.webapi.v1;
 
 import org.springframework.stereotype.Component;
 import top.cardone.core.util.func.Func1;
