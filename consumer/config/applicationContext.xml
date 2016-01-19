@@ -10,4 +10,6 @@
     <bean class="top.cardone.context.ApplicationContextHolder"/>
 
     <import resource="**/applicationContext-**.xml"/>
+
+    <import resource="spring-mvc-**.xml"/>
 </beans>

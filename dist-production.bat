@@ -6,6 +6,8 @@ cd parent && call mvn clean package -Dmaven.test.skip=true && cd ..
 call mvn clean package -Dmaven.test.skip=true
 rd /s/q dist\production
 mkdir dist\production\provider
+xcopy provider\webapp dist\production\provider\webapp /Y/E/C/R/I
+xcopy provider\views dist\production\provider\views /Y/E/C/R/I
 xcopy provider\config dist\production\provider\config /Y/E/C/R/I
 xcopy provider\config-production dist\production\provider\config /Y/E/C/R/I
 xcopy provider\run*.bat dist\production\provider /Y/C/R/I

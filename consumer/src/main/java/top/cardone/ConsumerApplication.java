@@ -12,17 +12,11 @@ import org.springframework.context.annotation.ImportResource;
  *
  * @author yao hai tao
  */
-@ImportResource(locations = {"file:/${spring.configLocation}"})
+@ImportResource(locations = {"file:/${app.root}/config/applicationContext.xml"})
 @Import({
-        DispatcherServletAutoConfiguration.class,
         ServerPropertiesAutoConfiguration.class,
-        EmbeddedServletContainerAutoConfiguration.class,
-        WebMvcAutoConfiguration.class,
-        FreeMarkerAutoConfiguration.class,
-        ErrorMvcAutoConfiguration.class,
-        HttpEncodingAutoConfiguration.class,
-        HttpMessageConvertersAutoConfiguration.class,
-        MultipartAutoConfiguration.class
+        DispatcherServletAutoConfiguration.class,
+        EmbeddedServletContainerAutoConfiguration.class
 })
 @ComponentScan
 public class ConsumerApplication {
