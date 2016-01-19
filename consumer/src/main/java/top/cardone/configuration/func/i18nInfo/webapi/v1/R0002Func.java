@@ -1,10 +1,11 @@
-package top.cardone.configuration.func.i18nInfo.webapi.vi;
+package top.cardone.configuration.func.i18nInfo.webapi.v1;
 
+import org.springframework.stereotype.Component;
+import top.cardone.core.util.func.Func1;
+
+import top.cardone.configuration.dto.I18nInfoDto;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import org.springframework.stereotype.Component;
-import top.cardone.configuration.dto.I18nInfoDto;
-import top.cardone.core.util.func.Func1;
 
 import java.util.List;
 import java.util.Map;
@@ -39,6 +40,7 @@ public class R0002Func implements Func1<Map<String, Object>, Map<String, Object>
         map.put("dataStateCode", i18nInfoDto.getDataStateCode());
         map.put("departmentCode", i18nInfoDto.getDepartmentCode());
         map.put("endDate", i18nInfoDto.getEndDate());
+        map.put("i18nInfoCode", i18nInfoDto.getI18nInfoCode());
         map.put("i18nInfoId", i18nInfoDto.getI18nInfoId());
         map.put("lastModifiedByCode", i18nInfoDto.getLastModifiedByCode());
         map.put("lastModifiedDate", i18nInfoDto.getLastModifiedDate());

@@ -1,6 +1,8 @@
-package top.cardone.configuration.func.dictionaryType.webapi.vi;
+package top.cardone.configuration.func.dictionaryType.webapi.v1;
 
 import org.springframework.stereotype.Component;
+import top.cardone.context.ApplicationContextHolder;
+import top.cardone.core.CodeException;
 import top.cardone.core.util.func.Func1;
 
 import java.util.Map;
