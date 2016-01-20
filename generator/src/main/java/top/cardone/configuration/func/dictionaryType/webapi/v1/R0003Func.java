@@ -22,7 +22,7 @@ public class R0003Func implements Func1<Object, Map<String, Object>> {
     public Object func(Map<String, Object> map) {
         Page<DictionaryTypeDto> dictionaryTypeDtoPage = ApplicationContextHolder.getBean(DictionaryTypeService.class).page(DictionaryTypeDto.class, map);
 
-        return ApplicationContextHolder.func(PageSupport.class, pageSupport -> pageSupport.newPage(this.toMapList(dictionaryTypeDtoPage.getContent()), map, dictionaryTypeDtoPage.getTotalElements()));
+        return ApplicationContextHolder.func(PageSupport.class, pageSupport -> pageSupport.newMap(this.toMapList(dictionaryTypeDtoPage.getContent()), map, dictionaryTypeDtoPage.getTotalElements()));
     }
 
     private List<Map<String, Object>> toMapList(List<DictionaryTypeDto> dictionaryTypeDtoList) {

@@ -77,6 +77,11 @@
             <groupId>commons-fileupload</groupId>
             <artifactId>commons-fileupload</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>top.cardone</groupId>
+            <artifactId>cardone-data-commons-implements-default</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
