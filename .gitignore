@@ -5,6 +5,8 @@
 *.war
 *.ear
 
+dist
+
 .classpath
 !/.project
 .project
