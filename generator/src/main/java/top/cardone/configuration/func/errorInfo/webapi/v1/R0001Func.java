@@ -1,13 +1,12 @@
 package top.cardone.configuration.func.errorInfo.webapi.v1;
 
+import com.google.common.collect.Maps;
 import org.springframework.stereotype.Component;
+import top.cardone.configuration.dto.ErrorInfoDto;
+import top.cardone.configuration.service.ErrorInfoService;
+import top.cardone.context.ApplicationContextHolder;
 import top.cardone.core.util.func.Func1;
 
-import top.cardone.configuration.dto.ErrorInfoDto;
-import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
-
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -17,17 +16,9 @@ import java.util.Map;
 public class R0001Func implements Func1<Object, Map<String, Object>> {
     @Override
     public Object func(Map<String, Object> map) {
-        return null;
-    }
+        ErrorInfoDto errorInfoDto = ApplicationContextHolder.getBean(ErrorInfoService.class).findOne(ErrorInfoDto.class, map);
 
-    private List<Map<String, Object>> toMapList(List<ErrorInfoDto> errorInfoDtoList) {
-        List<Map<String, Object>> mapList = Lists.newArrayList();
-
-        for (ErrorInfoDto errorInfoDto : errorInfoDtoList) {
-            mapList.add(this.toMap(errorInfoDto));
-        }
-
-        return mapList;
+        return this.toMap(errorInfoDto);
     }
 
     private Map<String, Object> toMap(ErrorInfoDto errorInfoDto) {

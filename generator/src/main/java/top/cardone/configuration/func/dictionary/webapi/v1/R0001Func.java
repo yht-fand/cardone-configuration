@@ -1,13 +1,12 @@
 package top.cardone.configuration.func.dictionary.webapi.v1;
 
+import com.google.common.collect.Maps;
 import org.springframework.stereotype.Component;
+import top.cardone.configuration.dto.DictionaryDto;
+import top.cardone.configuration.service.DictionaryService;
+import top.cardone.context.ApplicationContextHolder;
 import top.cardone.core.util.func.Func1;
 
-import top.cardone.configuration.dto.DictionaryDto;
-import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
-
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -17,17 +16,9 @@ import java.util.Map;
 public class R0001Func implements Func1<Object, Map<String, Object>> {
     @Override
     public Object func(Map<String, Object> map) {
-        return null;
-    }
+        DictionaryDto dictionaryDto = ApplicationContextHolder.getBean(DictionaryService.class).findOne(DictionaryDto.class, map);
 
-    private List<Map<String, Object>> toMapList(List<DictionaryDto> dictionaryDtoList) {
-        List<Map<String, Object>> mapList = Lists.newArrayList();
-
-        for (DictionaryDto dictionaryDto : dictionaryDtoList) {
-            mapList.add(this.toMap(dictionaryDto));
-        }
-
-        return mapList;
+        return this.toMap(dictionaryDto);
     }
 
     private Map<String, Object> toMap(DictionaryDto dictionaryDto) {

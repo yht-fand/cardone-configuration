@@ -18,7 +18,7 @@ import java.util.Map;
 public class R0002Func implements Func1<Object, Map<String, Object>> {
     @Override
     public Object func(Map<String, Object> map) {
-        List<DictionaryDto> dictionaryDtoList = ApplicationContextHolder.getBean(DictionaryService.class).findList(DictionaryDto.class, null);
+        List<DictionaryDto> dictionaryDtoList = ApplicationContextHolder.getBean(DictionaryService.class).findList(DictionaryDto.class, map);
 
         return this.toMapList(dictionaryDtoList);
     }

@@ -1,11 +1,14 @@
 package top.cardone.configuration.func.dictionaryType.webapi.v1;
 
-import org.springframework.stereotype.Component;
-import top.cardone.core.util.func.Func1;
-
-import top.cardone.configuration.dto.DictionaryTypeDto;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import org.springframework.data.domain.Page;
+import org.springframework.stereotype.Component;
+import top.cardone.configuration.dto.DictionaryTypeDto;
+import top.cardone.configuration.service.DictionaryTypeService;
+import top.cardone.context.ApplicationContextHolder;
+import top.cardone.core.util.func.Func1;
+import top.cardone.data.support.PageSupport;
 
 import java.util.List;
 import java.util.Map;
@@ -17,7 +20,9 @@ import java.util.Map;
 public class R0003Func implements Func1<Object, Map<String, Object>> {
     @Override
     public Object func(Map<String, Object> map) {
-        return null;
+        Page<DictionaryTypeDto> dictionaryTypeDtoPage = ApplicationContextHolder.getBean(DictionaryTypeService.class).page(DictionaryTypeDto.class, map);
+
+        return ApplicationContextHolder.func(PageSupport.class, pageSupport -> pageSupport.newPage(this.toMapList(dictionaryTypeDtoPage.getContent()), map, dictionaryTypeDtoPage.getTotalElements()));
     }
 
     private List<Map<String, Object>> toMapList(List<DictionaryTypeDto> dictionaryTypeDtoList) {
