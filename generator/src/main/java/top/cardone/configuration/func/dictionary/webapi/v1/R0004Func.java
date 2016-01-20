@@ -14,9 +14,9 @@ import java.util.Map;
  * 字典 - 查询
  */
 @Component("/web-api/v1/configuration/dictionary/r0004.json")
-public class R0004Func implements Func1<Map<String, Object>, Map<String, Object>> {
+public class R0004Func implements Func1<Object, Map<String, Object>> {
     @Override
-    public Map<String, Object> func(Map<String, Object> map) {
+    public Object func(Map<String, Object> map) {
         return null;
     }
 

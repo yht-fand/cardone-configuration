@@ -9,9 +9,9 @@ import java.util.Map;
  * 错误信息 - 添加
  */
 @Component("/configuration/errorInfo/addModal.json")
-public class AddModalFunc implements Func1<Map<String, Object>, Map<String, Object>> {
+public class AddModalFunc implements Func1<Object, Map<String, Object>> {
     @Override
-    public Map<String, Object> func(Map<String, Object> map) {
+    public Object func(Map<String, Object> map) {
         return null;
     }
 }
