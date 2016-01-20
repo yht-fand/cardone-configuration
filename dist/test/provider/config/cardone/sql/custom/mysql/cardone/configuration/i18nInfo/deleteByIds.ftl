@@ -1,1 +1,0 @@
-DELETE FROM t_i18n_info WHERE INSTR(:ids, i18nInfoId) > 0

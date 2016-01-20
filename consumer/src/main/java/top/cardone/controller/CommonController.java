@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import top.cardone.context.ApplicationContextHolder;
+import top.cardone.core.CodeException;
 import top.cardone.web.support.FuncBindSupport;
 
 import javax.servlet.http.HttpServletRequest;
@@ -36,6 +37,9 @@ public class CommonController {
     public String welcome(Map<String, Object> model) {
         model.put("time", new Date());
         model.put("message", this.message);
+
+//        throw new CodeException("000000", "test");
+
         return "welcome.ftl";
     }
 }

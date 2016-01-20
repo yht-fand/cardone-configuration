@@ -1,1 +1,0 @@
-DELETE FROM t_dictionary_type WHERE INSTR(:ids, dictionaryTypeId) > 0
