@@ -28,9 +28,6 @@
                 <entry key="beansWrapperFn">
                     <bean class="freemarker.ext.beans.BeansWrapper"/>
                 </entry>
-                <entry key="staticResourcesUrl" value="/work-rm-web/resources"/>
-                <entry key="staticResourcesVersion" value="0.0.1"/>
-                <entry key="imageResourcesUrl" value="/work-rm-web/resources/work-rm/0.0.1/default/img"/>
             </map>
         </property>
     </bean>

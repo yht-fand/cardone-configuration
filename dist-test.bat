@@ -6,13 +6,13 @@ cd parent && call mvn clean package -Dmaven.test.skip=true && cd ..
 call mvn clean package -Dmaven.test.skip=true
 rd /s/q dist\test
 mkdir dist\test\provider
-xcopy provider\webapp dist\test\provider\webapp /Y/E/C/R/I
-xcopy provider\views dist\test\provider\views /Y/E/C/R/I
 xcopy provider\config dist\test\provider\config /Y/E/C/R/I
 xcopy provider\config-test dist\test\provider\config /Y/E/C/R/I
 xcopy provider\run*.bat dist\test\provider /Y/C/R/I
 xcopy provider\target\cardone*-provider-*.jar dist\test\provider /Y/C/R/I
 mkdir dist\test\consumer
+xcopy consumer\webapp dist\test\consumer\webapp /Y/E/C/R/I
+xcopy consumer\views dist\test\consumer\views /Y/E/C/R/I
 xcopy consumer\config dist\test\consumer\config /Y/E/C/R/I
 xcopy consumer\config-test dist\test\consumer\config /Y/E/C/R/I
 xcopy consumer\run*.bat dist\test\consumer /Y/C/R/I
