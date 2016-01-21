@@ -30,7 +30,7 @@ public class CommonController {
     @RequestMapping(value = "/**/*.json")
     @ResponseBody
     public Object allJson(HttpServletRequest request) throws IOException {
-        return ApplicationContextHolder.func(FuncBindSupport.class, funcBindSupport -> funcBindSupport.func(request));
+        return ApplicationContextHolder.getBean(FuncBindSupport.class).func(request);
     }
 
     @RequestMapping("/")
