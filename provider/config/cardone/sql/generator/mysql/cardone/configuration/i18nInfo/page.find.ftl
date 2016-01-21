@@ -28,6 +28,10 @@ ${prefixName} `DEPARTMENT_CODE`
 ${prefixName} `END_DATE`
 <#assign prefixName = ','>
 </#if>
+<#if (select_i18nInfoCode??)>
+${prefixName} `I18N_INFO_CODE`
+<#assign prefixName = ','>
+</#if>
 <#if (select_i18nInfoId??)>
 ${prefixName} `I18N_INFO_ID`
 <#assign prefixName = ','>
@@ -76,6 +80,7 @@ ${prefixName} `WF_ID`
 , `DATA_STATE_CODE`
 , `DEPARTMENT_CODE`
 , `END_DATE`
+, `I18N_INFO_CODE`
 , `I18N_INFO_ID`
 , `LAST_MODIFIED_BY_CODE`
 , `LAST_MODIFIED_DATE`
@@ -116,6 +121,10 @@ ${prefixName} `DEPARTMENT_CODE` ${order_by_departmentCode_value!}
 </#if>
 <#if (order_by_endDate??)>
 ${prefixName} `END_DATE` ${order_by_endDate_value!}
+<#assign prefixName = ','>
+</#if>
+<#if (order_by_i18nInfoCode??)>
+${prefixName} `I18N_INFO_CODE` ${order_by_i18nInfoCode_value!}
 <#assign prefixName = ','>
 </#if>
 <#if (order_by_i18nInfoId??)>

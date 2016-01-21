@@ -21,6 +21,9 @@ DEPARTMENT_CODE AS departmentCode
 <#case "endDate">
 END_DATE AS endDate
 <#break>
+<#case "i18nInfoCode">
+I18N_INFO_CODE AS i18nInfoCode
+<#break>
 <#case "i18nInfoId">
 I18N_INFO_ID AS i18nInfoId
 <#break>

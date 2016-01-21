@@ -3,7 +3,7 @@ package top.cardone.configuration.dao;
 import top.cardone.data.dao.PageDao;
 
 /**
- * ErrorInfo
+ * 错误信息
  *
  * @author yao hai tao
  */

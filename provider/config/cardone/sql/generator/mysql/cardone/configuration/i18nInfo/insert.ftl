@@ -29,6 +29,10 @@ ${prefixName} `DEPARTMENT_CODE`
 ${prefixName} `END_DATE`
 <#assign prefixName = ','>
 </#if>
+<#if (insert_i18nInfoCode??) && (insert_i18nInfoCode_value??)>
+${prefixName} `I18N_INFO_CODE`
+<#assign prefixName = ','>
+</#if>
 <#if (insert_i18nInfoId??) && (insert_i18nInfoId_value??)>
 ${prefixName} `I18N_INFO_ID`
 <#assign prefixName = ','>
@@ -98,6 +102,10 @@ ${prefixName} :insert_departmentCode_value
 </#if>
 <#if (insert_endDate??) && (insert_endDate_value??)>
 ${prefixName} :insert_endDate_value
+<#assign prefixName = ','>
+</#if>
+<#if (insert_i18nInfoCode??) && (insert_i18nInfoCode_value??)>
+${prefixName} :insert_i18nInfoCode_value
 <#assign prefixName = ','>
 </#if>
 <#if (insert_i18nInfoId??) && (insert_i18nInfoId_value??)>

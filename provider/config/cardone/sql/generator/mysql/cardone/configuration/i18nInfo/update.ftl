@@ -42,6 +42,12 @@ ${prefixName} `END_DATE` = :update_endDate_value
 </#if>
 <#assign prefixName = ','>
 </#if>
+<#if (update_i18nInfoCode??)>
+<#if (update_i18nInfoCode_value??)>
+${prefixName} `I18N_INFO_CODE` = :update_i18nInfoCode_value
+</#if>
+<#assign prefixName = ','>
+</#if>
 <#if (update_i18nInfoId??)>
 <#if (update_i18nInfoId_value??)>
 ${prefixName} `I18N_INFO_ID` = :update_i18nInfoId_value

@@ -1,11 +1,11 @@
 package top.cardone.configuration.service.impl;
 
-import org.springframework.transaction.annotation.Transactional;
 import top.cardone.configuration.dao.ErrorInfoDao;
+import org.springframework.transaction.annotation.Transactional;
 import top.cardone.data.service.impl.PageServiceImpl;
 
 /**
- * ErrorInfo服务
+ * 错误信息服务
  *
  * @author yao hai tao
  */

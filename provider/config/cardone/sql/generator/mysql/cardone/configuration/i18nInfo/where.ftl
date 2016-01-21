@@ -436,6 +436,68 @@ ${prefixName} `END_DATE` like :where_or_like_endDate_value
 <#if (prefixName!) != 'WHERE'>
 <#assign prefixName = 'AND'>
 </#if>
+<#if (where_and_eq_i18nInfoCode??)>
+<#if (where_and_eq_i18nInfoCode_value??)>
+${prefixName} `I18N_INFO_CODE` = :where_and_eq_i18nInfoCode_value
+<#else>
+${prefixName} `I18N_INFO_CODE` IS NULL
+</#if>
+<#assign prefixName = ''>
+</#if>
+<#if (where_and_nq_i18nInfoCode??)>
+<#if (prefixName!) != 'WHERE'>
+<#assign prefixName = 'AND'>
+</#if>
+<#if (where_and_nq_i18nInfoCode_value??)>
+${prefixName} `I18N_INFO_CODE` <> :where_and_nq_i18nInfoCode_value
+<#else>
+${prefixName} `I18N_INFO_CODE` IS NOT NULL
+</#if>
+<#assign prefixName = ''>
+</#if>
+<#if (where_and_like_i18nInfoCode??)>
+<#if (prefixName!) != 'WHERE'>
+<#assign prefixName = 'AND'>
+</#if>
+<#if (where_and_like_i18nInfoCode_value??)>
+${prefixName} `I18N_INFO_CODE` <> :where_and_like_i18nInfoCode_value
+</#if>
+<#assign prefixName = ''>
+</#if>
+<#if (where_or_eq_i18nInfoCode??)>
+<#if (prefixName!) != 'WHERE'>
+<#assign prefixName = 'OR'>
+</#if>
+<#if (where_or_eq_i18nInfoCode_value??)>
+${prefixName} `I18N_INFO_CODE` = :where_or_eq_i18nInfoCode_value
+<#else>
+${prefixName} `I18N_INFO_CODE` IS NULL
+</#if>
+<#assign prefixName = ''>
+</#if>
+<#if (where_or_nq_i18nInfoCode??)>
+<#if (prefixName!) != 'WHERE'>
+<#assign prefixName = 'OR'>
+</#if>
+<#if (where_or_nq_i18nInfoCode_value??)>
+${prefixName} `I18N_INFO_CODE` <> :where_or_nq_i18nInfoCode_value
+<#else>
+${prefixName} `I18N_INFO_CODE` IS NOT NULL
+</#if>
+<#assign prefixName = ''>
+</#if>
+<#if (where_or_like_i18nInfoCode??)>
+<#if (prefixName!) != 'WHERE'>
+<#assign prefixName = 'OR'>
+</#if>
+<#if (where_or_like_i18nInfoCode_value??)>
+${prefixName} `I18N_INFO_CODE` like :where_or_like_i18nInfoCode_value
+</#if>
+<#assign prefixName = ''>
+</#if>
+<#if (prefixName!) != 'WHERE'>
+<#assign prefixName = 'AND'>
+</#if>
 <#if (where_and_eq_i18nInfoId??)>
 <#if (where_and_eq_i18nInfoId_value??)>
 ${prefixName} `I18N_INFO_ID` = :where_and_eq_i18nInfoId_value
