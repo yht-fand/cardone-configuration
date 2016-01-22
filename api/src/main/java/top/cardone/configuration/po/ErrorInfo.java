@@ -12,7 +12,7 @@ public class ErrorInfo implements java.io.Serializable {
     /**
      * 版本号
      */
-    private static final long serialVersionUID = 355704738103720108L;
+    private static final long serialVersionUID = 867693333438526313L;
 
     /**
      * 开始时间
@@ -113,11 +113,25 @@ public class ErrorInfo implements java.io.Serializable {
     protected String roleCodes;
 
     /**
+     * 站点编号
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String siteCode;
+
+    /**
      * 状态代码
      */
     @lombok.Getter
     @lombok.Setter
     protected String stateCode;
+
+    /**
+     * 系统信息代码
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String systemInfoCode;
 
     /**
      * 类别代码
