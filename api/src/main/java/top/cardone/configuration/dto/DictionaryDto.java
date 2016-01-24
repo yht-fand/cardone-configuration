@@ -9,8 +9,4 @@ import top.cardone.configuration.po.Dictionary;
  */
 @lombok.ToString(callSuper = true)
 public class DictionaryDto extends Dictionary {
-    /**
-     * 版本号
-     */
-    private static final long serialVersionUID = 808708827282515850L;
 }

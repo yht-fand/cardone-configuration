@@ -9,8 +9,4 @@ import top.cardone.configuration.po.SystemInfo;
  */
 @lombok.ToString(callSuper = true)
 public class SystemInfoDto extends SystemInfo {
-    /**
-     * 版本号
-     */
-    private static final long serialVersionUID = 100182329648405647L;
 }

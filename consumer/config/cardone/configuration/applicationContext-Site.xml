@@ -8,7 +8,7 @@
         <property name="serviceInterface" value="top.cardone.configuration.service.SiteService"/>
         <property name="queue">
             <bean class="org.apache.activemq.command.ActiveMQQueue">
-                <constructor-arg value="top.cardone.configuration.service.SiteService"/>
+                <constructor-arg value="cardone-configuration-${cardone-configuration-version}:top.cardone.configuration.service.SiteService"/>
             </bean>
         </property>
     </bean>

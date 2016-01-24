@@ -18,7 +18,7 @@
     <artifactId>cardone-configuration-provider</artifactId>
     <version>${project.parent.version}</version>
     <name>${project.artifactId}</name>
-    <description>cardone configuration provider</description>
+    <description>top.cardone.configuration cardone-configuration-provider</description>
     <packaging>jar</packaging>
 
     <dependencies>
@@ -30,6 +30,11 @@
         <dependency>
             <groupId>top.cardone</groupId>
             <artifactId>cardone-cache-implements-default</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>top.cardone</groupId>
+            <artifactId>cardone-cache-implements-memcached</artifactId>
         </dependency>
 
         <dependency>

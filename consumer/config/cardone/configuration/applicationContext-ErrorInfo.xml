@@ -8,7 +8,7 @@
         <property name="serviceInterface" value="top.cardone.configuration.service.ErrorInfoService"/>
         <property name="queue">
             <bean class="org.apache.activemq.command.ActiveMQQueue">
-                <constructor-arg value="top.cardone.configuration.service.ErrorInfoService"/>
+                <constructor-arg value="cardone-configuration-${cardone-configuration-version}:top.cardone.configuration.service.ErrorInfoService"/>
             </bean>
         </property>
     </bean>

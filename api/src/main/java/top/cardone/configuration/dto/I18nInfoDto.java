@@ -9,8 +9,4 @@ import top.cardone.configuration.po.I18nInfo;
  */
 @lombok.ToString(callSuper = true)
 public class I18nInfoDto extends I18nInfo {
-    /**
-     * 版本号
-     */
-    private static final long serialVersionUID = 894266013636913550L;
 }

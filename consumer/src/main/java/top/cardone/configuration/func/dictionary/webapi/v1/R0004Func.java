@@ -42,7 +42,9 @@ public class R0004Func implements Func1<Object, Map<String, Object>> {
         map.put("permissionCodes", dictionaryDto.getPermissionCodes());
         map.put("remark", dictionaryDto.getRemark());
         map.put("roleCodes", dictionaryDto.getRoleCodes());
+        map.put("siteCode", dictionaryDto.getSiteCode());
         map.put("stateCode", dictionaryDto.getStateCode());
+        map.put("systemInfoCode", dictionaryDto.getSystemInfoCode());
         map.put("value", dictionaryDto.getValue());
         map.put("version", dictionaryDto.getVersion());
         map.put("wfId", dictionaryDto.getWfId());

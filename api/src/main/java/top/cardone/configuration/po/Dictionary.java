@@ -9,10 +9,6 @@ import java.util.Date;
  */
 @lombok.ToString(callSuper = true)
 public class Dictionary implements java.io.Serializable {
-    /**
-     * 版本号
-     */
-    private static final long serialVersionUID = 131850190788364802L;
 
     /**
      * 开始时间

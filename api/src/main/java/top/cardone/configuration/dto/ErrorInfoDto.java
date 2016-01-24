@@ -9,8 +9,4 @@ import top.cardone.configuration.po.ErrorInfo;
  */
 @lombok.ToString(callSuper = true)
 public class ErrorInfoDto extends ErrorInfo {
-    /**
-     * 版本号
-     */
-    private static final long serialVersionUID = 393370397845194106L;
 }

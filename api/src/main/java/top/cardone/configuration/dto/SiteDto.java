@@ -9,8 +9,4 @@ import top.cardone.configuration.po.Site;
  */
 @lombok.ToString(callSuper = true)
 public class SiteDto extends Site {
-    /**
-     * 版本号
-     */
-    private static final long serialVersionUID = 319759800742962050L;
 }

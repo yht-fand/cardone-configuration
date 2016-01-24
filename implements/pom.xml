@@ -14,7 +14,7 @@
     <artifactId>cardone-configuration-implements</artifactId>
     <version>${project.parent.version}</version>
     <name>${project.artifactId}</name>
-    <description>cardone configuration implements</description>
+    <description>top.cardone.configuration cardone-configuration-implements</description>
     <packaging>pom</packaging>
 
     <modules>
