@@ -1,5 +1,5 @@
 set myself=%~dp0
-IF EXIST jdk (
+IF EXIST "jdk" (
 set JAVA_HOME=%myself%jdk
 set path=%JAVA_HOME%\bin
 )

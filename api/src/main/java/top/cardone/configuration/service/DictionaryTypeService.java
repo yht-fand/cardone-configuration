@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 字典类别服务
+ * DictionaryType服务
  *
  * @author yao hai tao
  */

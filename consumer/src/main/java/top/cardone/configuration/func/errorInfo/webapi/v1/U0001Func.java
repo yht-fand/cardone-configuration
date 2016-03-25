@@ -8,7 +8,7 @@ import top.cardone.core.util.func.Func1;
 import java.util.Map;
 
 /**
- * 错误信息 - 修改
+ * ErrorInfo - 修改
  */
 @Component("/web-api/v1/configuration/errorInfo/u0001.json")
 public class U0001Func implements Func1<Object, Map<String, Object>> {

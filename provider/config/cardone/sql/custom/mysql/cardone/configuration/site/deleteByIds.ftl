@@ -1,1 +1,0 @@
-DELETE FROM t_site WHERE INSTR(:ids, siteId) > 0

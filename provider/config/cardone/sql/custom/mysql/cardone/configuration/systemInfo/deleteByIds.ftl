@@ -1,1 +1,0 @@
-DELETE FROM t_system_info WHERE INSTR(:ids, systemInfoId) > 0

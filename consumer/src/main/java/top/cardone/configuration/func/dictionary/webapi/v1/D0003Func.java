@@ -8,7 +8,7 @@ import top.cardone.core.util.func.Func1;
 import java.util.Map;
 
 /**
- * 字典 - 删除
+ * Dictionary - 删除
  */
 @Component("/web-api/v1/configuration/dictionary/d0003.json")
 public class D0003Func implements Func1<Object, Map<String, Object>> {

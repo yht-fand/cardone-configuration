@@ -6,7 +6,7 @@ import top.cardone.core.util.func.Func1;
 import java.util.Map;
 
 /**
- * 国际化信息 - 添加
+ * I18nInfo - 添加
  */
 @Component("/configuration/i18nInfo/addModal.json")
 public class AddModalFunc implements Func1<Object, Map<String, Object>> {

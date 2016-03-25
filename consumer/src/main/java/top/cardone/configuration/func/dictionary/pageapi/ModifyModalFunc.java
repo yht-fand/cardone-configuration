@@ -6,7 +6,7 @@ import top.cardone.core.util.func.Func1;
 import java.util.Map;
 
 /**
- * 字典 - 修改
+ * Dictionary - 修改
  */
 @Component("/configuration/dictionary/modifyModal.json")
 public class ModifyModalFunc implements Func1<Object, Map<String, Object>> {

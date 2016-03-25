@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 字典类别 - 批量删除
+ * DictionaryType - 批量删除
  */
 @Component("/web-api/v1/configuration/dictionaryType/d0002.json")
 public class D0002Func implements Func1<Object, Map<String, Object>> {

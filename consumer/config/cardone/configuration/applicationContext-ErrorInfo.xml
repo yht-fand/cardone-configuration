@@ -3,8 +3,8 @@
        xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
        default-lazy-init="true">
-    <!-- 错误信息 -->
-    <bean name="top.cardone.configuration.service.ErrorInfoService" parent="consumerParent">
+    <!-- ErrorInfo -->
+    <bean name="top.cardone.configuration.service.ErrorInfoService" parent="invokerProxyFactoryParnet">
         <property name="serviceInterface" value="top.cardone.configuration.service.ErrorInfoService"/>
         <property name="queue">
             <bean class="org.apache.activemq.command.ActiveMQQueue">

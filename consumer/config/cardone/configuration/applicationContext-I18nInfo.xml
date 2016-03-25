@@ -3,8 +3,8 @@
        xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
        default-lazy-init="true">
-    <!-- 国际化信息 -->
-    <bean name="top.cardone.configuration.service.I18nInfoService" parent="consumerParent">
+    <!-- I18nInfo -->
+    <bean name="top.cardone.configuration.service.I18nInfoService" parent="invokerProxyFactoryParnet">
         <property name="serviceInterface" value="top.cardone.configuration.service.I18nInfoService"/>
         <property name="queue">
             <bean class="org.apache.activemq.command.ActiveMQQueue">

@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 站点 - 批量修改
+ * Site - 批量修改
  */
 @Component("/web-api/v1/configuration/site/u0002.json")
 public class U0002Func implements Func1<Object, Map<String, Object>> {

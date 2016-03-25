@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 系统信息服务
+ * SystemInfo服务
  *
  * @author yao hai tao
  */

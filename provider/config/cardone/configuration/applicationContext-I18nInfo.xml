@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns="http://www.springframework.org/schema/beans"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
-       default-lazy-init="true">
-    <!-- 国际化信息 -->
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- I18nInfo -->
     <bean id="top.cardone.configuration.dao.I18nInfoDao"
           class="top.cardone.configuration.dao.impl.I18nInfoDaoImpl">
         <property name="configTable">
@@ -11,13 +10,13 @@
                 <entry key="config">
                     <map>
                         <entry key="sqlFileRoot" value="/cardone/configuration/i18nInfo/"/>
-                        <entry key="pks" value="i18nInfoId"/>
-                        <entry key="codes" value="i18nInfoId"/>
+                        <entry key="pks" value=""/>
+                        <entry key="codes" value=""/>
                     </map>
                 </entry>
                 <entry key="insert">
                     <map>
-                        <entry key="i18nInfoId" value="getRandomUUIDFunc"/>
+                        <entry key="" value="getRandomUUIDFunc"/>
                         <entry key="createdByCode" value="readCreatedByCodeFunc"/>
                         <entry key="createdDate" value="readCreatedDateFunc"/>
                     </map>
@@ -32,7 +31,7 @@
         </property>
     </bean>
 
-    <!-- 国际化信息 -->
+    <!-- I18nInfo -->
     <bean id="top.cardone.configuration.service.I18nInfoService"
           class="top.cardone.configuration.service.impl.I18nInfoServiceImpl">
         <property name="dao" ref="top.cardone.configuration.dao.I18nInfoDao"/>
@@ -40,7 +39,7 @@
 
     <bean parent="messageListenerContainerParnet">
         <property name="messageListener">
-            <bean  parent="exceptionParnet">
+            <bean  parent="remoteInvocationExecutorParnet">
                 <property name="serviceInterface" value="top.cardone.configuration.service.I18nInfoService"/>
                 <property name="service" ref="top.cardone.configuration.service.I18nInfoService"/>
             </bean>
