@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * DictionaryType - 查询分页
+ * 字典类别 - 查询分页
  */
 @Component("/web-api/v1/configuration/dictionaryType/r0003.json")
 public class R0003Func implements Func1<Object, Map<String, Object>> {
@@ -22,7 +22,7 @@ public class R0003Func implements Func1<Object, Map<String, Object>> {
     public Object func(Map<String, Object> map) {
         Page<DictionaryTypeDto> dictionaryTypeDtoPage = ApplicationContextHolder.getBean(DictionaryTypeService.class).page(DictionaryTypeDto.class, map);
 
-        return ApplicationContextHolder.func(PageSupport.class, pageSupport -> pageSupport.newMap(this.toMapList(dictionaryTypeDtoPage.getContent()), map, dictionaryTypeDtoPage.getTotalElements()));
+        return ApplicationContextHolder.getBean(PageSupport.class).newMap(this.toMapList(dictionaryTypeDtoPage.getContent()), map, dictionaryTypeDtoPage.getTotalElements());
     }
 
     private List<Map<String, Object>> toMapList(List<DictionaryTypeDto> dictionaryTypeDtoList) {
@@ -38,6 +38,30 @@ public class R0003Func implements Func1<Object, Map<String, Object>> {
     private Map<String, Object> toMap(DictionaryTypeDto dictionaryTypeDto) {
         Map<String, Object> map = Maps.newHashMap();
 
+        map.put("beginDate", dictionaryTypeDto.getBeginDate());
+        map.put("createdByCode", dictionaryTypeDto.getCreatedByCode());
+        map.put("createdDate", dictionaryTypeDto.getCreatedDate());
+        map.put("dataStateCode", dictionaryTypeDto.getDataStateCode());
+        map.put("departmentCode", dictionaryTypeDto.getDepartmentCode());
+        map.put("dictionaryTypeCode", dictionaryTypeDto.getDictionaryTypeCode());
+        map.put("dictionaryTypeId", dictionaryTypeDto.getDictionaryTypeId());
+        map.put("endDate", dictionaryTypeDto.getEndDate());
+        map.put("lastModifiedByCode", dictionaryTypeDto.getLastModifiedByCode());
+        map.put("lastModifiedDate", dictionaryTypeDto.getLastModifiedDate());
+        map.put("name", dictionaryTypeDto.getName());
+        map.put("order", dictionaryTypeDto.getOrder());
+        map.put("orgCode", dictionaryTypeDto.getOrgCode());
+        map.put("parentCode", dictionaryTypeDto.getParentCode());
+        map.put("parentTreeCode", dictionaryTypeDto.getParentTreeCode());
+        map.put("parentTreeName", dictionaryTypeDto.getParentTreeName());
+        map.put("permissionCodes", dictionaryTypeDto.getPermissionCodes());
+        map.put("remark", dictionaryTypeDto.getRemark());
+        map.put("roleCodes", dictionaryTypeDto.getRoleCodes());
+        map.put("siteCode", dictionaryTypeDto.getSiteCode());
+        map.put("stateCode", dictionaryTypeDto.getStateCode());
+        map.put("systemInfoCode", dictionaryTypeDto.getSystemInfoCode());
+        map.put("version", dictionaryTypeDto.getVersion());
+        map.put("wfId", dictionaryTypeDto.getWfId());
 
         return map;
     }

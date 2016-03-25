@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * ErrorInfo - 批量删除
+ * 错误信息 - 批量删除
  */
 @Component("/web-api/v1/configuration/errorInfo/d0002.json")
 public class D0002Func implements Func1<Object, Map<String, Object>> {

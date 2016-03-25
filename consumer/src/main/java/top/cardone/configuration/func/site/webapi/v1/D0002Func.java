@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Site - 批量删除
+ * 站点 - 批量删除
  */
 @Component("/web-api/v1/configuration/site/d0002.json")
 public class D0002Func implements Func1<Object, Map<String, Object>> {

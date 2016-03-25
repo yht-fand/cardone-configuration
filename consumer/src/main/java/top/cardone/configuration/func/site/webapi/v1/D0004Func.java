@@ -8,7 +8,7 @@ import top.cardone.core.util.func.Func1;
 import java.util.Map;
 
 /**
- * Site - 删除
+ * 站点 - 删除
  */
 @Component("/web-api/v1/configuration/site/d0004.json")
 public class D0004Func implements Func1<Object, Map<String, Object>> {

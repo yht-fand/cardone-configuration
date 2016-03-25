@@ -6,7 +6,7 @@ import top.cardone.core.util.func.Func1;
 import java.util.Map;
 
 /**
- * I18nInfo - 索引
+ * 国际化信息 - 索引
  */
 @Component("/configuration/i18nInfo/index.json")
 public class IndexFunc implements Func1<Object, Map<String, Object>> {

@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * SystemInfo - 批量删除
+ * 系统信息 - 批量删除
  */
 @Component("/web-api/v1/configuration/systemInfo/d0002.json")
 public class D0002Func implements Func1<Object, Map<String, Object>> {

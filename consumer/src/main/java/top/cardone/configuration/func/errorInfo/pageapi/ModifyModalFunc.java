@@ -6,7 +6,7 @@ import top.cardone.core.util.func.Func1;
 import java.util.Map;
 
 /**
- * ErrorInfo - 修改
+ * 错误信息 - 修改
  */
 @Component("/configuration/errorInfo/modifyModal.json")
 public class ModifyModalFunc implements Func1<Object, Map<String, Object>> {

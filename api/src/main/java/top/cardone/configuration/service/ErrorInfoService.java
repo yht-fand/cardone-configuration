@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * ErrorInfo服务
+ * 错误信息服务
  *
  * @author yao hai tao
  */

@@ -6,7 +6,7 @@ import top.cardone.core.util.func.Func1;
 import java.util.Map;
 
 /**
- * DictionaryType - 索引
+ * 字典类别 - 索引
  */
 @Component("/configuration/dictionaryType/index.json")
 public class IndexFunc implements Func1<Object, Map<String, Object>> {

@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * I18nInfo - 批量删除
+ * 国际化信息 - 批量删除
  */
 @Component("/web-api/v1/configuration/i18nInfo/d0002.json")
 public class D0002Func implements Func1<Object, Map<String, Object>> {

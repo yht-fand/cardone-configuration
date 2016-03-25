@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * I18nInfo服务
+ * 国际化信息服务
  *
  * @author yao hai tao
  */

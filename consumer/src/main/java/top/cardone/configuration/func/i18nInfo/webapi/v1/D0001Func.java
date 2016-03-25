@@ -8,7 +8,7 @@ import top.cardone.core.util.func.Func1;
 import java.util.Map;
 
 /**
- * I18nInfo - 删除
+ * 国际化信息 - 删除
  */
 @Component("/web-api/v1/configuration/i18nInfo/d0001.json")
 public class D0001Func implements Func1<Object, Map<String, Object>> {

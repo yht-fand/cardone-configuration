@@ -3,7 +3,7 @@
        xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
        default-lazy-init="true">
-    <!-- Dictionary -->
+    <!-- 字典 -->
     <bean name="top.cardone.configuration.service.DictionaryService" parent="invokerProxyFactoryParnet">
         <property name="serviceInterface" value="top.cardone.configuration.service.DictionaryService"/>
         <property name="queue">

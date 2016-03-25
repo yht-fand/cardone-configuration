@@ -3,7 +3,7 @@ package top.cardone.configuration.dao;
 import top.cardone.data.dao.PageDao;
 
 /**
- * Dictionary
+ * 字典
  *
  * @author yao hai tao
  */
