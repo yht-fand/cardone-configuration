@@ -1,0 +1,1 @@
+UPDATE c1_i18n_info SET END_DATE = NOW() WHERE INSTR(:ids, i18nInfoId) > 0
