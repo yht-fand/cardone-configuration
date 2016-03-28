@@ -22,12 +22,12 @@ import static org.junit.Assert.assertNotNull;
 @SpringApplicationConfiguration(classes = ProviderApplication.class)
 public class DictionaryServiceImplTest {
     @Test
-    public void testInsertCache() throws Exception {
-        Map<String,Object> insert = Maps.newHashMap();
+    public void testSaveCache() throws Exception {
+        Map<String,Object> save = Maps.newHashMap();
 
-        insert.put("dictionaryTypeCode","test");
-        insert.put("dictionaryCode","test");
+        save.put("dictionaryTypeCode","test");
+        save.put("dictionaryCode","test");
 
-        ApplicationContextHolder.getBean(DictionaryService.class).insertCache(insert);
+        ApplicationContextHolder.getBean(DictionaryService.class).saveCache(save);
     }
 }
