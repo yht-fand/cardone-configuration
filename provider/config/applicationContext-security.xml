@@ -44,5 +44,5 @@
         <property name="securityManager" ref="securityManager"/>
     </bean>
 
-    <bean id="readPrincipal" class="top.cardone.security.shiro.func.ReadPrincipal"/>
+    <bean id="readPrincipalFunc" class="top.cardone.security.shiro.func.ReadPrincipalFunc"/>
 </beans>
