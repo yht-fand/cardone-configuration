@@ -90,7 +90,7 @@
         <property name="filterChainDefinitions">
             <value>
                 /logout.html = logout
-                /**/*.json = oauth2
+                <!--/**/*.json = oauth2-->
             </value>
         </property>
     </bean>
