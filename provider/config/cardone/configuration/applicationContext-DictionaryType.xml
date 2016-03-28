@@ -16,7 +16,7 @@
                 </entry>
                 <entry key="insert">
                     <map>
-                        <entry key="dictionaryTypeId" value="getRandomUUIDFunc"/>
+                        <entry key="dictionaryTypeId" value="readRandomUUIDFunc"/>
                         <entry key="createdByCode" value="readCreatedByCodeFunc"/>
                         <entry key="createdDate" value="readCreatedDateFunc"/>
                     </map>

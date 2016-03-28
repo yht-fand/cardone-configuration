@@ -16,7 +16,7 @@
                 </entry>
                 <entry key="insert">
                     <map>
-                        <entry key="systemInfoId" value="getRandomUUIDFunc"/>
+                        <entry key="systemInfoId" value="readRandomUUIDFunc"/>
                         <entry key="createdByCode" value="readCreatedByCodeFunc"/>
                         <entry key="createdDate" value="readCreatedDateFunc"/>
                     </map>
