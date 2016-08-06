@@ -1,12 +1,17 @@
 package top.cardone.configuration.func.dictionaryType.webapi.v1;
 
-import com.google.common.collect.Maps;
+import com.google.common.collect.HashBasedTable;
+import com.google.common.collect.Table;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Component;
-import top.cardone.configuration.dto.DictionaryTypeDto;
 import top.cardone.configuration.service.DictionaryTypeService;
 import top.cardone.context.ApplicationContextHolder;
+import top.cardone.context.util.ListUtils;
+import top.cardone.context.util.MapUtils;
 import top.cardone.core.util.func.Func1;
+import top.cardone.data.support.PageSupport;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -14,41 +19,42 @@ import java.util.Map;
  */
 @Component("/web-api/v1/configuration/dictionaryType/r0001.json")
 public class R0001Func implements Func1<Object, Map<String, Object>> {
-    @Override
-    public Object func(Map<String, Object> map) {
-        DictionaryTypeDto dictionaryTypeDto = ApplicationContextHolder.getBean(DictionaryTypeService.class).findOne(DictionaryTypeDto.class, map);
+    private Table<String, String, String> inputConfigTable;
+    private Table<String, String, String> outConfigTable;
 
-        return this.toMap(dictionaryTypeDto);
+    public R0001Func() {
+        inputConfigTable = HashBasedTable.create();
+
+        inputConfigTable.put("dictionaryTypeCode", "funcBeanId", "escapeSqlFunc");
+        inputConfigTable.put("parentCode", "funcBeanId", "escapeSqlFunc");
+
+        outConfigTable = HashBasedTable.create();
+
+        outConfigTable.put("DICTIONARY_TYPE_ID", "newName", "dictionaryTypeId");
+        outConfigTable.put("SYSTEM_INFO_CODE", "newName", "systemInfoCode");
+        outConfigTable.put("SYSTEM_INFO_NAME", "newName", "systemInfoName");
+        outConfigTable.put("SITE_CODE", "newName", "siteCode");
+        outConfigTable.put("SITE_NAME", "newName", "siteName");
+        outConfigTable.put("PARENT_CODE", "newName", "parentCode");
+        outConfigTable.put("PARENT_NAME", "newName", "parentName");
+        outConfigTable.put("DICTIONARY_TYPE_CODE", "newName", "dictionaryTypeCode");
+        outConfigTable.put("NAME", "newName", "name");
+        outConfigTable.put("CREATED_BY_CODE", "newName", "createdByCode");
+        outConfigTable.put("CREATED_BY_NAME", "newName", "createdByName");
+        outConfigTable.put("CREATED_DATE", "newName", "createdDate");
+        outConfigTable.put("LAST_MODIFIED_BY_CODE", "newName", "lastModifiedByCode");
+        outConfigTable.put("LAST_MODIFIED_BY_NAME", "newName", "lastModifiedByName");
+        outConfigTable.put("LAST_MODIFIED_DATE", "newName", "lastModifiedDate");
     }
 
-    private Map<String, Object> toMap(DictionaryTypeDto dictionaryTypeDto) {
-        Map<String, Object> map = Maps.newHashMap();
+    @Override
+    public Object func(Map<String, Object> inputMap) {
+        inputMap.putAll(MapUtils.newHashMap(inputMap, inputConfigTable));
 
-        map.put("beginDate", dictionaryTypeDto.getBeginDate());
-        map.put("createdByCode", dictionaryTypeDto.getCreatedByCode());
-        map.put("createdDate", dictionaryTypeDto.getCreatedDate());
-        map.put("dataStateCode", dictionaryTypeDto.getDataStateCode());
-        map.put("departmentCode", dictionaryTypeDto.getDepartmentCode());
-        map.put("dictionaryTypeCode", dictionaryTypeDto.getDictionaryTypeCode());
-        map.put("dictionaryTypeId", dictionaryTypeDto.getDictionaryTypeId());
-        map.put("endDate", dictionaryTypeDto.getEndDate());
-        map.put("lastModifiedByCode", dictionaryTypeDto.getLastModifiedByCode());
-        map.put("lastModifiedDate", dictionaryTypeDto.getLastModifiedDate());
-        map.put("name", dictionaryTypeDto.getName());
-        map.put("order", dictionaryTypeDto.getOrder());
-        map.put("orgCode", dictionaryTypeDto.getOrgCode());
-        map.put("parentCode", dictionaryTypeDto.getParentCode());
-        map.put("parentTreeCode", dictionaryTypeDto.getParentTreeCode());
-        map.put("parentTreeName", dictionaryTypeDto.getParentTreeName());
-        map.put("permissionCodes", dictionaryTypeDto.getPermissionCodes());
-        map.put("remark", dictionaryTypeDto.getRemark());
-        map.put("roleCodes", dictionaryTypeDto.getRoleCodes());
-        map.put("siteCode", dictionaryTypeDto.getSiteCode());
-        map.put("stateCode", dictionaryTypeDto.getStateCode());
-        map.put("systemInfoCode", dictionaryTypeDto.getSystemInfoCode());
-        map.put("version", dictionaryTypeDto.getVersion());
-        map.put("wfId", dictionaryTypeDto.getWfId());
+        Page<Map<String, Object>> dictionaryTypePage = ApplicationContextHolder.getBean(DictionaryTypeService.class).pageByCode(inputMap);
 
-        return map;
+        List<Map<String, Object>> newContent = ListUtils.newArrayList(dictionaryTypePage.getContent(), outConfigTable);
+
+        return ApplicationContextHolder.getBean(PageSupport.class).newMap(newContent, inputMap, dictionaryTypePage.getTotalElements());
     }
 }

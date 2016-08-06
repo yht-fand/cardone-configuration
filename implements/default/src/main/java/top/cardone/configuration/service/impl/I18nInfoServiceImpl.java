@@ -1,12 +1,18 @@
 package top.cardone.configuration.service.impl;
 
+import com.google.common.collect.Maps;
+import com.google.common.collect.Sets;
 import org.springframework.data.domain.Page;
 import org.springframework.transaction.annotation.Transactional;
-import top.cardone.data.service.impl.PageServiceImpl;
+import top.cardone.cache.Cache;
 import top.cardone.configuration.dao.I18nInfoDao;
+import top.cardone.context.ApplicationContextHolder;
+import top.cardone.context.util.StringUtils;
+import top.cardone.data.service.impl.PageServiceImpl;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * 国际化信息服务
@@ -129,5 +135,50 @@ public class I18nInfoServiceImpl extends PageServiceImpl<I18nInfoDao> implements
     @Transactional
     public int[] updateListCache(List<Object> updateList) {
         return this.updateList(updateList);
+    }
+
+    public Page<Map<String, Object>> pageByCode(Map<String, Object> page) {
+        return this.dao.pageByCode(page);
+    }
+
+    /**
+     * 查询对象
+     *
+     * @param i18nInfoId 国际化信息标识
+     * @return 国际化对象
+     */
+    public Map<String, Object> findOneByI18nInfoId(String i18nInfoId) {
+        return this.dao.findOneByI18nInfoId(i18nInfoId);
+    }
+
+    @Override
+    public String readOneContentByCodeCache(String typeCode, String i18nInfoCode, String defaultValue) {
+        return this.readOneContentByCode(typeCode, i18nInfoCode, defaultValue);
+    }
+
+    @Override
+    public String readOneContentByCode(String typeCode, String i18nInfoCode, String defaultValue) {
+        Map<String, Object> inputs = Maps.newHashMap();
+
+        inputs.put("typeCode", typeCode);
+        inputs.put("i18nInfoCode", i18nInfoCode);
+        inputs.put("object_id", "content");
+
+        String str = this.dao.readOne(String.class, inputs);
+
+        inputs.put("defaultValue", defaultValue);
+
+        if (StringUtils.isBlank(str)) {
+            //添加到缓存队列中，交由定时任务去生成国际化
+            Set<Map<String, Object>> insertI18nInfoSet = ApplicationContextHolder.getBean(Cache.class).get("init-data", "insertI18nInfoSet", () -> {
+                return Sets.newHashSet();
+            });
+
+            insertI18nInfoSet.add(inputs);
+
+            ApplicationContextHolder.getBean(Cache.class).put("init-data", "insertI18nInfoSet", insertI18nInfoSet);
+        }
+
+        return StringUtils.defaultIfBlank(str, defaultValue);
     }
 }

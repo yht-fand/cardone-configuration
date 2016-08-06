@@ -11,7 +11,7 @@
                     <map>
                         <entry key="sqlFileRoot" value="/cardone/configuration/i18nInfo/"/>
                         <entry key="pks" value="i18nInfoId"/>
-                        <entry key="codes" value="i18nInfoId"/>
+                        <entry key="codes" value="typeCode,i18nInfoCode"/>
                     </map>
                 </entry>
                 <entry key="insert">
@@ -39,14 +39,15 @@
 
     <bean parent="messageListenerContainerParnet">
         <property name="messageListener">
-            <bean  parent="remoteInvocationExecutorParnet">
+            <bean parent="remoteInvocationExecutorParnet">
                 <property name="serviceInterface" value="top.cardone.configuration.service.I18nInfoService"/>
                 <property name="service" ref="top.cardone.configuration.service.I18nInfoService"/>
             </bean>
         </property>
         <property name="destination">
             <bean class="org.apache.activemq.command.ActiveMQQueue">
-                <constructor-arg value="cardone-configuration-${cardone-configuration-version}:top.cardone.configuration.service.I18nInfoService"/>
+                <constructor-arg
+                        value="cardone-configuration-${cardone-configuration-version}:top.cardone.configuration.service.I18nInfoService"/>
             </bean>
         </property>
     </bean>

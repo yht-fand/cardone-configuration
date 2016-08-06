@@ -1,12 +1,18 @@
 package top.cardone.configuration.service.impl;
 
+import com.google.common.collect.Maps;
+import com.google.common.collect.Sets;
 import org.springframework.data.domain.Page;
 import org.springframework.transaction.annotation.Transactional;
-import top.cardone.data.service.impl.PageServiceImpl;
+import top.cardone.cache.Cache;
 import top.cardone.configuration.dao.ErrorInfoDao;
+import top.cardone.context.ApplicationContextHolder;
+import top.cardone.context.util.StringUtils;
+import top.cardone.data.service.impl.PageServiceImpl;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * 错误信息服务
@@ -129,5 +135,45 @@ public class ErrorInfoServiceImpl extends PageServiceImpl<ErrorInfoDao> implemen
     @Transactional
     public int[] updateListCache(List<Object> updateList) {
         return this.updateList(updateList);
+    }
+
+    public Page<Map<String, Object>> pageByCode(Map<String, Object> page) {
+        return this.dao.pageByCode(page);
+    }
+
+    @Override
+    public Map<String, Object> findOneByErrorInfoId(String errorInfoId) {
+        return this.dao.findOneByErrorInfoId(errorInfoId);
+    }
+
+    @Override
+    public String readOneContentByCodeCache(String typeCode, String errorInfoCode, String defaultValue) {
+        return this.readOneContentByCode(typeCode, errorInfoCode, defaultValue);
+    }
+
+    @Override
+    public String readOneContentByCode(String typeCode, String errorInfoCode, String defaultValue) {
+        Map<String, Object> inputs = Maps.newHashMap();
+
+        inputs.put("typeCode", typeCode);
+        inputs.put("errorInfoCode", errorInfoCode);
+        inputs.put("object_id", "content");
+
+        String str = this.dao.readOne(String.class, inputs);
+
+        inputs.put("defaultValue", defaultValue);
+
+        if (StringUtils.isBlank(str)) {
+            //添加到缓存队列中，交由定时任务去生成错误信息
+            Set<Map<String, Object>> insertErrorInfoSet = ApplicationContextHolder.getBean(Cache.class).get("init-data", "insertErrorInfoSet", () -> {
+                return Sets.newHashSet();
+            });
+
+            insertErrorInfoSet.add(inputs);
+
+            ApplicationContextHolder.getBean(Cache.class).put("init-data", "insertErrorInfoSet", insertErrorInfoSet);
+        }
+
+        return StringUtils.defaultIfBlank(str, defaultValue);
     }
 }

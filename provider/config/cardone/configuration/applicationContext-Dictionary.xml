@@ -11,7 +11,8 @@
                     <map>
                         <entry key="sqlFileRoot" value="/cardone/configuration/dictionary/"/>
                         <entry key="pks" value="dictionaryId"/>
-                        <entry key="codes" value="dictionaryTypeCode,dictionaryCode"/>
+                        <entry key="codes"
+                               value="systemInfoCode,siteCode,orgCode,departmentCode,dictionaryTypeCode,dictionaryCode"/>
                     </map>
                 </entry>
                 <entry key="insert">
@@ -39,14 +40,15 @@
 
     <bean parent="messageListenerContainerParnet">
         <property name="messageListener">
-            <bean  parent="remoteInvocationExecutorParnet">
+            <bean parent="remoteInvocationExecutorParnet">
                 <property name="serviceInterface" value="top.cardone.configuration.service.DictionaryService"/>
                 <property name="service" ref="top.cardone.configuration.service.DictionaryService"/>
             </bean>
         </property>
         <property name="destination">
             <bean class="org.apache.activemq.command.ActiveMQQueue">
-                <constructor-arg value="cardone-configuration-${cardone-configuration-version}:top.cardone.configuration.service.DictionaryService"/>
+                <constructor-arg
+                        value="cardone-configuration-${cardone-configuration-version}:top.cardone.configuration.service.DictionaryService"/>
             </bean>
         </property>
     </bean>

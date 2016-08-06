@@ -11,7 +11,7 @@
                     <map>
                         <entry key="sqlFileRoot" value="/cardone/configuration/errorInfo/"/>
                         <entry key="pks" value="errorInfoId"/>
-                        <entry key="codes" value="errorInfoId"/>
+                        <entry key="codes" value="typeCode,errorInfoCode"/>
                     </map>
                 </entry>
                 <entry key="insert">
@@ -39,14 +39,15 @@
 
     <bean parent="messageListenerContainerParnet">
         <property name="messageListener">
-            <bean  parent="remoteInvocationExecutorParnet">
+            <bean parent="remoteInvocationExecutorParnet">
                 <property name="serviceInterface" value="top.cardone.configuration.service.ErrorInfoService"/>
                 <property name="service" ref="top.cardone.configuration.service.ErrorInfoService"/>
             </bean>
         </property>
         <property name="destination">
             <bean class="org.apache.activemq.command.ActiveMQQueue">
-                <constructor-arg value="cardone-configuration-${cardone-configuration-version}:top.cardone.configuration.service.ErrorInfoService"/>
+                <constructor-arg
+                        value="cardone-configuration-${cardone-configuration-version}:top.cardone.configuration.service.ErrorInfoService"/>
             </bean>
         </property>
     </bean>

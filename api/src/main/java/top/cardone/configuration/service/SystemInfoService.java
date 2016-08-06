@@ -140,4 +140,11 @@ public interface SystemInfoService extends PageService {
      */
     @CacheEvict(value = "top.cardone.configuration.service.SystemInfoService", allEntries = true)
     int[] updateListCache(List<Object> updateList);
+
+    /**
+     * 分页
+     * @param page 对象
+     * @return 分页对象
+     */
+    Page<Map<String, Object>> pageByCode(Map<String, Object> page);
 }

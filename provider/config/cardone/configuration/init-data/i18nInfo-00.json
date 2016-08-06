@@ -1,0 +1,17 @@
+[
+  {
+    "typeCode": "zh-cn",
+    "i18nInfoCode": "test",
+    "content": "测试"
+  },
+  {
+    "typeCode": "zh-cn",
+    "i18nInfoCode": "login",
+    "content": "登录"
+  },
+  {
+    "typeCode": "zh-cn",
+    "i18nInfoCode": "exit",
+    "content": "退出"
+  }
+]

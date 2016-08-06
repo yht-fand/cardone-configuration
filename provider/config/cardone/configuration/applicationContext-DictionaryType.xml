@@ -11,7 +11,7 @@
                     <map>
                         <entry key="sqlFileRoot" value="/cardone/configuration/dictionaryType/"/>
                         <entry key="pks" value="dictionaryTypeId"/>
-                        <entry key="codes" value="dictionaryTypeId"/>
+                        <entry key="codes" value="systemInfoCode,siteCode,orgCode,departmentCode,dictionaryTypeCode"/>
                     </map>
                 </entry>
                 <entry key="insert">

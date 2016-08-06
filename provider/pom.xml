@@ -43,6 +43,11 @@
         </dependency>
 
         <dependency>
+            <groupId>top.cardone.authority</groupId>
+            <artifactId>cardone-authority-implements-default</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>top.cardone</groupId>
             <artifactId>cardone-beans-api</artifactId>
         </dependency>

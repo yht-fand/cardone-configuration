@@ -1,5 +1,6 @@
 package top.cardone.configuration.func.dictionary.pageapi;
 
+import com.google.common.collect.Maps;
 import org.springframework.stereotype.Component;
 import top.cardone.core.util.func.Func1;
 

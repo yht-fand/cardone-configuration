@@ -140,4 +140,23 @@ public interface ErrorInfoService extends PageService {
      */
     @CacheEvict(value = "top.cardone.configuration.service.ErrorInfoService", allEntries = true)
     int[] updateListCache(List<Object> updateList);
+
+    /**
+     * 分页
+     * @param page 对象
+     * @return 分页对象
+     */
+    Page<Map<String, Object>> pageByCode(Map<String, Object> page);
+
+    /**
+     * 查询对象
+     * @param errorInfoId 错误信息标识
+     * @return 错误消息对象
+     */
+    Map<String, Object> findOneByErrorInfoId(String errorInfoId);
+
+    @Cacheable(value = "top.cardone.configuration.service.ErrorInfoService", key = Caches.KEY_3)
+    String readOneContentByCodeCache(String typeCode, String errorInfoCode, String defaultValue);
+
+    String readOneContentByCode(String typeCode, String errorInfoCode, String defaultValue);
 }

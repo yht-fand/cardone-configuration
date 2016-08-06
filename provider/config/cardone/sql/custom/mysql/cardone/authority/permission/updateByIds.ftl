@@ -1,0 +1,1 @@
+UPDATE c1_permission SET END_DATE = NOW() WHERE INSTR(:ids, permissionId) > 0

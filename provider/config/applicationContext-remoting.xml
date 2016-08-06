@@ -11,7 +11,7 @@
           abstract="true" lazy-init="false">
         <property name="connectionFactory" ref="advancedConnectionFactory"/>
         <!-- 初始2个Consumer, 可动态扩展到10 -->
-        <property name="concurrentConsumers" value="2"/>
-        <property name="maxConcurrentConsumers" value="10"/>
+         <property name="concurrentConsumers" value="6"/>
+        <property name="maxConcurrentConsumers" value="18"/>
     </bean>
 </beans>
