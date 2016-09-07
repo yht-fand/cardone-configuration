@@ -1,0 +1,562 @@
+[
+  {
+    "name": "全部",
+    "dictionaryTypeCode": "accessType",
+    "dictionaryCode": "all"
+  },
+  {
+    "name": "部门",
+    "dictionaryTypeCode": "accessType",
+    "dictionaryCode": "department"
+  },
+  {
+    "name": "个人",
+    "dictionaryTypeCode": "accessType",
+    "dictionaryCode": "person"
+  },
+  {
+    "name": "1:查看个人数据",
+    "dictionaryTypeCode": "accessTypeForTs",
+    "dictionaryCode": "person"
+  },
+  {
+    "name": "2:导出数据权限",
+    "dictionaryTypeCode": "accessTypeForTs",
+    "dictionaryCode": "outPut"
+  },
+  {
+    "name": "3:删除数据权限",
+    "dictionaryTypeCode": "accessTypeForTs",
+    "dictionaryCode": "delete"
+  },
+  {
+    "name": "4:查看全部数据",
+    "dictionaryTypeCode": "accessTypeForTs",
+    "dictionaryCode": "all"
+  },
+  {
+    "name": "查询",
+    "dictionaryTypeCode": "actionType",
+    "dictionaryCode": "serch"
+  },
+  {
+    "name": "登录",
+    "dictionaryTypeCode": "actionType",
+    "dictionaryCode": "login"
+  },
+  {
+    "name": "删除",
+    "dictionaryTypeCode": "actionType",
+    "dictionaryCode": "delete"
+  },
+  {
+    "name": "修改",
+    "dictionaryTypeCode": "actionType",
+    "dictionaryCode": "modify"
+  },
+  {
+    "name": "修改",
+    "dictionaryTypeCode": "actionType",
+    "dictionaryCode": "alert"
+  },
+  {
+    "name": "新增",
+    "dictionaryTypeCode": "actionType",
+    "dictionaryCode": "add"
+  },
+  {
+    "name": "新增",
+    "dictionaryTypeCode": "actionType",
+    "dictionaryCode": "append"
+  },
+  {
+    "name": "下载",
+    "dictionaryTypeCode": "actionType",
+    "dictionaryCode": "download"
+  },
+  {
+    "name": "退出",
+    "dictionaryTypeCode": "actionType",
+    "dictionaryCode": "exit"
+  },
+  {
+    "name": "部门公告",
+    "dictionaryTypeCode": "announcementStatus",
+    "dictionaryCode": "departmentNotice"
+  },
+  {
+    "name": "全体公告",
+    "dictionaryTypeCode": "announcementStatus",
+    "dictionaryCode": "entireNotice"
+  },
+  {
+    "name": "体系公告",
+    "dictionaryTypeCode": "announcementStatus",
+    "dictionaryCode": "systemNotice"
+  },
+  {
+    "name": "驳回",
+    "dictionaryTypeCode": "applyStatus",
+    "dictionaryCode": "rejected"
+  },
+  {
+    "name": "通过",
+    "dictionaryTypeCode": "applyStatus",
+    "dictionaryCode": "approve"
+  },
+  {
+    "name": "未处理",
+    "dictionaryTypeCode": "applyStatus",
+    "dictionaryCode": "unsettled"
+  },
+  {
+    "name": "记录仪注册待办",
+    "dictionaryTypeCode": "applyType",
+    "dictionaryCode": "recorderRegBacklog"
+  },
+  {
+    "name": "用户注册待办",
+    "dictionaryTypeCode": "applyType",
+    "dictionaryCode": "registerBacklog"
+  },
+  {
+    "name": "转储待办",
+    "dictionaryTypeCode": "applyType",
+    "dictionaryCode": "unloadBacklog"
+  },
+  {
+    "name": "核查待办",
+    "dictionaryTypeCode": "applyType",
+    "dictionaryCode": "examineBacklog"
+  },
+  {
+    "name": "访问待办",
+    "dictionaryTypeCode": "applyType",
+    "dictionaryCode": "visitBacklog"
+  },
+  {
+    "name": "转储待办",
+    "dictionaryTypeCode": "approveType",
+    "dictionaryCode": "unloadBacklog"
+  },
+  {
+    "name": "核查待办",
+    "dictionaryTypeCode": "approveType",
+    "dictionaryCode": "examineBacklog"
+  },
+  {
+    "name": "访问待办",
+    "dictionaryTypeCode": "approveType",
+    "dictionaryCode": "visitBacklog"
+  },
+  {
+    "name": "记录仪注册待办",
+    "dictionaryTypeCode": "approveType",
+    "dictionaryCode": "recorderRegBacklog"
+  },
+  {
+    "name": "用户注册待办",
+    "dictionaryTypeCode": "approveType",
+    "dictionaryCode": "registerBacklog"
+  },
+  {
+    "name": "简易程序",
+    "dictionaryTypeCode": "barbarismTableName",
+    "dictionaryCode": "violation"
+  },
+  {
+    "name": "案件数据",
+    "dictionaryTypeCode": "barbarismTableName",
+    "dictionaryCode": "casesData"
+  },
+  {
+    "name": "强制措施",
+    "dictionaryTypeCode": "barbarismTableName",
+    "dictionaryCode": "force"
+  },
+  {
+    "name": "重要",
+    "dictionaryTypeCode": "caseLevel",
+    "dictionaryCode": "important"
+  },
+  {
+    "name": "普通",
+    "dictionaryTypeCode": "caseLevel",
+    "dictionaryCode": "commmon"
+  },
+  {
+    "name": "紧急",
+    "dictionaryTypeCode": "caseLevel",
+    "dictionaryCode": "urgency"
+  },
+  {
+    "name": "已破案",
+    "dictionaryTypeCode": "caseStatus",
+    "dictionaryCode": "solveCase"
+  },
+  {
+    "name": "终止侦查",
+    "dictionaryTypeCode": "caseStatus",
+    "dictionaryCode": "stopInvestigate"
+  },
+  {
+    "name": "已立案",
+    "dictionaryTypeCode": "caseStatus",
+    "dictionaryCode": "registered"
+  },
+  {
+    "name": "已销案",
+    "dictionaryTypeCode": "caseStatus",
+    "dictionaryCode": "closeCase"
+  },
+  {
+    "name": "刑事案件",
+    "dictionaryTypeCode": "caseType",
+    "dictionaryCode": "criminalCase"
+  },
+  {
+    "name": "行政案件",
+    "dictionaryTypeCode": "caseType",
+    "dictionaryCode": "administrativeCase"
+  },
+  {
+    "name": "服务级错误",
+    "dictionaryTypeCode": "errorInfo",
+    "dictionaryCode": "0"
+  },
+  {
+    "name": "业务级错误",
+    "dictionaryTypeCode": "errorInfo",
+    "dictionaryCode": "1"
+  },
+  {
+    "name": "已采信",
+    "dictionaryTypeCode": "evidenceStatus",
+    "dictionaryCode": "admissible"
+  },
+  {
+    "name": "未采信",
+    "dictionaryTypeCode": "evidenceStatus",
+    "dictionaryCode": "noadmissible"
+  },
+  {
+    "name": "已处理",
+    "dictionaryTypeCode": "examineStatus",
+    "dictionaryCode": "processed"
+  },
+  {
+    "name": "未处理",
+    "dictionaryTypeCode": "examineStatus",
+    "dictionaryCode": "unsettled"
+  },
+  {
+    "name": "已驳回",
+    "dictionaryTypeCode": "examineStatus",
+    "dictionaryCode": "rejected"
+  },
+  {
+    "name": "核查",
+    "dictionaryTypeCode": "examineType",
+    "dictionaryCode": "check"
+  },
+  {
+    "name": "投诉",
+    "dictionaryTypeCode": "examineType",
+    "dictionaryCode": "complaint"
+  },
+  {
+    "name": "菜单",
+    "dictionaryTypeCode": "fuctionType",
+    "dictionaryCode": "menu"
+  },
+  {
+    "name": "按钮",
+    "dictionaryTypeCode": "fuctionType",
+    "dictionaryCode": "button"
+  },
+  {
+    "name": "媒体类型报表统计",
+    "dictionaryTypeCode": "graphReportType",
+    "dictionaryCode": "mediaTypeReport"
+  },
+  {
+    "name": "案件媒体关联报表统计",
+    "dictionaryTypeCode": "graphReportType",
+    "dictionaryCode": "relatingReport"
+  },
+  {
+    "name": "媒体视频报表统计",
+    "dictionaryTypeCode": "graphReportType",
+    "dictionaryCode": "mediaReport"
+  },
+  {
+    "name": "案件报表统计",
+    "dictionaryTypeCode": "graphReportType",
+    "dictionaryCode": "caseReport"
+  },
+  {
+    "name": "中文",
+    "dictionaryTypeCode": "lang",
+    "dictionaryCode": "zh-cn"
+  },
+  {
+    "name": "英文",
+    "dictionaryTypeCode": "lang",
+    "dictionaryCode": "en"
+  },
+  {
+    "name": "音频",
+    "dictionaryTypeCode": "mediaType",
+    "dictionaryCode": "mediaAudio"
+  },
+  {
+    "name": "视频",
+    "dictionaryTypeCode": "mediaType",
+    "dictionaryCode": "mediaVideo"
+  },
+  {
+    "name": "文本",
+    "dictionaryTypeCode": "mediaType",
+    "dictionaryCode": "mediaText"
+  },
+  {
+    "name": "照片",
+    "dictionaryTypeCode": "mediaType",
+    "dictionaryCode": "mediaImage"
+  },
+  {
+    "name": "案件",
+    "dictionaryTypeCode": "objectType",
+    "dictionaryCode": "case"
+  },
+  {
+    "name": "权限",
+    "dictionaryTypeCode": "objectType",
+    "dictionaryCode": "authority"
+  },
+  {
+    "name": "其他",
+    "dictionaryTypeCode": "objectType",
+    "dictionaryCode": "other"
+  },
+  {
+    "name": "角色",
+    "dictionaryTypeCode": "objectType",
+    "dictionaryCode": "role"
+  },
+  {
+    "name": "核查资源关联",
+    "dictionaryTypeCode": "objectType",
+    "dictionaryCode": "checkRes"
+  },
+  {
+    "name": "部门",
+    "dictionaryTypeCode": "objectType",
+    "dictionaryCode": "department"
+  },
+  {
+    "name": "采集站设备",
+    "dictionaryTypeCode": "objectType",
+    "dictionaryCode": "transfer"
+  },
+  {
+    "name": "执法核查",
+    "dictionaryTypeCode": "objectType",
+    "dictionaryCode": "check"
+  },
+  {
+    "name": "人员",
+    "dictionaryTypeCode": "objectType",
+    "dictionaryCode": "person"
+  },
+  {
+    "name": "记录仪器",
+    "dictionaryTypeCode": "objectType",
+    "dictionaryCode": "recorder"
+  },
+  {
+    "name": "文件服务器",
+    "dictionaryTypeCode": "objectType",
+    "dictionaryCode": "fileServer"
+  },
+  {
+    "name": "外部数据库接口",
+    "dictionaryTypeCode": "parameterType",
+    "dictionaryCode": "externalDBInterface"
+  },
+  {
+    "name": "本机接口",
+    "dictionaryTypeCode": "parameterType",
+    "dictionaryCode": "localInterface"
+  },
+  {
+    "name": "包含下级部门",
+    "dictionaryTypeCode": "queryDeptType",
+    "dictionaryCode": "2"
+  },
+  {
+    "name": "不包含下级部门",
+    "dictionaryTypeCode": "queryDeptType",
+    "dictionaryCode": "1"
+  },
+  {
+    "name": "启用",
+    "dictionaryTypeCode": "recordStatus",
+    "dictionaryCode": "1"
+  },
+  {
+    "name": "禁用",
+    "dictionaryTypeCode": "recordStatus",
+    "dictionaryCode": "0"
+  },
+  {
+    "name": "标注视频总时长",
+    "dictionaryTypeCode": "relatingReportType",
+    "dictionaryCode": "3"
+  },
+  {
+    "name": "手动标注总数(个)",
+    "dictionaryTypeCode": "relatingReportType",
+    "dictionaryCode": "2"
+  },
+  {
+    "name": "自动关联总数(个)",
+    "dictionaryTypeCode": "relatingReportType",
+    "dictionaryCode": "1"
+  },
+  {
+    "name": "个人",
+    "dictionaryTypeCode": "remarkType",
+    "dictionaryCode": "0"
+  },
+  {
+    "name": "公用",
+    "dictionaryTypeCode": "remarkType",
+    "dictionaryCode": "1"
+  },
+  {
+    "name": "已报废",
+    "dictionaryTypeCode": "runningType",
+    "dictionaryCode": "scrapped"
+  },
+  {
+    "name": "维修中",
+    "dictionaryTypeCode": "runningType",
+    "dictionaryCode": "repairing"
+  },
+  {
+    "name": "使用中",
+    "dictionaryTypeCode": "runningType",
+    "dictionaryCode": "inUsing"
+  },
+  {
+    "name": "在库",
+    "dictionaryTypeCode": "runningType",
+    "dictionaryCode": "inLibrary"
+  },
+  {
+    "name": "采集站公告",
+    "dictionaryTypeCode": "sendNoticeType",
+    "dictionaryCode": "stationNotice"
+  },
+  {
+    "name": "全体公告",
+    "dictionaryTypeCode": "sendNoticeType",
+    "dictionaryCode": "allNotice"
+  },
+  {
+    "name": "网站公告",
+    "dictionaryTypeCode": "sendNoticeType",
+    "dictionaryCode": "webNotice"
+  },
+  {
+    "name": "设备公告",
+    "dictionaryTypeCode": "sendNoticeType",
+    "dictionaryCode": "deviceNotice"
+  },
+  {
+    "name": "男",
+    "dictionaryTypeCode": "sex",
+    "dictionaryCode": "1"
+  },
+  {
+    "name": "女",
+    "dictionaryTypeCode": "sex",
+    "dictionaryCode": "0"
+  },
+  {
+    "name": "手动录入",
+    "dictionaryTypeCode": "sourceType",
+    "dictionaryCode": "inputManually"
+  },
+  {
+    "name": "采集站采集",
+    "dictionaryTypeCode": "sourceType",
+    "dictionaryCode": "acquisitionCollection"
+  },
+  {
+    "name": "年统计",
+    "dictionaryTypeCode": "statType",
+    "dictionaryCode": "yearStat"
+  },
+  {
+    "name": "月统计",
+    "dictionaryTypeCode": "statType",
+    "dictionaryCode": "monthStat"
+  },
+  {
+    "name": "周统计",
+    "dictionaryTypeCode": "statType",
+    "dictionaryCode": "weekStat"
+  },
+  {
+    "name": "日统计",
+    "dictionaryTypeCode": "statType",
+    "dictionaryCode": "dayStat"
+  },
+  {
+    "name": "高清",
+    "dictionaryTypeCode": "videoDefinitionType",
+    "dictionaryCode": "high"
+  },
+  {
+    "name": "普清",
+    "dictionaryTypeCode": "videoDefinitionType",
+    "dictionaryCode": "general"
+  },
+  {
+    "name": "视频总时长(小时)",
+    "dictionaryTypeCode": "videoDefReportType",
+    "dictionaryCode": "1"
+  },
+  {
+    "name": "普清视频总时长(小时)",
+    "dictionaryTypeCode": "videoDefReportType",
+    "dictionaryCode": "3"
+  },
+  {
+    "name": "高清视频总时长(小时)",
+    "dictionaryTypeCode": "videoDefReportType",
+    "dictionaryCode": "2"
+  },
+  {
+    "name": "月预警",
+    "dictionaryTypeCode": "warningType",
+    "dictionaryCode": "monthWarning"
+  },
+  {
+    "name": "日预警",
+    "dictionaryTypeCode": "warningType",
+    "dictionaryCode": "dayWarning"
+  },
+  {
+    "name": "是",
+    "dictionaryTypeCode": "yesOrNo",
+    "dictionaryCode": "1"
+  },
+  {
+    "name": "否",
+    "dictionaryTypeCode": "yesOrNo",
+    "dictionaryCode": "0"
+  }
+]

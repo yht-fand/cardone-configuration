@@ -1,0 +1,62 @@
+{
+  "BEGIN_DATE": {
+    "newName": "beginDate"
+  },
+  "CONTENT": {
+    "newName": "content"
+  },
+  "CREATED_BY_CODE": {
+    "newName": "createdByCode"
+  },
+  "CREATED_DATE": {
+    "newName": "createdDate"
+  },
+  "DATA_STATE_CODE": {
+    "newName": "dataStateCode"
+  },
+  "DEPARTMENT_CODE": {
+    "newName": "departmentCode"
+  },
+  "END_DATE": {
+    "newName": "endDate"
+  },
+  "EXPLAIN_": {
+    "newName": "explain"
+  },
+  "LAST_MODIFIED_BY_CODE": {
+    "newName": "lastModifiedByCode"
+  },
+  "LAST_MODIFIED_DATE": {
+    "newName": "lastModifiedDate"
+  },
+  "NAME": {
+    "newName": "name"
+  },
+  "ORG_CODE": {
+    "newName": "orgCode"
+  },
+  "PERMISSION_CODES": {
+    "newName": "permissionCodes"
+  },
+  "ROLE_CODES": {
+    "newName": "roleCodes"
+  },
+  "SITE_CODE": {
+    "newName": "siteCode"
+  },
+  "SITE_ID": {
+    "newName": "siteId"
+  },
+  "STATE_CODE": {
+    "newName": "stateCode"
+  },
+  "SYSTEM_INFO_CODE": {
+    "newName": "systemInfoCode"
+  },
+  "VERSION_": {
+    "newName": "version"
+  },
+  "WF_ID": {
+    "newName": "wfId"
+  }
+}

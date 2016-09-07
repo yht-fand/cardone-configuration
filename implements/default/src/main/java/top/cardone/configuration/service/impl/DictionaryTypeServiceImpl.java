@@ -2,8 +2,8 @@ package top.cardone.configuration.service.impl;
 
 import org.springframework.data.domain.Page;
 import org.springframework.transaction.annotation.Transactional;
-import top.cardone.data.service.impl.PageServiceImpl;
 import top.cardone.configuration.dao.DictionaryTypeDao;
+import top.cardone.data.service.impl.PageServiceImpl;
 
 import java.util.List;
 import java.util.Map;
@@ -129,5 +129,15 @@ public class DictionaryTypeServiceImpl extends PageServiceImpl<DictionaryTypeDao
     @Transactional
     public int[] updateListCache(List<Object> updateList) {
         return this.updateList(updateList);
+    }
+
+    @Override
+    public Page<Map<String, Object>> pageByCode(Map<String, Object> page) {
+        return this.dao.pageByCode(page);
+    }
+
+    @Override
+    public Map<String, Object> findOneByDictionaryTypeId(String dictionaryTypeId) {
+        return this.dao.findOneByDictionaryTypeId(dictionaryTypeId);
     }
 }

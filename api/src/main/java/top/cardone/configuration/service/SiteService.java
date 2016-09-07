@@ -5,7 +5,6 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import top.cardone.cache.Caches;
 import top.cardone.data.service.PageService;
-
 import java.util.List;
 import java.util.Map;
 
@@ -140,4 +139,12 @@ public interface SiteService extends PageService {
      */
     @CacheEvict(value = "top.cardone.configuration.service.SiteService", allEntries = true)
     int[] updateListCache(List<Object> updateList);
+
+
+    /**
+     * 分页
+     * @param page 对象
+     * @return 分页对象
+     */
+    Page<Map<String, Object>> pageByCode(Map<String, Object> page);
 }

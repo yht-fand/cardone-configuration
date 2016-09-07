@@ -1,0 +1,17 @@
+[
+  {
+    "typeCode": "0",
+    "errorInfoCode": "00000000",
+    "content": "系统异常，请联系管理员！"
+  },
+  {
+    "typeCode": "1",
+    "errorInfoCode": "10000001",
+    "content": "未登录"
+  },
+  {
+    "typeCode": "1",
+    "errorInfoCode": "10000002",
+    "content": "没有权限"
+  }
+]

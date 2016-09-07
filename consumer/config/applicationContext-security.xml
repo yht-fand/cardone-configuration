@@ -12,6 +12,8 @@
         <property name="authenticationCacheName" value="authenticationCache"/>
         <property name="authorizationCachingEnabled" value="true"/>
         <property name="authorizationCacheName" value="authorizationCache"/>
+        <!--<property name="readListPermissionFuncName" value="readListPermissionCodeFunc"/>-->
+        <!--<property name="readListRoleFuncName" value="readListRoleCodeFunc"/>-->
     </bean>
 
     <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
@@ -90,8 +92,10 @@
         <property name="filterChainDefinitions">
             <value>
                 /logout.html = logout
-                <!--/**/*.json = oauth2-->
+                /**/*.json = oauth2
             </value>
         </property>
     </bean>
+
+    <bean id="authorityFunc" class="top.cardone.security.shiro.func.AuthorityFunc"/>
 </beans>

@@ -130,4 +130,9 @@ public class SystemInfoServiceImpl extends PageServiceImpl<SystemInfoDao> implem
     public int[] updateListCache(List<Object> updateList) {
         return this.updateList(updateList);
     }
+
+    @Override
+    public Page<Map<String, Object>> pageByCode(Map<String, Object> page) {
+        return this.dao.pageByCode(page);
+    }
 }

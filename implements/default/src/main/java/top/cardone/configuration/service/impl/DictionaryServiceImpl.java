@@ -1,12 +1,18 @@
 package top.cardone.configuration.service.impl;
 
+import com.google.common.collect.Maps;
+import com.google.common.collect.Sets;
 import org.springframework.data.domain.Page;
 import org.springframework.transaction.annotation.Transactional;
-import top.cardone.data.service.impl.PageServiceImpl;
+import top.cardone.cache.Cache;
 import top.cardone.configuration.dao.DictionaryDao;
+import top.cardone.context.ApplicationContextHolder;
+import top.cardone.context.util.StringUtils;
+import top.cardone.data.service.impl.PageServiceImpl;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * 字典服务
@@ -129,5 +135,90 @@ public class DictionaryServiceImpl extends PageServiceImpl<DictionaryDao> implem
     @Transactional
     public int[] updateListCache(List<Object> updateList) {
         return this.updateList(updateList);
+    }
+
+    @Override
+    public Page<Map<String, Object>> pageByCode(Map<String, Object> page) {
+        return this.dao.pageByCode(page);
+    }
+
+    @Override
+    public List<Map<String, Object>> findListByTypeCodeCache(String dictionaryTypeCode) {
+        return this.findListByTypeCode(dictionaryTypeCode);
+    }
+
+    @Override
+    public List<Map<String, Object>> findListByTypeCode(String dictionaryTypeCode) {
+        return this.dao.findlistByTypeCode(dictionaryTypeCode);
+    }
+
+    @Override
+    public Map<String, Object> findOneByDictionaryId(String dictionaryId) {
+        return this.dao.findOneByDictionaryId(dictionaryId);
+    }
+
+    @Override
+    public String readOneNameByCode(String dictionaryTypeCode, String dictionaryCode, String defaultValue) {
+        return this.readOneByCode(dictionaryTypeCode, dictionaryCode, defaultValue, "name");
+    }
+
+    private String readOneByCode(String dictionaryTypeCode, String dictionaryCode, String defaultValue, String objectId) {
+        Map<String, Object> inputs = Maps.newHashMap();
+
+        inputs.put("dictionaryTypeCode", dictionaryTypeCode);
+        inputs.put("dictionaryCode", dictionaryCode);
+        inputs.put("object_id", objectId);
+
+        String str = this.dao.readOne(String.class, inputs);
+
+        inputs.put("defaultValue", defaultValue);
+
+        if (StringUtils.isBlank(str)) {
+            //添加到缓存队列中，交由定时任务去生成数据字典
+            Set<Map<String, Object>> insertDictionarySet = ApplicationContextHolder.getBean(Cache.class).get("init-data", "insertDictionarySet", () -> {
+                return Sets.newHashSet();
+            });
+
+            insertDictionarySet.add(inputs);
+
+            ApplicationContextHolder.getBean(Cache.class).put("init-data", "insertDictionarySet", insertDictionarySet);
+        }
+
+        return StringUtils.defaultIfBlank(str, defaultValue);
+    }
+
+    @Override
+    public String readOneNameByCodeCache(String dictionaryTypeCode, String dictionaryCode, String defaultValue) {
+        return this.readOneNameByCode(dictionaryTypeCode, dictionaryCode, defaultValue);
+    }
+
+    @Override
+    public String readOneValueByCode(String dictionaryTypeCode, String dictionaryCode, String defaultValue) {
+        return this.readOneByCode(dictionaryTypeCode, dictionaryCode, defaultValue, "value");
+    }
+
+    @Override
+    public String readOneValueByCodeCache(String dictionaryTypeCode, String dictionaryCode, String defaultValue) {
+        return this.readOneValueByCode(dictionaryTypeCode, dictionaryCode, defaultValue);
+    }
+
+    @Override
+    public String readOneRemarkByCode(String dictionaryTypeCode, String dictionaryCode, String defaultValue) {
+        return this.readOneByCode(dictionaryTypeCode, dictionaryCode, defaultValue, "remark");
+    }
+
+    @Override
+    public String readOneRemarkByCodeCache(String dictionaryTypeCode, String dictionaryCode, String defaultValue) {
+        return this.readOneRemarkByCode(dictionaryTypeCode, dictionaryCode, defaultValue);
+    }
+
+    @Override
+    public String readOneExplainByCode(String dictionaryTypeCode, String dictionaryCode, String defaultValue) {
+        return this.readOneByCode(dictionaryTypeCode, dictionaryCode, defaultValue, "explain");
+    }
+
+    @Override
+    public String readOneExplainByCodeCache(String dictionaryTypeCode, String dictionaryCode, String defaultValue) {
+        return this.readOneExplainByCode(dictionaryTypeCode, dictionaryCode, defaultValue);
     }
 }
