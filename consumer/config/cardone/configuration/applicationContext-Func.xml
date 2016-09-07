@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean name="dictionarySelectFunc" parent="invokerProxyFactoryParnet">
+        <property name="serviceInterface" value="top.cardone.core.util.func.Func1"/>
+        <property name="queue">
+            <bean class="org.apache.activemq.command.ActiveMQQueue">
+                <constructor-arg value="cardone-configuration-${cardone-configuration-version}:dictionarySelectFunc"/>
+            </bean>
+        </property>
+    </bean>
+</beans>

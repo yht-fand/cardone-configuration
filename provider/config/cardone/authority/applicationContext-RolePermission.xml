@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns="http://www.springframework.org/schema/beans"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
-       default-lazy-init="true">
-    <!-- 字典类别 -->
-    <bean id="top.cardone.configuration.dao.DictionaryTypeDao"
-          class="top.cardone.configuration.dao.impl.DictionaryTypeDaoImpl">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- 角色与许可 -->
+    <bean id="top.cardone.authority.dao.RolePermissionDao"
+          class="top.cardone.authority.dao.impl.RolePermissionDaoImpl">
         <property name="configTable">
             <map>
                 <entry key="config">
                     <map>
-                        <entry key="sqlFileRoot" value="/cardone/configuration/dictionaryType/"/>
-                        <entry key="pks" value="dictionaryTypeId"/>
-                        <entry key="codes" value="systemInfoCode,siteCode,orgCode,departmentCode,dictionaryTypeCode"/>
+                        <entry key="sqlFileRoot" value="/cardone/authority/rolePermission/"/>
+                        <entry key="pks" value="rolePermissionId"/>
+                        <entry key="codes" value="rolePermissionId"/>
                     </map>
                 </entry>
                 <entry key="insert">
                     <map>
-                        <entry key="dictionaryTypeId" value="readRandomUUIDFunc"/>
+                        <entry key="rolePermissionId" value="readRandomUUIDFunc"/>
                         <entry key="createdByCode" value="readCreatedByCodeFunc"/>
                         <entry key="createdDate" value="readCreatedDateFunc"/>
                     </map>
@@ -31,9 +30,10 @@
             </map>
         </property>
     </bean>
-	
-    <bean id="top.cardone.configuration.service.DictionaryTypeService"
-          class="top.cardone.configuration.service.impl.DictionaryTypeServiceImpl">
-		<property name="dao" ref="top.cardone.configuration.dao.DictionaryTypeDao"/>
-	</bean>
+
+    <!-- 角色与许可 -->
+    <bean id="top.cardone.authority.service.RolePermissionService"
+          class="top.cardone.authority.service.impl.RolePermissionServiceImpl">
+        <property name="dao" ref="top.cardone.authority.dao.RolePermissionDao"/>
+    </bean>
 </beans>
