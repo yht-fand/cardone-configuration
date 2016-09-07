@@ -1,15 +1,33 @@
 {
   "postHandle": {
+    "permission_add": {
+      "beanId": "authorityFunc",
+      "params": {
+        "code": "configuration.errorInfo.add"
+      }
+    },
     "permission_modify": {
       "beanId": "authorityFunc",
       "params": {
         "code": "configuration.errorInfo.modify"
       }
     },
-    "errorInfoTypes": {
-      "beanId": "dictionarySelectFunc",
+    "permission_delete": {
+      "beanId": "authorityFunc",
       "params": {
-        "typeCode": "errorInfo"
+        "code": "configuration.errorInfo.delete"
+      }
+    },
+    "permission_impData": {
+      "beanId": "authorityFunc",
+      "params": {
+        "code": "configuration.errorInfo.impData"
+      }
+    },
+    "permission_expData": {
+      "beanId": "authorityFunc",
+      "params": {
+        "code": "configuration.errorInfo.expData"
       }
     }
   }
