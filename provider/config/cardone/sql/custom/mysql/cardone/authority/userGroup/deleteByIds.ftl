@@ -1,1 +1,0 @@
-DELETE FROM c1_user_group WHERE INSTR(:ids, userGroupId) > 0

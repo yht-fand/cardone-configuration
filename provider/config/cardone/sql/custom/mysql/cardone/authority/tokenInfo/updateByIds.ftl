@@ -1,1 +1,0 @@
-UPDATE c1_token_info SET END_DATE = NOW() WHERE INSTR(:ids, tokenInfoId) > 0
