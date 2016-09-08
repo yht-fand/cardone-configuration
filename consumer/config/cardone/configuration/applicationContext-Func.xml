@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns="http://www.springframework.org/schema/beans"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean name="dictionarySelectFunc" parent="invokerProxyFactoryParnet">
-        <property name="serviceInterface" value="top.cardone.core.util.func.Func1"/>
-        <property name="queue">
-            <bean class="org.apache.activemq.command.ActiveMQQueue">
-                <constructor-arg value="cardone-configuration-${cardone-configuration-version}:dictionarySelectFunc"/>
-            </bean>
-        </property>
-    </bean>
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-lazy-init="true">
+    <bean name="top.cardone.configuration.func.FindListDictionaryForSelectFunc"
+          class="top.cardone.configuration.func.FindListDictionaryForSelectFunc"/>
+
+    <alias name="top.cardone.configuration.func.FindListDictionaryForSelectFunc" alias="dictionaryForSelectFunc"/>
+
+    <alias name="top.cardone.configuration.func.FindListDictionaryForSelectFunc" alias="findListDictionaryForSelectFunc"/>
+
+    <alias name="top.cardone.configuration.func.FindListDictionaryForSelectFunc" alias="dictionarySelectFunc"/>
+
+    <bean name="top.cardone.configuration.func.ReadOneDictionaryFunc"
+          class="top.cardone.configuration.func.ReadOneDictionaryFunc"/>
+
+    <alias name="top.cardone.configuration.func.ReadOneDictionaryFunc" alias="readOneDictionaryFunc"/>
 </beans>
