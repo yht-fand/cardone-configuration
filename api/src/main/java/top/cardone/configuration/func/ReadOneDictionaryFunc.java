@@ -29,6 +29,12 @@ public class ReadOneDictionaryFunc implements Func1<String, Map<String, Object>>
 		readOneMap.put("dictionaryCode", MapUtils.getString(params, dictionaryCodeKeyName));
 		readOneMap.put("object_id", MapUtils.getString(params, objectIdKeyName));
 
-		return ApplicationContextHolder.getBean(DictionaryService.class).readOneCache(String.class, readOneMap);
+		boolean cache = MapUtils.getBooleanValue(params, "cache", true);
+
+		if (cache) {
+			return ApplicationContextHolder.getBean(DictionaryService.class).readOneCache(String.class, readOneMap);
+		}
+
+		return ApplicationContextHolder.getBean(DictionaryService.class).readOne(String.class, readOneMap);
 	}
 }
