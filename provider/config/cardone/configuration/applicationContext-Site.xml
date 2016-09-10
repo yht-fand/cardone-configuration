@@ -12,7 +12,7 @@
                     <map>
                         <entry key="sqlFileRoot" value="/cardone/configuration/site/"/>
                         <entry key="pks" value="siteId"/>
-                        <entry key="codes" value="siteId"/>
+                        <entry key="codes" value="siteCode"/>
                     </map>
                 </entry>
                 <entry key="insert">

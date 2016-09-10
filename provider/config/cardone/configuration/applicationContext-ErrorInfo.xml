@@ -12,7 +12,7 @@
                     <map>
                         <entry key="sqlFileRoot" value="/cardone/configuration/errorInfo/"/>
                         <entry key="pks" value="errorInfoId"/>
-                        <entry key="codes" value="errorInfoId"/>
+                        <entry key="codes" value="typeCode,errorInfoCode"/>
                     </map>
                 </entry>
                 <entry key="insert">
