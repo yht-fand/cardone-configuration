@@ -1,0 +1,74 @@
+{
+  "BEGIN_DATE": {
+    "newName": "beginDate"
+  },
+  "CREATED_BY_CODE": {
+    "newName": "createdByCode"
+  },
+  "CREATED_DATE": {
+    "newName": "createdDate"
+  },
+  "DATA_STATE_CODE": {
+    "newName": "dataStateCode"
+  },
+  "DEPARTMENT_CODE": {
+    "newName": "departmentCode"
+  },
+  "DICTIONARY_TYPE_CODE": {
+    "newName": "dictionaryTypeCode"
+  },
+  "DICTIONARY_TYPE_ID": {
+    "newName": "dictionaryTypeId"
+  },
+  "END_DATE": {
+    "newName": "endDate"
+  },
+  "LAST_MODIFIED_BY_CODE": {
+    "newName": "lastModifiedByCode"
+  },
+  "LAST_MODIFIED_DATE": {
+    "newName": "lastModifiedDate"
+  },
+  "NAME": {
+    "newName": "name"
+  },
+  "ORDER_": {
+    "newName": "order"
+  },
+  "ORG_CODE": {
+    "newName": "orgCode"
+  },
+  "PARENT_CODE": {
+    "newName": "parentCode"
+  },
+  "PARENT_TREE_CODE": {
+    "newName": "parentTreeCode"
+  },
+  "PARENT_TREE_NAME": {
+    "newName": "parentTreeName"
+  },
+  "PERMISSION_CODES": {
+    "newName": "permissionCodes"
+  },
+  "REMARK": {
+    "newName": "remark"
+  },
+  "ROLE_CODES": {
+    "newName": "roleCodes"
+  },
+  "SITE_CODE": {
+    "newName": "siteCode"
+  },
+  "STATE_CODE": {
+    "newName": "stateCode"
+  },
+  "SYSTEM_INFO_CODE": {
+    "newName": "systemInfoCode"
+  },
+  "VERSION_": {
+    "newName": "version"
+  },
+  "WF_ID": {
+    "newName": "wfId"
+  }
+}

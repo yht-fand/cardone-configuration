@@ -1,1 +1,1 @@
-UPDATE c1_system_info SET END_DATE = NOW() WHERE INSTR(:ids, systemInfoId) > 0
+UPDATE c1_system_info SET END_DATE = NOW(), DATA_STATE_CODE = '0' WHERE INSTR(:systemInfoIds, SYSTEM_INFO_ID) > 0

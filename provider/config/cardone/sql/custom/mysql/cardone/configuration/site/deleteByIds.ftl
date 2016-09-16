@@ -1,1 +1,1 @@
-DELETE FROM c1_site WHERE INSTR(:ids, siteId) > 0
+DELETE FROM c1_site WHERE INSTR(:siteIds, SITE_ID) > 0

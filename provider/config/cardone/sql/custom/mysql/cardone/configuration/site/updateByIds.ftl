@@ -1,1 +1,1 @@
-UPDATE c1_site SET END_DATE = NOW() WHERE INSTR(:ids, siteId) > 0
+UPDATE c1_site SET END_DATE = NOW(), DATA_STATE_CODE = '0' WHERE INSTR(:siteIds, SITE_ID) > 0

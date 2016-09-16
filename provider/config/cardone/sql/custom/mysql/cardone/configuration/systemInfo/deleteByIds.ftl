@@ -1,1 +1,1 @@
-DELETE FROM c1_system_info WHERE INSTR(:ids, systemInfoId) > 0
+DELETE FROM c1_system_info WHERE INSTR(:systemInfoIds, SYSTEM_INFO_ID) > 0

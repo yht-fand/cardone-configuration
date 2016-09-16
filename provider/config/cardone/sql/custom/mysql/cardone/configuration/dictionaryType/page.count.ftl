@@ -1,4 +1,4 @@
 SELECT
-COUNT(1) AS COUNT_
-FROM c1_dictionary_type
+COUNT(1)
+FROM c1_dictionary_type t
 <#include "page.where.ftl">

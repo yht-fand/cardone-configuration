@@ -1,1 +1,1 @@
-DELETE FROM c1_error_info WHERE INSTR(:ids, errorInfoId) > 0
+DELETE FROM c1_error_info WHERE INSTR(:errorInfoIds, ERROR_INFO_ID) > 0

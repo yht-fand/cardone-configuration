@@ -1,1 +1,1 @@
-UPDATE c1_error_info SET END_DATE = NOW() WHERE INSTR(:ids, errorInfoId) > 0
+UPDATE c1_error_info SET END_DATE = NOW(), DATA_STATE_CODE = '0' WHERE INSTR(:errorInfoIds, ERROR_INFO_ID) > 0
