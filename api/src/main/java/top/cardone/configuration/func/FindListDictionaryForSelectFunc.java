@@ -6,6 +6,7 @@ import lombok.Setter;
 import org.apache.commons.collections.MapUtils;
 import top.cardone.configuration.service.DictionaryService;
 import top.cardone.context.ApplicationContextHolder;
+import top.cardone.context.util.StringUtils;
 import top.cardone.core.util.func.Func1;
 
 import java.util.List;
@@ -33,7 +34,7 @@ public class FindListDictionaryForSelectFunc implements Func1<List<Map<String, O
 			Map<String, Object> newDictionary = Maps.newHashMap();
 
 			newDictionary.put("text", MapUtils.getString(dictionary, "NAME"));
-			newDictionary.put("value", MapUtils.getString(dictionary, "DICTIONARY_CODE"));
+			newDictionary.put("value", StringUtils.defaultIfBlank(MapUtils.getString(dictionary, "REMARK"), MapUtils.getString(dictionary, "DICTIONARY_CODE")));
 
 			newDictionaryList.add(newDictionary);
 		}

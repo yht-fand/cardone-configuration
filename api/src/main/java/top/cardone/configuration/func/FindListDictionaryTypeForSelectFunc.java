@@ -7,6 +7,7 @@ import org.apache.commons.collections.MapUtils;
 import top.cardone.configuration.service.DictionaryService;
 import top.cardone.configuration.service.DictionaryTypeService;
 import top.cardone.context.ApplicationContextHolder;
+import top.cardone.context.util.StringUtils;
 import top.cardone.core.util.func.Func1;
 
 import java.util.List;
@@ -34,7 +35,7 @@ public class FindListDictionaryTypeForSelectFunc implements Func1<List<Map<Strin
 			Map<String, Object> newDictionaryType = Maps.newHashMap();
 
 			newDictionaryType.put("text", MapUtils.getString(dictionaryType, "NAME"));
-			newDictionaryType.put("value", MapUtils.getString(dictionaryType, "DICTIONARY_TYPE_CODE"));
+			newDictionaryType.put("value", StringUtils.defaultIfBlank(MapUtils.getString(dictionaryType, "VALUE_"), MapUtils.getString(dictionaryType, "DICTIONARY_TYPE_CODE")));
 
 			newDictionaryTypeList.add(newDictionaryType);
 		}
