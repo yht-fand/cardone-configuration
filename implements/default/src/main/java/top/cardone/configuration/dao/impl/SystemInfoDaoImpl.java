@@ -12,10 +12,10 @@ import java.util.Map;
  */
 public class SystemInfoDaoImpl extends PageDaoImpl implements top.cardone.configuration.dao.SystemInfoDao {
 
-    @Override
-    public Page<Map<String, Object>> pageByCode(Map<String, Object> page) {
-        String countSqlFilePath = this.getSqlFilePath("page.count");
-        String findListSqlFilePath = this.getSqlFilePath("page.find");
-        return this.page(countSqlFilePath, findListSqlFilePath, page);
-    }
+	@Override
+	public Page<Map<String, Object>> pageByCode(Map<String, Object> page) {
+		String countSqlFilePath = this.getSqlFilePath("page.count");
+		String findListSqlFilePath = this.getSqlFilePath("page.find");
+		return this.page(countSqlFilePath, findListSqlFilePath, page);
+	}
 }

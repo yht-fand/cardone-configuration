@@ -12,18 +12,19 @@ import java.util.Map;
  */
 public interface I18nInfoDao extends PageDao {
 
-    /**
-     * 分页
-     *
-     * @param page 对象
-     * @return 分页对象
-     */
-    Page<Map<String, Object>> pageByCode(Map<String, Object> page);
+	/**
+	 * 分页
+	 *
+	 * @param page 对象
+	 * @return 分页对象
+	 */
+	Page<Map<String, Object>> pageByCode(Map<String, Object> page);
 
-    /**
-     * 查询对象
-     * @param i18nInfoId 国际化信息标识
-     * @return 国际化对象
-     */
-    Map<String, Object> findOneByI18nInfoId(String i18nInfoId);
+	/**
+	 * 查询对象
+	 *
+	 * @param i18nInfoId 国际化信息标识
+	 * @return 国际化对象
+	 */
+	Map<String, Object> findOneByI18nInfoId(String i18nInfoId);
 }

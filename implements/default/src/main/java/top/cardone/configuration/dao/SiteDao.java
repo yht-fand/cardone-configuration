@@ -12,11 +12,11 @@ import java.util.Map;
  */
 public interface SiteDao extends PageDao {
 
-    /**
-     * 分页
-     *
-     * @param page 对象
-     * @return 分页对象
-     */
-    Page<Map<String, Object>> pageByCode(Map<String, Object> page);
+	/**
+	 * 分页
+	 *
+	 * @param page 对象
+	 * @return 分页对象
+	 */
+	Page<Map<String, Object>> pageByCode(Map<String, Object> page);
 }

@@ -19,9 +19,18 @@ public class FindListDictionaryForSelectFunc implements Func1<List<Map<String, O
 	@Setter
 	private String dictionaryTypeCodeKeyName = "typeCode";
 
+	@Setter
+	private String stateCodeKeyName = "stateCode";
+
 	@Override
 	public List<Map<String, Object>> func(Map<String, Object> params) {
 		Map<String, Object> findListMap = Maps.newHashMap();
+
+		String stateCode = MapUtils.getString(params, stateCodeKeyName);
+
+		if (StringUtils.isNotBlank(stateCode)) {
+			findListMap.put("stateCode", stateCode);
+		}
 
 		findListMap.put("dictionaryTypeCode", MapUtils.getString(params, dictionaryTypeCodeKeyName));
 		findListMap.put("order_by_order", "1");

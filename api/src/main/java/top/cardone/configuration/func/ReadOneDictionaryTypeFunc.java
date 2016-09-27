@@ -3,7 +3,6 @@ package top.cardone.configuration.func;
 import com.google.common.collect.Maps;
 import lombok.Setter;
 import org.apache.commons.collections.MapUtils;
-import top.cardone.configuration.service.DictionaryService;
 import top.cardone.configuration.service.DictionaryTypeService;
 import top.cardone.context.ApplicationContextHolder;
 import top.cardone.core.util.func.Func1;

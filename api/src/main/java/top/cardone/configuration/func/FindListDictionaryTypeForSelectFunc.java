@@ -4,7 +4,6 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import lombok.Setter;
 import org.apache.commons.collections.MapUtils;
-import top.cardone.configuration.service.DictionaryService;
 import top.cardone.configuration.service.DictionaryTypeService;
 import top.cardone.context.ApplicationContextHolder;
 import top.cardone.context.util.StringUtils;
@@ -20,9 +19,18 @@ public class FindListDictionaryTypeForSelectFunc implements Func1<List<Map<Strin
 	@Setter
 	private String parentCodeKeyName = "parentCode";
 
+	@Setter
+	private String stateCodeKeyName = "stateCode";
+
 	@Override
 	public List<Map<String, Object>> func(Map<String, Object> params) {
 		Map<String, Object> findListMap = Maps.newHashMap();
+
+		String stateCode = MapUtils.getString(params, stateCodeKeyName);
+
+		if (StringUtils.isNotBlank(stateCode)) {
+			findListMap.put("stateCode", stateCode);
+		}
 
 		findListMap.put("parentCode", MapUtils.getString(params, parentCodeKeyName));
 		findListMap.put("order_by_order", "1");

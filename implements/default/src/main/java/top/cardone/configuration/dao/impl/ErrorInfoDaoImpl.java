@@ -13,18 +13,18 @@ import java.util.Map;
  */
 public class ErrorInfoDaoImpl extends PageDaoImpl implements top.cardone.configuration.dao.ErrorInfoDao {
 
-    @Override
-    public Page<Map<String, Object>> pageByCode(Map<String, Object> page) {
-        String countSqlFilePath = this.getSqlFilePath("page.count");
-        String findListSqlFilePath = this.getSqlFilePath("page.find");
-        return this.page(countSqlFilePath, findListSqlFilePath, page);
-    }
+	@Override
+	public Page<Map<String, Object>> pageByCode(Map<String, Object> page) {
+		String countSqlFilePath = this.getSqlFilePath("page.count");
+		String findListSqlFilePath = this.getSqlFilePath("page.find");
+		return this.page(countSqlFilePath, findListSqlFilePath, page);
+	}
 
-    @Override
-    public Map<String, Object> findOneByErrorInfoId(String errorInfoId) {
-        Map<String, Object> findOne = Maps.newHashMap();
-        findOne.put("errorInfoId", errorInfoId);
-        String findOneSqlFilePath = this.getSqlFilePath("page.find");
-        return this.findOne(findOneSqlFilePath, findOne);
-    }
+	@Override
+	public Map<String, Object> findOneByErrorInfoId(String errorInfoId) {
+		Map<String, Object> findOne = Maps.newHashMap();
+		findOne.put("errorInfoId", errorInfoId);
+		String findOneSqlFilePath = this.getSqlFilePath("page.find");
+		return this.findOne(findOneSqlFilePath, findOne);
+	}
 }

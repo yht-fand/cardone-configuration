@@ -21,21 +21,22 @@ import java.util.Map;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = ProviderApplication.class)
 public class DictionaryServiceImplTest {
-    @Test
-    public void testFindListByTypeCode() throws Exception {
-        Map<String,Object> map = Maps.newHashMap();
-        map.put("dictionaryTypeCode","lang");
-        List<Map<String, Object>> l = ApplicationContextHolder.getBean(DictionaryService.class).findListByTypeCode("lang");
-        Assume.assumeTrue(l.size()==2);
-    }
-    @Test
-    public  void testPageByCode() throws  Exception{
-        Map<String,Object> map = Maps.newHashMap();
-        map.put("dictionaryCode","");
-        map.put("dictionaryTypeCode","");
-        map.put("pageSize",20);
-        map.put("pageNumber",1);
-        Page<Map<String, Object>> dictionaryDtoPage = ApplicationContextHolder.getBean(DictionaryService.class).pageByCode(map);
-        Assume.assumeTrue(dictionaryDtoPage.getTotalElements()==112);
-    }
+	@Test
+	public void testFindListByTypeCode() throws Exception {
+		Map<String, Object> map = Maps.newHashMap();
+		map.put("dictionaryTypeCode", "lang");
+		List<Map<String, Object>> l = ApplicationContextHolder.getBean(DictionaryService.class).findListByTypeCode("lang");
+		Assume.assumeTrue(l.size() == 2);
+	}
+
+	@Test
+	public void testPageByCode() throws Exception {
+		Map<String, Object> map = Maps.newHashMap();
+		map.put("dictionaryCode", "");
+		map.put("dictionaryTypeCode", "");
+		map.put("pageSize", 20);
+		map.put("pageNumber", 1);
+		Page<Map<String, Object>> dictionaryDtoPage = ApplicationContextHolder.getBean(DictionaryService.class).pageByCode(map);
+		Assume.assumeTrue(dictionaryDtoPage.getTotalElements() == 112);
+	}
 }

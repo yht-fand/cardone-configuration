@@ -13,11 +13,11 @@ import top.cardone.context.ApplicationContextHolder;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = ProviderApplication.class)
 public class I18nInfoServiceTest {
-    @Test
-    public void readContentByCode() throws Exception {
-        String content = ApplicationContextHolder.getBean(I18nInfoService.class).readOneContentByCode("zh-cn", "test", "test");
+	@Test
+	public void readContentByCode() throws Exception {
+		String content = ApplicationContextHolder.getBean(I18nInfoService.class).readOneContentByCode("zh-cn", "test", "test");
 
-        System.out.println(content);
-    }
+		System.out.println(content);
+	}
 
 }
