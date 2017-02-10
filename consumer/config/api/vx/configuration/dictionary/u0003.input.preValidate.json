@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "dictionaryId": {
+      "required": true
+    }
+  },
+  "messages": {
+    "dictionaryId": {
+      "required": "字典标识不能为空值!"
+    }
+  }
+}

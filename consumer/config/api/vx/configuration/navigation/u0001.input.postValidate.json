@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "navigationId": {
+      "required": true
+    }
+  },
+  "messages": {
+    "navigationId": {
+      "required": "导航标识不能为空值!"
+    }
+  }
+}

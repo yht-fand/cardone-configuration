@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "siteCode": {
+      "required": true
+    }
+  },
+  "messages": {
+    "siteCode": {
+      "required": "站点编号不能为空值!"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "systemInfoId": {
+      "required": true
+    }
+  },
+  "messages": {
+    "systemInfoId": {
+      "required": "系统信息标识不能为空值!"
+    }
+  }
+}

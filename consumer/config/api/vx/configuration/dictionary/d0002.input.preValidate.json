@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "dictionaryIds": {
+      "required": true
+    }
+  },
+  "messages": {
+    "dictionaryIds": {
+      "required": "字典标识集合不能为空值!"
+    }
+  }
+}

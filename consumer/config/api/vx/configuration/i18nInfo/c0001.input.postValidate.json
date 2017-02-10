@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "i18nInfoCode": {
+      "required": true
+    }
+  },
+  "messages": {
+    "i18nInfoCode": {
+      "required": "国际化信息编号不能为空值!"
+    }
+  }
+}

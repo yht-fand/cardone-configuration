@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "siteId": {
+      "required": true
+    }
+  },
+  "messages": {
+    "siteId": {
+      "required": "站点标识不能为空值!"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "dictionaryTypeCode": {
+      "required": true
+    }
+  },
+  "messages": {
+    "dictionaryTypeCode": {
+      "required": "字典类别编号不能为空值!"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "navigationCode": {
+      "required": true
+    }
+  },
+  "messages": {
+    "navigationCode": {
+      "required": "导航编号不能为空值!"
+    }
+  }
+}

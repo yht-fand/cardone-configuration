@@ -1,0 +1,23 @@
+{
+  "beginDate": "BEGIN_DATE",
+  "content": "CONTENT",
+  "createdByCode": "CREATED_BY_CODE",
+  "createdDate": "CREATED_DATE",
+  "dataStateCode": "DATA_STATE_CODE",
+  "departmentCode": "DEPARTMENT_CODE",
+  "endDate": "END_DATE",
+  "explain": "EXPLAIN_",
+  "flagCode": "FLAG_CODE",
+  "flagObjectCode": "FLAG_OBJECT_CODE",
+  "jsonData": "JSON_DATA",
+  "lastModifiedByCode": "LAST_MODIFIED_BY_CODE",
+  "lastModifiedDate": "LAST_MODIFIED_DATE",
+  "name": "NAME",
+  "order": "ORDER_",
+  "orgCode": "ORG_CODE",
+  "siteCode": "SITE_CODE",
+  "siteId": "SITE_ID",
+  "stateCode": "STATE_CODE",
+  "systemInfoCode": "SYSTEM_INFO_CODE",
+  "version": "VERSION_"
+}

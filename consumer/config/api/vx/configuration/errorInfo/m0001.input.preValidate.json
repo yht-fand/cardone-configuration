@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "errorInfoId": {
+      "required": true
+    }
+  },
+  "messages": {
+    "errorInfoId": {
+      "required": "错误信息标识不能为空值!"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "systemInfoCode": {
+      "required": true
+    }
+  },
+  "messages": {
+    "systemInfoCode": {
+      "required": "系统信息编号不能为空值!"
+    }
+  }
+}
