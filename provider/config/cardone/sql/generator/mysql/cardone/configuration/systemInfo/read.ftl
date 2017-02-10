@@ -21,6 +21,15 @@ DEPARTMENT_CODE AS departmentCode
 <#case "endDate">
 END_DATE AS endDate
 <#break>
+<#case "flagCode">
+FLAG_CODE AS flagCode
+<#break>
+<#case "flagObjectCode">
+FLAG_OBJECT_CODE AS flagObjectCode
+<#break>
+<#case "jsonData">
+JSON_DATA AS jsonData
+<#break>
 <#case "lastModifiedByCode">
 LAST_MODIFIED_BY_CODE AS lastModifiedByCode
 <#break>
@@ -30,17 +39,17 @@ LAST_MODIFIED_DATE AS lastModifiedDate
 <#case "name">
 NAME AS name
 <#break>
+<#case "order">
+ORDER_ AS order
+<#break>
 <#case "orgCode">
 ORG_CODE AS orgCode
-<#break>
-<#case "permissionCodes">
-PERMISSION_CODES AS permissionCodes
 <#break>
 <#case "remark">
 REMARK AS remark
 <#break>
-<#case "roleCodes">
-ROLE_CODES AS roleCodes
+<#case "siteCode">
+SITE_CODE AS siteCode
 <#break>
 <#case "stateCode">
 STATE_CODE AS stateCode
@@ -53,9 +62,6 @@ SYSTEM_INFO_ID AS systemInfoId
 <#break>
 <#case "version">
 VERSION_ AS version
-<#break>
-<#case "wfId">
-WF_ID AS wfId
 <#break>
 <#default>
 COUNT(1) AS COUNT_

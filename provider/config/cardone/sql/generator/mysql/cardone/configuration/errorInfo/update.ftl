@@ -36,6 +36,18 @@ ${prefixName} `ERROR_INFO_CODE` = :update_errorInfoCode_value
 ${prefixName} `ERROR_INFO_ID` = :update_errorInfoId_value
 <#assign prefixName = ','>
 </#if>
+<#if (update_flagCode??)>
+${prefixName} `FLAG_CODE` = :update_flagCode_value
+<#assign prefixName = ','>
+</#if>
+<#if (update_flagObjectCode??)>
+${prefixName} `FLAG_OBJECT_CODE` = :update_flagObjectCode_value
+<#assign prefixName = ','>
+</#if>
+<#if (update_jsonData??)>
+${prefixName} `JSON_DATA` = :update_jsonData_value
+<#assign prefixName = ','>
+</#if>
 <#if (update_lastModifiedByCode??)>
 ${prefixName} `LAST_MODIFIED_BY_CODE` = :update_lastModifiedByCode_value
 <#assign prefixName = ','>
@@ -44,16 +56,24 @@ ${prefixName} `LAST_MODIFIED_BY_CODE` = :update_lastModifiedByCode_value
 ${prefixName} `LAST_MODIFIED_DATE` = :update_lastModifiedDate_value
 <#assign prefixName = ','>
 </#if>
+<#if (update_objectCode??)>
+${prefixName} `OBJECT_CODE` = :update_objectCode_value
+<#assign prefixName = ','>
+</#if>
+<#if (update_objectId??)>
+${prefixName} `OBJECT_ID` = :update_objectId_value
+<#assign prefixName = ','>
+</#if>
+<#if (update_objectTypeCode??)>
+${prefixName} `OBJECT_TYPE_CODE` = :update_objectTypeCode_value
+<#assign prefixName = ','>
+</#if>
+<#if (update_order??)>
+${prefixName} `ORDER_` = :update_order_value
+<#assign prefixName = ','>
+</#if>
 <#if (update_orgCode??)>
 ${prefixName} `ORG_CODE` = :update_orgCode_value
-<#assign prefixName = ','>
-</#if>
-<#if (update_permissionCodes??)>
-${prefixName} `PERMISSION_CODES` = :update_permissionCodes_value
-<#assign prefixName = ','>
-</#if>
-<#if (update_roleCodes??)>
-${prefixName} `ROLE_CODES` = :update_roleCodes_value
 <#assign prefixName = ','>
 </#if>
 <#if (update_siteCode??)>
@@ -74,10 +94,6 @@ ${prefixName} `TYPE_CODE` = :update_typeCode_value
 </#if>
 <#if (update_version??)>
 ${prefixName} `VERSION_` = :update_version_value
-<#assign prefixName = ','>
-</#if>
-<#if (update_wfId??)>
-${prefixName} `WF_ID` = :update_wfId_value
 <#assign prefixName = ','>
 </#if>
 <#include "where.ftl">

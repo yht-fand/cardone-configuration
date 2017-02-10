@@ -32,6 +32,18 @@ ${prefixName} `DICTIONARY_TYPE_ID`
 ${prefixName} `END_DATE`
 <#assign prefixName = ','>
 </#if>
+<#if (select_flagCode??)>
+${prefixName} `FLAG_CODE`
+<#assign prefixName = ','>
+</#if>
+<#if (select_flagObjectCode??)>
+${prefixName} `FLAG_OBJECT_CODE`
+<#assign prefixName = ','>
+</#if>
+<#if (select_jsonData??)>
+${prefixName} `JSON_DATA`
+<#assign prefixName = ','>
+</#if>
 <#if (select_lastModifiedByCode??)>
 ${prefixName} `LAST_MODIFIED_BY_CODE`
 <#assign prefixName = ','>
@@ -64,16 +76,8 @@ ${prefixName} `PARENT_TREE_CODE`
 ${prefixName} `PARENT_TREE_NAME`
 <#assign prefixName = ','>
 </#if>
-<#if (select_permissionCodes??)>
-${prefixName} `PERMISSION_CODES`
-<#assign prefixName = ','>
-</#if>
 <#if (select_remark??)>
 ${prefixName} `REMARK`
-<#assign prefixName = ','>
-</#if>
-<#if (select_roleCodes??)>
-${prefixName} `ROLE_CODES`
 <#assign prefixName = ','>
 </#if>
 <#if (select_siteCode??)>
@@ -92,35 +96,8 @@ ${prefixName} `SYSTEM_INFO_CODE`
 ${prefixName} `VERSION_`
 <#assign prefixName = ','>
 </#if>
-<#if (select_wfId??)>
-${prefixName} `WF_ID`
-<#assign prefixName = ','>
-</#if>
 <#if prefixName ==  ' '>
-  `BEGIN_DATE`
-, `CREATED_BY_CODE`
-, `CREATED_DATE`
-, `DATA_STATE_CODE`
-, `DEPARTMENT_CODE`
-, `DICTIONARY_TYPE_CODE`
-, `DICTIONARY_TYPE_ID`
-, `END_DATE`
-, `LAST_MODIFIED_BY_CODE`
-, `LAST_MODIFIED_DATE`
-, `NAME`
-, `ORDER_`
-, `ORG_CODE`
-, `PARENT_CODE`
-, `PARENT_TREE_CODE`
-, `PARENT_TREE_NAME`
-, `PERMISSION_CODES`
-, `REMARK`
-, `ROLE_CODES`
-, `SITE_CODE`
-, `STATE_CODE`
-, `SYSTEM_INFO_CODE`
-, `VERSION_`
-, `WF_ID`
+*
 </#if>
 FROM c1_dictionary_type
 <#include "where.ftl">
@@ -157,6 +134,18 @@ ${prefixName} `DICTIONARY_TYPE_ID` ${order_by_dictionaryTypeId_value!}
 ${prefixName} `END_DATE` ${order_by_endDate_value!}
 <#assign prefixName = ','>
 </#if>
+<#if (order_by_flagCode??)>
+${prefixName} `FLAG_CODE` ${order_by_flagCode_value!}
+<#assign prefixName = ','>
+</#if>
+<#if (order_by_flagObjectCode??)>
+${prefixName} `FLAG_OBJECT_CODE` ${order_by_flagObjectCode_value!}
+<#assign prefixName = ','>
+</#if>
+<#if (order_by_jsonData??)>
+${prefixName} `JSON_DATA` ${order_by_jsonData_value!}
+<#assign prefixName = ','>
+</#if>
 <#if (order_by_lastModifiedByCode??)>
 ${prefixName} `LAST_MODIFIED_BY_CODE` ${order_by_lastModifiedByCode_value!}
 <#assign prefixName = ','>
@@ -189,16 +178,8 @@ ${prefixName} `PARENT_TREE_CODE` ${order_by_parentTreeCode_value!}
 ${prefixName} `PARENT_TREE_NAME` ${order_by_parentTreeName_value!}
 <#assign prefixName = ','>
 </#if>
-<#if (order_by_permissionCodes??)>
-${prefixName} `PERMISSION_CODES` ${order_by_permissionCodes_value!}
-<#assign prefixName = ','>
-</#if>
 <#if (order_by_remark??)>
 ${prefixName} `REMARK` ${order_by_remark_value!}
-<#assign prefixName = ','>
-</#if>
-<#if (order_by_roleCodes??)>
-${prefixName} `ROLE_CODES` ${order_by_roleCodes_value!}
 <#assign prefixName = ','>
 </#if>
 <#if (order_by_siteCode??)>
@@ -215,9 +196,5 @@ ${prefixName} `SYSTEM_INFO_CODE` ${order_by_systemInfoCode_value!}
 </#if>
 <#if (order_by_version??)>
 ${prefixName} `VERSION_` ${order_by_version_value!}
-<#assign prefixName = ','>
-</#if>
-<#if (order_by_wfId??)>
-${prefixName} `WF_ID` ${order_by_wfId_value!}
 <#assign prefixName = ','>
 </#if>

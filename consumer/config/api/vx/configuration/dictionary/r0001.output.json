@@ -1,74 +1,26 @@
 {
-  "BEGIN_DATE": {
-    "newName": "beginDate"
-  },
-  "CREATED_BY_CODE": {
-    "newName": "createdByCode"
-  },
-  "CREATED_DATE": {
-    "newName": "createdDate"
-  },
-  "DATA_STATE_CODE": {
-    "newName": "dataStateCode"
-  },
-  "DEPARTMENT_CODE": {
-    "newName": "departmentCode"
-  },
-  "DICTIONARY_CODE": {
-    "newName": "dictionaryCode"
-  },
-  "DICTIONARY_ID": {
-    "newName": "dictionaryId"
-  },
-  "DICTIONARY_TYPE_CODE": {
-    "newName": "dictionaryTypeCode"
-  },
-  "END_DATE": {
-    "newName": "endDate"
-  },
-  "EXPLAIN_": {
-    "newName": "explain"
-  },
-  "LAST_MODIFIED_BY_CODE": {
-    "newName": "lastModifiedByCode"
-  },
-  "LAST_MODIFIED_DATE": {
-    "newName": "lastModifiedDate"
-  },
-  "NAME": {
-    "newName": "name"
-  },
-  "ORDER_": {
-    "newName": "order"
-  },
-  "ORG_CODE": {
-    "newName": "orgCode"
-  },
-  "PERMISSION_CODES": {
-    "newName": "permissionCodes"
-  },
-  "REMARK": {
-    "newName": "remark"
-  },
-  "ROLE_CODES": {
-    "newName": "roleCodes"
-  },
-  "SITE_CODE": {
-    "newName": "siteCode"
-  },
-  "STATE_CODE": {
-    "newName": "stateCode"
-  },
-  "SYSTEM_INFO_CODE": {
-    "newName": "systemInfoCode"
-  },
-  "VALUE_": {
-    "newName": "value"
-  },
-  "VERSION_": {
-    "newName": "version"
-  },
-  "WF_ID": {
-    "newName": "wfId"
-  }
+  "beginDate": "BEGIN_DATE",
+  "createdByCode": "CREATED_BY_CODE",
+  "createdDate": "CREATED_DATE",
+  "dataStateCode": "DATA_STATE_CODE",
+  "departmentCode": "DEPARTMENT_CODE",
+  "dictionaryCode": "DICTIONARY_CODE",
+  "dictionaryId": "DICTIONARY_ID",
+  "dictionaryTypeCode": "DICTIONARY_TYPE_CODE",
+  "endDate": "END_DATE",
+  "explain": "EXPLAIN_",
+  "flagCode": "FLAG_CODE",
+  "flagObjectCode": "FLAG_OBJECT_CODE",
+  "jsonData": "JSON_DATA",
+  "lastModifiedByCode": "LAST_MODIFIED_BY_CODE",
+  "lastModifiedDate": "LAST_MODIFIED_DATE",
+  "name": "NAME",
+  "order": "ORDER_",
+  "orgCode": "ORG_CODE",
+  "remark": "REMARK",
+  "siteCode": "SITE_CODE",
+  "stateCode": "STATE_CODE",
+  "systemInfoCode": "SYSTEM_INFO_CODE",
+  "value": "VALUE_",
+  "version": "VERSION_"
 }

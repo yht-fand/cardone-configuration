@@ -27,20 +27,35 @@ ERROR_INFO_CODE AS errorInfoCode
 <#case "errorInfoId">
 ERROR_INFO_ID AS errorInfoId
 <#break>
+<#case "flagCode">
+FLAG_CODE AS flagCode
+<#break>
+<#case "flagObjectCode">
+FLAG_OBJECT_CODE AS flagObjectCode
+<#break>
+<#case "jsonData">
+JSON_DATA AS jsonData
+<#break>
 <#case "lastModifiedByCode">
 LAST_MODIFIED_BY_CODE AS lastModifiedByCode
 <#break>
 <#case "lastModifiedDate">
 LAST_MODIFIED_DATE AS lastModifiedDate
 <#break>
+<#case "objectCode">
+OBJECT_CODE AS objectCode
+<#break>
+<#case "objectId">
+OBJECT_ID AS objectId
+<#break>
+<#case "objectTypeCode">
+OBJECT_TYPE_CODE AS objectTypeCode
+<#break>
+<#case "order">
+ORDER_ AS order
+<#break>
 <#case "orgCode">
 ORG_CODE AS orgCode
-<#break>
-<#case "permissionCodes">
-PERMISSION_CODES AS permissionCodes
-<#break>
-<#case "roleCodes">
-ROLE_CODES AS roleCodes
 <#break>
 <#case "siteCode">
 SITE_CODE AS siteCode
@@ -56,9 +71,6 @@ TYPE_CODE AS typeCode
 <#break>
 <#case "version">
 VERSION_ AS version
-<#break>
-<#case "wfId">
-WF_ID AS wfId
 <#break>
 <#default>
 COUNT(1) AS COUNT_

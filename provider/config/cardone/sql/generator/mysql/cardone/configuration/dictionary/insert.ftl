@@ -41,6 +41,18 @@ ${prefixName} `END_DATE`
 ${prefixName} `EXPLAIN_`
 <#assign prefixName = ','>
 </#if>
+<#if (insert_flagCode??) && (insert_flagCode_value??)>
+${prefixName} `FLAG_CODE`
+<#assign prefixName = ','>
+</#if>
+<#if (insert_flagObjectCode??) && (insert_flagObjectCode_value??)>
+${prefixName} `FLAG_OBJECT_CODE`
+<#assign prefixName = ','>
+</#if>
+<#if (insert_jsonData??) && (insert_jsonData_value??)>
+${prefixName} `JSON_DATA`
+<#assign prefixName = ','>
+</#if>
 <#if (insert_lastModifiedByCode??) && (insert_lastModifiedByCode_value??)>
 ${prefixName} `LAST_MODIFIED_BY_CODE`
 <#assign prefixName = ','>
@@ -61,16 +73,8 @@ ${prefixName} `ORDER_`
 ${prefixName} `ORG_CODE`
 <#assign prefixName = ','>
 </#if>
-<#if (insert_permissionCodes??) && (insert_permissionCodes_value??)>
-${prefixName} `PERMISSION_CODES`
-<#assign prefixName = ','>
-</#if>
 <#if (insert_remark??) && (insert_remark_value??)>
 ${prefixName} `REMARK`
-<#assign prefixName = ','>
-</#if>
-<#if (insert_roleCodes??) && (insert_roleCodes_value??)>
-${prefixName} `ROLE_CODES`
 <#assign prefixName = ','>
 </#if>
 <#if (insert_siteCode??) && (insert_siteCode_value??)>
@@ -91,10 +95,6 @@ ${prefixName} `VALUE_`
 </#if>
 <#if (insert_version??) && (insert_version_value??)>
 ${prefixName} `VERSION_`
-<#assign prefixName = ','>
-</#if>
-<#if (insert_wfId??) && (insert_wfId_value??)>
-${prefixName} `WF_ID`
 <#assign prefixName = ','>
 </#if>
 )
@@ -140,6 +140,18 @@ ${prefixName} :insert_endDate_value
 ${prefixName} :insert_explain_value
 <#assign prefixName = ','>
 </#if>
+<#if (insert_flagCode??) && (insert_flagCode_value??)>
+${prefixName} :insert_flagCode_value
+<#assign prefixName = ','>
+</#if>
+<#if (insert_flagObjectCode??) && (insert_flagObjectCode_value??)>
+${prefixName} :insert_flagObjectCode_value
+<#assign prefixName = ','>
+</#if>
+<#if (insert_jsonData??) && (insert_jsonData_value??)>
+${prefixName} :insert_jsonData_value
+<#assign prefixName = ','>
+</#if>
 <#if (insert_lastModifiedByCode??) && (insert_lastModifiedByCode_value??)>
 ${prefixName} :insert_lastModifiedByCode_value
 <#assign prefixName = ','>
@@ -160,16 +172,8 @@ ${prefixName} :insert_order_value
 ${prefixName} :insert_orgCode_value
 <#assign prefixName = ','>
 </#if>
-<#if (insert_permissionCodes??) && (insert_permissionCodes_value??)>
-${prefixName} :insert_permissionCodes_value
-<#assign prefixName = ','>
-</#if>
 <#if (insert_remark??) && (insert_remark_value??)>
 ${prefixName} :insert_remark_value
-<#assign prefixName = ','>
-</#if>
-<#if (insert_roleCodes??) && (insert_roleCodes_value??)>
-${prefixName} :insert_roleCodes_value
 <#assign prefixName = ','>
 </#if>
 <#if (insert_siteCode??) && (insert_siteCode_value??)>
@@ -190,10 +194,6 @@ ${prefixName} :insert_value_value
 </#if>
 <#if (insert_version??) && (insert_version_value??)>
 ${prefixName} :insert_version_value
-<#assign prefixName = ','>
-</#if>
-<#if (insert_wfId??) && (insert_wfId_value??)>
-${prefixName} :insert_wfId_value
 <#assign prefixName = ','>
 </#if>
 )

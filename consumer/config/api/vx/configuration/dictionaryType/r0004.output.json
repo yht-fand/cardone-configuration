@@ -1,74 +1,26 @@
 {
-  "BEGIN_DATE": {
-    "newName": "beginDate"
-  },
-  "CREATED_BY_CODE": {
-    "newName": "createdByCode"
-  },
-  "CREATED_DATE": {
-    "newName": "createdDate"
-  },
-  "DATA_STATE_CODE": {
-    "newName": "dataStateCode"
-  },
-  "DEPARTMENT_CODE": {
-    "newName": "departmentCode"
-  },
-  "DICTIONARY_TYPE_CODE": {
-    "newName": "dictionaryTypeCode"
-  },
-  "DICTIONARY_TYPE_ID": {
-    "newName": "dictionaryTypeId"
-  },
-  "END_DATE": {
-    "newName": "endDate"
-  },
-  "LAST_MODIFIED_BY_CODE": {
-    "newName": "lastModifiedByCode"
-  },
-  "LAST_MODIFIED_DATE": {
-    "newName": "lastModifiedDate"
-  },
-  "NAME": {
-    "newName": "name"
-  },
-  "ORDER_": {
-    "newName": "order"
-  },
-  "ORG_CODE": {
-    "newName": "orgCode"
-  },
-  "PARENT_CODE": {
-    "newName": "parentCode"
-  },
-  "PARENT_TREE_CODE": {
-    "newName": "parentTreeCode"
-  },
-  "PARENT_TREE_NAME": {
-    "newName": "parentTreeName"
-  },
-  "PERMISSION_CODES": {
-    "newName": "permissionCodes"
-  },
-  "REMARK": {
-    "newName": "remark"
-  },
-  "ROLE_CODES": {
-    "newName": "roleCodes"
-  },
-  "SITE_CODE": {
-    "newName": "siteCode"
-  },
-  "STATE_CODE": {
-    "newName": "stateCode"
-  },
-  "SYSTEM_INFO_CODE": {
-    "newName": "systemInfoCode"
-  },
-  "VERSION_": {
-    "newName": "version"
-  },
-  "WF_ID": {
-    "newName": "wfId"
-  }
+  "beginDate": "BEGIN_DATE",
+  "createdByCode": "CREATED_BY_CODE",
+  "createdDate": "CREATED_DATE",
+  "dataStateCode": "DATA_STATE_CODE",
+  "departmentCode": "DEPARTMENT_CODE",
+  "dictionaryTypeCode": "DICTIONARY_TYPE_CODE",
+  "dictionaryTypeId": "DICTIONARY_TYPE_ID",
+  "endDate": "END_DATE",
+  "flagCode": "FLAG_CODE",
+  "flagObjectCode": "FLAG_OBJECT_CODE",
+  "jsonData": "JSON_DATA",
+  "lastModifiedByCode": "LAST_MODIFIED_BY_CODE",
+  "lastModifiedDate": "LAST_MODIFIED_DATE",
+  "name": "NAME",
+  "order": "ORDER_",
+  "orgCode": "ORG_CODE",
+  "parentCode": "PARENT_CODE",
+  "parentTreeCode": "PARENT_TREE_CODE",
+  "parentTreeName": "PARENT_TREE_NAME",
+  "remark": "REMARK",
+  "siteCode": "SITE_CODE",
+  "stateCode": "STATE_CODE",
+  "systemInfoCode": "SYSTEM_INFO_CODE",
+  "version": "VERSION_"
 }

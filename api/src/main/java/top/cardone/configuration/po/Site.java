@@ -10,143 +10,150 @@ import java.util.Date;
 @lombok.ToString(callSuper = true)
 public class Site implements java.io.Serializable {
 
-	/**
-	 * 开始时间
-	 */
-	@lombok.Getter
-	@lombok.Setter
-	protected Date beginDate;
+    /**
+     * 开始时间
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected Date beginDate;
 
-	/**
-	 * 正文
-	 */
-	@lombok.Getter
-	@lombok.Setter
-	protected String content;
+    /**
+     * 正文
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String content;
 
-	/**
-	 * 创建人代码
-	 */
-	@lombok.Getter
-	@lombok.Setter
-	protected String createdByCode;
+    /**
+     * 创建人代码
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String createdByCode;
 
-	/**
-	 * 创建时间
-	 */
-	@lombok.Getter
-	@lombok.Setter
-	protected Date createdDate;
+    /**
+     * 创建时间
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected Date createdDate;
 
-	/**
-	 * 数据状态代码
-	 */
-	@lombok.Getter
-	@lombok.Setter
-	protected String dataStateCode;
+    /**
+     * 数据状态代码(数据字典)
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String dataStateCode;
 
-	/**
-	 * 部门代码
-	 */
-	@lombok.Getter
-	@lombok.Setter
-	protected String departmentCode;
+    /**
+     * 部门代码
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String departmentCode;
 
-	/**
-	 * 结束时间
-	 */
-	@lombok.Getter
-	@lombok.Setter
-	protected Date endDate;
+    /**
+     * 结束时间
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected Date endDate;
 
-	/**
-	 * 解释
-	 */
-	@lombok.Getter
-	@lombok.Setter
-	protected String explain;
+    /**
+     * 解释
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String explain;
 
-	/**
-	 * 最后修改人代码
-	 */
-	@lombok.Getter
-	@lombok.Setter
-	protected String lastModifiedByCode;
+    /**
+     * 标记代码(数据字典：工作流、同步、生成、录入、审批)
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String flagCode;
 
-	/**
-	 * 最后修改时间
-	 */
-	@lombok.Getter
-	@lombok.Setter
-	protected Date lastModifiedDate;
+    /**
+     * 标识对象代码(工作流：工作流标识、同步：批次号、生成：操作者编号、录入：操作者编号、审批：操作者编号)
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String flagObjectCode;
 
-	/**
-	 * 名称
-	 */
-	@lombok.Getter
-	@lombok.Setter
-	protected String name;
+    /**
+     * JSON数据
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String jsonData;
 
-	/**
-	 * 组织代码
-	 */
-	@lombok.Getter
-	@lombok.Setter
-	protected String orgCode;
+    /**
+     * 最后修改人代码
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String lastModifiedByCode;
 
-	/**
-	 * 许可代码集合
-	 */
-	@lombok.Getter
-	@lombok.Setter
-	protected String permissionCodes;
+    /**
+     * 最后修改时间
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected Date lastModifiedDate;
 
-	/**
-	 * 角色代码集合
-	 */
-	@lombok.Getter
-	@lombok.Setter
-	protected String roleCodes;
+    /**
+     * 名称
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String name;
 
-	/**
-	 * 站点编号
-	 */
-	@lombok.Getter
-	@lombok.Setter
-	protected String siteCode;
+    /**
+     * 排序
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected Long order;
 
-	/**
-	 * 站点标识
-	 */
-	@lombok.Getter
-	@lombok.Setter
-	protected String siteId;
+    /**
+     * 组织代码
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String orgCode;
 
-	/**
-	 * 状态代码
-	 */
-	@lombok.Getter
-	@lombok.Setter
-	protected String stateCode;
+    /**
+     * 站点代码
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String siteCode;
 
-	/**
-	 * 系统信息代码
-	 */
-	@lombok.Getter
-	@lombok.Setter
-	protected String systemInfoCode;
+    /**
+     * 站点标识
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String siteId;
 
-	/**
-	 * 版本
-	 */
-	@lombok.Getter
-	@lombok.Setter
-	protected Long version;
+    /**
+     * 状态代码(数据字典)
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String stateCode;
 
-	/**
-	 * 工作流标识
-	 */
-	@lombok.Getter
-	@lombok.Setter
-	protected String wfId;
+    /**
+     * 系统信息代码
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String systemInfoCode;
+
+    /**
+     * 版本
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected Integer version;
 }

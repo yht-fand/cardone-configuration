@@ -1,6 +1,7 @@
 package top.cardone.func.vx.configuration.dictionary;
 
 import com.google.common.base.Charsets;
+import top.cardone.ConsumerApplication;
 import lombok.extern.log4j.Log4j2;
 import org.apache.commons.io.FileUtils;
 import org.junit.Before;
@@ -15,7 +16,6 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import top.cardone.ConsumerApplication;
 import top.cardone.context.ApplicationContextHolder;
 import top.cardone.core.util.func.Func1;
 
@@ -26,48 +26,48 @@ import java.io.IOException;
 @WebIntegrationTest(value = {"spring.profiles.active=test"})
 @SpringApplicationConfiguration(classes = ConsumerApplication.class)
 public class C0004FuncTest {
-	@Value("http://localhost:${server.port:8765}/${server.context-path:}/vx/configuration/dictionary/c0004.json")
-	private String funcUrl;
+    @Value("http://localhost:${server.port:8765}/${server.context-path:}/vx/configuration/dictionary/c0004.json")
+    private String funcUrl;
 
-	@Value("${app.root}/src/test/java/top/cardone/func/vx/configuration/dictionary/C0004FuncTest.func.input.json")
-	private Resource funcInputResource;
+    @Value("${app.root}/src/test/java/top/cardone/func/vx/configuration/dictionary/C0004FuncTest.func.input.json")
+    private Resource funcInputResource;
 
-	@Value("${app.root}/src/test/java/top/cardone/func/vx/configuration/dictionary/C0004FuncTest.func.output.json")
-	private Resource funcOutputResource;
+    @Value("${app.root}/src/test/java/top/cardone/func/vx/configuration/dictionary/C0004FuncTest.func.output.json")
+    private Resource funcOutputResource;
 
-	private HttpHeaders headers;
+    private HttpHeaders headers;
 
-	@Before
-	public void setup() {
-		headers = new HttpHeaders();
-		headers.setContentType(MediaType.APPLICATION_JSON_UTF8);
-		headers.set("Accept", MediaType.APPLICATION_JSON_UTF8_VALUE);
-		headers.set("token", (String) ApplicationContextHolder.getBean(Func1.class, "readCredentialsForAesFunc").func("admin"));
-		headers.set("username", "admin");
+    @Before
+    public void setup() {
+        headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON_UTF8);
+        headers.set("Accept", MediaType.APPLICATION_JSON_UTF8_VALUE);
+        headers.set("token", (String) ApplicationContextHolder.getBean(Func1.class, "readCredentialsForAesFunc").func("admin"));
+        headers.set("username", "admin");
 
-		if (!funcInputResource.exists()) {
-			try {
-				FileUtils.write(funcInputResource.getFile(), "{}", Charsets.UTF_8);
-			} catch (IOException e) {
-				log.debug(e);
-			}
-		}
-	}
+        if (!funcInputResource.exists()) {
+            try {
+                FileUtils.write(funcInputResource.getFile(), "{}", Charsets.UTF_8);
+            } catch (IOException e) {
+                log.debug(e);
+            }
+        }
+    }
 
-	@Test
-	public void func() throws Exception {
-		String input = FileUtils.readFileToString(funcInputResource.getFile());
+    @Test
+    public void func() throws Exception {
+        String input = FileUtils.readFileToString(funcInputResource.getFile());
 
-		HttpEntity<String> httpEntity = new HttpEntity<>(input, headers);
+        HttpEntity<String> httpEntity = new HttpEntity<>(input, headers);
 
-		String output = new TestRestTemplate().postForObject(funcUrl, httpEntity, String.class);
+        String output = new TestRestTemplate().postForObject(funcUrl, httpEntity, String.class);
 
-		log.debug(output);
+        log.debug(output);
 
-		try {
-			FileUtils.write(funcOutputResource.getFile(), output, Charsets.UTF_8);
-		} catch (IOException e) {
-			log.debug(e);
-		}
-	}
+        try {
+            FileUtils.write(funcOutputResource.getFile(), output, Charsets.UTF_8);
+        } catch (IOException e) {
+            log.debug(e);
+        }
+    }
 }

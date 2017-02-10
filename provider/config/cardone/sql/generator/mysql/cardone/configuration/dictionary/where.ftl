@@ -79,6 +79,30 @@ ${prefixName} `EXPLAIN_` IS NULL
 </#if>
 <#assign prefixName = 'AND'>
 </#if>
+<#if (where_and_eq_flagCode??)>
+<#if (where_and_eq_flagCode_value??)>
+${prefixName} `FLAG_CODE` = :where_and_eq_flagCode_value
+<#else>
+${prefixName} `FLAG_CODE` IS NULL
+</#if>
+<#assign prefixName = 'AND'>
+</#if>
+<#if (where_and_eq_flagObjectCode??)>
+<#if (where_and_eq_flagObjectCode_value??)>
+${prefixName} `FLAG_OBJECT_CODE` = :where_and_eq_flagObjectCode_value
+<#else>
+${prefixName} `FLAG_OBJECT_CODE` IS NULL
+</#if>
+<#assign prefixName = 'AND'>
+</#if>
+<#if (where_and_eq_jsonData??)>
+<#if (where_and_eq_jsonData_value??)>
+${prefixName} `JSON_DATA` = :where_and_eq_jsonData_value
+<#else>
+${prefixName} `JSON_DATA` IS NULL
+</#if>
+<#assign prefixName = 'AND'>
+</#if>
 <#if (where_and_eq_lastModifiedByCode??)>
 <#if (where_and_eq_lastModifiedByCode_value??)>
 ${prefixName} `LAST_MODIFIED_BY_CODE` = :where_and_eq_lastModifiedByCode_value
@@ -119,27 +143,11 @@ ${prefixName} `ORG_CODE` IS NULL
 </#if>
 <#assign prefixName = 'AND'>
 </#if>
-<#if (where_and_eq_permissionCodes??)>
-<#if (where_and_eq_permissionCodes_value??)>
-${prefixName} `PERMISSION_CODES` = :where_and_eq_permissionCodes_value
-<#else>
-${prefixName} `PERMISSION_CODES` IS NULL
-</#if>
-<#assign prefixName = 'AND'>
-</#if>
 <#if (where_and_eq_remark??)>
 <#if (where_and_eq_remark_value??)>
 ${prefixName} `REMARK` = :where_and_eq_remark_value
 <#else>
 ${prefixName} `REMARK` IS NULL
-</#if>
-<#assign prefixName = 'AND'>
-</#if>
-<#if (where_and_eq_roleCodes??)>
-<#if (where_and_eq_roleCodes_value??)>
-${prefixName} `ROLE_CODES` = :where_and_eq_roleCodes_value
-<#else>
-${prefixName} `ROLE_CODES` IS NULL
 </#if>
 <#assign prefixName = 'AND'>
 </#if>
@@ -180,14 +188,6 @@ ${prefixName} `VALUE_` IS NULL
 ${prefixName} `VERSION_` = :where_and_eq_version_value
 <#else>
 ${prefixName} `VERSION_` IS NULL
-</#if>
-<#assign prefixName = 'AND'>
-</#if>
-<#if (where_and_eq_wfId??)>
-<#if (where_and_eq_wfId_value??)>
-${prefixName} `WF_ID` = :where_and_eq_wfId_value
-<#else>
-${prefixName} `WF_ID` IS NULL
 </#if>
 <#assign prefixName = 'AND'>
 </#if>

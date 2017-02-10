@@ -40,6 +40,18 @@ ${prefixName} `END_DATE` = :update_endDate_value
 ${prefixName} `EXPLAIN_` = :update_explain_value
 <#assign prefixName = ','>
 </#if>
+<#if (update_flagCode??)>
+${prefixName} `FLAG_CODE` = :update_flagCode_value
+<#assign prefixName = ','>
+</#if>
+<#if (update_flagObjectCode??)>
+${prefixName} `FLAG_OBJECT_CODE` = :update_flagObjectCode_value
+<#assign prefixName = ','>
+</#if>
+<#if (update_jsonData??)>
+${prefixName} `JSON_DATA` = :update_jsonData_value
+<#assign prefixName = ','>
+</#if>
 <#if (update_lastModifiedByCode??)>
 ${prefixName} `LAST_MODIFIED_BY_CODE` = :update_lastModifiedByCode_value
 <#assign prefixName = ','>
@@ -60,16 +72,8 @@ ${prefixName} `ORDER_` = :update_order_value
 ${prefixName} `ORG_CODE` = :update_orgCode_value
 <#assign prefixName = ','>
 </#if>
-<#if (update_permissionCodes??)>
-${prefixName} `PERMISSION_CODES` = :update_permissionCodes_value
-<#assign prefixName = ','>
-</#if>
 <#if (update_remark??)>
 ${prefixName} `REMARK` = :update_remark_value
-<#assign prefixName = ','>
-</#if>
-<#if (update_roleCodes??)>
-${prefixName} `ROLE_CODES` = :update_roleCodes_value
 <#assign prefixName = ','>
 </#if>
 <#if (update_siteCode??)>
@@ -90,10 +94,6 @@ ${prefixName} `VALUE_` = :update_value_value
 </#if>
 <#if (update_version??)>
 ${prefixName} `VERSION_` = :update_version_value
-<#assign prefixName = ','>
-</#if>
-<#if (update_wfId??)>
-${prefixName} `WF_ID` = :update_wfId_value
 <#assign prefixName = ','>
 </#if>
 <#include "where.ftl">
