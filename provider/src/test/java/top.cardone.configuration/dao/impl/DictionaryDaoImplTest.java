@@ -6,7 +6,7 @@ import org.apache.commons.collections.MapUtils;
 import org.junit.Assume;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Page;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import top.cardone.ProviderApplication;
@@ -22,7 +22,7 @@ import java.util.Map;
  * @author yao hai tao
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = ProviderApplication.class)
+@SpringBootTest(classes = ProviderApplication.class)
 public class DictionaryDaoImplTest {
 
 	@Test

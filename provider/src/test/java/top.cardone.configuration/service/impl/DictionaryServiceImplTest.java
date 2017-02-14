@@ -4,7 +4,7 @@ import com.google.common.collect.Maps;
 import org.junit.Assume;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Page;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import top.cardone.ProviderApplication;
@@ -19,7 +19,7 @@ import java.util.Map;
  * Created by gongzw on 2016/4/20.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = ProviderApplication.class)
+@SpringBootTest(classes = ProviderApplication.class)
 public class DictionaryServiceImplTest {
 	@Test
 	public void testFindListByTypeCode() throws Exception {
