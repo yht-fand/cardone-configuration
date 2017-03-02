@@ -1,0 +1,67 @@
+﻿[
+  {
+    "dictionaryTypeCode": "yesOrNo",
+    "name": "是否",
+    "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "sex",
+    "name": "男生",
+    "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "lang",
+    "name": "国际化语言",
+    "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "accessType",
+    "name": "数据查阅类型",
+    "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "statType",
+    "name": "统计类型",
+    "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "objectType",
+    "name": "对象类型",
+    "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "fuctionType",
+    "name": "功能类型",
+    "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "actionType",
+    "name": "动作类型",
+    "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "sys",
+    "name": "系统",
+    "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "sms",
+    "name": "短信",
+    "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "flag",
+    "name": "标记",
+    "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "state",
+    "name": "状态",
+    "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "dataState",
+    "name": "数据状态",
+    "flagCode": "generate"
+  }
+]

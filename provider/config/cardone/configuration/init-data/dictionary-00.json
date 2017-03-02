@@ -1,0 +1,230 @@
+[
+  {
+    "dictionaryTypeCode": "accessType",
+    "dictionaryCode": "all",
+    "name": "全部",
+    "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "accessType",
+    "dictionaryCode": "department",
+    "name": "部门",
+    "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "accessType",
+    "dictionaryCode": "person",
+    "name": "个人",
+    "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "actionType",
+    "dictionaryCode": "serch",
+    "name": "查询",
+    "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "actionType",
+    "dictionaryCode": "login",
+    "name": "登录",
+    "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "actionType",
+    "dictionaryCode": "delete",
+    "name": "删除",
+    "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "actionType",
+    "dictionaryCode": "modify",
+    "name": "修改",
+    "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "actionType",
+    "dictionaryCode": "alert",
+    "name": "修改",
+    "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "actionType",
+    "dictionaryCode": "add",
+    "name": "新增",
+    "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "actionType",
+    "dictionaryCode": "append",
+    "name": "新增",
+    "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "actionType",
+    "dictionaryCode": "download",
+    "name": "下载",
+    "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "actionType",
+    "dictionaryCode": "exit",
+    "name": "退出",
+    "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "fuctionType",
+    "dictionaryCode": "menu",
+    "name": "菜单",
+    "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "fuctionType",
+    "dictionaryCode": "button",
+    "name": "按钮",
+    "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "lang",
+    "dictionaryCode": "zh-cn",
+    "name": "中文",
+    "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "lang",
+    "dictionaryCode": "en",
+    "name": "英文",
+    "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "objectType",
+    "dictionaryCode": "authority",
+    "name": "权限",
+    "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "objectType",
+    "dictionaryCode": "other",
+    "name": "其他",
+    "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "objectType",
+    "dictionaryCode": "role",
+    "name": "角色",
+    "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "objectType",
+    "dictionaryCode": "department",
+    "name": "部门",
+    "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "recordStatus",
+    "dictionaryCode": "1",
+    "name": "启用",
+    "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "recordStatus",
+    "dictionaryCode": "0",
+    "name": "禁用",
+    "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "sex",
+    "dictionaryCode": "1",
+    "name": "男",
+    "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "sex",
+    "dictionaryCode": "0",
+    "name": "女",
+    "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "statType",
+    "dictionaryCode": "yearStat",
+    "name": "年统计",
+    "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "statType",
+    "dictionaryCode": "monthStat",
+    "name": "月统计",
+    "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "statType",
+    "dictionaryCode": "weekStat",
+    "name": "周统计",
+    "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "statType",
+    "dictionaryCode": "dayStat",
+    "name": "日统计",
+    "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "yesOrNo",
+    "dictionaryCode": "1",
+    "name": "是",
+    "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "yesOrNo",
+    "dictionaryCode": "0",
+    "name": "否",
+    "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "flag",
+    "dictionaryCode": "sync",
+    "name": "同步",
+    "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "flag",
+    "dictionaryCode": "input",
+    "name": "录入",
+    "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "flag",
+    "dictionaryCode": "import",
+    "name": "导入",
+    "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "flag",
+    "dictionaryCode": "generate",
+    "name": "生成",
+    "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "state",
+    "dictionaryCode": "1",
+    "name": "有效",
+    "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "state",
+    "dictionaryCode": "0",
+    "name": "过期",
+    "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "dataState",
+    "dictionaryCode": "1",
+    "name": "有效",
+    "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "dataState",
+    "dictionaryCode": "0",
+    "name": "已删除",
+    "flagCode": "generate"
+  }
+]
