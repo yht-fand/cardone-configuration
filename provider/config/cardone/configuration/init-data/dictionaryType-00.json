@@ -63,5 +63,10 @@
     "dictionaryTypeCode": "dataState",
     "name": "数据状态",
     "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "userGroupType",
+    "name": "用户组类别",
+    "flagCode": "generate"
   }
 ]

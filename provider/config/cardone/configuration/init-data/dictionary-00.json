@@ -226,5 +226,17 @@
     "dictionaryCode": "0",
     "name": "已删除",
     "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "userGroupType",
+    "dictionaryCode": "init",
+    "name": "初始化",
+    "flagCode": "generate"
+  },
+  {
+    "dictionaryTypeCode": "userGroupType",
+    "dictionaryCode": "department",
+    "name": "部门",
+    "flagCode": "generate"
   }
 ]
