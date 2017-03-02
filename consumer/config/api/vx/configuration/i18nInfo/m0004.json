@@ -1,1 +1,74 @@
-{}
+{
+  "input": {
+    "beginDate": "beginDate",
+    "content": "content",
+    "createdByCode": "createdByCode",
+    "createdDate": "createdDate",
+    "dataStateCode": "dataStateCode",
+    "departmentCode": "departmentCode",
+    "endDate": "endDate",
+    "flagCode": "flagCode",
+    "flagObjectCode": "flagObjectCode",
+    "i18nInfoCode": "i18nInfoCode",
+    "i18nInfoId": "i18nInfoId",
+    "jsonData": "jsonData",
+    "lastModifiedByCode": "lastModifiedByCode",
+    "lastModifiedDate": "lastModifiedDate",
+    "order": "order",
+    "orgCode": "orgCode",
+    "siteCode": "siteCode",
+    "stateCode": "stateCode",
+    "systemInfoCode": "systemInfoCode",
+    "typeCode": "typeCode",
+    "version": "version"
+  },
+  "validation": {
+    "rules": {
+      "i18nInfoCode": {
+        "required": true,
+        "minlength": 4,
+        "maxlength": 255
+      },
+      "name": {
+        "required": true,
+        "minlength": 4,
+        "maxlength": 255
+      }
+    },
+    "messages": {
+      "i18nInfoCode": {
+        "required": "必填",
+        "minlength": "需3个字符以上",
+        "maxlength": "需小于255个字符"
+      },
+      "name": {
+        "required": "名称不能为空值!",
+        "minlength": "需3个字符以上",
+        "maxlength": "需小于255个字符"
+      }
+    }
+  },
+  "output": {
+    "beginDate": "BEGIN_DATE",
+    "content": "CONTENT",
+    "createdByCode": "CREATED_BY_CODE",
+    "createdDate": "CREATED_DATE",
+    "dataStateCode": "DATA_STATE_CODE",
+    "departmentCode": "DEPARTMENT_CODE",
+    "endDate": "END_DATE",
+    "flagCode": "FLAG_CODE",
+    "flagObjectCode": "FLAG_OBJECT_CODE",
+    "i18nInfoCode": "I18N_INFO_CODE",
+    "i18nInfoId": "I18N_INFO_ID",
+    "jsonData": "JSON_DATA",
+    "lastModifiedByCode": "LAST_MODIFIED_BY_CODE",
+    "lastModifiedDate": "LAST_MODIFIED_DATE",
+    "order": "ORDER_",
+    "orgCode": "ORG_CODE",
+    "siteCode": "SITE_CODE",
+    "stateCode": "STATE_CODE",
+    "systemInfoCode": "SYSTEM_INFO_CODE",
+    "typeCode": "TYPE_CODE",
+    "version": "VERSION_"
+  }
+}

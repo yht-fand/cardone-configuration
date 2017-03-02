@@ -1,1 +1,17 @@
-{}
+{
+  "input": {
+    "errorInfoIds": "errorInfoIds"
+  },
+  "validation": {
+    "rules": {
+      "errorInfoIds": {
+        "required": true
+      }
+    },
+    "messages": {
+      "errorInfoIds": {
+        "required": "错误信息标识集合不能为空值!"
+      }
+    }
+  }
+}

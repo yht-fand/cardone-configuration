@@ -1,1 +1,17 @@
-{}
+{
+  "input": {
+    "i18nInfoIds": "i18nInfoIds"
+  },
+  "validation": {
+    "rules": {
+      "i18nInfoIds": {
+        "required": true
+      }
+    },
+    "messages": {
+      "i18nInfoIds": {
+        "required": "国际化信息标识集合不能为空值!"
+      }
+    }
+  }
+}

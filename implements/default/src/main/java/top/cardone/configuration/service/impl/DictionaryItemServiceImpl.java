@@ -141,4 +141,9 @@ public class DictionaryItemServiceImpl extends PageServiceImpl<DictionaryItemDao
     public Map<String, Object> findOneByDictionaryItemId(Map<String, Object> findOne) {
         return this.dao.findOneByDictionaryItemId(findOne);
     }
+
+    @Override
+    public List<Map<String, Object>> findListByKeyword(Map<String, Object> findList) {
+        return this.dao.findListByKeyword(findList);
+    }
 }

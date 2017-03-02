@@ -154,4 +154,12 @@ public interface DictionaryItemService extends PageService {
      * @return 字典项对象
      */
     Map<String, Object> findOneByDictionaryItemId(Map<String, Object> findOne);
+	
+    /**
+     * 查询字典项下拉列表
+     *
+     * @param findList 关键字
+     * @return 字典项下拉列表
+     */
+    List<Map<String, Object>> findListByKeyword(Map<String, Object> findList);
 }

@@ -141,4 +141,9 @@ public class NavigationServiceImpl extends PageServiceImpl<NavigationDao> implem
     public Map<String, Object> findOneByNavigationId(Map<String, Object> findOne) {
         return this.dao.findOneByNavigationId(findOne);
     }
+
+    @Override
+    public List<Map<String, Object>> findListByKeyword(Map<String, Object> findList) {
+        return this.dao.findListByKeyword(findList);
+    }
 }

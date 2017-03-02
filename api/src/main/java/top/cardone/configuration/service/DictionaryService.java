@@ -156,10 +156,18 @@ public interface DictionaryService extends PageService {
 	/**
 	 * 查询对象
 	 *
-	 * @param dictionaryId 字典标识
+	 * @param findOne 字典标识
 	 * @return 字典对象
 	 */
-	Map<String, Object> findOneByDictionaryId(String dictionaryId);
+	Map<String, Object> findOneByDictionaryId(Map<String, Object> findOne);
+
+	/**
+	 * 查询字典下拉列表
+	 *
+	 * @param findList 关键字
+	 * @return 字典下拉列表
+	 */
+	List<Map<String, Object>> findListByKeyword(Map<String, Object> findList);
 
 	String readOneNameByCode(String dictionaryTypeCode, String dictionaryCode, String defaultValue);
 

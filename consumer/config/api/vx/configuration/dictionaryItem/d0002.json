@@ -1,1 +1,17 @@
-{}
+{
+  "input": {
+    "dictionaryItemIds": "dictionaryItemIds"
+  },
+  "validation": {
+    "rules": {
+      "dictionaryItemIds": {
+        "required": true
+      }
+    },
+    "messages": {
+      "dictionaryItemIds": {
+        "required": "字典项标识集合不能为空值!"
+      }
+    }
+  }
+}

@@ -1,9 +1,8 @@
 package top.cardone.configuration.dao.impl;
 
-import com.google.common.collect.Maps;
-import org.springframework.data.domain.Page;
 import top.cardone.data.jdbc.dao.impl.PageDaoImpl;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -12,21 +11,17 @@ import java.util.Map;
  * @author yao hai tao
  */
 public class DictionaryTypeDaoImpl extends PageDaoImpl implements top.cardone.configuration.dao.DictionaryTypeDao {
-	@Override
-	public Page<Map<String, Object>> pageByCode(Map<String, Object> page) {
-		String countSqlFilePath = this.getSqlFilePath("page.count");
-		String findListSqlFilePath = this.getSqlFilePath("page.find");
-		return this.page(countSqlFilePath, findListSqlFilePath, page);
-	}
+    @Override
+    public Map<String, Object> findOneByDictionaryTypeId(Map<String, Object> findOne) {
+        String findOneSqlFilePath = this.getSqlFilePath("page.find");
+		
+        return this.findOne(findOneSqlFilePath, findOne);
+    }
 
-	@Override
-	public Map<String, Object> findOneByDictionaryTypeId(String dictionaryTypeId) {
-		Map<String, Object> findOne = Maps.newHashMap();
+    @Override
+    public List<Map<String, Object>> findListByKeyword(Map<String, Object> findList) {
+        String findListByKeywordSqlFilePath = this.getSqlFilePath("findListByKeyword");
 
-		findOne.put("dictionaryTypeId", dictionaryTypeId);
-
-		String findOneSqlFilePath = this.getSqlFilePath("page.find");
-
-		return this.findOne(findOneSqlFilePath, findOne);
-	}
+        return this.findList(findListByKeywordSqlFilePath, findList);
+    }
 }
