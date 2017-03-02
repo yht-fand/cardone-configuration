@@ -204,6 +204,12 @@
     "flagCode": "init"
   },
   {
+    "dictionaryTypeCode": "flag",
+    "dictionaryCode": "init",
+    "name": "初始化",
+    "flagCode": "init"
+  },
+  {
     "dictionaryTypeCode": "state",
     "dictionaryCode": "1",
     "name": "有效",
