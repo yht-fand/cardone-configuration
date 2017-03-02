@@ -12,20 +12,20 @@
                     <map>
                         <entry key="sqlFileRoot" value="/cardone/configuration/dictionary/"/>
                         <entry key="pks" value="dictionaryId"/>
-                        <entry key="codes" value="systemInfoCode,siteCode,orgCode,departmentCode,dictionaryTypeCode,dictionaryCode"/>
+                        <entry key="codes" value="dictionaryTypeCode,dictionaryCode"/>
                     </map>
                 </entry>
                 <entry key="insert">
                     <map>
                         <entry key="dictionaryId" value="readRandomUUIDFunc"/>
-                        <entry key="createdByCode" value="readCreatedByCodeFunc"/>
-                        <entry key="createdDate" value="readCreatedDateFunc"/>
+                        <entry key="createdByCode" value="readPrincipalFunc"/>
+                        <entry key="createdDate" value="readOneDateFunc"/>
                     </map>
                 </entry>
                 <entry key="update">
                     <map>
-                        <entry key="lastModifiedByCode" value="readLastModifiedByCodeFunc"/>
-                        <entry key="lastModifiedDate" value="readLastModifiedDateFunc"/>
+                        <entry key="lastModifiedByCode" value="readPrincipalFunc"/>
+                        <entry key="lastModifiedDate" value="readOneDateFunc"/>
                     </map>
                 </entry>
             </map>

@@ -12,20 +12,20 @@
                     <map>
                         <entry key="sqlFileRoot" value="/cardone/configuration/i18nInfo/"/>
                         <entry key="pks" value="i18nInfoId"/>
-                        <entry key="codes" value="typeCode,i18nInfoCode"/>
+                        <entry key="codes" value="i18nInfoCode"/>
                     </map>
                 </entry>
                 <entry key="insert">
                     <map>
                         <entry key="i18nInfoId" value="readRandomUUIDFunc"/>
-                        <entry key="createdByCode" value="readCreatedByCodeFunc"/>
-                        <entry key="createdDate" value="readCreatedDateFunc"/>
+                        <entry key="createdByCode" value="readPrincipalFunc"/>
+                        <entry key="createdDate" value="readOneDateFunc"/>
                     </map>
                 </entry>
                 <entry key="update">
                     <map>
-                        <entry key="lastModifiedByCode" value="readLastModifiedByCodeFunc"/>
-                        <entry key="lastModifiedDate" value="readLastModifiedDateFunc"/>
+                        <entry key="lastModifiedByCode" value="readPrincipalFunc"/>
+                        <entry key="lastModifiedDate" value="readOneDateFunc"/>
                     </map>
                 </entry>
             </map>
