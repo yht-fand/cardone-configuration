@@ -29,6 +29,10 @@
                     <property name="serviceBeanId" value="top.cardone.configuration.service.DictionaryService"/>
                     <property name="jsonFiles" value="${app.root}/config/*/configuration/init-data/dictionary-*.json"/>
                 </bean>
+                <bean class="top.cardone.data.action.InitDataAction">
+                    <property name="serviceBeanId" value="top.cardone.configuration.service.NavigationService"/>
+                    <property name="jsonFiles" value="${app.root}/config/*/configuration/init-data/navigation-*.json"/>
+                </bean>
             </list>
         </property>
     </bean>
