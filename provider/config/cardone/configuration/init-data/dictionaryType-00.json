@@ -2,71 +2,81 @@
   {
     "dictionaryTypeCode": "yesOrNo",
     "name": "是否",
-    "flagCode": "generate"
+    "flagCode": "init"
   },
   {
     "dictionaryTypeCode": "sex",
     "name": "男生",
-    "flagCode": "generate"
+    "flagCode": "init"
   },
   {
     "dictionaryTypeCode": "lang",
     "name": "国际化语言",
-    "flagCode": "generate"
+    "flagCode": "init"
   },
   {
     "dictionaryTypeCode": "accessType",
     "name": "数据查阅类型",
-    "flagCode": "generate"
+    "flagCode": "init"
   },
   {
     "dictionaryTypeCode": "statType",
     "name": "统计类型",
-    "flagCode": "generate"
+    "flagCode": "init"
   },
   {
     "dictionaryTypeCode": "objectType",
     "name": "对象类型",
-    "flagCode": "generate"
+    "flagCode": "init"
   },
   {
     "dictionaryTypeCode": "fuctionType",
     "name": "功能类型",
-    "flagCode": "generate"
+    "flagCode": "init"
   },
   {
     "dictionaryTypeCode": "actionType",
     "name": "动作类型",
-    "flagCode": "generate"
+    "flagCode": "init"
   },
   {
     "dictionaryTypeCode": "sys",
     "name": "系统",
-    "flagCode": "generate"
+    "flagCode": "init"
   },
   {
     "dictionaryTypeCode": "sms",
     "name": "短信",
-    "flagCode": "generate"
+    "flagCode": "init"
   },
   {
     "dictionaryTypeCode": "flag",
     "name": "标记",
-    "flagCode": "generate"
+    "flagCode": "init"
   },
   {
     "dictionaryTypeCode": "state",
     "name": "状态",
-    "flagCode": "generate"
+    "flagCode": "init"
   },
   {
     "dictionaryTypeCode": "dataState",
     "name": "数据状态",
-    "flagCode": "generate"
+    "flagCode": "init"
   },
   {
     "dictionaryTypeCode": "userGroupType",
     "name": "用户组类别",
-    "flagCode": "generate"
+    "flagCode": "init"
+  },
+  {
+    "dictionaryTypeCode": "roleType",
+    "name": "角色类别",
+    "flagCode": "init"
+  },
+  {
+    "dictionaryTypeCode": "permissionType",
+    "name": "许可类别",
+    "flagCode": "init"
   }
 ]

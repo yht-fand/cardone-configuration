@@ -3,18 +3,18 @@
     "typeCode": "zh-cn",
     "i18nInfoCode": "test",
     "content": "测试",
-    "flagCode": "generate"
+    "flagCode": "init"
   },
   {
     "typeCode": "zh-cn",
     "i18nInfoCode": "login",
     "content": "登录",
-    "flagCode": "generate"
+    "flagCode": "init"
   },
   {
     "typeCode": "zh-cn",
     "i18nInfoCode": "exit",
     "content": "退出",
-    "flagCode": "generate"
+    "flagCode": "init"
   }
 ]

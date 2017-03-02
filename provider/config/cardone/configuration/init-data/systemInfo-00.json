@@ -2,6 +2,6 @@
   {
     "systemInfoCode": "cardone",
     "name": "cardone",
-    "flagCode": "generate"
+    "flagCode": "init"
   }
 ]
