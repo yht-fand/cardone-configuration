@@ -2,11 +2,14 @@ package top.cardone.configuration.service.impl;
 
 import org.springframework.data.domain.Page;
 import org.springframework.transaction.annotation.Transactional;
+import top.cardone.context.ApplicationContextHolder;
+import top.cardone.data.action.InitDataAction;
 import top.cardone.data.service.impl.PageServiceImpl;
 import top.cardone.configuration.dao.NavigationDao;
 
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 /**
  * 导航服务
@@ -145,5 +148,24 @@ public class NavigationServiceImpl extends PageServiceImpl<NavigationDao> implem
     @Override
     public List<Map<String, Object>> findListByKeyword(Map<String, Object> findList) {
         return this.dao.findListByKeyword(findList);
+    }
+
+    @Override
+    public List<Map<String, Object>> findListForTree(Map<String, Object> findList) {
+        return this.dao.findListForTree(findList);
+    }
+
+    @Override
+    @Transactional
+    public int generateData() {
+        return this.generateData(UUID.randomUUID().toString());
+    }
+
+    @Override
+    @Transactional
+    public int generateData(String flagObjectCode) {
+        ApplicationContextHolder.action(InitDataAction.class, action -> action.action(), "top.cardone.configuration.service.NavigationService.init");
+
+        return this.dao.generateData(flagObjectCode);
     }
 }

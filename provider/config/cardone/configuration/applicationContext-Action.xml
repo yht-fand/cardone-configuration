@@ -2,6 +2,13 @@
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean name="top.cardone.configuration.service.NavigationService.init"
+          class="top.cardone.data.action.InitDataAction">
+        <property name="serviceBeanId" value="top.cardone.configuration.service.NavigationService"/>
+        <property name="jsonFiles" value="${app.root}/config/*/configuration/init-data/navigation-*.json"/>
+    </bean>
+
     <bean class="top.cardone.context.action.Actions" init-method="action">
         <property name="actions">
             <list>
@@ -23,16 +30,14 @@
                 </bean>
                 <bean class="top.cardone.data.action.InitDataAction">
                     <property name="serviceBeanId" value="top.cardone.configuration.service.DictionaryTypeService"/>
-                    <property name="jsonFiles" value="${app.root}/config/*/configuration/init-data/dictionaryType-*.json"/>
+                    <property name="jsonFiles"
+                              value="${app.root}/config/*/configuration/init-data/dictionaryType-*.json"/>
                 </bean>
                 <bean class="top.cardone.data.action.InitDataAction">
                     <property name="serviceBeanId" value="top.cardone.configuration.service.DictionaryService"/>
                     <property name="jsonFiles" value="${app.root}/config/*/configuration/init-data/dictionary-*.json"/>
                 </bean>
-                <bean class="top.cardone.data.action.InitDataAction">
-                    <property name="serviceBeanId" value="top.cardone.configuration.service.NavigationService"/>
-                    <property name="jsonFiles" value="${app.root}/config/*/configuration/init-data/navigation-*.json"/>
-                </bean>
+                <ref bean="top.cardone.configuration.service.NavigationService.init"/>
             </list>
         </property>
     </bean>

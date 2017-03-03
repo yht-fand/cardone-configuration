@@ -26,4 +26,20 @@ public interface NavigationDao extends PageDao {
      * @return 导航下拉列表
      */
     List<Map<String, Object>> findListByKeyword(Map<String, Object> findList);
+
+    /**
+     * 查询树
+     *
+     * @param findList 关键字
+     * @return
+     */
+    List<Map<String, Object>> findListForTree(Map<String, Object> findList);
+
+    /**
+     * 生成
+     *
+     * @param flagObjectCode 标识对象编号
+     * @return
+     */
+    int generateData(String flagObjectCode);
 }
