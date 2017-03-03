@@ -38,7 +38,7 @@ public class DictionaryDaoImplTest {
 
 	@Test
 	public void testFindlistByTypeCode() throws Exception {
-		List<Map<String, Object>> l = ApplicationContextHolder.getBean(DictionaryDao.class).findlistByTypeCode("lang");
+		List<Map<String, Object>> l = ApplicationContextHolder.getBean(DictionaryDao.class).findlistByDictionaryTypeCode("lang");
 		Assume.assumeTrue(l.size() == 2);
 	}
 

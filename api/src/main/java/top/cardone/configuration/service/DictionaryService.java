@@ -149,9 +149,9 @@ public interface DictionaryService extends PageService {
 	 */
 	Page<Map<String, Object>> pageByCode(Map<String, Object> page);
 
-	List<Map<String, Object>> findListByTypeCodeCache(String dictionaryTypeCode);
+	List<Map<String, Object>> findListByDictionaryTypeCodeCache(String dictionaryTypeCode);
 
-	List<Map<String, Object>> findListByTypeCode(String dictionaryTypeCode);
+	List<Map<String, Object>> findListByDictionaryTypeCode(String dictionaryTypeCode);
 
 	/**
 	 * 查询对象
@@ -188,4 +188,9 @@ public interface DictionaryService extends PageService {
 
 	@Cacheable(value = "top.cardone.configuration.service.DictionaryService", key = Caches.KEY_3)
 	String readOneExplainByCodeCache(String dictionaryTypeCode, String dictionaryCode, String defaultValue);
+
+	List<Map<String,Object>> findListByDictionaryTypeCodes(String dictionaryTypeCodes);
+
+	@Cacheable(value = "top.cardone.configuration.service.DictionaryService", key = Caches.KEY_1)
+	List<Map<String,Object>> findListByDictionaryTypeCodesCache(String dictionaryTypeCodes);
 }

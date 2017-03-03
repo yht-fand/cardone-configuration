@@ -20,7 +20,7 @@ public interface DictionaryDao extends PageDao {
 	 */
 	Page<Map<String, Object>> pageByCode(Map<String, Object> page);
 
-	List<Map<String, Object>> findlistByTypeCode(String dictionaryTypeCode);
+	List<Map<String, Object>> findlistByDictionaryTypeCode(String dictionaryTypeCode);
 
 	/**
 	 * 查询对象

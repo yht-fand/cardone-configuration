@@ -25,7 +25,7 @@ public class DictionaryServiceImplTest {
 	public void testFindListByTypeCode() throws Exception {
 		Map<String, Object> map = Maps.newHashMap();
 		map.put("dictionaryTypeCode", "lang");
-		List<Map<String, Object>> l = ApplicationContextHolder.getBean(DictionaryService.class).findListByTypeCode("lang");
+		List<Map<String, Object>> l = ApplicationContextHolder.getBean(DictionaryService.class).findListByDictionaryTypeCode("lang");
 		Assume.assumeTrue(l.size() == 2);
 	}
 

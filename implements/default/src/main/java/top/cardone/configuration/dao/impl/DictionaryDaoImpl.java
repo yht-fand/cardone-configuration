@@ -23,7 +23,7 @@ public class DictionaryDaoImpl extends PageDaoImpl implements top.cardone.config
 	}
 
 	@Override
-	public List<Map<String, Object>> findlistByTypeCode(String dictionaryTypeCode) {
+	public List<Map<String, Object>> findlistByDictionaryTypeCode(String dictionaryTypeCode) {
 		String findListSqlFilePath = this.getSqlFilePath("selectByTypeCode");
 
 		Map<String, Object> findList = Maps.newHashMap();
