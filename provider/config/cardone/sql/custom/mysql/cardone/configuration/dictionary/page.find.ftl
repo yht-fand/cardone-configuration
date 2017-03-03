@@ -1,4 +1,3 @@
-<#assign StringUtils = beansWrapperFn.getStaticModels()["org.apache.commons.lang3.StringUtils"]>
 SELECT
 t.`DICTIONARY_ID`,
 t.`DICTIONARY_CODE`,
@@ -24,7 +23,7 @@ t.DATA_STATE_CODE
 FROM
 `c1_dictionary` t
 LEFT JOIN `c1_dictionary_type` d ON(d.`DICTIONARY_TYPE_CODE` = t.`DICTIONARY_TYPE_CODE`)
-<#if StringUtils.isNotBlank(dictionaryId)>
+<#if cardone.StringUtils.isNotBlank(dictionaryId)>
 WHERE t.dictionary_id =:dictionaryId
 <#else>
 <#include "page.where.ftl">
