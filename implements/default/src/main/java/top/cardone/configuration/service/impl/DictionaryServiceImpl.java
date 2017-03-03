@@ -171,15 +171,13 @@ public class DictionaryServiceImpl extends PageServiceImpl<DictionaryDao> implem
     }
 
     private String readOneByCode(String dictionaryTypeCode, String dictionaryCode, String defaultValue, String objectId) {
-        Map<String, Object> inputs = Maps.newHashMap();
+        Map<String, Object> readOne = Maps.newHashMap();
 
-        inputs.put("dictionaryTypeCode", dictionaryTypeCode);
-        inputs.put("dictionaryCode", dictionaryCode);
-        inputs.put("object_id", objectId);
+        readOne.put("dictionaryTypeCode", dictionaryTypeCode);
+        readOne.put("dictionaryCode", dictionaryCode);
+        readOne.put("object_id", objectId);
 
-        String str = this.dao.readOne(String.class, inputs);
-
-        inputs.put("defaultValue", defaultValue);
+        String str = this.dao.readOne(String.class, readOne);
 
         if (StringUtils.isBlank(str)) {
             //添加到缓存队列中，交由定时任务去生成数据字典
@@ -187,7 +185,9 @@ public class DictionaryServiceImpl extends PageServiceImpl<DictionaryDao> implem
                 return Sets.newHashSet();
             });
 
-            insertDictionarySet.add(inputs);
+            readOne.put(objectId, defaultValue);
+
+            insertDictionarySet.add(readOne);
 
             ApplicationContextHolder.getBean(Cache.class).put("init-data", "insertDictionarySet", insertDictionarySet);
         }
