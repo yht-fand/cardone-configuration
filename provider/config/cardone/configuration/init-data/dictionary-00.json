@@ -262,5 +262,23 @@
     "dictionaryCode": "init",
     "name": "初始化",
     "flagCode": "init"
+  },
+  {
+    "dictionaryTypeCode": "permissionType",
+    "dictionaryCode": "user",
+    "name": "用户",
+    "flagCode": "init"
+  },
+  {
+    "dictionaryTypeCode": "permissionType",
+    "dictionaryCode": "navigation",
+    "name": "导航",
+    "flagCode": "init"
+  },
+  {
+    "dictionaryTypeCode": "permissionType",
+    "dictionaryCode": "department",
+    "name": "部门",
+    "flagCode": "init"
   }
 ]
