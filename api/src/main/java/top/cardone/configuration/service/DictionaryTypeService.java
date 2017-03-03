@@ -4,6 +4,7 @@ import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import top.cardone.cache.Caches;
+import top.cardone.context.annotation.Func;
 import top.cardone.data.service.PageService;
 
 import java.util.List;
@@ -55,24 +56,28 @@ public interface DictionaryTypeService extends PageService {
      * @see top.cardone.configuration.service.DictionaryTypeService#delete
      */
     @CacheEvict(value = "top.cardone.configuration.service.DictionaryTypeService", allEntries = true)
+    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateDictionaryTypeTreeFunc\"}")
     int deleteCache(Object delete);
 
 	/**
      * @see top.cardone.configuration.service.DictionaryTypeService#deleteAll
      */
     @CacheEvict(value = "top.cardone.configuration.service.DictionaryTypeService", allEntries = true)
+    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateDictionaryTypeTreeFunc\"}")
     int deleteAllCache();
 
 	/**
      * @see top.cardone.configuration.service.DictionaryTypeService#deleteByIds
      */
     @CacheEvict(value = "top.cardone.configuration.service.DictionaryTypeService", allEntries = true)
+    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateDictionaryTypeTreeFunc\"}")
     int deleteByIdsCache(Object ids);
 
 	/**
      * @see top.cardone.configuration.service.DictionaryTypeService#deleteList
      */
     @CacheEvict(value = "top.cardone.configuration.service.DictionaryTypeService", allEntries = true)
+    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateDictionaryTypeTreeFunc\"}")
     int[] deleteListCache(List<Object> deleteList);
 
 	/**
@@ -91,24 +96,28 @@ public interface DictionaryTypeService extends PageService {
      * @see top.cardone.configuration.service.DictionaryTypeService#insert
      */
     @CacheEvict(value = "top.cardone.configuration.service.DictionaryTypeService", allEntries = true)
+    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateDictionaryTypeTreeFunc\"}")
     int insertCache(Object insert);
 
 	/**
      * @see top.cardone.configuration.service.DictionaryTypeService#insertByNotExists
      */
     @CacheEvict(value = "top.cardone.configuration.service.DictionaryTypeService", allEntries = true)
+    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateDictionaryTypeTreeFunc\"}")
     int insertByNotExistsCache(Object insert);
 
 	/**
      * @see top.cardone.configuration.service.DictionaryTypeService#insertList
      */
     @CacheEvict(value = "top.cardone.configuration.service.DictionaryTypeService", allEntries = true)
+    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateDictionaryTypeTreeFunc\"}")
     int[] insertListCache(List<Object> insertList);
 
 	/**
      * @see top.cardone.configuration.service.DictionaryTypeService#insertListByNotExists
      */
     @CacheEvict(value = "top.cardone.configuration.service.DictionaryTypeService", allEntries = true)
+    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateDictionaryTypeTreeFunc\"}")
     int[] insertListByNotExistsCache(List<Object> insertList);
 
 	/**
@@ -127,24 +136,28 @@ public interface DictionaryTypeService extends PageService {
      * @see top.cardone.configuration.service.DictionaryTypeService#save
      */
     @CacheEvict(value = "top.cardone.configuration.service.DictionaryTypeService", allEntries = true)
+    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateDictionaryTypeTreeFunc\"}")
     Integer saveCache(Object save);
 
 	/**
      * @see top.cardone.configuration.service.DictionaryTypeService#update
      */
     @CacheEvict(value = "top.cardone.configuration.service.DictionaryTypeService", allEntries = true)
+    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateDictionaryTypeTreeFunc\"}")
     int updateCache(Object update);
 
 	/**
      * @see top.cardone.configuration.service.DictionaryTypeService#updateList
      */
     @CacheEvict(value = "top.cardone.configuration.service.DictionaryTypeService", allEntries = true)
+    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateDictionaryTypeTreeFunc\"}")
     int[] updateListCache(List<Object> updateList);
 
 	/**
      * @see top.cardone.configuration.service.DictionaryTypeService#saveList
      */
     @CacheEvict(value = "top.cardone.configuration.service.DictionaryTypeService", allEntries = true)
+    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateDictionaryTypeTreeFunc\"}")
     int[][] saveListCache(List<Object> saveList);
 	
     /**
