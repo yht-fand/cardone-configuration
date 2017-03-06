@@ -3,5 +3,5 @@ WHERE 1 = 1
 <#if cardone.StringUtils.isNotBlank(id)>
 AND  FIND_IN_SET(:id, t.`PARENT_TREE_CODE`)
 </#if>
-<@cardone.permissionSql permissionsColumnName="t.NAVIGATION_CODE" permissions=permissions />
+<@cardone.permissionSql permissionColumnName="t.NAVIGATION_CODE" permissions=permissions />
 ORDER BY t.ORDER_, t.NAVIGATION_CODE
