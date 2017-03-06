@@ -15,7 +15,7 @@ public class NavigationDaoImpl extends PageDaoImpl implements top.cardone.config
     @Override
     public Map<String, Object> findOneByNavigationId(Map<String, Object> findOne) {
         String findOneSqlFilePath = this.getSqlFilePath("page.find");
-		
+
         return this.findOne(findOneSqlFilePath, findOne);
     }
 
@@ -30,7 +30,7 @@ public class NavigationDaoImpl extends PageDaoImpl implements top.cardone.config
     public List<Map<String, Object>> findListForTree(Map<String, Object> findList) {
         String findListSqlFilePath = this.getSqlFilePath("findListForTree");
 
-        return this.findList(findListSqlFilePath, findList);
+        return this.findList(findListSqlFilePath, this.toMap(findList, "select"));
     }
 
     @Override

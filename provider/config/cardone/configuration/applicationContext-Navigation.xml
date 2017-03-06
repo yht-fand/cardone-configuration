@@ -28,6 +28,28 @@
                         <entry key="lastModifiedDate" value="readOneDateFunc"/>
                     </map>
                 </entry>
+                <entry key="select">
+                    <map>
+                        <entry key="permissions">
+                            <bean class="top.cardone.authority.func.ReadPrincipalFunc">
+                                <property name="key" value="permission_departments"/>
+                                <property name="functionCode" value="navigation"/>
+                            </bean>
+                        </entry>
+                        <entry key="permissions">
+                            <bean class="top.cardone.authority.func.ReadPrincipalFunc">
+                                <property name="key" value="permission_users"/>
+                                <property name="functionCode" value="navigation"/>
+                            </bean>
+                        </entry>
+                        <entry key="permissions">
+                            <bean class="top.cardone.authority.func.ReadPrincipalFunc">
+                                <property name="key" value="permissions"/>
+                                <property name="functionCode" value="navigation"/>
+                            </bean>
+                        </entry>
+                    </map>
+                </entry>
             </map>
         </property>
     </bean>
