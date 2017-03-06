@@ -3,11 +3,10 @@
 <#assign SecurityUtils = beansWrapperFn.getStaticModels()["org.apache.shiro.SecurityUtils"]>
 
 <#macro permissionSql permission_departments="" departmentColumnName="T.DEPARTMENT_CODE" permission_users="" userColumnName="T.CREATED_BY_CODE" permissions="" permissionsColumnName="T.CODE" loginUserCode=SecurityUtils.getSubject().getPrincipal()>
-    <#if loginUserCode == "admin">
+    <#if loginUserCode == "admin1">
         <#return >
     </#if>
-AND (
-    <#assign prefixName = ''>
+    <#assign prefixName = 'AND ('>
     <#if StringUtils.isNotBlank(permission_departments) && StringUtils.isNotBlank(departmentColumnName)>
     ${prefixName}FIND_IN_SET(${departmentColumnName}, :permission_departments)
         <#assign prefixName = " OR ">
@@ -16,9 +15,9 @@ AND (
     ${prefixName}FIND_IN_SET(${userColumnName}, :permission_users)
         <#assign prefixName = " OR ">
     </#if>
-    <#if StringUtils.isNotBlank(permissions) && StringUtils.isNotBlank(permissionsColumnName)>
-    ${prefixName}FIND_IN_SET(${permissionsColumnName}, :permissions)
+    <#if StringUtils.isNotBlank(permission_departments) && StringUtils.isNotBlank(departmentColumnName)>
+    ${prefixName}FIND_IN_SET(${departmentColumnName}, :permission_departments)
         <#assign prefixName = " OR ">
     </#if>
-)
+    <#if prefixName != 'AND ('>)</#if>
 </#macro>
