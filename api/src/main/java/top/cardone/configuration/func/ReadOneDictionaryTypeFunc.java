@@ -1,36 +1,27 @@
 package top.cardone.configuration.func;
 
-import com.google.common.collect.Maps;
-import lombok.Setter;
 import org.apache.commons.collections.MapUtils;
 import top.cardone.configuration.service.DictionaryTypeService;
 import top.cardone.context.ApplicationContextHolder;
-import top.cardone.core.util.func.Func1;
+import top.cardone.core.util.func.Func2;
+import top.cardone.mapper.BeanMapper;
 
 import java.util.Map;
 
 /**
  * Created by cardone-home-001 on 2016/4/20.
  */
-public class ReadOneDictionaryTypeFunc implements Func1<String, Map<String, Object>> {
-	@Setter
-	private String dictionaryTypeCodeKeyName = "code";
-	@Setter
-	private String objectIdKeyName = "objectId";
+public class ReadOneDictionaryTypeFunc implements Func2<Object, Map<String, Object>, Map<String, Object>> {
+    @Override
+    public Object func(Map<String, Object> map, Map<String, Object> config) {
+        Map<String, Object> readOne = ApplicationContextHolder.getBean(BeanMapper.class).getObject(Map.class, map, config);
 
-	@Override
-	public String func(Map<String, Object> params) {
-		Map<String, Object> readOneMap = Maps.newHashMap();
+        boolean cache = MapUtils.getBooleanValue(config, "cache", true);
 
-		readOneMap.put("dictionaryTypeCode", MapUtils.getString(params, dictionaryTypeCodeKeyName));
-		readOneMap.put("object_id", MapUtils.getString(params, objectIdKeyName));
+        if (cache) {
+            return ApplicationContextHolder.getBean(DictionaryTypeService.class).readOneCache(String.class, readOne);
+        }
 
-		boolean cache = MapUtils.getBooleanValue(params, "cache", true);
-
-		if (cache) {
-			return ApplicationContextHolder.getBean(DictionaryTypeService.class).readOneCache(String.class, readOneMap);
-		}
-
-		return ApplicationContextHolder.getBean(DictionaryTypeService.class).readOne(String.class, readOneMap);
-	}
+        return ApplicationContextHolder.getBean(DictionaryTypeService.class).readOne(String.class, readOne);
+    }
 }
