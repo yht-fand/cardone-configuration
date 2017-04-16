@@ -3,27 +3,26 @@
        xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
        default-lazy-init="true">
-    <bean name="top.cardone.configuration.func.FindListDictionaryForSelectFunc"
-          class="top.cardone.configuration.func.FindListDictionaryForSelectFunc"/>
+    <bean name="dictionarySelectFunc"
+          class="top.cardone.data.func.FindListFunc">
+        <property name="serviceBeanName" value="top.cardone.configuration.service.DictionaryService"/>
+    </bean>
 
-    <alias name="top.cardone.configuration.func.FindListDictionaryForSelectFunc" alias="dictionaryForSelectFunc"/>
+    <bean name="readOneDictionaryFunc"
+          class="top.cardone.data.func.ReadOneFunc">
+        <property name="serviceBeanName" value="top.cardone.configuration.service.DictionaryService"/>
+    </bean>
 
-    <alias name="top.cardone.configuration.func.FindListDictionaryForSelectFunc" alias="findListDictionaryForSelectFunc"/>
+    <bean name="readOneDictionaryByDictionaryTypeCodesFunc"
+          class="top.cardone.configuration.func.ReadOneDictionaryByDictionaryTypeCodesFunc"/>
 
-    <alias name="top.cardone.configuration.func.FindListDictionaryForSelectFunc" alias="dictionarySelectFunc"/>
+    <bean name="dictionaryTypeSelectFunc"
+          class="top.cardone.data.func.FindListFunc">
+        <property name="serviceBeanName" value="top.cardone.configuration.service.DictionaryTypeService"/>
+    </bean>
 
-    <bean name="top.cardone.configuration.func.ReadOneDictionaryFunc"
-          class="top.cardone.configuration.func.ReadOneDictionaryFunc"/>
-
-    <alias name="top.cardone.configuration.func.ReadOneDictionaryFunc" alias="readOneDictionaryFunc"/>
-
-    <bean name="top.cardone.configuration.func.FindListDictionaryTypeForSelectFunc"
-          class="top.cardone.configuration.func.FindListDictionaryTypeForSelectFunc"/>
-
-    <alias name="top.cardone.configuration.func.FindListDictionaryTypeForSelectFunc" alias="findListDictionaryTypeForSelectFunc"/>
-
-    <bean name="top.cardone.configuration.func.ReadOneDictionaryTypeFunc"
-          class="top.cardone.configuration.func.ReadOneDictionaryTypeFunc"/>
-
-    <alias name="top.cardone.configuration.func.ReadOneDictionaryTypeFunc" alias="readOneDictionaryTypeFunc"/>
+    <bean name="readOneDictionaryTypeFunc"
+          class="top.cardone.data.func.ReadOneFunc">
+        <property name="serviceBeanName" value="top.cardone.configuration.service.DictionaryTypeService"/>
+    </bean>
 </beans>

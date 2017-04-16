@@ -10,11 +10,13 @@ import top.cardone.cache.Cache;
 import top.cardone.configuration.dao.DictionaryDao;
 import top.cardone.configuration.service.DictionaryService;
 import top.cardone.context.ApplicationContextHolder;
+import top.cardone.context.util.MapUtils;
 import top.cardone.context.util.StringUtils;
 import top.cardone.data.service.impl.PageServiceImpl;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -181,9 +183,7 @@ public class DictionaryServiceImpl extends PageServiceImpl<DictionaryDao> implem
 
         if (StringUtils.isBlank(str)) {
             //添加到缓存队列中，交由定时任务去生成数据字典
-            Set<Map<String, Object>> insertDictionarySet = ApplicationContextHolder.getBean(Cache.class).get("init-data", "insertDictionarySet", () -> {
-                return Sets.newHashSet();
-            });
+            Set<Map<String, Object>> insertDictionarySet = ApplicationContextHolder.getBean(Cache.class).get("init-data", "insertDictionarySet", () -> Sets.newHashSet());
 
             readOne.put(objectId, defaultValue);
 
@@ -248,5 +248,26 @@ public class DictionaryServiceImpl extends PageServiceImpl<DictionaryDao> implem
     @Override
     public List<Map<String, Object>> findListByDictionaryTypeCodesCache(String dictionaryTypeCodes) {
         return this.findListByDictionaryTypeCodes(dictionaryTypeCodes);
+    }
+
+    @Override
+    public Object readOneByDictionaryTypeCodes(Map<String, Object> readOne) {
+        String[] dictionaryTypeCodeArray = StringUtils.split(MapUtils.getString(readOne, "dictionaryTypeCodes"), ",");
+
+        if (dictionaryTypeCodeArray == null) {
+            return null;
+        }
+
+        for (String dictionaryTypeCode : dictionaryTypeCodeArray) {
+            readOne.put("dictionaryTypeCode", dictionaryTypeCode);
+
+            Object obj = ApplicationContextHolder.getBean(DictionaryService.class).readOne(readOne);
+
+            if (!Objects.isNull(obj)) {
+                return obj;
+            }
+        }
+
+        return null;
     }
 }
