@@ -17,7 +17,7 @@ public class ReadOneDictionaryByDictionaryTypeCodesFunc implements Func2<Object,
 
     @Override
     public Object func(Map<String, Object> map, Map<String, Object> config) {
-        Map<String, Object> readOne = ApplicationContextHolder.getBean(BeanMapper.class).getObject(Map.class, map, config);
+        Map<String, Object> readOne = top.cardone.context.util.MapUtils.newHashMap(map, config);
 
         boolean cache = MapUtils.getBooleanValue(config, "cache", true);
 
