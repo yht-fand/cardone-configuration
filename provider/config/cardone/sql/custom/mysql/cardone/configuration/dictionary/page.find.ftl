@@ -22,9 +22,9 @@ IFNULL((SELECT s.`NAME` FROM `c1_dictionary` s WHERE s.DICTIONARY_TYPE_CODE = 'u
 t.DATA_STATE_CODE
 FROM
 `c1_dictionary` t
-LEFT JOIN `c1_dictionary_type` d ON(d.`DICTIONARY_TYPE_CODE` = t.`DICTIONARY_TYPE_CODE`)
+LEFT JOIN `c1_dictionary_type` d ON (d.`DICTIONARY_TYPE_CODE` = t.`DICTIONARY_TYPE_CODE`)
 <#if cardone.StringUtils.isNotBlank(dictionaryId)>
-WHERE t.dictionary_id =:dictionaryId
+WHERE t.dictionary_id = :dictionaryId
 <#else>
 <#include "page.where.ftl">
 ORDER BY t.`DICTIONARY_TYPE_CODE`,

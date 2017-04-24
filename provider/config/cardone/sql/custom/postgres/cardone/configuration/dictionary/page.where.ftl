@@ -1,26 +1,35 @@
-WHERE 1 = 1
+<#assign prefixName = true>
 <#if cardone.StringUtils.isNotBlank(dictionaryTypeCode)>
-AND t.DICTIONARY_TYPE_CODE = :dictionaryTypeCode
+${prefixName?string('WHERE ', 'AND ')}(t.DICTIONARY_TYPE_CODE = :dictionaryTypeCode OR Exists(select 1 from c1_department e where e.DICTIONARY_TYPE_CODE = t.DICTIONARY_TYPE_CODE and :dictionaryTypeCode = ANY(string_to_array(e.parent_tree_code, ','))))
+    <#assign prefixName = false>
 <#elseif cardone.StringUtils.isNotBlank(dictionaryTypeTreeName)>
-AND (LOCATE(:dictionaryTypeTreeName, d.PARENT_CODE) OR LOCATE(:dictionaryTypeTreeName, d.PARENT_TREE_CODE) OR LOCATE(:dictionaryTypeTreeName, d.PARENT_TREE_NAME) OR LOCATE(:dictionaryTypeTreeName, t.DICTIONARY_TYPE_CODE) OR LOCATE(:dictionaryTypeTreeName, d.NAME))
+${prefixName?string('WHERE ', 'AND ')}(POSITION(:dictionaryTypeTreeName in t.DICTIONARY_TYPE_CODE) > 0 OR Exists(select 1 from C1_DICTIONARY_TYPE e where e.DICTIONARY_TYPE_CODE = t.DICTIONARY_TYPE_CODE and POSITION(:dictionaryTypeTreeName in e.NAME) > 0))
+    <#assign prefixName = false>
 </#if>
 <#if cardone.StringUtils.isNotBlank(dictionaryCode)>
-AND t.DICTIONARY_CODE = :dictionaryCode
+${prefixName?string('WHERE ', 'AND ')}t.DICTIONARY_CODE = :dictionaryCode
+    <#assign prefixName = false>
 <#elseif cardone.StringUtils.isNotBlank(name)>
-AND (LOCATE(:name, t.DICTIONARY_CODE) OR LOCATE(:name, t.NAME))
+${prefixName?string('WHERE ', 'AND ')}(POSITION(:name in t.DICTIONARY_CODE) > 0 OR POSITION(:name in t.NAME) > 0)
+    <#assign prefixName = false>
 </#if>
-<#if cardone.StringUtils.isNotBlank(startTime)>
-AND ((t.BEGIN_DATE is null OR t.BEGIN_DATE >= :startTime) OR (t.END_DATE is null OR t.END_DATE >= :startTime))
+<#if cardone.ObjectUtils.anyNotNull(startTime)>
+${prefixName?string('WHERE ', 'AND ')}((t.BEGIN_DATE is null OR t.BEGIN_DATE >= :startTime) OR (t.END_DATE is null OR t.END_DATE >= :startTime))
+    <#assign prefixName = false>
 </#if>
-<#if cardone.StringUtils.isNotBlank(endTime)>
-AND ((t.BEGIN_DATE is null OR t.BEGIN_DATE <= CONCAT(:endTime, ' 59:59:59')) OR (t.END_DATE is null OR t.END_DATE <= CONCAT(:endTime, ' 59:59:59')))
+<#if cardone.ObjectUtils.anyNotNull(endTime)>
+${prefixName?string('WHERE ', 'AND ')}((t.BEGIN_DATE is null OR t.BEGIN_DATE <= :endTime) OR (t.END_DATE is null OR t.END_DATE <= :endTime))
+    <#assign prefixName = false>
 </#if>
 <#if cardone.StringUtils.isNotBlank(flagCode)>
-AND t.FLAG_CODE = :flagCode
+${prefixName?string('WHERE ', 'AND ')}t.FLAG_CODE = :flagCode
+    <#assign prefixName = false>
 </#if>
 <#if cardone.StringUtils.isNotBlank(stateCode)>
-AND t.STATE_CODE = :stateCode
+${prefixName?string('WHERE ', 'AND ')}t.STATE_CODE = :stateCode
+    <#assign prefixName = false>
 </#if>
 <#if cardone.StringUtils.isNotBlank(dataStateCode)>
-AND t.DATA_STATE_CODE = :dataStateCode
+${prefixName?string('WHERE ', 'AND ')}t.DATA_STATE_CODE = :dataStateCode
+    <#assign prefixName = false>
 </#if>
