@@ -24,4 +24,11 @@ public class DictionaryTypeDaoImpl extends PageDaoImpl implements top.cardone.co
 
         return this.findList(findListByKeywordSqlFilePath, findList);
     }
+
+    @Override
+    public List<Map<String, Object>> findListForTree(Map<String, Object> findList) {
+        String findListForTreeSqlFilePath = this.getSqlFilePath("findListForTree");
+
+        return this.findList(findListForTreeSqlFilePath, findList);
+    }
 }

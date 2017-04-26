@@ -146,4 +146,9 @@ public class DictionaryTypeServiceImpl extends PageServiceImpl<DictionaryTypeDao
     public List<Map<String, Object>> findListByKeyword(Map<String, Object> findList) {
         return this.dao.findListByKeyword(findList);
     }
+
+    @Override
+    public List<Map<String, Object>> findListForTree(Map<String, Object> findList) {
+        return this.dao.findListForTree(findList);
+    }
 }
