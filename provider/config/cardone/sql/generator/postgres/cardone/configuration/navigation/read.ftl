@@ -1,5 +1,8 @@
 SELECT
 <#switch (object_id!)>
+<#case "batchNo">
+batch_no AS batchNo
+<#break>
 <#case "beginDate">
 begin_date AS beginDate
 <#break>
@@ -48,8 +51,8 @@ navigation_code AS navigationCode
 <#case "navigationId">
 navigation_id AS navigationId
 <#break>
-<#case "order">
-order_ AS order
+<#case "orderBy">
+order_by_ AS orderBy
 <#break>
 <#case "orgCode">
 org_code AS orgCode
@@ -62,6 +65,9 @@ parent_tree_code AS parentTreeCode
 <#break>
 <#case "parentTreeName">
 parent_tree_name AS parentTreeName
+<#break>
+<#case "personalCode">
+personal_code AS personalCode
 <#break>
 <#case "siteCode">
 site_code AS siteCode
@@ -85,7 +91,7 @@ url AS url
 version_ AS version
 <#break>
 <#default>
-COUNT(1) AS COUNT_
+COUNT(*) AS COUNT_
 </#switch>
 FROM c1_navigation
 <#include "where.ftl">

@@ -48,7 +48,7 @@ LAST_MODIFIED_DATE AS lastModifiedDate
 <#case "name">
 NAME AS name
 <#break>
-<#case "order">
+<#case "orderBy">
 ORDER_ AS order
 <#break>
 <#case "orgCode">

@@ -51,7 +51,7 @@ OBJECT_ID AS objectId
 <#case "objectTypeCode">
 OBJECT_TYPE_CODE AS objectTypeCode
 <#break>
-<#case "order">
+<#case "orderBy">
 ORDER_ AS order
 <#break>
 <#case "orgCode">

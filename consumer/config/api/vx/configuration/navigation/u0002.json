@@ -1,5 +1,6 @@
 {
   "input": {
+    "batchNo": "batchNo",
     "beginDate": "beginDate",
     "createdByCode": "createdByCode",
     "createdDate": "createdDate",
@@ -16,11 +17,12 @@
     "name": "name",
     "navigationCode": "navigationCode",
     "navigationId": "navigationId",
-    "order": "order",
+    "orderBy": "orderBy",
     "orgCode": "orgCode",
     "parentCode": "parentCode",
     "parentTreeCode": "parentTreeCode",
     "parentTreeName": "parentTreeName",
+    "personalCode": "personalCode",
     "siteCode": "siteCode",
     "stateCode": "stateCode",
     "systemInfoCode": "systemInfoCode",

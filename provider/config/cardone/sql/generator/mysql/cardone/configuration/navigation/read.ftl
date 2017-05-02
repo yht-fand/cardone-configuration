@@ -48,7 +48,7 @@ NAVIGATION_CODE AS navigationCode
 <#case "navigationId">
 NAVIGATION_ID AS navigationId
 <#break>
-<#case "order">
+<#case "orderBy">
 ORDER_ AS order
 <#break>
 <#case "orgCode">

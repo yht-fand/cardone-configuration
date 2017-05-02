@@ -1,5 +1,6 @@
 {
   "input": {
+    "batchNo": "batchNo",
     "beginDate": "beginDate",
     "content": "content",
     "createdByCode": "createdByCode",
@@ -14,8 +15,9 @@
     "lastModifiedByCode": "lastModifiedByCode",
     "lastModifiedDate": "lastModifiedDate",
     "name": "name",
-    "order": "order",
+    "orderBy": "orderBy",
     "orgCode": "orgCode",
+    "personalCode": "personalCode",
     "siteCode": "siteCode",
     "siteId": "siteId",
     "stateCode": "stateCode",
@@ -49,6 +51,7 @@
     }
   },
   "output": {
+    "batchNo": "batch_no",
     "beginDate": "begin_date",
     "content": "content",
     "createdByCode": "created_by_code",
@@ -63,8 +66,9 @@
     "lastModifiedByCode": "last_modified_by_code",
     "lastModifiedDate": "last_modified_date",
     "name": "name",
-    "order": "order_",
+    "orderBy": "order_by_",
     "orgCode": "org_code",
+    "personalCode": "personal_code",
     "siteCode": "site_code",
     "siteId": "site_id",
     "stateCode": "state_code",

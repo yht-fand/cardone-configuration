@@ -3,14 +3,14 @@
     "navigationCode": "device",
     "parentCode": "",
     "name": "设备管理",
-    "order": 0,
+    "orderBy": 0,
     "flagCode": "init"
   },
   {
     "navigationCode": "device/serviceState",
     "parentCode": "device",
     "name": "服务器状态",
-    "order": 0,
+    "orderBy": 0,
     "flagCode": "init"
   },
   {
@@ -18,7 +18,7 @@
     "parentCode": "device/serviceState",
     "name": "服务器概述信息",
     "url": "device/serviceState/serviceInfo",
-    "order": 0,
+    "orderBy": 0,
     "flagCode": "init"
   },
   {
@@ -26,7 +26,7 @@
     "parentCode": "device/serviceState",
     "name": "内存信息",
     "url": "device/serviceState/memoryInfo",
-    "order": 0,
+    "orderBy": 0,
     "flagCode": "init"
   },
   {
@@ -34,7 +34,7 @@
     "parentCode": "device/serviceState",
     "name": "CPU信息",
     "url": "device/serviceState/CPUInfo",
-    "order": 0,
+    "orderBy": 0,
     "flagCode": "init"
   },
   {
@@ -42,7 +42,7 @@
     "parentCode": "device/serviceState",
     "name": "硬盘信息",
     "url": "device/serviceState/hardDiskInfo",
-    "order": 0,
+    "orderBy": 0,
     "flagCode": "init"
   },
   {
@@ -50,7 +50,7 @@
     "parentCode": "device/serviceState",
     "name": "网络信息",
     "url": "device/serviceState/networkInfo",
-    "order": 0,
+    "orderBy": 0,
     "flagCode": "init"
   },
   {
@@ -58,7 +58,7 @@
     "parentCode": "device",
     "name": "文件服务器管理",
     "url": "device/fileServiceManage/index",
-    "order": 0,
+    "orderBy": 0,
     "flagCode": "init"
   },
   {
@@ -66,7 +66,7 @@
     "parentCode": "device",
     "name": "采集站管理",
     "url": "device/collectionStation/index",
-    "order": 0,
+    "orderBy": 0,
     "flagCode": "init"
   },
   {
@@ -74,7 +74,7 @@
     "parentCode": "device",
     "name": "升级包管理",
     "url": "device//index",
-    "order": 0,
+    "orderBy": 0,
     "flagCode": "init"
   },
   {
@@ -82,13 +82,13 @@
     "parentCode": "device",
     "name": "记录仪管理",
     "url": "device/recorder/index",
-    "order": 0,
+    "orderBy": 0,
     "flagCode": "init"
   },
   {
     "navigationCode": "data",
     "name": "数据",
-    "order": 0,
+    "orderBy": 0,
     "flagCode": "init"
   },
   {
@@ -96,13 +96,13 @@
     "parentCode": "data",
     "name": "媒体管理",
     "url": "data/mediaData/index",
-    "order": 0,
+    "orderBy": 0,
     "flagCode": "init"
   },
   {
     "navigationCode": "law",
     "name": "案件管理",
-    "order": 0,
+    "orderBy": 0,
     "flagCode": "init"
   },
   {
@@ -110,7 +110,7 @@
     "parentCode": "law",
     "name": "案件信息",
     "url": "law/caseInfo/index",
-    "order": 0,
+    "orderBy": 0,
     "flagCode": "init"
   },
   {
@@ -118,13 +118,13 @@
     "parentCode": "law",
     "name": "案件信息与媒体数据",
     "url": "law/caseInfoMediaData/index",
-    "order": 0,
+    "orderBy": 0,
     "flagCode": "init"
   },
   {
     "navigationCode": "log",
     "name": "日志",
-    "order": 0,
+    "orderBy": 0,
     "flagCode": "init"
   }
 ]

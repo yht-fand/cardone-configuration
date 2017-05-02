@@ -1,5 +1,9 @@
 SELECT
 <#assign prefixName = ' '>
+<#if (select_batchNo??)>
+${prefixName} batch_no
+<#assign prefixName = ','>
+</#if>
 <#if (select_beginDate??)>
 ${prefixName} begin_date
 <#assign prefixName = ','>
@@ -56,8 +60,8 @@ ${prefixName} last_modified_date
 ${prefixName} name
 <#assign prefixName = ','>
 </#if>
-<#if (select_order??)>
-${prefixName} order_
+<#if (select_orderBy??)>
+${prefixName} order_by_
 <#assign prefixName = ','>
 </#if>
 <#if (select_orgCode??)>
@@ -74,6 +78,10 @@ ${prefixName} parent_tree_code
 </#if>
 <#if (select_parentTreeName??)>
 ${prefixName} parent_tree_name
+<#assign prefixName = ','>
+</#if>
+<#if (select_personalCode??)>
+${prefixName} personal_code
 <#assign prefixName = ','>
 </#if>
 <#if (select_remark??)>
@@ -102,6 +110,10 @@ ${prefixName} version_
 FROM c1_dictionary_type
 <#include "where.ftl">
 <#assign prefixName = 'ORDER BY'>
+<#if (order_by_batchNo??)>
+${prefixName} batch_no ${order_by_batchNo_value!}
+<#assign prefixName = ','>
+</#if>
 <#if (order_by_beginDate??)>
 ${prefixName} begin_date ${order_by_beginDate_value!}
 <#assign prefixName = ','>
@@ -158,8 +170,8 @@ ${prefixName} last_modified_date ${order_by_lastModifiedDate_value!}
 ${prefixName} name ${order_by_name_value!}
 <#assign prefixName = ','>
 </#if>
-<#if (order_by_order??)>
-${prefixName} order_ ${order_by_order_value!}
+<#if (order_by_orderBy??)>
+${prefixName} order_by_ ${order_by_orderBy_value!}
 <#assign prefixName = ','>
 </#if>
 <#if (order_by_orgCode??)>
@@ -176,6 +188,10 @@ ${prefixName} parent_tree_code ${order_by_parentTreeCode_value!}
 </#if>
 <#if (order_by_parentTreeName??)>
 ${prefixName} parent_tree_name ${order_by_parentTreeName_value!}
+<#assign prefixName = ','>
+</#if>
+<#if (order_by_personalCode??)>
+${prefixName} personal_code ${order_by_personalCode_value!}
 <#assign prefixName = ','>
 </#if>
 <#if (order_by_remark??)>
