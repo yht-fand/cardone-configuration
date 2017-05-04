@@ -26,6 +26,8 @@
         <property name="serviceBeanName" value="top.cardone.configuration.service.DictionaryTypeService"/>
     </bean>
 
+    <bean name="readOneErrorInfoContentFunc" class="top.cardone.configuration.func.ReadOneErrorInfoContentFunc"/>
+
     <bean id="generateDictionaryTypeTreeFunc"
           class="top.cardone.data.func.GenerateTreeFunc">
         <property name="codePutKey" value="dictionaryTypeCode"/>
