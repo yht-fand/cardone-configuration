@@ -20,6 +20,7 @@ public class ReadOneErrorInfoContentFunc implements Func2<String, String, String
         Map<String, Object> readOne = Maps.newHashMap();
 
         readOne.put("errorInfoCode", errorInfoCode);
+        readOne.put("typeCode", LocaleContextHolder.getLocale().toString());
         readOne.put("object_id", "content");
 
         String content = ApplicationContextHolder.getBean(ErrorInfoService.class).readOneCache(String.class, readOne);
