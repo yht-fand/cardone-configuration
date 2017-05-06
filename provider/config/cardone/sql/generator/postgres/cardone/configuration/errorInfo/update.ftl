@@ -100,6 +100,10 @@ ${prefixName} system_info_code = :update_systemInfoCode_value
 ${prefixName} type_code = :update_typeCode_value
 <#assign prefixName = ','>
 </#if>
+<#if (update_url??)>
+${prefixName} url = :update_url_value
+<#assign prefixName = ','>
+</#if>
 <#if (update_version??)>
 ${prefixName} version_ = :update_version_value
 <#assign prefixName = ','>

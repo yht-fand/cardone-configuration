@@ -12,7 +12,7 @@
                     <map>
                         <entry key="sqlFileRoot" value="/cardone/configuration/errorInfo/"/>
                         <entry key="pks" value="errorInfoId"/>
-                        <entry key="codes" value="typeCode,errorInfoCode"/>
+                        <entry key="codes" value="url,typeCode,errorInfoCode"/>
                     </map>
                 </entry>
                 <entry key="insert">
@@ -31,9 +31,9 @@
             </map>
         </property>
     </bean>
-	
+
     <bean id="top.cardone.configuration.service.ErrorInfoService"
           class="top.cardone.configuration.service.impl.ErrorInfoServiceImpl">
-		<property name="dao" ref="top.cardone.configuration.dao.ErrorInfoDao"/>
-	</bean>
+        <property name="dao" ref="top.cardone.configuration.dao.ErrorInfoDao"/>
+    </bean>
 </beans>

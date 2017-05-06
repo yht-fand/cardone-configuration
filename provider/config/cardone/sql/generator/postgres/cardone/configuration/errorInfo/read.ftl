@@ -75,6 +75,9 @@ system_info_code AS systemInfoCode
 <#case "typeCode">
 type_code AS typeCode
 <#break>
+<#case "url">
+url AS url
+<#break>
 <#case "version">
 version_ AS version
 <#break>

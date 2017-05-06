@@ -199,6 +199,14 @@ ${prefixName} type_code IS NULL
 </#if>
 <#assign prefixName = 'AND'>
 </#if>
+<#if (where_and_eq_url??)>
+<#if (where_and_eq_url_value??)>
+${prefixName} url = :where_and_eq_url_value
+<#else>
+${prefixName} url IS NULL
+</#if>
+<#assign prefixName = 'AND'>
+</#if>
 <#if (where_and_eq_version??)>
 <#if (where_and_eq_version_value??)>
 ${prefixName} version_ = :where_and_eq_version_value

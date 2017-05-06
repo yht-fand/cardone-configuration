@@ -102,6 +102,10 @@ ${prefixName} system_info_code
 ${prefixName} type_code
 <#assign prefixName = ','>
 </#if>
+<#if (insert_url??) && (insert_url_value??)>
+${prefixName} url
+<#assign prefixName = ','>
+</#if>
 <#if (insert_version??) && (insert_version_value??)>
 ${prefixName} version_
 <#assign prefixName = ','>
@@ -207,6 +211,10 @@ ${prefixName} :insert_systemInfoCode_value
 </#if>
 <#if (insert_typeCode??) && (insert_typeCode_value??)>
 ${prefixName} :insert_typeCode_value
+<#assign prefixName = ','>
+</#if>
+<#if (insert_url??) && (insert_url_value??)>
+${prefixName} :insert_url_value
 <#assign prefixName = ','>
 </#if>
 <#if (insert_version??) && (insert_version_value??)>
@@ -412,6 +420,14 @@ ${prefixName} E.system_info_code IS NULL
 ${prefixName} E.type_code = :where_and_eq_typeCode_value
 <#else>
 ${prefixName} E.type_code IS NULL
+</#if>
+<#assign prefixName = 'AND'>
+</#if>
+<#if (where_and_eq_url??)>
+<#if (where_and_eq_url_value??)>
+${prefixName} E.url = :where_and_eq_url_value
+<#else>
+${prefixName} E.url IS NULL
 </#if>
 <#assign prefixName = 'AND'>
 </#if>

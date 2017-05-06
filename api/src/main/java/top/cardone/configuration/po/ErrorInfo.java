@@ -186,6 +186,13 @@ public class ErrorInfo implements java.io.Serializable {
     protected String typeCode;
 
     /**
+     * url
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String url;
+
+    /**
      * 版本
      */
     @lombok.Getter

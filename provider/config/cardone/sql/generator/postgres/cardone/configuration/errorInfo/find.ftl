@@ -100,6 +100,10 @@ ${prefixName} system_info_code
 ${prefixName} type_code
 <#assign prefixName = ','>
 </#if>
+<#if (select_url??)>
+${prefixName} url
+<#assign prefixName = ','>
+</#if>
 <#if (select_version??)>
 ${prefixName} version_
 <#assign prefixName = ','>
@@ -208,6 +212,10 @@ ${prefixName} system_info_code ${order_by_systemInfoCode_value!}
 </#if>
 <#if (order_by_typeCode??)>
 ${prefixName} type_code ${order_by_typeCode_value!}
+<#assign prefixName = ','>
+</#if>
+<#if (order_by_url??)>
+${prefixName} url ${order_by_url_value!}
 <#assign prefixName = ','>
 </#if>
 <#if (order_by_version??)>

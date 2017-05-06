@@ -1,19 +1,19 @@
 [
   {
-    "typeCode": "0",
-    "errorInfoCode": "00000000",
+    "typeCode": "zh_CN",
+    "errorInfoCode": "system error",
     "content": "系统异常，请联系管理员！",
     "flagCode": "init"
   },
   {
-    "typeCode": "1",
-    "errorInfoCode": "10000001",
+    "typeCode": "zh_CN",
+    "errorInfoCode": "not logged",
     "content": "未登录",
     "flagCode": "init"
   },
   {
-    "typeCode": "1",
-    "errorInfoCode": "10000002",
+    "typeCode": "zh_CN",
+    "errorInfoCode": "no permission",
     "content": "没有权限",
     "flagCode": "init"
   }

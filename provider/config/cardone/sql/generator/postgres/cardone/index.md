@@ -193,6 +193,7 @@ site_code|YES|String(255)|站点代码
 state_code|YES|String(255)|状态代码(数据字典)
 system_info_code|YES|String(255)|系统信息代码
 type_code|YES|String(255)|类别代码(数据字典)
+url|YES|String(255)|url
 version_|YES|Integer(10)|版本
 
 ##### 系统信息（c1_system_info）

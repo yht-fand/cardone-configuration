@@ -27,9 +27,15 @@
             <groupId>top.cardone</groupId>
             <artifactId>cardone-cache-api</artifactId>
         </dependency>
+
         <dependency>
             <groupId>top.cardone</groupId>
             <artifactId>cardone-mapper-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>top.cardone</groupId>
+            <artifactId>cardone-web-api</artifactId>
         </dependency>
     </dependencies>
 </project>

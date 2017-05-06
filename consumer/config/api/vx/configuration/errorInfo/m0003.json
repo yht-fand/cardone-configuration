@@ -25,6 +25,7 @@
     "stateCode": "stateCode",
     "systemInfoCode": "systemInfoCode",
     "typeCode": "typeCode",
+    "url": "url",
     "version": "version"
   },
   "validation": {
@@ -79,6 +80,7 @@
     "stateCode": "state_code",
     "systemInfoCode": "system_info_code",
     "typeCode": "type_code",
+    "url": "url",
     "version": "version_"
   }
 }

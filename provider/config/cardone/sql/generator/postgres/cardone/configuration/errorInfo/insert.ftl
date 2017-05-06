@@ -101,6 +101,10 @@ ${prefixName} system_info_code
 ${prefixName} type_code
 <#assign prefixName = ','>
 </#if>
+<#if (insert_url??) && (insert_url_value??)>
+${prefixName} url
+<#assign prefixName = ','>
+</#if>
 <#if (insert_version??) && (insert_version_value??)>
 ${prefixName} version_
 <#assign prefixName = ','>
@@ -206,6 +210,10 @@ ${prefixName} :insert_systemInfoCode_value
 </#if>
 <#if (insert_typeCode??) && (insert_typeCode_value??)>
 ${prefixName} :insert_typeCode_value
+<#assign prefixName = ','>
+</#if>
+<#if (insert_url??) && (insert_url_value??)>
+${prefixName} :insert_url_value
 <#assign prefixName = ','>
 </#if>
 <#if (insert_version??) && (insert_version_value??)>
