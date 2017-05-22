@@ -49,7 +49,7 @@ NAVIGATION_CODE AS navigationCode
 NAVIGATION_ID AS navigationId
 <#break>
 <#case "orderBy">
-ORDER_ AS order
+ORDER_BY_ AS order
 <#break>
 <#case "orgCode">
 ORG_CODE AS orgCode

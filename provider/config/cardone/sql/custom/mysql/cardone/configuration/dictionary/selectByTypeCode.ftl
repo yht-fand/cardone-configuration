@@ -6,4 +6,4 @@ where 1=1
 <#if cardone.StringUtils.isNotBlank(dictionaryTypeCode)>
 AND c1_d.`DICTIONARY_TYPE_CODE` = :dictionaryTypeCode
 </#if>
-ORDER BY ORDER_
+ORDER BY order_by_

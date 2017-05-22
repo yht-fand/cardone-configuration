@@ -1,9 +1,9 @@
 SELECT
-c1_d.DICTIONARY_CODE,
-c1_d.NAME
+c1_d.*
 FROM c1_dictionary c1_d
-where 1=1
+<#assign prefixName = true>
 <#if cardone.StringUtils.isNotBlank(dictionaryTypeCode)>
-AND c1_d.DICTIONARY_TYPE_CODE = :dictionaryTypeCode
+${prefixName?string('WHERE ', 'AND ')}c1_d.DICTIONARY_TYPE_CODE = :dictionaryTypeCode
+<#assign prefixName = false>
 </#if>
-ORDER BY ORDER_
+ORDER BY order_by_

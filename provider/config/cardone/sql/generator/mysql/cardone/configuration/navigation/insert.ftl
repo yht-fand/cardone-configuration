@@ -65,8 +65,8 @@ ${prefixName} `NAVIGATION_CODE`
 ${prefixName} `NAVIGATION_ID`
 <#assign prefixName = ','>
 </#if>
-<#if (insert_order??) && (insert_order_value??)>
-${prefixName} `ORDER_`
+<#if (insert_order??) && (insert_order_by_value??)>
+${prefixName} `ORDER_BY_`
 <#assign prefixName = ','>
 </#if>
 <#if (insert_orgCode??) && (insert_orgCode_value??)>
@@ -180,8 +180,8 @@ ${prefixName} :insert_navigationCode_value
 ${prefixName} :insert_navigationId_value
 <#assign prefixName = ','>
 </#if>
-<#if (insert_order??) && (insert_order_value??)>
-${prefixName} :insert_order_value
+<#if (insert_order??) && (insert_order_by_value??)>
+${prefixName} :insert_order_by_value
 <#assign prefixName = ','>
 </#if>
 <#if (insert_orgCode??) && (insert_orgCode_value??)>

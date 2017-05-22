@@ -52,7 +52,7 @@ OBJECT_ID AS objectId
 OBJECT_TYPE_CODE AS objectTypeCode
 <#break>
 <#case "orderBy">
-ORDER_ AS order
+ORDER_BY_ AS order
 <#break>
 <#case "orgCode">
 ORG_CODE AS orgCode
