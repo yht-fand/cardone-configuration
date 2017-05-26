@@ -186,7 +186,7 @@ public class ErrorInfo implements java.io.Serializable {
     protected String typeCode;
 
     /**
-     * url
+     * URL
      */
     @lombok.Getter
     @lombok.Setter
