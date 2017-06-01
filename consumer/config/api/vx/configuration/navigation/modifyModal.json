@@ -1,0 +1,52 @@
+{
+  "input": {
+    "navigationId": "navigationId"
+  },
+  "validation": {
+    "rules": {
+      "navigationId": {
+        "required": true
+      }
+    },
+    "messages": {
+      "navigationId": {
+        "required": {
+          "code": "navigationId required",
+          "defaultMessage": "导航标识必填"
+        }
+      }
+    }
+  },
+  "output": {
+    "batchNo": "batch_no",
+    "beginDate": "begin_date",
+    "createdByCode": "created_by_code",
+    "createdDate": "created_date",
+    "dataOption": "data_option",
+    "dataStateCode": "data_state_code",
+    "departmentCode": "department_code",
+    "endDate": "end_date",
+    "flagCode": "flag_code",
+    "flagObjectCode": "flag_object_code",
+    "iconStyle": "icon_style",
+    "jsonData": "json_data",
+    "lastModifiedByCode": "last_modified_by_code",
+    "lastModifiedDate": "last_modified_date",
+    "name": "name",
+    "navigationCode": "navigation_code",
+    "navigationId": "navigation_id",
+    "orderBy": "order_by_",
+    "orgCode": "org_code",
+    "parentCode": "parent_code",
+    "parentTreeCode": "parent_tree_code",
+    "parentTreeName": "parent_tree_name",
+    "personalCode": "personal_code",
+    "siteCode": "site_code",
+    "stateCode": "state_code",
+    "systemInfoCode": "system_info_code",
+    "target": "target",
+    "typeCode": "type_code",
+    "url": "url",
+    "version": "version_"
+  }
+}

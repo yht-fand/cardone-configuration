@@ -10,7 +10,10 @@
     },
     "messages": {
       "dictionaryTypeIds": {
-        "required": "字典类别标识集合不能为空值!"
+        "required": {
+          "code": "dictionaryTypeIds required",
+          "defaultMessage": "字典类别标识集合必填"
+        }
       }
     }
   }

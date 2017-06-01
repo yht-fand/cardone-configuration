@@ -10,7 +10,10 @@
     },
     "messages": {
       "navigationIds": {
-        "required": "导航标识集合不能为空值!"
+        "required": {
+          "code": "navigationIds required",
+          "defaultMessage": "导航标识集合必填"
+        }
       }
     }
   }

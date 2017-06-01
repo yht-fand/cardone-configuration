@@ -46,14 +46,32 @@
     },
     "messages": {
       "navigationCode": {
-        "required": "必填",
-        "minlength": "需3个字符以上",
-        "maxlength": "需小于255个字符"
+        "required": {
+          "code": "navigationCode required",
+          "defaultMessage": "导航编号必填"
+        },
+        "minlength": {
+          "code": "navigationCode minlength",
+          "defaultMessage": "导航编号需{0}个字符以上"
+        },
+        "maxlength": {
+          "code": "navigationCode maxlength",
+          "defaultMessage": "导航编号需小于{0}个字符"
+        }
       },
       "name": {
-        "required": "名称不能为空值!",
-        "minlength": "需3个字符以上",
-        "maxlength": "需小于255个字符"
+        "required": {
+          "code": "name required",
+          "defaultMessage": "导航名称必填"
+        },
+        "minlength": {
+          "code": "name minlength",
+          "defaultMessage": "导航名称需{0}个字符以上"
+        },
+        "maxlength": {
+          "code": "name maxlength",
+          "defaultMessage": "导航名称需小于{0}个字符"
+        }
       }
     }
   },

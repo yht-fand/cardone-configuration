@@ -10,7 +10,10 @@
     },
     "messages": {
       "i18nInfoIds": {
-        "required": "国际化信息标识集合不能为空值!"
+        "required": {
+          "code": "i18nInfoIds required",
+          "defaultMessage": "国际化信息标识集合必填"
+        }
       }
     }
   }

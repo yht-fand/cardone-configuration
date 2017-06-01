@@ -10,7 +10,10 @@
     },
     "messages": {
       "systemInfoIds": {
-        "required": "系统信息标识集合不能为空值!"
+        "required": {
+          "code": "systemInfoIds required",
+          "defaultMessage": "系统信息标识集合必填"
+        }
       }
     }
   }

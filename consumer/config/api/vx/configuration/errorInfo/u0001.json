@@ -41,12 +41,24 @@
     },
     "messages": {
       "errorInfoId": {
-        "required": "必填"
+        "required": {
+          "code": "errorInfoId required",
+          "defaultMessage": "错误信息标识必填"
+        }
       },
       "name": {
-        "required": "名称不能为空值!",
-        "minlength": "需3个字符以上",
-        "maxlength": "需小于255个字符"
+        "required": {
+          "code": "name required",
+          "defaultMessage": "错误信息名称必填"
+        },
+        "minlength": {
+          "code": "name minlength",
+          "defaultMessage": "错误信息名称需{0}个字符以上"
+        },
+        "maxlength": {
+          "code": "name maxlength",
+          "defaultMessage": "错误信息名称需小于{0}个字符"
+        }
       }
     }
   }

@@ -39,14 +39,32 @@
     },
     "messages": {
       "i18nInfoCode": {
-        "required": "必填",
-        "minlength": "需3个字符以上",
-        "maxlength": "需小于255个字符"
+        "required": {
+          "code": "i18nInfoCode required",
+          "defaultMessage": "国际化信息编号必填"
+        },
+        "minlength": {
+          "code": "i18nInfoCode minlength",
+          "defaultMessage": "国际化信息编号需{0}个字符以上"
+        },
+        "maxlength": {
+          "code": "i18nInfoCode maxlength",
+          "defaultMessage": "国际化信息编号需小于{0}个字符"
+        }
       },
       "name": {
-        "required": "名称不能为空值!",
-        "minlength": "需3个字符以上",
-        "maxlength": "需小于255个字符"
+        "required": {
+          "code": "name required",
+          "defaultMessage": "国际化信息名称必填"
+        },
+        "minlength": {
+          "code": "name minlength",
+          "defaultMessage": "国际化信息名称需{0}个字符以上"
+        },
+        "maxlength": {
+          "code": "name maxlength",
+          "defaultMessage": "国际化信息名称需小于{0}个字符"
+        }
       }
     }
   }

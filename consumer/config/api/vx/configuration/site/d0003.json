@@ -10,7 +10,10 @@
     },
     "messages": {
       "siteIds": {
-        "required": "站点标识集合不能为空值!"
+        "required": {
+          "code": "siteIds required",
+          "defaultMessage": "站点标识集合必填"
+        }
       }
     }
   }
