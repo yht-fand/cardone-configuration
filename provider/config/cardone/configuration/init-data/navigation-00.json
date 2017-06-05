@@ -4,7 +4,8 @@
     "parentCode": "",
     "name": "日志",
     "orderBy": 3000,
-    "flagCode": "init"
+    "flagCode": "init",
+    "dataStateCode": "0"
   },
   {
     "navigationCode": "log/operateLog/index",
@@ -12,14 +13,16 @@
     "name": "操作日志",
     "url": "log/operateLog/index",
     "orderBy": 3001,
-    "flagCode": "init"
+    "flagCode": "init",
+    "dataStateCode": "0"
   },
   {
     "navigationCode": "usercenter",
     "parentCode": "",
     "name": "用户中心",
     "orderBy": 1100,
-    "flagCode": "init"
+    "flagCode": "init",
+    "dataStateCode": "1"
   },
   {
     "navigationCode": "usercenter/province/index",
@@ -27,7 +30,8 @@
     "name": "省份",
     "url": "usercenter/province/index",
     "orderBy": 1101,
-    "flagCode": "init"
+    "flagCode": "init",
+    "dataStateCode": "0"
   },
   {
     "navigationCode": "usercenter/city/index",
@@ -35,7 +39,8 @@
     "name": "城市",
     "url": "usercenter/city/index",
     "orderBy": 1102,
-    "flagCode": "init"
+    "flagCode": "init",
+    "dataStateCode": "0"
   },
   {
     "navigationCode": "usercenter/area/index",
@@ -43,7 +48,8 @@
     "name": "地区",
     "url": "usercenter/area/index",
     "orderBy": 1103,
-    "flagCode": "init"
+    "flagCode": "init",
+    "dataStateCode": "0"
   },
   {
     "navigationCode": "usercenter/region/index",
@@ -51,7 +57,8 @@
     "name": "区域",
     "url": "usercenter/region/index",
     "orderBy": 1104,
-    "flagCode": "init"
+    "flagCode": "init",
+    "dataStateCode": "0"
   },
   {
     "navigationCode": "usercenter/org/index",
@@ -59,7 +66,8 @@
     "name": "组织",
     "url": "usercenter/org/index",
     "orderBy": 1105,
-    "flagCode": "init"
+    "flagCode": "init",
+    "dataStateCode": "0"
   },
   {
     "navigationCode": "usercenter/department/index",
@@ -67,7 +75,8 @@
     "name": "部门",
     "url": "usercenter/department/index",
     "orderBy": 1106,
-    "flagCode": "init"
+    "flagCode": "init",
+    "dataStateCode": "1"
   },
   {
     "navigationCode": "usercenter/user/index",
@@ -75,7 +84,8 @@
     "name": "用户",
     "url": "usercenter/user/index",
     "orderBy": 1107,
-    "flagCode": "init"
+    "flagCode": "init",
+    "dataStateCode": "1"
   },
   {
     "navigationCode": "usercenter/openUser/index",
@@ -83,7 +93,8 @@
     "name": "开放用户",
     "url": "usercenter/openUser/index",
     "orderBy": 1108,
-    "flagCode": "init"
+    "flagCode": "init",
+    "dataStateCode": "0"
   },
   {
     "navigationCode": "usercenter/userOrg/index",
@@ -91,7 +102,8 @@
     "name": "用户与组织",
     "url": "usercenter/userOrg/index",
     "orderBy": 1109,
-    "flagCode": "init"
+    "flagCode": "init",
+    "dataStateCode": "0"
   },
   {
     "navigationCode": "usercenter/userDepartment/index",
@@ -99,7 +111,8 @@
     "name": "用户与部门",
     "url": "usercenter/userDepartment/index",
     "orderBy": 1110,
-    "flagCode": "init"
+    "flagCode": "init",
+    "dataStateCode": "0"
   },
   {
     "navigationCode": "usercenter/userAddress/index",
@@ -107,14 +120,16 @@
     "name": "用户与地址",
     "url": "usercenter/userAddress/index",
     "orderBy": 1111,
-    "flagCode": "init"
+    "flagCode": "init",
+    "dataStateCode": "0"
   },
   {
     "navigationCode": "configuration",
     "parentCode": "",
     "name": "配置",
     "orderBy": 1200,
-    "flagCode": "init"
+    "flagCode": "init",
+    "dataStateCode": "1"
   },
   {
     "navigationCode": "configuration/dictionaryType/index",
@@ -122,7 +137,8 @@
     "name": "字典类别",
     "url": "configuration/dictionaryType/index",
     "orderBy": 1201,
-    "flagCode": "init"
+    "flagCode": "init",
+    "dataStateCode": "1"
   },
   {
     "navigationCode": "configuration/dictionary/index",
@@ -130,7 +146,8 @@
     "name": "字典",
     "url": "configuration/dictionary/index",
     "orderBy": 1202,
-    "flagCode": "init"
+    "flagCode": "init",
+    "dataStateCode": "1"
   },
   {
     "navigationCode": "configuration/dictionaryItem/index",
@@ -138,7 +155,8 @@
     "name": "字典项",
     "url": "configuration/dictionaryItem/index",
     "orderBy": 1203,
-    "flagCode": "init"
+    "flagCode": "init",
+    "dataStateCode": "0"
   },
   {
     "navigationCode": "configuration/errorInfo/index",
@@ -146,7 +164,8 @@
     "name": "错误信息",
     "url": "configuration/errorInfo/index",
     "orderBy": 1204,
-    "flagCode": "init"
+    "flagCode": "init",
+    "dataStateCode": "0"
   },
   {
     "navigationCode": "configuration/i18nInfo/index",
@@ -154,7 +173,8 @@
     "name": "国际化信息",
     "url": "configuration/i18nInfo/index",
     "orderBy": 1205,
-    "flagCode": "init"
+    "flagCode": "init",
+    "dataStateCode": "0"
   },
   {
     "navigationCode": "configuration/systemInfo/index",
@@ -162,7 +182,8 @@
     "name": "系统信息",
     "url": "configuration/systemInfo/index",
     "orderBy": 1206,
-    "flagCode": "init"
+    "flagCode": "init",
+    "dataStateCode": "0"
   },
   {
     "navigationCode": "configuration/site/index",
@@ -170,7 +191,8 @@
     "name": "站点",
     "url": "configuration/site/index",
     "orderBy": 1207,
-    "flagCode": "init"
+    "flagCode": "init",
+    "dataStateCode": "0"
   },
   {
     "navigationCode": "configuration/navigation/index",
@@ -178,14 +200,16 @@
     "name": "导航",
     "url": "configuration/navigation/index",
     "orderBy": 1208,
-    "flagCode": "init"
+    "flagCode": "init",
+    "dataStateCode": "0"
   },
   {
     "navigationCode": "workflow",
     "parentCode": "",
     "name": "工作流",
     "orderBy": 1900,
-    "flagCode": "init"
+    "flagCode": "init",
+    "dataStateCode": "0"
   },
   {
     "navigationCode": "workflow/wfVariable/index",
@@ -193,7 +217,8 @@
     "name": "工作流变量",
     "url": "workflow/wfVariable/index",
     "orderBy": 1901,
-    "flagCode": "init"
+    "flagCode": "init",
+    "dataStateCode": "0"
   },
   {
     "navigationCode": "workflow/wfVariableUser/index",
@@ -201,14 +226,16 @@
     "name": "工作流变量与用户",
     "url": "workflow/wfVariableUser/index",
     "orderBy": 1902,
-    "flagCode": "init"
+    "flagCode": "init",
+    "dataStateCode": "0"
   },
   {
     "navigationCode": "authority",
     "parentCode": "",
     "name": "权限",
     "orderBy": 1300,
-    "flagCode": "init"
+    "flagCode": "init",
+    "dataStateCode": "1"
   },
   {
     "navigationCode": "authority/fastSettings",
@@ -216,7 +243,8 @@
     "name": "快速配置",
     "url": "authority/fastSettings",
     "orderBy": 1301,
-    "flagCode": "init"
+    "flagCode": "init",
+    "dataStateCode": "1"
   },
   {
     "navigationCode": "authority/userGroup/index",
@@ -224,7 +252,8 @@
     "name": "用户组",
     "url": "authority/userGroup/index",
     "orderBy": 1302,
-    "flagCode": "init"
+    "flagCode": "init",
+    "dataStateCode": "1"
   },
   {
     "navigationCode": "authority/role/index",
@@ -232,7 +261,8 @@
     "name": "角色",
     "url": "authority/role/index",
     "orderBy": 1303,
-    "flagCode": "init"
+    "flagCode": "init",
+    "dataStateCode": "1"
   },
   {
     "navigationCode": "authority/permission/index",
@@ -240,7 +270,8 @@
     "name": "许可",
     "url": "authority/permission/index",
     "orderBy": 1304,
-    "flagCode": "init"
+    "flagCode": "init",
+    "dataStateCode": "1"
   },
   {
     "navigationCode": "authority/userGroupPermission/index",
@@ -248,7 +279,8 @@
     "name": "用户组与许可",
     "url": "authority/userGroupPermission/index",
     "orderBy": 1305,
-    "flagCode": "init"
+    "flagCode": "init",
+    "dataStateCode": "1"
   },
   {
     "navigationCode": "authority/userGroupUser/index",
@@ -256,7 +288,8 @@
     "name": "用户组与用户",
     "url": "authority/userGroupUser/index",
     "orderBy": 1306,
-    "flagCode": "init"
+    "flagCode": "init",
+    "dataStateCode": "1"
   },
   {
     "navigationCode": "authority/userGroupRole/index",
@@ -264,7 +297,8 @@
     "name": "用户组与角色",
     "url": "authority/userGroupRole/index",
     "orderBy": 1307,
-    "flagCode": "init"
+    "flagCode": "init",
+    "dataStateCode": "1"
   },
   {
     "navigationCode": "authority/rolePermission/index",
@@ -272,7 +306,8 @@
     "name": "角色与许可",
     "url": "authority/rolePermission/index",
     "orderBy": 1308,
-    "flagCode": "init"
+    "flagCode": "init",
+    "dataStateCode": "1"
   },
   {
     "navigationCode": "authority/userPermission/index",
@@ -280,7 +315,8 @@
     "name": "用户与许可",
     "url": "authority/userPermission/index",
     "orderBy": 1309,
-    "flagCode": "init"
+    "flagCode": "init",
+    "dataStateCode": "1"
   },
   {
     "navigationCode": "authority/userRole/index",
@@ -288,7 +324,8 @@
     "name": "用户与角色",
     "url": "authority/userRole/index",
     "orderBy": 1310,
-    "flagCode": "init"
+    "flagCode": "init",
+    "dataStateCode": "1"
   },
   {
     "navigationCode": "authority/oAuthConsumer/index",
@@ -296,7 +333,8 @@
     "name": "授权消费",
     "url": "authority/oAuthConsumer/index",
     "orderBy": 1311,
-    "flagCode": "init"
+    "flagCode": "init",
+    "dataStateCode": "0"
   },
   {
     "navigationCode": "authority/tokenInfo/index",
@@ -304,13 +342,15 @@
     "name": "令牌信息",
     "url": "authority/tokenInfo/index",
     "orderBy": 1312,
-    "flagCode": "init"
+    "flagCode": "init",
+    "dataStateCode": "0"
   },
   {
     "navigationCode": "cms",
     "name": "内容",
     "orderBy": 2000,
-    "flagCode": "init"
+    "flagCode": "init",
+    "dataStateCode": "0"
   },
   {
     "navigationCode": "cms/article/index",
@@ -318,7 +358,8 @@
     "name": "文章",
     "url": "cms/article/index",
     "orderBy": 2001,
-    "flagCode": "init"
+    "flagCode": "init",
+    "dataStateCode": "0"
   },
   {
     "navigationCode": "cms/notice/index",
@@ -326,6 +367,7 @@
     "name": "公告",
     "url": "cms/notice/index",
     "orderBy": 2002,
-    "flagCode": "init"
+    "flagCode": "init",
+    "dataStateCode": "0"
   }
 ]
