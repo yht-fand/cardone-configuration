@@ -127,7 +127,7 @@
     "navigationCode": "configuration",
     "parentCode": "",
     "name": "配置",
-    "orderBy": 1200,
+    "orderBy": 9900,
     "flagCode": "init",
     "dataStateCode": "1"
   },
@@ -136,7 +136,7 @@
     "parentCode": "configuration",
     "name": "字典类别",
     "url": "configuration/dictionaryType/index",
-    "orderBy": 1201,
+    "orderBy": 9901,
     "flagCode": "init",
     "dataStateCode": "1"
   },
@@ -145,7 +145,7 @@
     "parentCode": "configuration",
     "name": "字典",
     "url": "configuration/dictionary/index",
-    "orderBy": 1202,
+    "orderBy": 9902,
     "flagCode": "init",
     "dataStateCode": "1"
   },
@@ -154,7 +154,7 @@
     "parentCode": "configuration",
     "name": "字典项",
     "url": "configuration/dictionaryItem/index",
-    "orderBy": 1203,
+    "orderBy": 9903,
     "flagCode": "init",
     "dataStateCode": "0"
   },
@@ -163,7 +163,7 @@
     "parentCode": "configuration",
     "name": "错误信息",
     "url": "configuration/errorInfo/index",
-    "orderBy": 1204,
+    "orderBy": 9904,
     "flagCode": "init",
     "dataStateCode": "0"
   },
@@ -172,7 +172,7 @@
     "parentCode": "configuration",
     "name": "国际化信息",
     "url": "configuration/i18nInfo/index",
-    "orderBy": 1205,
+    "orderBy": 9905,
     "flagCode": "init",
     "dataStateCode": "0"
   },
@@ -181,7 +181,7 @@
     "parentCode": "configuration",
     "name": "系统信息",
     "url": "configuration/systemInfo/index",
-    "orderBy": 1206,
+    "orderBy": 9906,
     "flagCode": "init",
     "dataStateCode": "0"
   },
@@ -190,7 +190,7 @@
     "parentCode": "configuration",
     "name": "站点",
     "url": "configuration/site/index",
-    "orderBy": 1207,
+    "orderBy": 9907,
     "flagCode": "init",
     "dataStateCode": "0"
   },
@@ -199,7 +199,7 @@
     "parentCode": "configuration",
     "name": "导航",
     "url": "configuration/navigation/index",
-    "orderBy": 1208,
+    "orderBy": 9908,
     "flagCode": "init",
     "dataStateCode": "0"
   },
