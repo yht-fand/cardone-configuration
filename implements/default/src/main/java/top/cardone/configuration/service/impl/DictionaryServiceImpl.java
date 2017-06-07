@@ -251,6 +251,11 @@ public class DictionaryServiceImpl extends PageServiceImpl<DictionaryDao> implem
     }
 
     @Override
+    public Object readOneByDictionaryTypeCodesCache(Map<String, Object> readOne) {
+        return this.readOneByDictionaryTypeCodes(readOne);
+    }
+
+    @Override
     public Object readOneByDictionaryTypeCodes(Map<String, Object> readOne) {
         String[] dictionaryTypeCodeArray = StringUtils.split(MapUtils.getString(readOne, "dictionaryTypeCodes"), ",");
 

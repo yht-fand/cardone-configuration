@@ -194,5 +194,8 @@ public interface DictionaryService extends PageService {
     @Cacheable(value = "top.cardone.configuration.service.DictionaryService", key = Caches.KEY_1)
     List<Map<String, Object>> findListByDictionaryTypeCodesCache(String dictionaryTypeCodes);
 
+    @Cacheable(value = "top.cardone.configuration.service.DictionaryService", key = Caches.KEY_1)
+    Object readOneByDictionaryTypeCodesCache(Map<String, Object> readOne);
+
     Object readOneByDictionaryTypeCodes(Map<String, Object> readOne);
 }
