@@ -10,10 +10,7 @@
     },
     "messages": {
       "systemInfoId": {
-        "required": {
-          "code": "systemInfoId required",
-          "defaultMessage": "系统信息标识必填"
-        }
+        "required": "系统信息标识必填"
       }
     }
   },

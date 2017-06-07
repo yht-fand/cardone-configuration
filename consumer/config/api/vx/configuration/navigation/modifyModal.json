@@ -10,10 +10,7 @@
     },
     "messages": {
       "navigationId": {
-        "required": {
-          "code": "navigationId required",
-          "defaultMessage": "导航标识必填"
-        }
+        "required": "导航标识必填"
       }
     }
   },

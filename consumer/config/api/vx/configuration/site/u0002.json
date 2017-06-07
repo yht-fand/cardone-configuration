@@ -37,24 +37,12 @@
     },
     "messages": {
       "siteId": {
-        "required": {
-          "code": "siteId required",
-          "defaultMessage": "站点标识必填",
-        }
+        "required": "站点标识必填"
       },
       "name": {
-        "required": {
-          "code": "name required",
-          "defaultMessage": "站点名称必填",
-        },
-        "minlength": {
-          "code": "name minlength",
-          "defaultMessage": "站点名称需{0}个字符以上",
-        },
-        "maxlength": {
-          "code": "name maxlength",
-          "defaultMessage": "站点名称需小于{0}个字符"
-        }
+        "required": "站点名称必填",
+        "minlength": "站点名称需{0}个字符以上",
+        "maxlength": "站点名称需小于{0}个字符"
       }
     }
   }

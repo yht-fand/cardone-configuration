@@ -1,6 +1,10 @@
 {
   "input": {
-    "i18nInfoIds": "i18nInfoIds"
+    "i18nInfoIds": {
+      "stringToListFunc": {
+        "idName": "i18nInfoId"
+      }
+    }
   },
   "validation": {
     "rules": {
@@ -10,10 +14,7 @@
     },
     "messages": {
       "i18nInfoIds": {
-        "required": {
-          "code": "i18nInfoIds required",
-          "defaultMessage": "国际化信息标识集合必填"
-        }
+        "required": "国际化信息标识集合必填"
       }
     }
   }

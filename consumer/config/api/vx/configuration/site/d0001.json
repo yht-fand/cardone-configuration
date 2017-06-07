@@ -1,6 +1,13 @@
 {
   "input": {
-    "siteIds": "siteIds"
+    "siteIds": {
+      "stringToListFunc": {
+        "idName": "siteId",
+        "map": {
+          "dataStateCode": "0"
+        }
+      }
+    }
   },
   "validation": {
     "rules": {
@@ -10,10 +17,7 @@
     },
     "messages": {
       "siteIds": {
-        "required": {
-          "code": "siteIds required",
-          "defaultMessage": "站点标识集合必填"
-        }
+        "required": "站点标识集合必填"
       }
     }
   }

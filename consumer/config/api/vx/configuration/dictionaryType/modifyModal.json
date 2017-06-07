@@ -10,10 +10,7 @@
     },
     "messages": {
       "dictionaryTypeId": {
-        "required": {
-          "code": "dictionaryTypeId required",
-          "defaultMessage": "字典类别标识必填"
-        }
+        "required": "字典类别标识必填"
       }
     }
   },

@@ -10,10 +10,7 @@
     },
     "messages": {
       "siteId": {
-        "required": {
-          "code": "siteId required",
-          "defaultMessage": "站点标识必填"
-        }
+        "required": "站点标识必填"
       }
     }
   },

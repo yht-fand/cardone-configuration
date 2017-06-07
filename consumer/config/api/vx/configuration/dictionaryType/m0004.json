@@ -42,32 +42,14 @@
     },
     "messages": {
       "dictionaryTypeCode": {
-        "required": {
-          "code": "dictionaryTypeCode required",
-          "defaultMessage": "字典类别编号必填"
-        },
-        "minlength": {
-          "code": "dictionaryTypeCode minlength",
-          "defaultMessage": "字典类别编号需{0}个字符以上"
-        },
-        "maxlength": {
-          "code": "dictionaryTypeCode maxlength",
-          "defaultMessage": "字典类别编号需小于{0}个字符"
-        }
+        "required": "字典类别编号必填",
+        "minlength": "字典类别编号需{0}个字符以上",
+        "maxlength": "字典类别编号需小于{0}个字符"
       },
       "name": {
-        "required": {
-          "code": "name required",
-          "defaultMessage": "字典类别名称必填"
-        },
-        "minlength": {
-          "code": "name minlength",
-          "defaultMessage": "字典类别名称需{0}个字符以上"
-        },
-        "maxlength": {
-          "code": "name maxlength",
-          "defaultMessage": "字典类别名称需小于{0}个字符"
-        }
+        "required": "字典类别名称必填",
+        "minlength": "字典类别名称需{0}个字符以上",
+        "maxlength": "字典类别名称需小于{0}个字符"
       }
     }
   },

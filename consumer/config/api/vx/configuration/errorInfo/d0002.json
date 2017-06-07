@@ -1,6 +1,10 @@
 {
   "input": {
-    "errorInfoIds": "errorInfoIds"
+    "errorInfoIds": {
+      "stringToListFunc": {
+        "idName": "errorInfoId"
+      }
+    }
   },
   "validation": {
     "rules": {
@@ -10,10 +14,7 @@
     },
     "messages": {
       "errorInfoIds": {
-        "required": {
-          "code": "errorInfoIds required",
-          "defaultMessage": "错误信息标识集合必填"
-        }
+        "required": "错误信息标识集合必填"
       }
     }
   }

@@ -1,6 +1,13 @@
 {
   "input": {
-    "systemInfoIds": "systemInfoIds"
+    "systemInfoIds": {
+      "stringToListFunc": {
+        "idName": "systemInfoId",
+        "map": {
+          "dataStateCode": "0"
+        }
+      }
+    }
   },
   "validation": {
     "rules": {
@@ -10,10 +17,7 @@
     },
     "messages": {
       "systemInfoIds": {
-        "required": {
-          "code": "systemInfoIds required",
-          "defaultMessage": "系统信息标识集合必填"
-        }
+        "required": "系统信息标识集合必填"
       }
     }
   }

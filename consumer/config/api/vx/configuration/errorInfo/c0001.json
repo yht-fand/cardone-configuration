@@ -43,32 +43,14 @@
     },
     "messages": {
       "errorInfoCode": {
-        "required": {
-          "code": "errorInfoCode required",
-          "defaultMessage": "错误信息编号必填"
-        },
-        "minlength": {
-          "code": "errorInfoCode minlength",
-          "defaultMessage": "错误信息编号需{0}个字符以上"
-        },
-        "maxlength": {
-          "code": "errorInfoCode maxlength",
-          "defaultMessage": "错误信息编号需小于{0}个字符"
-        }
+        "required": "错误信息编号必填",
+        "minlength": "错误信息编号需{0}个字符以上",
+        "maxlength": "错误信息编号需小于{0}个字符"
       },
       "name": {
-        "required": {
-          "code": "name required",
-          "defaultMessage": "错误信息名称必填"
-        },
-        "minlength": {
-          "code": "name minlength",
-          "defaultMessage": "错误信息名称需{0}个字符以上"
-        },
-        "maxlength": {
-          "code": "name maxlength",
-          "defaultMessage": "错误信息名称需小于{0}个字符"
-        }
+        "required": "错误信息名称必填",
+        "minlength": "错误信息名称需{0}个字符以上",
+        "maxlength": "错误信息名称需小于{0}个字符"
       }
     }
   }

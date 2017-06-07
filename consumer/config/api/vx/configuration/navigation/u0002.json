@@ -44,24 +44,12 @@
     },
     "messages": {
       "navigationId": {
-        "required": {
-          "code": "navigationId required",
-          "defaultMessage": "导航标识必填",
-        }
+        "required": "导航标识必填"
       },
       "name": {
-        "required": {
-          "code": "name required",
-          "defaultMessage": "导航名称必填",
-        },
-        "minlength": {
-          "code": "name minlength",
-          "defaultMessage": "导航名称需{0}个字符以上",
-        },
-        "maxlength": {
-          "code": "name maxlength",
-          "defaultMessage": "导航名称需小于{0}个字符"
-        }
+        "required": "导航名称必填",
+        "minlength": "导航名称需{0}个字符以上",
+        "maxlength": "导航名称需小于{0}个字符"
       }
     }
   }

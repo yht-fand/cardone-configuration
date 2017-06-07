@@ -1,6 +1,13 @@
 {
   "input": {
-    "navigationIds": "navigationIds"
+    "navigationIds": {
+      "stringToListFunc": {
+        "idName": "navigationId",
+        "map": {
+          "dataStateCode": "0"
+        }
+      }
+    }
   },
   "validation": {
     "rules": {
@@ -10,10 +17,7 @@
     },
     "messages": {
       "navigationIds": {
-        "required": {
-          "code": "navigationIds required",
-          "defaultMessage": "导航标识集合必填"
-        }
+        "required": "导航标识集合必填"
       }
     }
   }

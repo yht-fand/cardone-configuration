@@ -10,10 +10,7 @@
     },
     "messages": {
       "i18nInfoId": {
-        "required": {
-          "code": "i18nInfoId required",
-          "defaultMessage": "国际化信息标识必填"
-        }
+        "required": "国际化信息标识必填"
       }
     }
   },

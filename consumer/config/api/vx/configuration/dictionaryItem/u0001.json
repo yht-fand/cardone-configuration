@@ -41,24 +41,12 @@
     },
     "messages": {
       "dictionaryItemId": {
-        "required": {
-          "code": "dictionaryItemId required",
-          "defaultMessage": "字典项标识必填"
-        }
+        "required": "字典项标识必填"
       },
       "name": {
-        "required": {
-          "code": "name required",
-          "defaultMessage": "字典项名称必填"
-        },
-        "minlength": {
-          "code": "name minlength",
-          "defaultMessage": "字典项名称需{0}个字符以上"
-        },
-        "maxlength": {
-          "code": "name maxlength",
-          "defaultMessage": "字典项名称需小于{0}个字符"
-        }
+        "required": "字典项名称必填",
+        "minlength": "字典项名称需{0}个字符以上",
+        "maxlength": "字典项名称需小于{0}个字符"
       }
     }
   }

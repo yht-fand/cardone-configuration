@@ -1,6 +1,10 @@
 {
   "input": {
-    "dictionaryItemIds": "dictionaryItemIds"
+    "dictionaryItemIds": {
+      "stringToListFunc": {
+        "idName": "dictionaryItemId"
+      }
+    }
   },
   "validation": {
     "rules": {
@@ -10,10 +14,7 @@
     },
     "messages": {
       "dictionaryItemIds": {
-        "required": {
-          "code": "dictionaryItemIds required",
-          "defaultMessage": "字典项标识集合必填"
-        }
+        "required": "字典项标识集合必填"
       }
     }
   }

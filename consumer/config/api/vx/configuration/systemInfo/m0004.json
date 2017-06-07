@@ -39,32 +39,14 @@
     },
     "messages": {
       "systemInfoCode": {
-        "required": {
-          "code": "systemInfoCode required",
-          "defaultMessage": "系统信息编号必填"
-        },
-        "minlength": {
-          "code": "systemInfoCode minlength",
-          "defaultMessage": "系统信息编号需{0}个字符以上"
-        },
-        "maxlength": {
-          "code": "systemInfoCode maxlength",
-          "defaultMessage": "系统信息编号需小于{0}个字符"
-        }
+        "required": "系统信息编号必填",
+        "minlength": "系统信息编号需{0}个字符以上",
+        "maxlength": "系统信息编号需小于{0}个字符"
       },
       "name": {
-        "required": {
-          "code": "name required",
-          "defaultMessage": "系统信息名称必填"
-        },
-        "minlength": {
-          "code": "name minlength",
-          "defaultMessage": "系统信息名称需{0}个字符以上"
-        },
-        "maxlength": {
-          "code": "name maxlength",
-          "defaultMessage": "系统信息名称需小于{0}个字符"
-        }
+        "required": "系统信息名称必填",
+        "minlength": "系统信息名称需{0}个字符以上",
+        "maxlength": "系统信息名称需小于{0}个字符"
       }
     }
   },
