@@ -26,7 +26,7 @@ class d0001 {
     }
 
     def func(input) {
-        ['data': ApplicationContextHolder.getBean(ErrorInfoService.class).deleteListCache(input?.errorInfoIds)]
+        ['deleteCounts': ApplicationContextHolder.getBean(ErrorInfoService.class).deleteListCache(input?.errorInfoIds)]
     }
 
     def output(output) {

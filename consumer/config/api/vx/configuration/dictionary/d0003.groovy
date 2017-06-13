@@ -26,7 +26,7 @@ class d0001 {
     }
 
     def func(input) {
-        ['data': ApplicationContextHolder.getBean(DictionaryService.class).updateListCache(input?.dictionaryIds)]
+        ['deleteCounts': ApplicationContextHolder.getBean(DictionaryService.class).updateListCache(input?.dictionaryIds)]
     }
 
     def output(output) {
