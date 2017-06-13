@@ -148,11 +148,6 @@ public class DictionaryServiceImpl extends PageServiceImpl<DictionaryDao> implem
     }
 
     @Override
-    public List<Map<String, Object>> findListByDictionaryTypeCodeCache(String dictionaryTypeCode) {
-        return this.findListByDictionaryTypeCode(dictionaryTypeCode);
-    }
-
-    @Override
     public List<Map<String, Object>> findListByDictionaryTypeCode(String dictionaryTypeCode) {
         return this.dao.findlistByDictionaryTypeCode(dictionaryTypeCode);
     }
@@ -179,13 +174,17 @@ public class DictionaryServiceImpl extends PageServiceImpl<DictionaryDao> implem
         readOne.put("dictionaryCode", dictionaryCode);
         readOne.put("object_id", objectId);
 
+        return this.readOneByCode(readOne, defaultValue);
+    }
+
+    private String readOneByCode(Map<String, Object> readOne, String defaultValue) {
         String str = this.dao.readOne(String.class, readOne);
 
         if (StringUtils.isBlank(str)) {
             //添加到缓存队列中，交由定时任务去生成数据字典
             Set<Map<String, Object>> insertDictionarySet = ApplicationContextHolder.getBean(Cache.class).get("init-data", "insertDictionarySet", () -> Sets.newHashSet());
 
-            readOne.put(objectId, defaultValue);
+            readOne.put(MapUtils.getString(readOne, "object_id"), defaultValue);
 
             insertDictionarySet.add(readOne);
 
@@ -196,28 +195,13 @@ public class DictionaryServiceImpl extends PageServiceImpl<DictionaryDao> implem
     }
 
     @Override
-    public String readOneNameByCodeCache(String dictionaryTypeCode, String dictionaryCode, String defaultValue) {
-        return this.readOneNameByCode(dictionaryTypeCode, dictionaryCode, defaultValue);
-    }
-
-    @Override
     public String readOneValueByCode(String dictionaryTypeCode, String dictionaryCode, String defaultValue) {
         return this.readOneByCode(dictionaryTypeCode, dictionaryCode, defaultValue, "value");
     }
 
     @Override
-    public String readOneValueByCodeCache(String dictionaryTypeCode, String dictionaryCode, String defaultValue) {
-        return this.readOneValueByCode(dictionaryTypeCode, dictionaryCode, defaultValue);
-    }
-
-    @Override
     public String readOneRemarkByCode(String dictionaryTypeCode, String dictionaryCode, String defaultValue) {
         return this.readOneByCode(dictionaryTypeCode, dictionaryCode, defaultValue, "remark");
-    }
-
-    @Override
-    public String readOneRemarkByCodeCache(String dictionaryTypeCode, String dictionaryCode, String defaultValue) {
-        return this.readOneRemarkByCode(dictionaryTypeCode, dictionaryCode, defaultValue);
     }
 
     @Override
@@ -251,11 +235,6 @@ public class DictionaryServiceImpl extends PageServiceImpl<DictionaryDao> implem
     }
 
     @Override
-    public Object readOneByDictionaryTypeCodesCache(Map<String, Object> readOne) {
-        return this.readOneByDictionaryTypeCodes(readOne);
-    }
-
-    @Override
     public Object readOneByDictionaryTypeCodes(Map<String, Object> readOne) {
         String[] dictionaryTypeCodeArray = StringUtils.split(MapUtils.getString(readOne, "dictionaryTypeCodes"), ",");
 
@@ -266,7 +245,7 @@ public class DictionaryServiceImpl extends PageServiceImpl<DictionaryDao> implem
         for (String dictionaryTypeCode : dictionaryTypeCodeArray) {
             readOne.put("dictionaryTypeCode", dictionaryTypeCode);
 
-            Object obj = ApplicationContextHolder.getBean(DictionaryService.class).readOne(readOne);
+            Object obj = this.readOneByCode(readOne, null);
 
             if (!Objects.isNull(obj)) {
                 return obj;

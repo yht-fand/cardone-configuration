@@ -3,6 +3,7 @@ package top.cardone.configuration.service;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
+import org.springframework.transaction.annotation.Transactional;
 import top.cardone.cache.Caches;
 import top.cardone.data.service.PageService;
 
@@ -18,8 +19,11 @@ public interface DictionaryService extends PageService {
     /**
      * @see top.cardone.configuration.service.DictionaryService#page
      */
+    @Transactional(readOnly = true)
     @Cacheable(value = "top.cardone.configuration.service.DictionaryService", key = Caches.KEY_1)
-    Page<Map<String, Object>> pageCache(Object page);
+    default Page<Map<String, Object>> pageCache(Object page) {
+        return this.page(page);
+    }
 
     /**
      * @see top.cardone.configuration.service.DictionaryService#page
@@ -149,7 +153,11 @@ public interface DictionaryService extends PageService {
      */
     Page<Map<String, Object>> pageByCode(Map<String, Object> page);
 
-    List<Map<String, Object>> findListByDictionaryTypeCodeCache(String dictionaryTypeCode);
+    @Transactional(readOnly = true)
+    @Cacheable(value = "top.cardone.configuration.service.DictionaryService", key = Caches.KEY_1)
+    default List<Map<String, Object>> findListByDictionaryTypeCodeCache(String dictionaryTypeCode) {
+        return this.findListByDictionaryTypeCode(dictionaryTypeCode);
+    }
 
     List<Map<String, Object>> findListByDictionaryTypeCode(String dictionaryTypeCode);
 
@@ -171,18 +179,27 @@ public interface DictionaryService extends PageService {
 
     String readOneNameByCode(String dictionaryTypeCode, String dictionaryCode, String defaultValue);
 
+    @Transactional(readOnly = true)
     @Cacheable(value = "top.cardone.configuration.service.DictionaryService", key = Caches.KEY_3)
-    String readOneNameByCodeCache(String dictionaryTypeCode, String dictionaryCode, String defaultValue);
+    default String readOneNameByCodeCache(String dictionaryTypeCode, String dictionaryCode, String defaultValue) {
+        return this.readOneNameByCode(dictionaryTypeCode, dictionaryCode, defaultValue);
+    }
 
     String readOneValueByCode(String dictionaryTypeCode, String dictionaryCode, String defaultValue);
 
+    @Transactional(readOnly = true)
     @Cacheable(value = "top.cardone.configuration.service.DictionaryService", key = Caches.KEY_3)
-    String readOneValueByCodeCache(String dictionaryTypeCode, String dictionaryCode, String defaultValue);
+    default String readOneValueByCodeCache(String dictionaryTypeCode, String dictionaryCode, String defaultValue) {
+        return this.readOneValueByCode(dictionaryTypeCode, dictionaryCode, defaultValue);
+    }
 
     String readOneRemarkByCode(String dictionaryTypeCode, String dictionaryCode, String defaultValue);
 
+    @Transactional(readOnly = true)
     @Cacheable(value = "top.cardone.configuration.service.DictionaryService", key = Caches.KEY_3)
-    String readOneRemarkByCodeCache(String dictionaryTypeCode, String dictionaryCode, String defaultValue);
+    default String readOneRemarkByCodeCache(String dictionaryTypeCode, String dictionaryCode, String defaultValue) {
+        return this.readOneRemarkByCode(dictionaryTypeCode, dictionaryCode, defaultValue);
+    }
 
     String readOneExplainByCode(String dictionaryTypeCode, String dictionaryCode, String defaultValue);
 
@@ -191,11 +208,15 @@ public interface DictionaryService extends PageService {
 
     List<Map<String, Object>> findListByDictionaryTypeCodes(String dictionaryTypeCodes);
 
+    @Transactional(readOnly = true)
     @Cacheable(value = "top.cardone.configuration.service.DictionaryService", key = Caches.KEY_1)
     List<Map<String, Object>> findListByDictionaryTypeCodesCache(String dictionaryTypeCodes);
 
+    @Transactional(readOnly = true)
     @Cacheable(value = "top.cardone.configuration.service.DictionaryService", key = Caches.KEY_1)
-    Object readOneByDictionaryTypeCodesCache(Map<String, Object> readOne);
+    default Object readOneByDictionaryTypeCodesCache(Map<String, Object> readOne) {
+        return this.readOneByDictionaryTypeCodes(readOne);
+    }
 
     Object readOneByDictionaryTypeCodes(Map<String, Object> readOne);
 }

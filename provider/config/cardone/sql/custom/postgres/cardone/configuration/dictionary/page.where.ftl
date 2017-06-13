@@ -14,11 +14,11 @@ ${prefixName?string('WHERE ', 'AND ')}(POSITION(:name in t.DICTIONARY_CODE) > 0 
     <#assign prefixName = false>
 </#if>
 <#if cardone.ObjectUtils.anyNotNull(startTime)>
-${prefixName?string('WHERE ', 'AND ')}((t.BEGIN_DATE is null OR t.BEGIN_DATE >= :startTime) OR (t.END_DATE is null OR t.END_DATE >= :startTime))
+${prefixName?string('WHERE ', 'AND ')}(t.BEGIN_DATE >= :startTime OR t.END_DATE >= :startTime)
     <#assign prefixName = false>
 </#if>
 <#if cardone.ObjectUtils.anyNotNull(endTime)>
-${prefixName?string('WHERE ', 'AND ')}((t.BEGIN_DATE is null OR t.BEGIN_DATE <= :endTime) OR (t.END_DATE is null OR t.END_DATE <= :endTime))
+${prefixName?string('WHERE ', 'AND ')}(t.BEGIN_DATE <= :endTime OR t.END_DATE <= :endTime)
     <#assign prefixName = false>
 </#if>
 <#if cardone.StringUtils.isNotBlank(flagCode)>
