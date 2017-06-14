@@ -5,7 +5,7 @@ import top.cardone.configuration.service.I18nInfoService
 import top.cardone.context.ApplicationContextHolder
 import top.cardone.core.CodeException
 
-class c0001 {
+class c0001 implements java.io.Serializable {
     def input(input) {
         def newInput = [:]
 

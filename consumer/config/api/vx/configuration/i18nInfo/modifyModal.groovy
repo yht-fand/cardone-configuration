@@ -5,7 +5,7 @@ import top.cardone.configuration.service.I18nInfoService
 import top.cardone.context.ApplicationContextHolder
 import top.cardone.core.CodeException
 
-class modifyModal {
+class modifyModal implements java.io.Serializable {
     def input(input) {
         ["i18nInfoId": input.i18nInfoId]
     }
