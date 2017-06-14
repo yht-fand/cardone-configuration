@@ -3,8 +3,8 @@
 <#assign ObjectUtils = beansWrapperFn.getStaticModels()["org.apache.commons.lang3.ObjectUtils"]>
 <#assign SecurityUtils = beansWrapperFn.getStaticModels()["org.apache.shiro.SecurityUtils"]>
 
-<#macro permissionSql permission_departments="" departmentColumnName="T.DEPARTMENT_CODE" permission_users="" userColumnName="T.CREATED_BY_CODE" permissions="" permissionColumnName="T.CODE">
-    <#if SecurityUtils.getSubject().hasRole("administrator")>
+<#macro permissionSql role="administrator" permission="*:view:*"  permission_departments="" departmentColumnName="T.DEPARTMENT_CODE" permission_users="" userColumnName="T.CREATED_BY_CODE" permissions="" permissionColumnName="T.CODE">
+    <#if SecurityUtils.getSubject().hasRole(role) || SecurityUtils.getSubject().isPermitted(permission)>
         <#return >
     </#if>
     <#assign prefixName = 'AND ('>
