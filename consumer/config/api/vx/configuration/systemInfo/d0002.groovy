@@ -16,7 +16,7 @@ class d0001 implements java.io.Serializable {
         def systemInfoIdList = []
 
         for (def systemInfoId : systemInfoIds) {
-            systemInfoIdList.add(["systemInfoId": systemInfoId, "dataStateCode": "0", "endDate": new Date()])
+            systemInfoIdList.add(["systemInfoId": systemInfoId, "flagCode": "input", "dataStateCode": "0", "endDate": new Date()])
         }
 
         ["systemInfoIds": systemInfoIdList]

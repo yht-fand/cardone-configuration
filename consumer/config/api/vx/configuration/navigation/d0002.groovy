@@ -16,7 +16,7 @@ class d0001 implements java.io.Serializable {
         def navigationIdList = []
 
         for (def navigationId : navigationIds) {
-            navigationIdList.add(["navigationId": navigationId, "dataStateCode": "0", "endDate": new Date()])
+            navigationIdList.add(["navigationId": navigationId, "flagCode": "input", "dataStateCode": "0", "endDate": new Date()])
         }
 
         ["navigationIds": navigationIdList]
