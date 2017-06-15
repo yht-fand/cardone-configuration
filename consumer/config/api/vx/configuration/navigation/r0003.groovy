@@ -1,4 +1,4 @@
-package api.vx.configuration.navigation
+package top.cardone.api.vx.configuration.navigation
 
 import top.cardone.configuration.service.DictionaryService
 import top.cardone.context.ApplicationContextHolder

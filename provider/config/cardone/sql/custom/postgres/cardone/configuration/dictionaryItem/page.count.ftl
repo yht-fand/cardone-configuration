@@ -1,4 +1,4 @@
 SELECT
-COUNT(1)
+COUNT(*)
 FROM c1_dictionary_item t
 <#include "page.where.ftl">

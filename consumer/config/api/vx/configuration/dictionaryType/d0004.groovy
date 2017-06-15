@@ -1,4 +1,4 @@
-package api.vx.configuration.dictionaryType
+package top.cardone.api.vx.configuration.dictionaryType
 
 import org.apache.commons.lang3.StringUtils
 import top.cardone.configuration.service.DictionaryTypeService
@@ -26,10 +26,10 @@ class d0001 implements java.io.Serializable {
     }
 
     def func(input) {
-        ['deleteCounts': ApplicationContextHolder.getBean(DictionaryTypeService.class).updateListCache(input?.dictionaryTypeIds)]
+        ApplicationContextHolder.getBean(DictionaryTypeService.class).updateListCache(input?.dictionaryTypeIds)
     }
 
     def output(output) {
-        output
+        ['deleteCounts': output]
     }
 }

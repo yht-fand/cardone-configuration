@@ -1,4 +1,4 @@
-package api.vx.configuration.i18nInfo
+package top.cardone.api.vx.configuration.i18nInfo
 
 import org.apache.commons.lang3.StringUtils
 import top.cardone.configuration.service.I18nInfoService

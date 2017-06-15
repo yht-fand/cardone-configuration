@@ -1,4 +1,4 @@
-package api.vx.configuration.errorInfo
+package top.cardone.api.vx.configuration.errorInfo
 
 import org.apache.commons.lang3.StringUtils
 import top.cardone.configuration.service.ErrorInfoService
@@ -9,33 +9,35 @@ class c0001 implements java.io.Serializable {
     def input(input) {
         def newInput = [:]
 
-		newInput['batchNo'] = input['batchNo']
-		newInput['beginDate'] = input['beginDate']
-		newInput['content'] = input['content']
-		newInput['createdByCode'] = input['createdByCode']
-		newInput['createdDate'] = input['createdDate']
-		newInput['dataStateCode'] = input['dataStateCode']
-		newInput['departmentCode'] = input['departmentCode']
-		newInput['endDate'] = input['endDate']
-		newInput['errorInfoCode'] = input['errorInfoCode']
-		newInput['errorInfoId'] = input['errorInfoId']
-		newInput['flagCode'] = input['flagCode']
-		newInput['flagObjectCode'] = input['flagObjectCode']
-		newInput['jsonData'] = input['jsonData']
-		newInput['lastModifiedByCode'] = input['lastModifiedByCode']
-		newInput['lastModifiedDate'] = input['lastModifiedDate']
-		newInput['objectCode'] = input['objectCode']
-		newInput['objectId'] = input['objectId']
-		newInput['objectTypeCode'] = input['objectTypeCode']
-		newInput['orderBy'] = input['orderBy']
-		newInput['orgCode'] = input['orgCode']
-		newInput['personalCode'] = input['personalCode']
-		newInput['siteCode'] = input['siteCode']
-		newInput['stateCode'] = input['stateCode']
-		newInput['systemInfoCode'] = input['systemInfoCode']
-		newInput['typeCode'] = input['typeCode']
-		newInput['url'] = input['url']
-		newInput['version'] = input['version']
+		newInput?.batchNo = input?.batchNo
+		newInput?.beginDate = input?.beginDate
+		newInput?.content = input?.content
+		newInput?.createdByCode = input?.createdByCode
+		newInput?.createdDate = input?.createdDate
+		newInput?.dataStateCode = input?.dataStateCode
+		newInput?.departmentCode = input?.departmentCode
+		newInput?.endDate = input?.endDate
+		newInput?.errorInfoCode = input?.errorInfoCode
+		newInput?.errorInfoId = input?.errorInfoId
+		newInput?.flagCode = input?.flagCode
+		newInput?.flagObjectCode = input?.flagObjectCode
+		newInput?.jsonData = input?.jsonData
+		newInput?.lastModifiedByCode = input?.lastModifiedByCode
+		newInput?.lastModifiedDate = input?.lastModifiedDate
+		newInput?.objectCode = input?.objectCode
+		newInput?.objectId = input?.objectId
+		newInput?.objectTypeCode = input?.objectTypeCode
+		newInput?.orderBy = input?.orderBy
+		newInput?.orgCode = input?.orgCode
+		newInput?.personalCode = input?.personalCode
+		newInput?.siteCode = input?.siteCode
+		newInput?.stateCode = input?.stateCode
+		newInput?.systemInfoCode = input?.systemInfoCode
+		newInput?.typeCode = input?.typeCode
+		newInput?.url = input?.url
+		newInput?.version = input?.version
+
+        newInput.flagCode = StringUtils.defaultIfBlank(input.flagCode, "input")
 
         newInput
     }
@@ -65,7 +67,7 @@ class c0001 implements java.io.Serializable {
 //          throw new CodeException("name maxlength", "错误信息名称需小于{0}个字符", 255)
 //      }
 		
-		def readOne = ['errorInfoCode': input.errorInfoCode]
+		def readOne = ['errorInfoCode': input.errorInfoCode, "dataStateCode": "1"]
 
 		def count = ApplicationContextHolder.getBean(ErrorInfoService.class).readOne(Integer.class, readOne)
 
@@ -79,6 +81,6 @@ class c0001 implements java.io.Serializable {
     }
 
     def output(output) {
-		['insertCount': output]
+		['insertCount': output]        
     }
 }

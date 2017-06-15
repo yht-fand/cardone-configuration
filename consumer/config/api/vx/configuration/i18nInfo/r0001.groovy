@@ -1,4 +1,4 @@
-package api.vx.configuration.i18nInfo
+package top.cardone.api.vx.configuration.i18nInfo
 
 import top.cardone.configuration.service.DictionaryService
 import top.cardone.context.ApplicationContextHolder

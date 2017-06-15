@@ -1,14 +1,4 @@
 {
-  "input": {
-    "systemInfoIds": {
-      "stringToListFunc": {
-        "idName": "systemInfoId",
-        "map": {
-          "dataStateCode": "0"
-        }
-      }
-    }
-  },
   "validation": {
     "rules": {
       "systemInfoIds": {

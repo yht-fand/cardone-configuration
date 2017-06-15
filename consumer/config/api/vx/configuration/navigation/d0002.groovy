@@ -1,4 +1,4 @@
-package api.vx.configuration.navigation
+package top.cardone.api.vx.configuration.navigation
 
 import org.apache.commons.lang3.StringUtils
 import top.cardone.configuration.service.NavigationService
@@ -26,10 +26,10 @@ class d0001 implements java.io.Serializable {
     }
 
     def func(input) {
-        ['deleteCounts': ApplicationContextHolder.getBean(NavigationService.class).deleteListCache(input?.navigationIds)]
+        ApplicationContextHolder.getBean(NavigationService.class).updateListCache(input?.navigationIds)
     }
 
     def output(output) {
-        output
+        ['deleteCounts': output]
     }
 }

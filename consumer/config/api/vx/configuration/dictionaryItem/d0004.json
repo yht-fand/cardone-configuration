@@ -1,14 +1,4 @@
 {
-  "input": {
-    "dictionaryItemIds": {
-      "stringToListFunc": {
-        "idName": "dictionaryItemId",
-        "map": {
-          "dataStateCode": "0"
-        }
-      }
-    }
-  },
   "validation": {
     "rules": {
       "dictionaryItemIds": {

@@ -1,4 +1,4 @@
-package api.vx.configuration.navigation
+package top.cardone.api.vx.configuration.navigation
 
 import org.apache.commons.lang3.StringUtils
 import top.cardone.configuration.service.NavigationService

@@ -1,4 +1,4 @@
-package api.vx.configuration.systemInfo
+package top.cardone.api.vx.configuration.systemInfo
 
 import org.apache.commons.lang3.StringUtils
 import top.cardone.configuration.service.SystemInfoService
@@ -9,29 +9,29 @@ class m0003 implements java.io.Serializable {
     def input(input) {
         def newInput = [:]
 
-		newInput['batchNo'] = input['batchNo']
-		newInput['beginDate'] = input['beginDate']
-		newInput['content'] = input['content']
-		newInput['createdByCode'] = input['createdByCode']
-		newInput['createdDate'] = input['createdDate']
-		newInput['dataStateCode'] = input['dataStateCode']
-		newInput['departmentCode'] = input['departmentCode']
-		newInput['endDate'] = input['endDate']
-		newInput['flagCode'] = input['flagCode']
-		newInput['flagObjectCode'] = input['flagObjectCode']
-		newInput['jsonData'] = input['jsonData']
-		newInput['lastModifiedByCode'] = input['lastModifiedByCode']
-		newInput['lastModifiedDate'] = input['lastModifiedDate']
-		newInput['name'] = input['name']
-		newInput['orderBy'] = input['orderBy']
-		newInput['orgCode'] = input['orgCode']
-		newInput['personalCode'] = input['personalCode']
-		newInput['remark'] = input['remark']
-		newInput['siteCode'] = input['siteCode']
-		newInput['stateCode'] = input['stateCode']
-		newInput['systemInfoCode'] = input['systemInfoCode']
-		newInput['systemInfoId'] = input['systemInfoId']
-		newInput['version'] = input['version']
+		newInput?.batchNo = input?.batchNo
+		newInput?.beginDate = input?.beginDate
+		newInput?.content = input?.content
+		newInput?.createdByCode = input?.createdByCode
+		newInput?.createdDate = input?.createdDate
+		newInput?.dataStateCode = input?.dataStateCode
+		newInput?.departmentCode = input?.departmentCode
+		newInput?.endDate = input?.endDate
+		newInput?.flagCode = input?.flagCode
+		newInput?.flagObjectCode = input?.flagObjectCode
+		newInput?.jsonData = input?.jsonData
+		newInput?.lastModifiedByCode = input?.lastModifiedByCode
+		newInput?.lastModifiedDate = input?.lastModifiedDate
+		newInput?.name = input?.name
+		newInput?.orderBy = input?.orderBy
+		newInput?.orgCode = input?.orgCode
+		newInput?.personalCode = input?.personalCode
+		newInput?.remark = input?.remark
+		newInput?.siteCode = input?.siteCode
+		newInput?.stateCode = input?.stateCode
+		newInput?.systemInfoCode = input?.systemInfoCode
+		newInput?.systemInfoId = input?.systemInfoId
+		newInput?.version = input?.version
 
         newInput
     }
@@ -61,7 +61,7 @@ class m0003 implements java.io.Serializable {
 //          throw new CodeException("name maxlength", "系统信息名称需小于{0}个字符", 255)
 //      }
 		
-		def readOne = ['systemInfoCode': input.systemInfoCode]
+		def readOne = ['systemInfoCode': input.systemInfoCode, "dataStateCode": "1"]
 
 		def count = ApplicationContextHolder.getBean(SystemInfoService.class).readOne(Integer.class, readOne)
 
@@ -77,29 +77,29 @@ class m0003 implements java.io.Serializable {
     def output(output) {
         def newOutput = [:]
 
-		newOutput['batchNo'] = output['batch_no']
-		newOutput['beginDate'] = output['begin_date']
-		newOutput['content'] = output['content']
-		newOutput['createdByCode'] = output['created_by_code']
-		newOutput['createdDate'] = output['created_date']
-		newOutput['dataStateCode'] = output['data_state_code']
-		newOutput['departmentCode'] = output['department_code']
-		newOutput['endDate'] = output['end_date']
-		newOutput['flagCode'] = output['flag_code']
-		newOutput['flagObjectCode'] = output['flag_object_code']
-		newOutput['jsonData'] = output['json_data']
-		newOutput['lastModifiedByCode'] = output['last_modified_by_code']
-		newOutput['lastModifiedDate'] = output['last_modified_date']
-		newOutput['name'] = output['name']
-		newOutput['orderBy'] = output['order_by_']
-		newOutput['orgCode'] = output['org_code']
-		newOutput['personalCode'] = output['personal_code']
-		newOutput['remark'] = output['remark']
-		newOutput['siteCode'] = output['site_code']
-		newOutput['stateCode'] = output['state_code']
-		newOutput['systemInfoCode'] = output['system_info_code']
-		newOutput['systemInfoId'] = output['system_info_id']
-		newOutput['version'] = output['version_']
+		newOutput?.batchNo = output?.batch_no
+		newOutput?.beginDate = output?.begin_date
+		newOutput?.content = output?.content
+		newOutput?.createdByCode = output?.created_by_code
+		newOutput?.createdDate = output?.created_date
+		newOutput?.dataStateCode = output?.data_state_code
+		newOutput?.departmentCode = output?.department_code
+		newOutput?.endDate = output?.end_date
+		newOutput?.flagCode = output?.flag_code
+		newOutput?.flagObjectCode = output?.flag_object_code
+		newOutput?.jsonData = output?.json_data
+		newOutput?.lastModifiedByCode = output?.last_modified_by_code
+		newOutput?.lastModifiedDate = output?.last_modified_date
+		newOutput?.name = output?.name
+		newOutput?.orderBy = output?.order_by_
+		newOutput?.orgCode = output?.org_code
+		newOutput?.personalCode = output?.personal_code
+		newOutput?.remark = output?.remark
+		newOutput?.siteCode = output?.site_code
+		newOutput?.stateCode = output?.state_code
+		newOutput?.systemInfoCode = output?.system_info_code
+		newOutput?.systemInfoId = output?.system_info_id
+		newOutput?.version = output?.version_
 
         newOutput
     }

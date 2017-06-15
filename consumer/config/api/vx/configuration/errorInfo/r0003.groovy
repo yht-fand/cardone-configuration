@@ -1,4 +1,4 @@
-package api.vx.configuration.errorInfo
+package top.cardone.api.vx.configuration.errorInfo
 
 import top.cardone.configuration.service.DictionaryService
 import top.cardone.context.ApplicationContextHolder

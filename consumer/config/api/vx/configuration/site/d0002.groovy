@@ -1,4 +1,4 @@
-package api.vx.configuration.site
+package top.cardone.api.vx.configuration.site
 
 import org.apache.commons.lang3.StringUtils
 import top.cardone.configuration.service.SiteService
@@ -26,10 +26,10 @@ class d0001 implements java.io.Serializable {
     }
 
     def func(input) {
-        ['deleteCounts': ApplicationContextHolder.getBean(SiteService.class).deleteListCache(input?.siteIds)]
+        ApplicationContextHolder.getBean(SiteService.class).updateListCache(input?.siteIds)
     }
 
     def output(output) {
-        output
+        ['deleteCounts': output]
     }
 }

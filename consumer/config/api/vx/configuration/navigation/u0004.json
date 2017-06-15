@@ -1,36 +1,4 @@
 {
-  "input": {
-    "batchNo": "batchNo",
-    "beginDate": "beginDate",
-    "createdByCode": "createdByCode",
-    "createdDate": "createdDate",
-    "dataOption": "dataOption",
-    "dataStateCode": "dataStateCode",
-    "departmentCode": "departmentCode",
-    "endDate": "endDate",
-    "flagCode": "flagCode",
-    "flagObjectCode": "flagObjectCode",
-    "iconStyle": "iconStyle",
-    "jsonData": "jsonData",
-    "lastModifiedByCode": "lastModifiedByCode",
-    "lastModifiedDate": "lastModifiedDate",
-    "name": "name",
-    "navigationCode": "navigationCode",
-    "navigationId": "navigationId",
-    "orderBy": "orderBy",
-    "orgCode": "orgCode",
-    "parentCode": "parentCode",
-    "parentTreeCode": "parentTreeCode",
-    "parentTreeName": "parentTreeName",
-    "personalCode": "personalCode",
-    "siteCode": "siteCode",
-    "stateCode": "stateCode",
-    "systemInfoCode": "systemInfoCode",
-    "target": "target",
-    "typeCode": "typeCode",
-    "url": "url",
-    "version": "version"
-  },
   "validation": {
     "rules": {
       "navigationId": {

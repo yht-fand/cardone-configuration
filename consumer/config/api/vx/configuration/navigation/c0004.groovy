@@ -1,4 +1,4 @@
-package api.vx.configuration.navigation
+package top.cardone.api.vx.configuration.navigation
 
 import org.apache.commons.lang3.StringUtils
 import top.cardone.configuration.service.NavigationService
@@ -9,36 +9,38 @@ class c0004 implements java.io.Serializable {
     def input(input) {
         def newInput = [:]
 
-		newInput['batchNo'] = input['batchNo']
-		newInput['beginDate'] = input['beginDate']
-		newInput['createdByCode'] = input['createdByCode']
-		newInput['createdDate'] = input['createdDate']
-		newInput['dataOption'] = input['dataOption']
-		newInput['dataStateCode'] = input['dataStateCode']
-		newInput['departmentCode'] = input['departmentCode']
-		newInput['endDate'] = input['endDate']
-		newInput['flagCode'] = input['flagCode']
-		newInput['flagObjectCode'] = input['flagObjectCode']
-		newInput['iconStyle'] = input['iconStyle']
-		newInput['jsonData'] = input['jsonData']
-		newInput['lastModifiedByCode'] = input['lastModifiedByCode']
-		newInput['lastModifiedDate'] = input['lastModifiedDate']
-		newInput['name'] = input['name']
-		newInput['navigationCode'] = input['navigationCode']
-		newInput['navigationId'] = input['navigationId']
-		newInput['orderBy'] = input['orderBy']
-		newInput['orgCode'] = input['orgCode']
-		newInput['parentCode'] = input['parentCode']
-		newInput['parentTreeCode'] = input['parentTreeCode']
-		newInput['parentTreeName'] = input['parentTreeName']
-		newInput['personalCode'] = input['personalCode']
-		newInput['siteCode'] = input['siteCode']
-		newInput['stateCode'] = input['stateCode']
-		newInput['systemInfoCode'] = input['systemInfoCode']
-		newInput['target'] = input['target']
-		newInput['typeCode'] = input['typeCode']
-		newInput['url'] = input['url']
-		newInput['version'] = input['version']
+		newInput?.batchNo = input?.batchNo
+		newInput?.beginDate = input?.beginDate
+		newInput?.createdByCode = input?.createdByCode
+		newInput?.createdDate = input?.createdDate
+		newInput?.dataOption = input?.dataOption
+		newInput?.dataStateCode = input?.dataStateCode
+		newInput?.departmentCode = input?.departmentCode
+		newInput?.endDate = input?.endDate
+		newInput?.flagCode = input?.flagCode
+		newInput?.flagObjectCode = input?.flagObjectCode
+		newInput?.iconStyle = input?.iconStyle
+		newInput?.jsonData = input?.jsonData
+		newInput?.lastModifiedByCode = input?.lastModifiedByCode
+		newInput?.lastModifiedDate = input?.lastModifiedDate
+		newInput?.name = input?.name
+		newInput?.navigationCode = input?.navigationCode
+		newInput?.navigationId = input?.navigationId
+		newInput?.orderBy = input?.orderBy
+		newInput?.orgCode = input?.orgCode
+		newInput?.parentCode = input?.parentCode
+		newInput?.parentTreeCode = input?.parentTreeCode
+		newInput?.parentTreeName = input?.parentTreeName
+		newInput?.personalCode = input?.personalCode
+		newInput?.siteCode = input?.siteCode
+		newInput?.stateCode = input?.stateCode
+		newInput?.systemInfoCode = input?.systemInfoCode
+		newInput?.target = input?.target
+		newInput?.typeCode = input?.typeCode
+		newInput?.url = input?.url
+		newInput?.version = input?.version
+
+        newInput.flagCode = StringUtils.defaultIfBlank(input.flagCode, "input")
 
         newInput
     }
@@ -68,7 +70,7 @@ class c0004 implements java.io.Serializable {
 //          throw new CodeException("name maxlength", "导航名称需小于{0}个字符", 255)
 //      }
 		
-		def readOne = ['navigationCode': input.navigationCode]
+		def readOne = ['navigationCode': input.navigationCode, "dataStateCode": "1"]
 
 		def count = ApplicationContextHolder.getBean(NavigationService.class).readOne(Integer.class, readOne)
 
@@ -82,6 +84,6 @@ class c0004 implements java.io.Serializable {
     }
 
     def output(output) {
-		['insertCount': output]
+		['insertCount': output]        
     }
 }

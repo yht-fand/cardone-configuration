@@ -1,14 +1,4 @@
 {
-  "input": {
-    "errorInfoIds": {
-      "stringToListFunc": {
-        "idName": "errorInfoId",
-        "map": {
-          "dataStateCode": "0"
-        }
-      }
-    }
-  },
   "validation": {
     "rules": {
       "errorInfoIds": {

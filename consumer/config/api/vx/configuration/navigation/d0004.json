@@ -1,14 +1,4 @@
 {
-  "input": {
-    "navigationIds": {
-      "stringToListFunc": {
-        "idName": "navigationId",
-        "map": {
-          "dataStateCode": "0"
-        }
-      }
-    }
-  },
   "validation": {
     "rules": {
       "navigationIds": {

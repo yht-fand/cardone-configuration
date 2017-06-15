@@ -1,4 +1,4 @@
-package api.vx.configuration.dictionaryType
+package top.cardone.api.vx.configuration.dictionaryType
 
 import org.apache.commons.lang3.StringUtils
 import top.cardone.configuration.service.DictionaryTypeService
@@ -9,32 +9,34 @@ class u0002 implements java.io.Serializable {
     def input(input) {
         def newInput = [:]
 
-		newInput['batchNo'] = input['batchNo']
-		newInput['beginDate'] = input['beginDate']
-		newInput['createdByCode'] = input['createdByCode']
-		newInput['createdDate'] = input['createdDate']
-		newInput['dataStateCode'] = input['dataStateCode']
-		newInput['departmentCode'] = input['departmentCode']
-		newInput['dictionaryTypeCode'] = input['dictionaryTypeCode']
-		newInput['dictionaryTypeId'] = input['dictionaryTypeId']
-		newInput['endDate'] = input['endDate']
-		newInput['flagCode'] = input['flagCode']
-		newInput['flagObjectCode'] = input['flagObjectCode']
-		newInput['jsonData'] = input['jsonData']
-		newInput['lastModifiedByCode'] = input['lastModifiedByCode']
-		newInput['lastModifiedDate'] = input['lastModifiedDate']
-		newInput['name'] = input['name']
-		newInput['orderBy'] = input['orderBy']
-		newInput['orgCode'] = input['orgCode']
-		newInput['parentCode'] = input['parentCode']
-		newInput['parentTreeCode'] = input['parentTreeCode']
-		newInput['parentTreeName'] = input['parentTreeName']
-		newInput['personalCode'] = input['personalCode']
-		newInput['remark'] = input['remark']
-		newInput['siteCode'] = input['siteCode']
-		newInput['stateCode'] = input['stateCode']
-		newInput['systemInfoCode'] = input['systemInfoCode']
-		newInput['version'] = input['version']
+		newInput?.batchNo = input?.batchNo
+		newInput?.beginDate = input?.beginDate
+		newInput?.createdByCode = input?.createdByCode
+		newInput?.createdDate = input?.createdDate
+		newInput?.dataStateCode = input?.dataStateCode
+		newInput?.departmentCode = input?.departmentCode
+		newInput?.dictionaryTypeCode = input?.dictionaryTypeCode
+		newInput?.dictionaryTypeId = input?.dictionaryTypeId
+		newInput?.endDate = input?.endDate
+		newInput?.flagCode = input?.flagCode
+		newInput?.flagObjectCode = input?.flagObjectCode
+		newInput?.jsonData = input?.jsonData
+		newInput?.lastModifiedByCode = input?.lastModifiedByCode
+		newInput?.lastModifiedDate = input?.lastModifiedDate
+		newInput?.name = input?.name
+		newInput?.orderBy = input?.orderBy
+		newInput?.orgCode = input?.orgCode
+		newInput?.parentCode = input?.parentCode
+		newInput?.parentTreeCode = input?.parentTreeCode
+		newInput?.parentTreeName = input?.parentTreeName
+		newInput?.personalCode = input?.personalCode
+		newInput?.remark = input?.remark
+		newInput?.siteCode = input?.siteCode
+		newInput?.stateCode = input?.stateCode
+		newInput?.systemInfoCode = input?.systemInfoCode
+		newInput?.version = input?.version
+
+        newInput.flagCode = StringUtils.defaultIfBlank(input.flagCode, "input")
 
         newInput
     }
@@ -56,7 +58,7 @@ class u0002 implements java.io.Serializable {
 //          throw new CodeException("name maxlength", "字典类别名称需小于{0}个字符", 255)
 //      }
 
-		def readOne = ["dictionaryTypeCode": input.dictionaryTypeCode, "object_id": "dictionaryTypeId"]
+		def readOne = ["dictionaryTypeCode": input.dictionaryTypeCode, "object_id": "dictionaryTypeId", "dataStateCode": "1"]
 
 		String dbDictionaryTypeId = ApplicationContextHolder.getBean(DictionaryTypeService.class).readOne(String.class, readOne)
 
@@ -70,6 +72,6 @@ class u0002 implements java.io.Serializable {
     }
 
     def output(output) {
-		['updateCount': output]
+		['updateCount': output]        
     }
 }

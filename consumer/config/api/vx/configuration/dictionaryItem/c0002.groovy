@@ -1,4 +1,4 @@
-package api.vx.configuration.dictionaryItem
+package top.cardone.api.vx.configuration.dictionaryItem
 
 import org.apache.commons.lang3.StringUtils
 import top.cardone.configuration.service.DictionaryItemService
@@ -9,33 +9,35 @@ class c0002 implements java.io.Serializable {
     def input(input) {
         def newInput = [:]
 
-		newInput['batchNo'] = input['batchNo']
-		newInput['beginDate'] = input['beginDate']
-		newInput['createdByCode'] = input['createdByCode']
-		newInput['createdDate'] = input['createdDate']
-		newInput['dataStateCode'] = input['dataStateCode']
-		newInput['departmentCode'] = input['departmentCode']
-		newInput['dictionaryCode'] = input['dictionaryCode']
-		newInput['dictionaryItemCode'] = input['dictionaryItemCode']
-		newInput['dictionaryItemId'] = input['dictionaryItemId']
-		newInput['dictionaryTypeCode'] = input['dictionaryTypeCode']
-		newInput['endDate'] = input['endDate']
-		newInput['explain'] = input['explain']
-		newInput['flagCode'] = input['flagCode']
-		newInput['flagObjectCode'] = input['flagObjectCode']
-		newInput['jsonData'] = input['jsonData']
-		newInput['lastModifiedByCode'] = input['lastModifiedByCode']
-		newInput['lastModifiedDate'] = input['lastModifiedDate']
-		newInput['name'] = input['name']
-		newInput['orderBy'] = input['orderBy']
-		newInput['orgCode'] = input['orgCode']
-		newInput['personalCode'] = input['personalCode']
-		newInput['remark'] = input['remark']
-		newInput['siteCode'] = input['siteCode']
-		newInput['stateCode'] = input['stateCode']
-		newInput['systemInfoCode'] = input['systemInfoCode']
-		newInput['value'] = input['value']
-		newInput['version'] = input['version']
+		newInput?.batchNo = input?.batchNo
+		newInput?.beginDate = input?.beginDate
+		newInput?.createdByCode = input?.createdByCode
+		newInput?.createdDate = input?.createdDate
+		newInput?.dataStateCode = input?.dataStateCode
+		newInput?.departmentCode = input?.departmentCode
+		newInput?.dictionaryCode = input?.dictionaryCode
+		newInput?.dictionaryItemCode = input?.dictionaryItemCode
+		newInput?.dictionaryItemId = input?.dictionaryItemId
+		newInput?.dictionaryTypeCode = input?.dictionaryTypeCode
+		newInput?.endDate = input?.endDate
+		newInput?.explain = input?.explain
+		newInput?.flagCode = input?.flagCode
+		newInput?.flagObjectCode = input?.flagObjectCode
+		newInput?.jsonData = input?.jsonData
+		newInput?.lastModifiedByCode = input?.lastModifiedByCode
+		newInput?.lastModifiedDate = input?.lastModifiedDate
+		newInput?.name = input?.name
+		newInput?.orderBy = input?.orderBy
+		newInput?.orgCode = input?.orgCode
+		newInput?.personalCode = input?.personalCode
+		newInput?.remark = input?.remark
+		newInput?.siteCode = input?.siteCode
+		newInput?.stateCode = input?.stateCode
+		newInput?.systemInfoCode = input?.systemInfoCode
+		newInput?.value = input?.value
+		newInput?.version = input?.version
+
+        newInput.flagCode = StringUtils.defaultIfBlank(input.flagCode, "input")
 
         newInput
     }
@@ -65,7 +67,7 @@ class c0002 implements java.io.Serializable {
 //          throw new CodeException("name maxlength", "字典项名称需小于{0}个字符", 255)
 //      }
 		
-		def readOne = ['dictionaryItemCode': input.dictionaryItemCode]
+		def readOne = ['dictionaryItemCode': input.dictionaryItemCode, "dataStateCode": "1"]
 
 		def count = ApplicationContextHolder.getBean(DictionaryItemService.class).readOne(Integer.class, readOne)
 
@@ -79,6 +81,6 @@ class c0002 implements java.io.Serializable {
     }
 
     def output(output) {
-		['insertCount': output]
+		['insertCount': output]        
     }
 }

@@ -1,4 +1,4 @@
-package api.vx.configuration.i18nInfo
+package top.cardone.api.vx.configuration.i18nInfo
 
 import org.apache.commons.lang3.time.DateFormatUtils
 import org.apache.shiro.SecurityUtils

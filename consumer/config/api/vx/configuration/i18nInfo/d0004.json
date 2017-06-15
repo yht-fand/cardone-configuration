@@ -1,14 +1,4 @@
 {
-  "input": {
-    "i18nInfoIds": {
-      "stringToListFunc": {
-        "idName": "i18nInfoId",
-        "map": {
-          "dataStateCode": "0"
-        }
-      }
-    }
-  },
   "validation": {
     "rules": {
       "i18nInfoIds": {

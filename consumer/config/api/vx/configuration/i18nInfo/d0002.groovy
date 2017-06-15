@@ -1,4 +1,4 @@
-package api.vx.configuration.i18nInfo
+package top.cardone.api.vx.configuration.i18nInfo
 
 import org.apache.commons.lang3.StringUtils
 import top.cardone.configuration.service.I18nInfoService
@@ -26,10 +26,10 @@ class d0001 implements java.io.Serializable {
     }
 
     def func(input) {
-        ['deleteCounts': ApplicationContextHolder.getBean(I18nInfoService.class).deleteListCache(input?.i18nInfoIds)]
+        ApplicationContextHolder.getBean(I18nInfoService.class).updateListCache(input?.i18nInfoIds)
     }
 
     def output(output) {
-        output
+        ['deleteCounts': output]
     }
 }

@@ -1,4 +1,4 @@
-package api.vx.configuration.dictionaryItem
+package top.cardone.api.vx.configuration.dictionaryItem
 
 import org.apache.commons.lang3.StringUtils
 import top.cardone.configuration.service.DictionaryItemService
@@ -26,10 +26,10 @@ class d0001 implements java.io.Serializable {
     }
 
     def func(input) {
-        ['deleteCounts': ApplicationContextHolder.getBean(DictionaryItemService.class).deleteListCache(input?.dictionaryItemIds)]
+        ApplicationContextHolder.getBean(DictionaryItemService.class).updateListCache(input?.dictionaryItemIds)
     }
 
     def output(output) {
-        output
+        ['deleteCounts': output]
     }
 }

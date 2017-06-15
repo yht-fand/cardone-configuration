@@ -1,4 +1,4 @@
-package api.vx.configuration.site
+package top.cardone.api.vx.configuration.site
 
 import org.apache.commons.lang3.StringUtils
 import top.cardone.configuration.service.SiteService

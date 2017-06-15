@@ -1,4 +1,4 @@
-package api.vx.configuration.errorInfo
+package top.cardone.api.vx.configuration.errorInfo
 
 import org.apache.commons.lang3.time.DateFormatUtils
 import org.apache.shiro.SecurityUtils

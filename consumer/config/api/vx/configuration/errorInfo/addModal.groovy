@@ -1,4 +1,4 @@
-package api.vx.configuration.errorInfo
+package top.cardone.api.vx.configuration.errorInfo
 
 import org.apache.commons.lang3.StringUtils
 import top.cardone.configuration.service.ErrorInfoService

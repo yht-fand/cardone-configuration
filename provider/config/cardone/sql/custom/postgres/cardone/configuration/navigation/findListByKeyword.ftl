@@ -1,6 +1,9 @@
-SELECT d.NAVIGATION_CODE, d.NAME FROM c1_navigation d
-<#if cardone.StringUtils.isNotBlank(term)>
-WHERE strpos(d.NAME, :term) > 0 OR strpos(d.NAVIGATION_CODE, :term) > 0
+SELECT t.NAVIGATION_CODE, t.NAME FROM c1_navigation t
+where t.state_code ='1' and t.data_state_code = '1'
+<#if cardone.StringUtils.isBlank(notTerm) >
+    <#if cardone.StringUtils.isNotBlank(term)>
+    and (strpos(t.NAME, :term) > 0 OR strpos(t.NAVIGATION_CODE, :term) > 0)
+    </#if>
 </#if>
-ORDER BY d.ORDER_BY_, d.NAVIGATION_CODE
+ORDER BY t.ORDER_BY_, t.NAVIGATION_CODE
 LIMIT 20

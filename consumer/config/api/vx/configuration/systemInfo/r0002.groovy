@@ -1,4 +1,4 @@
-package api.vx.configuration.systemInfo
+package top.cardone.api.vx.configuration.systemInfo
 
 import org.apache.commons.lang3.StringUtils
 import top.cardone.configuration.service.SystemInfoService

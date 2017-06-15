@@ -1,29 +1,4 @@
 {
-  "input": {
-    "batchNo": "batchNo",
-    "beginDate": "beginDate",
-    "content": "content",
-    "createdByCode": "createdByCode",
-    "createdDate": "createdDate",
-    "dataStateCode": "dataStateCode",
-    "departmentCode": "departmentCode",
-    "endDate": "endDate",
-    "explain": "explain",
-    "flagCode": "flagCode",
-    "flagObjectCode": "flagObjectCode",
-    "jsonData": "jsonData",
-    "lastModifiedByCode": "lastModifiedByCode",
-    "lastModifiedDate": "lastModifiedDate",
-    "name": "name",
-    "orderBy": "orderBy",
-    "orgCode": "orgCode",
-    "personalCode": "personalCode",
-    "siteCode": "siteCode",
-    "siteId": "siteId",
-    "stateCode": "stateCode",
-    "systemInfoCode": "systemInfoCode",
-    "version": "version"
-  },
   "validation": {
     "rules": {
       "siteCode": {
@@ -49,30 +24,5 @@
         "maxlength": "站点名称需小于{0}个字符"
       }
     }
-  },
-  "output": {
-    "batchNo": "batch_no",
-    "beginDate": "begin_date",
-    "content": "content",
-    "createdByCode": "created_by_code",
-    "createdDate": "created_date",
-    "dataStateCode": "data_state_code",
-    "departmentCode": "department_code",
-    "endDate": "end_date",
-    "explain": "explain_",
-    "flagCode": "flag_code",
-    "flagObjectCode": "flag_object_code",
-    "jsonData": "json_data",
-    "lastModifiedByCode": "last_modified_by_code",
-    "lastModifiedDate": "last_modified_date",
-    "name": "name",
-    "orderBy": "order_by_",
-    "orgCode": "org_code",
-    "personalCode": "personal_code",
-    "siteCode": "site_code",
-    "siteId": "site_id",
-    "stateCode": "state_code",
-    "systemInfoCode": "system_info_code",
-    "version": "version_"
   }
 }

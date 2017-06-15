@@ -1,4 +1,4 @@
-package api.vx.configuration.dictionaryItem
+package top.cardone.api.vx.configuration.dictionaryItem
 
 import org.apache.commons.lang3.time.DateFormatUtils
 import org.apache.shiro.SecurityUtils

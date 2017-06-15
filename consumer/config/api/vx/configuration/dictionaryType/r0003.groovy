@@ -1,4 +1,4 @@
-package api.vx.configuration.dictionaryType
+package top.cardone.api.vx.configuration.dictionaryType
 
 import top.cardone.configuration.service.DictionaryService
 import top.cardone.context.ApplicationContextHolder

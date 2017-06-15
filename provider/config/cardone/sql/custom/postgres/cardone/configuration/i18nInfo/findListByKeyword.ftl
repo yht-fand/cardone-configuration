@@ -1,6 +1,9 @@
-SELECT d.I18NINFO_CODE, d.NAME FROM c1_i18n_info d
-<#if cardone.StringUtils.isNotBlank(term)>
-WHERE strpos(d.NAME, :term) > 0 OR strpos(d.I18NINFO_CODE, :term) > 0
+SELECT t.I18NINFO_CODE, t.NAME FROM c1_i18n_info t
+where t.state_code ='1' and t.data_state_code = '1'
+<#if cardone.StringUtils.isBlank(notTerm) >
+    <#if cardone.StringUtils.isNotBlank(term)>
+    and (strpos(t.NAME, :term) > 0 OR strpos(t.I18NINFO_CODE, :term) > 0)
+    </#if>
 </#if>
-ORDER BY d.ORDER_BY_, d.I18NINFO_CODE
+ORDER BY t.ORDER_, t.I18NINFO_CODE
 LIMIT 20

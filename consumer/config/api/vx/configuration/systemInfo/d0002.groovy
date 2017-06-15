@@ -1,4 +1,4 @@
-package api.vx.configuration.systemInfo
+package top.cardone.api.vx.configuration.systemInfo
 
 import org.apache.commons.lang3.StringUtils
 import top.cardone.configuration.service.SystemInfoService
@@ -26,10 +26,10 @@ class d0001 implements java.io.Serializable {
     }
 
     def func(input) {
-        ['deleteCounts': ApplicationContextHolder.getBean(SystemInfoService.class).deleteListCache(input?.systemInfoIds)]
+        ApplicationContextHolder.getBean(SystemInfoService.class).updateListCache(input?.systemInfoIds)
     }
 
     def output(output) {
-        output
+        ['deleteCounts': output]
     }
 }

@@ -1,4 +1,4 @@
-package api.vx.configuration.i18nInfo
+package top.cardone.api.vx.configuration.i18nInfo
 
 import org.apache.commons.lang3.StringUtils
 import top.cardone.configuration.service.I18nInfoService
@@ -9,29 +9,31 @@ class c0003 implements java.io.Serializable {
     def input(input) {
         def newInput = [:]
 
-		newInput['batchNo'] = input['batchNo']
-		newInput['beginDate'] = input['beginDate']
-		newInput['content'] = input['content']
-		newInput['createdByCode'] = input['createdByCode']
-		newInput['createdDate'] = input['createdDate']
-		newInput['dataStateCode'] = input['dataStateCode']
-		newInput['departmentCode'] = input['departmentCode']
-		newInput['endDate'] = input['endDate']
-		newInput['flagCode'] = input['flagCode']
-		newInput['flagObjectCode'] = input['flagObjectCode']
-		newInput['i18nInfoCode'] = input['i18nInfoCode']
-		newInput['i18nInfoId'] = input['i18nInfoId']
-		newInput['jsonData'] = input['jsonData']
-		newInput['lastModifiedByCode'] = input['lastModifiedByCode']
-		newInput['lastModifiedDate'] = input['lastModifiedDate']
-		newInput['orderBy'] = input['orderBy']
-		newInput['orgCode'] = input['orgCode']
-		newInput['personalCode'] = input['personalCode']
-		newInput['siteCode'] = input['siteCode']
-		newInput['stateCode'] = input['stateCode']
-		newInput['systemInfoCode'] = input['systemInfoCode']
-		newInput['typeCode'] = input['typeCode']
-		newInput['version'] = input['version']
+		newInput?.batchNo = input?.batchNo
+		newInput?.beginDate = input?.beginDate
+		newInput?.content = input?.content
+		newInput?.createdByCode = input?.createdByCode
+		newInput?.createdDate = input?.createdDate
+		newInput?.dataStateCode = input?.dataStateCode
+		newInput?.departmentCode = input?.departmentCode
+		newInput?.endDate = input?.endDate
+		newInput?.flagCode = input?.flagCode
+		newInput?.flagObjectCode = input?.flagObjectCode
+		newInput?.i18nInfoCode = input?.i18nInfoCode
+		newInput?.i18nInfoId = input?.i18nInfoId
+		newInput?.jsonData = input?.jsonData
+		newInput?.lastModifiedByCode = input?.lastModifiedByCode
+		newInput?.lastModifiedDate = input?.lastModifiedDate
+		newInput?.orderBy = input?.orderBy
+		newInput?.orgCode = input?.orgCode
+		newInput?.personalCode = input?.personalCode
+		newInput?.siteCode = input?.siteCode
+		newInput?.stateCode = input?.stateCode
+		newInput?.systemInfoCode = input?.systemInfoCode
+		newInput?.typeCode = input?.typeCode
+		newInput?.version = input?.version
+
+        newInput.flagCode = StringUtils.defaultIfBlank(input.flagCode, "input")
 
         newInput
     }
@@ -61,7 +63,7 @@ class c0003 implements java.io.Serializable {
 //          throw new CodeException("name maxlength", "国际化信息名称需小于{0}个字符", 255)
 //      }
 		
-		def readOne = ['i18nInfoCode': input.i18nInfoCode]
+		def readOne = ['i18nInfoCode': input.i18nInfoCode, "dataStateCode": "1"]
 
 		def count = ApplicationContextHolder.getBean(I18nInfoService.class).readOne(Integer.class, readOne)
 
@@ -75,6 +77,6 @@ class c0003 implements java.io.Serializable {
     }
 
     def output(output) {
-		['insertCount': output]
+		['insertCount': output]        
     }
 }

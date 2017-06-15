@@ -1,14 +1,4 @@
 {
-  "input": {
-    "siteIds": {
-      "stringToListFunc": {
-        "idName": "siteId",
-        "map": {
-          "dataStateCode": "0"
-        }
-      }
-    }
-  },
   "validation": {
     "rules": {
       "siteIds": {

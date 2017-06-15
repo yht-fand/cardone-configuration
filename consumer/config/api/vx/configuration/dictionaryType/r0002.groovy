@@ -1,4 +1,4 @@
-package api.vx.configuration.dictionaryType
+package top.cardone.api.vx.configuration.dictionaryType
 
 import org.apache.commons.lang3.StringUtils
 import top.cardone.configuration.service.DictionaryTypeService

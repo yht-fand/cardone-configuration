@@ -1,7 +1,4 @@
 {
-  "input": {
-    "siteId": "siteId"
-  },
   "validation": {
     "rules": {
       "siteId": {
@@ -13,30 +10,5 @@
         "required": "站点标识必填"
       }
     }
-  },
-  "output": {
-    "batchNo": "batch_no",
-    "beginDate": "begin_date",
-    "content": "content",
-    "createdByCode": "created_by_code",
-    "createdDate": "created_date",
-    "dataStateCode": "data_state_code",
-    "departmentCode": "department_code",
-    "endDate": "end_date",
-    "explain": "explain_",
-    "flagCode": "flag_code",
-    "flagObjectCode": "flag_object_code",
-    "jsonData": "json_data",
-    "lastModifiedByCode": "last_modified_by_code",
-    "lastModifiedDate": "last_modified_date",
-    "name": "name",
-    "orderBy": "order_by_",
-    "orgCode": "org_code",
-    "personalCode": "personal_code",
-    "siteCode": "site_code",
-    "siteId": "site_id",
-    "stateCode": "state_code",
-    "systemInfoCode": "system_info_code",
-    "version": "version_"
   }
 }

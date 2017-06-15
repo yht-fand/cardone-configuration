@@ -1,4 +1,4 @@
-package api.vx.configuration.errorInfo
+package top.cardone.api.vx.configuration.errorInfo
 
 import org.apache.commons.lang3.StringUtils
 import top.cardone.configuration.service.ErrorInfoService
@@ -26,10 +26,10 @@ class d0001 implements java.io.Serializable {
     }
 
     def func(input) {
-        ['deleteCounts': ApplicationContextHolder.getBean(ErrorInfoService.class).updateListCache(input?.errorInfoIds)]
+        ApplicationContextHolder.getBean(ErrorInfoService.class).updateListCache(input?.errorInfoIds)
     }
 
     def output(output) {
-        output
+        ['deleteCounts': output]
     }
 }
