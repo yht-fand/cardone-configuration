@@ -184,9 +184,11 @@ public class DictionaryServiceImpl extends PageServiceImpl<DictionaryDao> implem
             //添加到缓存队列中，交由定时任务去生成数据字典
             Set<Map<String, Object>> insertDictionarySet = ApplicationContextHolder.getBean(Cache.class).get("init-data", "insertDictionarySet", () -> Sets.newHashSet());
 
-            readOne.put(MapUtils.getString(readOne, "object_id"), defaultValue);
+            Map<String,Object> insert = Maps.newHashMap(readOne);
 
-            insertDictionarySet.add(readOne);
+            insert.put(MapUtils.getString(readOne, "object_id"), defaultValue);
+
+            insertDictionarySet.add(insert);
 
             ApplicationContextHolder.getBean(Cache.class).put("init-data", "insertDictionarySet", insertDictionarySet);
         }
