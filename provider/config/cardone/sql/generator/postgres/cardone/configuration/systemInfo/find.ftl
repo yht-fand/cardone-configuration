@@ -92,6 +92,7 @@ ${prefixName?string('  ', ', ')}"system_info_id"
 ${prefixName?string('  ', ', ')}"version_"
 <#assign prefixName = false>
 </#if>
+<#if prefixName>
 *
 </#if>
 FROM c1_system_info

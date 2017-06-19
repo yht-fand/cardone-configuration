@@ -108,6 +108,7 @@ ${prefixName?string('  ', ', ')}"value_"
 ${prefixName?string('  ', ', ')}"version_"
 <#assign prefixName = false>
 </#if>
+<#if prefixName>
 *
 </#if>
 FROM c1_dictionary_item

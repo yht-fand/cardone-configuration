@@ -92,6 +92,7 @@ ${prefixName?string('  ', ', ')}"type_code"
 ${prefixName?string('  ', ', ')}"version_"
 <#assign prefixName = false>
 </#if>
+<#if prefixName>
 *
 </#if>
 FROM c1_i18n_info
