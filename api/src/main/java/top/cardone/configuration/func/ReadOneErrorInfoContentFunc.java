@@ -35,6 +35,12 @@ public class ReadOneErrorInfoContentFunc implements Func3<String, String, String
         String content = ApplicationContextHolder.getBean(ErrorInfoService.class).readOneCache(String.class, readOne);
 
         if (StringUtils.isBlank(content)) {
+            Map<String, Object> defaultReadOne = Maps.newHashMap(readOne);
+
+            defaultReadOne.put("url", "");
+
+            content = ApplicationContextHolder.getBean(ErrorInfoService.class).readOneCache(String.class, defaultReadOne);
+
             ApplicationContextHolder.getBean(TaskExecutor.class).execute(TaskUtils.decorateTaskWithErrorHandler(() -> {
                 Map<String, Object> insert = Maps.newHashMap();
 
