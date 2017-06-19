@@ -27,7 +27,7 @@ public class ReadOneErrorInfoContentFunc implements Func3<String, String, String
             url = servletRequestAttributes.getRequest().getServletPath();
         }
 
-        readOne.put("url", url);
+        readOne.put("url", StringUtils.EMPTY);
         readOne.put("errorInfoCode", errorInfoCode);
         readOne.put("typeCode", LocaleContextHolder.getLocale().toString());
         readOne.put("object_id", "content");
@@ -35,12 +35,11 @@ public class ReadOneErrorInfoContentFunc implements Func3<String, String, String
         String content = ApplicationContextHolder.getBean(ErrorInfoService.class).readOneCache(String.class, readOne);
 
         if (StringUtils.isBlank(content)) {
-            Map<String, Object> defaultReadOne = Maps.newHashMap(readOne);
+            readOne.put("url", StringUtils.defaultIfBlank(url, StringUtils.EMPTY));
+            content = ApplicationContextHolder.getBean(ErrorInfoService.class).readOneCache(String.class, readOne);
+        }
 
-            defaultReadOne.put("url", "");
-
-            content = ApplicationContextHolder.getBean(ErrorInfoService.class).readOneCache(String.class, defaultReadOne);
-
+        if (StringUtils.isBlank(content)) {
             ApplicationContextHolder.getBean(TaskExecutor.class).execute(TaskUtils.decorateTaskWithErrorHandler(() -> {
                 Map<String, Object> insert = Maps.newHashMap();
 
