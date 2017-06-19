@@ -2,11 +2,11 @@ package top.cardone.configuration.service.impl;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import com.google.common.collect.Sets;
 import org.apache.commons.collections.CollectionUtils;
+import org.springframework.core.task.TaskExecutor;
 import org.springframework.data.domain.Page;
+import org.springframework.scheduling.support.TaskUtils;
 import org.springframework.transaction.annotation.Transactional;
-import top.cardone.cache.Cache;
 import top.cardone.configuration.dao.DictionaryDao;
 import top.cardone.configuration.service.DictionaryService;
 import top.cardone.context.ApplicationContextHolder;
@@ -17,7 +17,6 @@ import top.cardone.data.service.impl.PageServiceImpl;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 
 /**
  * 字典服务
@@ -181,16 +180,17 @@ public class DictionaryServiceImpl extends PageServiceImpl<DictionaryDao> implem
         String str = this.dao.readOne(String.class, readOne);
 
         if (StringUtils.isBlank(str)) {
-            //添加到缓存队列中，交由定时任务去生成数据字典
-            Set<Map<String, Object>> insertDictionarySet = ApplicationContextHolder.getBean(Cache.class).get("init-data", "insertDictionarySet", () -> Sets.newHashSet());
-
-            Map<String,Object> insert = Maps.newHashMap(readOne);
+            Map<String, Object> insert = Maps.newHashMap(readOne);
 
             insert.put(MapUtils.getString(readOne, "object_id"), defaultValue);
 
-            insertDictionarySet.add(insert);
+            if (!insert.containsKey("name")) {
+                insert.put("name", insert.get("dictionaryCode"));
+            }
 
-            ApplicationContextHolder.getBean(Cache.class).put("init-data", "insertDictionarySet", insertDictionarySet);
+            ApplicationContextHolder.getBean(TaskExecutor.class).execute(TaskUtils.decorateTaskWithErrorHandler(() -> {
+                this.insertByNotExistsCache(insert);
+            }, null, true));
         }
 
         return StringUtils.defaultIfBlank(str, defaultValue);
