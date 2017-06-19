@@ -36,6 +36,7 @@ public class ReadOneErrorInfoContentFunc implements Func3<String, String, String
 
         if (StringUtils.isBlank(content)) {
             readOne.put("url", StringUtils.defaultIfBlank(url, StringUtils.EMPTY));
+
             content = ApplicationContextHolder.getBean(ErrorInfoService.class).readOneCache(String.class, readOne);
         }
 
