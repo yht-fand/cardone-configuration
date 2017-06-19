@@ -22,6 +22,7 @@
                         <entry key="createdDate" value="readOneDateFunc"/>
                         <entry key="beginDate" value="readOneDateFunc"/>
                         <entry key="endDate" value="endDateDefaultValueFunc"/>
+                        <entry key="systemInfoCode" value="systemInfoCodeDefaultValueFunc"/>
                     </map>
                 </entry>
                 <entry key="update">
@@ -29,6 +30,7 @@
                         <entry key="lastModifiedByCode" value="readPrincipalFunc"/>
                         <entry key="lastModifiedDate" value="readOneDateFunc"/>
                         <entry key="endDate" value="endDateDefaultValueFunc"/>
+                        <entry key="systemInfoCode" value="systemInfoCodeDefaultValueFunc"/>
                     </map>
                 </entry>
             </map>

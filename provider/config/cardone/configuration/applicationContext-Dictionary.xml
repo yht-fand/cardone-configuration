@@ -12,7 +12,7 @@
                     <map>
                         <entry key="sqlFileRoot" value="/cardone/configuration/dictionary/"/>
                         <entry key="pks" value="dictionaryId"/>
-                        <entry key="codes" value="systemCode,siteCode,orgCode,dictionaryTypeCode,dictionaryCode,endDate"/>
+                        <entry key="codes" value="systemInfoCode,siteCode,orgCode,dictionaryTypeCode,dictionaryCode,endDate"/>
                     </map>
                 </entry>
                 <entry key="insert">
@@ -22,6 +22,9 @@
                         <entry key="createdDate" value="readOneDateFunc"/>
                         <entry key="beginDate" value="readOneDateFunc"/>
                         <entry key="endDate" value="endDateDefaultValueFunc"/>
+                        <entry key="systemInfoCode" value="systemInfoCodeDefaultValueFunc"/>
+                        <entry key="siteCode" value="siteCodeDefaultValueFunc"/>
+                        <entry key="orgCode" value="orgCodeDefaultValueFunc"/>
                     </map>
                 </entry>
                 <entry key="update">
@@ -29,6 +32,9 @@
                         <entry key="lastModifiedByCode" value="readPrincipalFunc"/>
                         <entry key="lastModifiedDate" value="readOneDateFunc"/>
                         <entry key="endDate" value="endDateDefaultValueFunc"/>
+                        <entry key="systemInfoCode" value="systemInfoCodeDefaultValueFunc"/>
+                        <entry key="siteCode" value="siteCodeDefaultValueFunc"/>
+                        <entry key="orgCode" value="orgCodeDefaultValueFunc"/>
                     </map>
                 </entry>
             </map>
