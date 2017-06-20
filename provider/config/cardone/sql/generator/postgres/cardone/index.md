@@ -22,7 +22,7 @@ end_date|YES|Date(29)|结束日期
 flag_code|YES|String(255)|标记代码(数据字典：工作流、同步、生成、录入、审批)
 flag_object_code|YES|String(255)|标识对象代码(工作流：工作流标识、同步：批次号、生成：操作者编号、录入：操作者编号、审批：操作者编号)
 icon_style|YES|String(255)|图标样式
-json_data|YES|Object(2147483647)|JSON数据
+json_data|YES|Object(2147483647)|json数据
 last_modified_by_code|YES|String(255)|最后修改人代码
 last_modified_date|YES|Date(29)|最后修改日期
 name|YES|String(255)|名称
@@ -39,7 +39,7 @@ state_code|YES|String(255)|状态代码(数据字典)
 system_info_code|YES|String(255)|系统信息代码
 target|YES|String(255)|目标
 type_code|YES|String(255)|类别代码(数据字典)
-url|YES|String(255)|URL
+url|YES|String(255)|url
 version_|YES|Integer(10)|版本
 
 ##### 字典类别（c1_dictionary_type）
@@ -57,7 +57,7 @@ dictionary_type_id|NO|String(255)|字典类别标识
 end_date|YES|Date(29)|结束日期
 flag_code|YES|String(255)|标记代码(数据字典：工作流、同步、生成、录入、审批)
 flag_object_code|YES|String(255)|标识对象代码(工作流：工作流标识、同步：批次号、生成：操作者编号、录入：操作者编号、审批：操作者编号)
-json_data|YES|Object(2147483647)|JSON数据
+json_data|YES|Object(2147483647)|json数据
 last_modified_by_code|YES|String(255)|最后修改人代码
 last_modified_date|YES|Date(29)|最后修改日期
 name|YES|String(255)|名称
@@ -90,7 +90,7 @@ end_date|YES|Date(29)|结束日期
 explain_|YES|String(511)|解释
 flag_code|YES|String(255)|标记代码(数据字典：工作流、同步、生成、录入、审批)
 flag_object_code|YES|String(255)|标识对象代码(工作流：工作流标识、同步：批次号、生成：操作者编号、录入：操作者编号、审批：操作者编号)
-json_data|YES|Object(2147483647)|JSON数据
+json_data|YES|Object(2147483647)|json数据
 last_modified_by_code|YES|String(255)|最后修改人代码
 last_modified_date|YES|Date(29)|最后修改日期
 name|YES|String(255)|名称
@@ -122,7 +122,7 @@ end_date|YES|Date(29)|结束日期
 explain_|YES|String(511)|解释
 flag_code|YES|String(255)|标记代码(数据字典：工作流、同步、生成、录入、审批)
 flag_object_code|YES|String(255)|标识对象代码(工作流：工作流标识、同步：批次号、生成：操作者编号、录入：操作者编号、审批：操作者编号)
-json_data|YES|Object(2147483647)|JSON数据
+json_data|YES|Object(2147483647)|json数据
 last_modified_by_code|YES|String(255)|最后修改人代码
 last_modified_date|YES|Date(29)|最后修改日期
 name|YES|String(255)|名称
@@ -152,7 +152,7 @@ flag_code|YES|String(255)|标记代码(数据字典：工作流、同步、生�
 flag_object_code|YES|String(255)|标识对象代码(工作流：工作流标识、同步：批次号、生成：操作者编号、录入：操作者编号、审批：操作者编号)
 i18n_info_code|NO|String(255)|国际化信息代码
 i18n_info_id|NO|String(255)|国际化信息标识
-json_data|YES|Object(2147483647)|JSON数据
+json_data|YES|Object(2147483647)|json数据
 last_modified_by_code|YES|String(255)|最后修改人代码
 last_modified_date|YES|Date(29)|最后修改日期
 order_by_|YES|Long(19)|排序
@@ -180,7 +180,7 @@ error_info_code|NO|String(255)|错误信息代码
 error_info_id|NO|String(255)|错误信息标识
 flag_code|YES|String(255)|标记代码(数据字典：工作流、同步、生成、录入、审批)
 flag_object_code|YES|String(255)|标识对象代码(工作流：工作流标识、同步：批次号、生成：操作者编号、录入：操作者编号、审批：操作者编号)
-json_data|YES|Object(2147483647)|JSON数据
+json_data|YES|Object(2147483647)|json数据
 last_modified_by_code|YES|String(255)|最后修改人代码
 last_modified_date|YES|Date(29)|最后修改日期
 object_code|YES|String(255)|对象代码
@@ -193,7 +193,7 @@ site_code|YES|String(255)|站点代码
 state_code|YES|String(255)|状态代码(数据字典)
 system_info_code|YES|String(255)|系统信息代码
 type_code|YES|String(255)|类别代码(数据字典)
-url|YES|String(255)|URL
+url|YES|String(255)|url
 version_|YES|Integer(10)|版本
 
 ##### 系统信息（c1_system_info）
@@ -210,7 +210,7 @@ department_code|YES|String(255)|部门代码
 end_date|YES|Date(29)|结束日期
 flag_code|YES|String(255)|标记代码(数据字典：工作流、同步、生成、录入、审批)
 flag_object_code|YES|String(255)|标识对象代码(工作流：工作流标识、同步：批次号、生成：操作者编号、录入：操作者编号、审批：操作者编号)
-json_data|YES|Object(2147483647)|JSON数据
+json_data|YES|Object(2147483647)|json数据
 last_modified_by_code|YES|String(255)|最后修改人代码
 last_modified_date|YES|Date(29)|最后修改日期
 name|YES|String(255)|名称
@@ -239,7 +239,7 @@ end_date|YES|Date(29)|结束日期
 explain_|YES|String(511)|解释
 flag_code|YES|String(255)|标记代码(数据字典：工作流、同步、生成、录入、审批)
 flag_object_code|YES|String(255)|标识对象代码(工作流：工作流标识、同步：批次号、生成：操作者编号、录入：操作者编号、审批：操作者编号)
-json_data|YES|Object(2147483647)|JSON数据
+json_data|YES|Object(2147483647)|json数据
 last_modified_by_code|YES|String(255)|最后修改人代码
 last_modified_date|YES|Date(29)|最后修改日期
 name|YES|String(255)|名称

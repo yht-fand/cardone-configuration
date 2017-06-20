@@ -95,7 +95,7 @@ public class ErrorInfo implements java.io.Serializable {
     protected String flagObjectCode;
 
     /**
-     * JSON数据
+     * json数据
      */
     @lombok.Getter
     @lombok.Setter
@@ -186,7 +186,7 @@ public class ErrorInfo implements java.io.Serializable {
     protected String typeCode;
 
     /**
-     * URL
+     * url
      */
     @lombok.Getter
     @lombok.Setter

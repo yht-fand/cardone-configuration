@@ -88,7 +88,7 @@ public class Navigation implements java.io.Serializable {
     protected String iconStyle;
 
     /**
-     * JSON数据
+     * json数据
      */
     @lombok.Getter
     @lombok.Setter
@@ -207,7 +207,7 @@ public class Navigation implements java.io.Serializable {
     protected String typeCode;
 
     /**
-     * URL
+     * url
      */
     @lombok.Getter
     @lombok.Setter

@@ -109,7 +109,7 @@ public class DictionaryItem implements java.io.Serializable {
     protected String flagObjectCode;
 
     /**
-     * JSON数据
+     * json数据
      */
     @lombok.Getter
     @lombok.Setter

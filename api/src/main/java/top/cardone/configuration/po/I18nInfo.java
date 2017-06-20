@@ -95,7 +95,7 @@ public class I18nInfo implements java.io.Serializable {
     protected String i18nInfoId;
 
     /**
-     * JSON数据
+     * json数据
      */
     @lombok.Getter
     @lombok.Setter
