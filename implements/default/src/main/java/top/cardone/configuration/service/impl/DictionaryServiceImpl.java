@@ -171,6 +171,15 @@ public class DictionaryServiceImpl extends PageServiceImpl<DictionaryDao> implem
 
         readOne.put("dictionaryTypeCode", dictionaryTypeCode);
         readOne.put("dictionaryCode", dictionaryCode);
+
+        if (!readOne.containsKey("dataStateCode")) {
+            readOne.put("dataStateCode", "1");
+        }
+
+        if (!readOne.containsKey("stateCode")) {
+            readOne.put("stateCode", "1");
+        }
+
         readOne.put("object_id", objectId);
 
         return this.readOneByCode(readOne, defaultValue);
