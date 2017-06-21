@@ -193,10 +193,6 @@ public class DictionaryServiceImpl extends PageServiceImpl<DictionaryDao> implem
 
             insert.put(MapUtils.getString(readOne, "object_id"), defaultValue);
 
-            if (!insert.containsKey("name")) {
-                insert.put("name", insert.get("dictionaryCode"));
-            }
-
             ApplicationContextHolder.getBean(TaskExecutor.class).execute(TaskUtils.decorateTaskWithErrorHandler(() -> {
                 this.insertByNotExistsCache(insert);
             }, null, true));
@@ -258,9 +254,15 @@ public class DictionaryServiceImpl extends PageServiceImpl<DictionaryDao> implem
 
             Object obj = this.readOneByCode(readOne, null);
 
-            if (!Objects.isNull(obj)) {
-                return obj;
+            if (Objects.isNull(obj)) {
+                continue;
             }
+
+            if (obj instanceof String && StringUtils.isBlank((String) obj)) {
+                continue;
+            }
+
+            return obj;
         }
 
         return null;
