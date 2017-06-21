@@ -264,6 +264,12 @@ public class DictionaryServiceImpl extends PageServiceImpl<DictionaryDao> implem
             return obj;
         }
 
+        for (String insertDictionaryTypeCode : insertDictionaryTypeCodes) {
+            readOne.put("dictionaryTypeCode", insertDictionaryTypeCode);
+
+            this.asynchronousInsert(Maps.newHashMap(readOne), (String) MapUtils.getString(readOne, "dictionaryCode"));
+        }
+
         return MapUtils.getString(readOne, "dictionaryCode");
     }
 }
