@@ -5,6 +5,7 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.transaction.annotation.Transactional;
 import top.cardone.cache.Caches;
+import top.cardone.context.util.StringUtils;
 import top.cardone.data.service.PageService;
 
 import java.util.List;
@@ -180,32 +181,36 @@ public interface DictionaryService extends PageService {
 
     @Cacheable(value = "top.cardone.configuration.service.DictionaryService", key = Caches.KEY_3)
     default String readOneNameByCodeCache(String dictionaryTypeCode, String dictionaryCode, String defaultValue) {
-        return this.readOneNameByCode(dictionaryTypeCode, dictionaryCode, defaultValue);
+        return this.readOneNameByCode(dictionaryTypeCode, dictionaryCode, StringUtils.defaultIfBlank(defaultValue, dictionaryCode));
     }
 
     String readOneValueByCode(String dictionaryTypeCode, String dictionaryCode, String defaultValue);
 
     @Cacheable(value = "top.cardone.configuration.service.DictionaryService", key = Caches.KEY_3)
     default String readOneValueByCodeCache(String dictionaryTypeCode, String dictionaryCode, String defaultValue) {
-        return this.readOneValueByCode(dictionaryTypeCode, dictionaryCode, defaultValue);
+        return this.readOneValueByCode(dictionaryTypeCode, dictionaryCode, StringUtils.defaultIfBlank(defaultValue, dictionaryCode));
     }
 
     String readOneRemarkByCode(String dictionaryTypeCode, String dictionaryCode, String defaultValue);
 
     @Cacheable(value = "top.cardone.configuration.service.DictionaryService", key = Caches.KEY_3)
     default String readOneRemarkByCodeCache(String dictionaryTypeCode, String dictionaryCode, String defaultValue) {
-        return this.readOneRemarkByCode(dictionaryTypeCode, dictionaryCode, defaultValue);
+        return this.readOneRemarkByCode(dictionaryTypeCode, dictionaryCode, StringUtils.defaultIfBlank(defaultValue, dictionaryCode));
     }
 
     String readOneExplainByCode(String dictionaryTypeCode, String dictionaryCode, String defaultValue);
 
     @Cacheable(value = "top.cardone.configuration.service.DictionaryService", key = Caches.KEY_3)
-    String readOneExplainByCodeCache(String dictionaryTypeCode, String dictionaryCode, String defaultValue);
+    default String readOneExplainByCodeCache(String dictionaryTypeCode, String dictionaryCode, String defaultValue) {
+        return this.readOneExplainByCode(dictionaryTypeCode, dictionaryCode, StringUtils.defaultIfBlank(defaultValue, dictionaryCode));
+    }
 
     List<Map<String, Object>> findListByDictionaryTypeCodes(String dictionaryTypeCodes);
 
     @Cacheable(value = "top.cardone.configuration.service.DictionaryService", key = Caches.KEY_1)
-    List<Map<String, Object>> findListByDictionaryTypeCodesCache(String dictionaryTypeCodes);
+   default List<Map<String, Object>> findListByDictionaryTypeCodesCache(String dictionaryTypeCodes) {
+        return this.findListByDictionaryTypeCodes(dictionaryTypeCodes);
+    }
 
     @Cacheable(value = "top.cardone.configuration.service.DictionaryService", key = Caches.KEY_1)
     default Object readOneByDictionaryTypeCodesCache(Map<String, Object> readOne) {

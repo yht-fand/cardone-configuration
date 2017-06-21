@@ -2,6 +2,7 @@ package top.cardone.configuration.service.impl;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import com.google.common.collect.Sets;
 import org.apache.commons.collections.CollectionUtils;
 import org.springframework.core.task.TaskExecutor;
 import org.springframework.data.domain.Page;
@@ -17,6 +18,7 @@ import top.cardone.data.service.impl.PageServiceImpl;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 
 /**
  * 字典服务
@@ -171,15 +173,8 @@ public class DictionaryServiceImpl extends PageServiceImpl<DictionaryDao> implem
 
         readOne.put("dictionaryTypeCode", dictionaryTypeCode);
         readOne.put("dictionaryCode", dictionaryCode);
-
-        if (!readOne.containsKey("dataStateCode")) {
-            readOne.put("dataStateCode", "1");
-        }
-
-        if (!readOne.containsKey("stateCode")) {
-            readOne.put("stateCode", "1");
-        }
-
+        readOne.put("stateCode", MapUtils.getString(readOne, "stateCode", "1"));
+        readOne.put("dataStateCode", MapUtils.getString(readOne, "dataStateCode", "1"));
         readOne.put("object_id", objectId);
 
         return this.readOneByCode(readOne, defaultValue);
@@ -188,17 +183,19 @@ public class DictionaryServiceImpl extends PageServiceImpl<DictionaryDao> implem
     private String readOneByCode(Map<String, Object> readOne, String defaultValue) {
         String str = this.dao.readOne(String.class, readOne);
 
-        if (StringUtils.isBlank(str)) {
-            Map<String, Object> insert = Maps.newHashMap(readOne);
-
-            insert.put(MapUtils.getString(readOne, "object_id"), defaultValue);
-
-            ApplicationContextHolder.getBean(TaskExecutor.class).execute(TaskUtils.decorateTaskWithErrorHandler(() -> {
-                this.insertByNotExistsCache(insert);
-            }, null, true));
+        if (StringUtils.isBlank(str) && StringUtils.isNotBlank(defaultValue)) {
+            this.asynchronousInsert(Maps.newHashMap(readOne), defaultValue);
         }
 
         return StringUtils.defaultIfBlank(str, defaultValue);
+    }
+
+    private void asynchronousInsert(Map<String, Object> insert, String defaultValue) {
+        insert.put(MapUtils.getString(insert, "object_id"), defaultValue);
+
+        ApplicationContextHolder.getBean(TaskExecutor.class).execute(TaskUtils.decorateTaskWithErrorHandler(() -> {
+            this.insertByNotExistsCache(insert);
+        }, null, true));
     }
 
     @Override
@@ -217,13 +214,12 @@ public class DictionaryServiceImpl extends PageServiceImpl<DictionaryDao> implem
     }
 
     @Override
-    public String readOneExplainByCodeCache(String dictionaryTypeCode, String dictionaryCode, String defaultValue) {
-        return this.readOneExplainByCode(dictionaryTypeCode, dictionaryCode, defaultValue);
-    }
-
-    @Override
     public List<Map<String, Object>> findListByDictionaryTypeCodes(String dictionaryTypeCodes) {
         String[] dictionaryTypeCodeArray = StringUtils.split(dictionaryTypeCodes, ",");
+
+        if (dictionaryTypeCodeArray == null) {
+            return Lists.newArrayList();
+        }
 
         for (String dictionaryTypeCode : dictionaryTypeCodeArray) {
             List<Map<String, Object>> mapList = ApplicationContextHolder.getBean(DictionaryService.class).findListByDictionaryTypeCode(dictionaryTypeCode);
@@ -237,11 +233,6 @@ public class DictionaryServiceImpl extends PageServiceImpl<DictionaryDao> implem
     }
 
     @Override
-    public List<Map<String, Object>> findListByDictionaryTypeCodesCache(String dictionaryTypeCodes) {
-        return this.findListByDictionaryTypeCodes(dictionaryTypeCodes);
-    }
-
-    @Override
     public Object readOneByDictionaryTypeCodes(Map<String, Object> readOne) {
         String[] dictionaryTypeCodeArray = StringUtils.split(MapUtils.getString(readOne, "dictionaryTypeCodes"), ",");
 
@@ -249,17 +240,25 @@ public class DictionaryServiceImpl extends PageServiceImpl<DictionaryDao> implem
             return null;
         }
 
+        Set<String> insertDictionaryTypeCodes = Sets.newHashSet();
+
         for (String dictionaryTypeCode : dictionaryTypeCodeArray) {
             readOne.put("dictionaryTypeCode", dictionaryTypeCode);
 
             Object obj = this.readOneByCode(readOne, null);
 
-            if (Objects.isNull(obj)) {
+            if (Objects.isNull(obj) || (obj instanceof String && StringUtils.isBlank((String) obj))) {
+                insertDictionaryTypeCodes.add(dictionaryTypeCode);
+
                 continue;
             }
 
-            if (obj instanceof String && StringUtils.isBlank((String) obj)) {
-                continue;
+            if ((obj instanceof String) && CollectionUtils.isNotEmpty(insertDictionaryTypeCodes)) {
+                for (String insertDictionaryTypeCode : insertDictionaryTypeCodes) {
+                    readOne.put("dictionaryTypeCode", insertDictionaryTypeCode);
+
+                    this.asynchronousInsert(Maps.newHashMap(readOne), (String) obj);
+                }
             }
 
             return obj;
