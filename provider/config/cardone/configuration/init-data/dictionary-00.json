@@ -212,13 +212,13 @@
   {
     "dictionaryTypeCode": "state",
     "dictionaryCode": "1",
-    "name": "有效",
+    "name": "启用",
     "flagCode": "init"
   },
   {
     "dictionaryTypeCode": "state",
     "dictionaryCode": "0",
-    "name": "过期",
+    "name": "禁用",
     "flagCode": "init"
   },
   {
