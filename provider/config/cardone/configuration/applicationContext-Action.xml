@@ -33,10 +33,12 @@
                     <property name="serviceBeanId" value="top.cardone.configuration.service.DictionaryTypeService"/>
                     <property name="jsonFiles"
                               value="${app.root}/config/*/configuration/init-data/dictionaryType-*.json"/>
+                    <property name="reinit" value="true"/>
                 </bean>
                 <bean class="top.cardone.data.action.InitDataAction">
                     <property name="serviceBeanId" value="top.cardone.configuration.service.DictionaryService"/>
                     <property name="jsonFiles" value="${app.root}/config/*/configuration/init-data/dictionary-*.json"/>
+                    <property name="reinit" value="true"/>
                 </bean>
                 <ref bean="top.cardone.configuration.service.NavigationService.init"/>
             </list>
