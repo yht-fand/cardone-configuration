@@ -265,6 +265,6 @@ public class DictionaryServiceImpl extends PageServiceImpl<DictionaryDao> implem
             return obj;
         }
 
-        return null;
+        return MapUtils.getString(readOne, "dictionaryCode");
     }
 }
