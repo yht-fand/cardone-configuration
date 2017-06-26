@@ -1,1 +1,0 @@
-UPDATE c1_dictionary_type SET END_DATE = NOW(), DATA_STATE_CODE = '0' WHERE INSTR(:dictionaryTypeIds, DICTIONARY_TYPE_ID) > 0

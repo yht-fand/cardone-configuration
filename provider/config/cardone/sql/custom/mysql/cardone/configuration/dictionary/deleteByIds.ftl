@@ -1,1 +1,0 @@
-DELETE FROM c1_dictionary WHERE INSTR(:dictionaryIds, DICTIONARY_ID) > 0

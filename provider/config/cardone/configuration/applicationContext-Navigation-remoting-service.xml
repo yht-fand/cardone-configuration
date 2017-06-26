@@ -1,19 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns="http://www.springframework.org/schema/beans"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <!-- 导航 -->
-    <bean parent="messageListenerContainerParnet">
-        <property name="messageListener">
-            <bean  parent="remoteInvocationExecutorParnet">
-                <property name="serviceInterface" value="top.cardone.configuration.service.NavigationService"/>
-                <property name="service" ref="top.cardone.configuration.service.NavigationService"/>
-            </bean>
-        </property>
-        <property name="destination">
-            <bean class="org.apache.activemq.command.ActiveMQQueue">
-                <constructor-arg value="cardone-configuration-${cardone-configuration-version}:top.cardone.configuration.service.NavigationService"/>
-            </bean>
-        </property>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/rabbit http://www.springframework.org/schema/rabbit/spring-rabbit.xsd">
+    <rabbit:direct-exchange
+            name="exchange:cardone-configuration-${cardone-configuration-version}:top.cardone.configuration.service.NavigationService">
+        <rabbit:bindings>
+            <rabbit:binding
+                    queue="queue:cardone-configuration-${cardone-configuration-version}:top.cardone.configuration.service.NavigationService"
+                    key="queue:cardone-configuration-${cardone-configuration-version}:top.cardone.configuration.service.NavigationService"/>
+        </rabbit:bindings>
+    </rabbit:direct-exchange>
+
+    <rabbit:queue
+            name="queue:cardone-configuration-${cardone-configuration-version}:top.cardone.configuration.service.NavigationService"/>
+
+    <bean id="top.cardone.configuration.service.NavigationServiceExporter"
+          class="org.springframework.amqp.remoting.service.AmqpInvokerServiceExporter">
+        <property name="serviceInterface" value="top.cardone.configuration.service.NavigationService"/>
+        <property name="service" ref="top.cardone.configuration.service.NavigationService"/>
+        <property name="amqpTemplate" ref="org.springframework.amqp.core.AmqpTemplate"/>
     </bean>
+
+    <rabbit:listener-container acknowledge="none" max-concurrency="128" prefetch="10">
+        <rabbit:listener ref="top.cardone.configuration.service.NavigationServiceExporter"
+                         queue-names="queue:cardone-configuration-${cardone-configuration-version}:top.cardone.configuration.service.NavigationService"/>
+    </rabbit:listener-container>
 </beans>
