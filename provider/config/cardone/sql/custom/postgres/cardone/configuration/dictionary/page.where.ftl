@@ -1,9 +1,9 @@
 <#assign prefixName = true>
 <#if cardone.StringUtils.isNotBlank(dictionaryTypeCode)>
-${prefixName?string('WHERE ', 'AND ')}(t.DICTIONARY_TYPE_CODE = :dictionaryTypeCode OR Exists(select 1 from c1_department e where e.DICTIONARY_TYPE_CODE = t.DICTIONARY_TYPE_CODE and :dictionaryTypeCode = ANY(string_to_array(e.parent_tree_code, ','))))
+${prefixName?string('WHERE ', 'AND ')}(t.DICTIONARY_TYPE_CODE = :dictionaryTypeCode OR :dictionaryTypeCode = ANY(string_to_array(d.parent_tree_code, ',')))
     <#assign prefixName = false>
 <#elseif cardone.StringUtils.isNotBlank(dictionaryTypeTreeName)>
-${prefixName?string('WHERE ', 'AND ')}(POSITION(:dictionaryTypeTreeName in t.DICTIONARY_TYPE_CODE) > 0 OR Exists(select 1 from C1_DICTIONARY_TYPE e where e.DICTIONARY_TYPE_CODE = t.DICTIONARY_TYPE_CODE and POSITION(:dictionaryTypeTreeName in e.NAME) > 0))
+${prefixName?string('WHERE ', 'AND ')}(POSITION(:dictionaryTypeTreeName in t.DICTIONARY_TYPE_CODE) > 0 OR POSITION(:dictionaryTypeTreeName in d.NAME) > 0)
     <#assign prefixName = false>
 </#if>
 <#if cardone.StringUtils.isNotBlank(dictionaryCode)>
