@@ -64,9 +64,9 @@ class u0001 implements java.io.Serializable {
 
 		def readOne = ["navigationCode": input.navigationCode, "object_id": "navigationId", "dataStateCode": "1"]
 
-		String dbNavigationId = ApplicationContextHolder.getBean(NavigationService.class).readOne(String.class, readOne)
+		def dbNavigationId = ApplicationContextHolder.getBean(NavigationService.class).readOne(String.class, readOne)
 
-		if ((dbNavigationId != null) && !StringUtils.equals(dbNavigationId, input.navigationId)) {
+		if (!StringUtils.equals(dbNavigationId, input.navigationId)) {
 			throw new CodeException("navigationId already exists", "导航编号已经存在")
 		}
     }

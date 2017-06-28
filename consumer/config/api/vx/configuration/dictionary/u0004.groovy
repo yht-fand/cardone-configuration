@@ -60,9 +60,9 @@ class u0004 implements java.io.Serializable {
 
 		def readOne = ["dictionaryCode": input.dictionaryCode, "object_id": "dictionaryId", "dataStateCode": "1"]
 
-		String dbDictionaryId = ApplicationContextHolder.getBean(DictionaryService.class).readOne(String.class, readOne)
+		def dbDictionaryId = ApplicationContextHolder.getBean(DictionaryService.class).readOne(String.class, readOne)
 
-		if ((dbDictionaryId != null) && !StringUtils.equals(dbDictionaryId, input.dictionaryId)) {
+		if (!StringUtils.equals(dbDictionaryId, input.dictionaryId)) {
 			throw new CodeException("dictionaryId already exists", "字典编号已经存在")
 		}
     }

@@ -61,9 +61,9 @@ class u0004 implements java.io.Serializable {
 
 		def readOne = ["errorInfoCode": input.errorInfoCode, "object_id": "errorInfoId", "dataStateCode": "1"]
 
-		String dbErrorInfoId = ApplicationContextHolder.getBean(ErrorInfoService.class).readOne(String.class, readOne)
+		def dbErrorInfoId = ApplicationContextHolder.getBean(ErrorInfoService.class).readOne(String.class, readOne)
 
-		if ((dbErrorInfoId != null) && !StringUtils.equals(dbErrorInfoId, input.errorInfoId)) {
+		if (!StringUtils.equals(dbErrorInfoId, input.errorInfoId)) {
 			throw new CodeException("errorInfoId already exists", "错误信息编号已经存在")
 		}
     }

@@ -57,9 +57,9 @@ class u0003 implements java.io.Serializable {
 
 		def readOne = ["i18nInfoCode": input.i18nInfoCode, "object_id": "i18nInfoId", "dataStateCode": "1"]
 
-		String dbI18nInfoId = ApplicationContextHolder.getBean(I18nInfoService.class).readOne(String.class, readOne)
+		def dbI18nInfoId = ApplicationContextHolder.getBean(I18nInfoService.class).readOne(String.class, readOne)
 
-		if ((dbI18nInfoId != null) && !StringUtils.equals(dbI18nInfoId, input.i18nInfoId)) {
+		if (!StringUtils.equals(dbI18nInfoId, input.i18nInfoId)) {
 			throw new CodeException("i18nInfoId already exists", "国际化信息编号已经存在")
 		}
     }
