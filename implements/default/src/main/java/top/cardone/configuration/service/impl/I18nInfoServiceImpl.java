@@ -115,7 +115,7 @@ public class I18nInfoServiceImpl extends PageServiceImpl<I18nInfoDao> implements
 
     @Override
     @Transactional
-    public Integer saveCache(Object save) {
+    public int saveCache(Object save) {
         return this.save(save);
     }
 

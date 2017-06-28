@@ -127,7 +127,7 @@ public interface DictionaryItemService extends PageService {
      * @see top.cardone.configuration.service.DictionaryItemService#save
      */
     @CacheEvict(value = "top.cardone.configuration.service.DictionaryItemService", allEntries = true)
-    Integer saveCache(Object save);
+    int saveCache(Object save);
 
 	/**
      * @see top.cardone.configuration.service.DictionaryItemService#update

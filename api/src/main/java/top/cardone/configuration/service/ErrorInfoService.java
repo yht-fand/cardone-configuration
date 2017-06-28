@@ -127,7 +127,7 @@ public interface ErrorInfoService extends PageService {
      * @see top.cardone.configuration.service.ErrorInfoService#save
      */
     @CacheEvict(value = "top.cardone.configuration.service.ErrorInfoService", allEntries = true)
-    Integer saveCache(Object save);
+    int saveCache(Object save);
 
 	/**
      * @see top.cardone.configuration.service.ErrorInfoService#update

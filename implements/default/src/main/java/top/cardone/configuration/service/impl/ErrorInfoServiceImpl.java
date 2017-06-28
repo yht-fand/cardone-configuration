@@ -115,7 +115,7 @@ public class ErrorInfoServiceImpl extends PageServiceImpl<ErrorInfoDao> implemen
 
     @Override
     @Transactional
-    public Integer saveCache(Object save) {
+    public int saveCache(Object save) {
         return this.save(save);
     }
 

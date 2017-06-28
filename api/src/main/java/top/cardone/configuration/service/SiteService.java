@@ -127,7 +127,7 @@ public interface SiteService extends PageService {
      * @see top.cardone.configuration.service.SiteService#save
      */
     @CacheEvict(value = "top.cardone.configuration.service.SiteService", allEntries = true)
-    Integer saveCache(Object save);
+    int saveCache(Object save);
 
 	/**
      * @see top.cardone.configuration.service.SiteService#update

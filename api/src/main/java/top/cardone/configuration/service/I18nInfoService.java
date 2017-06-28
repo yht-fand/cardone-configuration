@@ -127,7 +127,7 @@ public interface I18nInfoService extends PageService {
      * @see top.cardone.configuration.service.I18nInfoService#save
      */
     @CacheEvict(value = "top.cardone.configuration.service.I18nInfoService", allEntries = true)
-    Integer saveCache(Object save);
+    int saveCache(Object save);
 
 	/**
      * @see top.cardone.configuration.service.I18nInfoService#update

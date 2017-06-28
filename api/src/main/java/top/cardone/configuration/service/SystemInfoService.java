@@ -127,7 +127,7 @@ public interface SystemInfoService extends PageService {
      * @see top.cardone.configuration.service.SystemInfoService#save
      */
     @CacheEvict(value = "top.cardone.configuration.service.SystemInfoService", allEntries = true)
-    Integer saveCache(Object save);
+    int saveCache(Object save);
 
 	/**
      * @see top.cardone.configuration.service.SystemInfoService#update

@@ -136,7 +136,7 @@ public interface NavigationService extends PageService {
      */
     @CacheEvict(value = "top.cardone.configuration.service.NavigationService", allEntries = true)
     @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateNavigationTreeFunc\"}")
-    Integer saveCache(Object save);
+    int saveCache(Object save);
 
 	/**
      * @see top.cardone.configuration.service.NavigationService#update
