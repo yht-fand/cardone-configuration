@@ -4,7 +4,9 @@ import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import top.cardone.cache.Caches;
-import top.cardone.context.annotation.Func;
+import top.cardone.context.annotation.Event;
+import top.cardone.context.annotation.Events;
+import top.cardone.context.event.SimpleEvent;
 import top.cardone.data.service.PageService;
 
 import java.util.List;
@@ -56,28 +58,28 @@ public interface NavigationService extends PageService {
      * @see top.cardone.configuration.service.NavigationService#delete
      */
     @CacheEvict(value = "top.cardone.configuration.service.NavigationService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateNavigationTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateNavigationTreeFunc")})
     int deleteCache(Object delete);
 
 	/**
      * @see top.cardone.configuration.service.NavigationService#deleteAll
      */
     @CacheEvict(value = "top.cardone.configuration.service.NavigationService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateNavigationTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateNavigationTreeFunc")})
     int deleteAllCache();
 
 	/**
      * @see top.cardone.configuration.service.NavigationService#deleteByIds
      */
     @CacheEvict(value = "top.cardone.configuration.service.NavigationService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateNavigationTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateNavigationTreeFunc")})
     int deleteByIdsCache(Object ids);
 
 	/**
      * @see top.cardone.configuration.service.NavigationService#deleteList
      */
     @CacheEvict(value = "top.cardone.configuration.service.NavigationService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateNavigationTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateNavigationTreeFunc")})
     int[] deleteListCache(List<Object> deleteList);
 
 	/**
@@ -96,21 +98,21 @@ public interface NavigationService extends PageService {
      * @see top.cardone.configuration.service.NavigationService#insert
      */
     @CacheEvict(value = "top.cardone.configuration.service.NavigationService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateNavigationTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateNavigationTreeFunc")})
     int insertCache(Object insert);
 
 	/**
      * @see top.cardone.configuration.service.NavigationService#insertByNotExists
      */
     @CacheEvict(value = "top.cardone.configuration.service.NavigationService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateNavigationTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateNavigationTreeFunc")})
     int insertByNotExistsCache(Object insert);
 
 	/**
      * @see top.cardone.configuration.service.NavigationService#insertList
      */
     @CacheEvict(value = "top.cardone.configuration.service.NavigationService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateNavigationTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateNavigationTreeFunc")})
     int[] insertListCache(List<Object> insertList);
 
 	/**
@@ -135,28 +137,28 @@ public interface NavigationService extends PageService {
      * @see top.cardone.configuration.service.NavigationService#save
      */
     @CacheEvict(value = "top.cardone.configuration.service.NavigationService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateNavigationTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateNavigationTreeFunc")})
     int saveCache(Object save);
 
 	/**
      * @see top.cardone.configuration.service.NavigationService#update
      */
     @CacheEvict(value = "top.cardone.configuration.service.NavigationService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateNavigationTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateNavigationTreeFunc")})
     int updateCache(Object update);
 
 	/**
      * @see top.cardone.configuration.service.NavigationService#updateList
      */
     @CacheEvict(value = "top.cardone.configuration.service.NavigationService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateNavigationTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateNavigationTreeFunc")})
     int[] updateListCache(List<Object> updateList);
 
 	/**
      * @see top.cardone.configuration.service.NavigationService#saveList
      */
     @CacheEvict(value = "top.cardone.configuration.service.NavigationService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateNavigationTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateNavigationTreeFunc")})
     int[][] saveListCache(List<Object> saveList);
 	
     /**
@@ -189,7 +191,7 @@ public interface NavigationService extends PageService {
      * @return
      */
     @CacheEvict(value = "top.cardone.configuration.service.NavigationService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateNavigationTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateNavigationTreeFunc")})
     int generateData();
 
     /**
@@ -199,6 +201,6 @@ public interface NavigationService extends PageService {
      * @return
      */
     @CacheEvict(value = "top.cardone.configuration.service.NavigationService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateNavigationTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateNavigationTreeFunc")})
     int generateData(String flagObjectCode);
 }
