@@ -6,6 +6,7 @@ import org.springframework.data.domain.Page;
 import top.cardone.cache.Caches;
 import top.cardone.context.annotation.Event;
 import top.cardone.context.annotation.Events;
+import top.cardone.context.event.SimpleErrorEvent;
 import top.cardone.context.event.SimpleEvent;
 import top.cardone.data.service.PageService;
 
@@ -22,12 +23,16 @@ public interface DictionaryTypeService extends PageService {
      * @see top.cardone.configuration.service.DictionaryTypeService#page
      */
     @Cacheable(value = "top.cardone.configuration.service.DictionaryTypeService", key = Caches.KEY_1)
+    @Events({@Event(applicationEvent = SimpleErrorEvent.class, configs = {"insertOperateLogAction"}),
+            @Event(applicationEvent = SimpleEvent.class, configs = {"insertOperateLogAction"})})
     Page<Map<String, Object>> pageCache(Object page);
 
     /**
      * @see top.cardone.configuration.service.DictionaryTypeService#page
      */
     @Cacheable(value = "top.cardone.configuration.service.DictionaryTypeService", key = Caches.KEY_2)
+    @Events({@Event(applicationEvent = SimpleErrorEvent.class, configs = {"insertOperateLogAction"}),
+            @Event(applicationEvent = SimpleEvent.class, configs = {"insertOperateLogAction"})})
     <P> Page<P> pageCache(Class<P> mappedClass, Object page);
 
     /**
