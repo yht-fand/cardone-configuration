@@ -3,6 +3,7 @@ package top.cardone.configuration.service;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
+import org.springframework.transaction.annotation.Transactional;
 import top.cardone.cache.Caches;
 import top.cardone.context.annotation.Event;
 import top.cardone.context.annotation.Events;
@@ -18,21 +19,20 @@ import java.util.Map;
  *
  * @author yao hai tao
  */
+@Events({@Event(applicationEvent = SimpleErrorEvent.class, configs = {"insertOperateLogAction"}),
+        @Event(applicationEvent = SimpleEvent.class, configs = {"insertOperateLogAction"})})
 public interface DictionaryTypeService extends PageService {
     /**
      * @see top.cardone.configuration.service.DictionaryTypeService#page
      */
     @Cacheable(value = "top.cardone.configuration.service.DictionaryTypeService", key = Caches.KEY_1)
-    @Events({@Event(applicationEvent = SimpleErrorEvent.class, configs = {"insertOperateLogAction"}),
-            @Event(applicationEvent = SimpleEvent.class, configs = {"insertOperateLogAction"})})
     Page<Map<String, Object>> pageCache(Object page);
 
     /**
      * @see top.cardone.configuration.service.DictionaryTypeService#page
      */
     @Cacheable(value = "top.cardone.configuration.service.DictionaryTypeService", key = Caches.KEY_2)
-    @Events({@Event(applicationEvent = SimpleErrorEvent.class, configs = {"insertOperateLogAction"}),
-            @Event(applicationEvent = SimpleEvent.class, configs = {"insertOperateLogAction"})})
+
     <P> Page<P> pageCache(Class<P> mappedClass, Object page);
 
     /**
@@ -63,28 +63,28 @@ public interface DictionaryTypeService extends PageService {
      * @see top.cardone.configuration.service.DictionaryTypeService#delete
      */
     @CacheEvict(value = "top.cardone.configuration.service.DictionaryTypeService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateDictionaryTypeTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateDictionaryTypeTreeAction")})
     int deleteCache(Object delete);
 
     /**
      * @see top.cardone.configuration.service.DictionaryTypeService#deleteAll
      */
     @CacheEvict(value = "top.cardone.configuration.service.DictionaryTypeService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateDictionaryTypeTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateDictionaryTypeTreeAction")})
     int deleteAllCache();
 
     /**
      * @see top.cardone.configuration.service.DictionaryTypeService#deleteByIds
      */
     @CacheEvict(value = "top.cardone.configuration.service.DictionaryTypeService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateDictionaryTypeTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateDictionaryTypeTreeAction")})
     int deleteByIdsCache(Object ids);
 
     /**
      * @see top.cardone.configuration.service.DictionaryTypeService#deleteList
      */
     @CacheEvict(value = "top.cardone.configuration.service.DictionaryTypeService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateDictionaryTypeTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateDictionaryTypeTreeAction")})
     int[] deleteListCache(List<Object> deleteList);
 
     /**
@@ -103,28 +103,28 @@ public interface DictionaryTypeService extends PageService {
      * @see top.cardone.configuration.service.DictionaryTypeService#insert
      */
     @CacheEvict(value = "top.cardone.configuration.service.DictionaryTypeService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateDictionaryTypeTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateDictionaryTypeTreeAction")})
     int insertCache(Object insert);
 
     /**
      * @see top.cardone.configuration.service.DictionaryTypeService#insertByNotExists
      */
     @CacheEvict(value = "top.cardone.configuration.service.DictionaryTypeService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateDictionaryTypeTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateDictionaryTypeTreeAction")})
     int insertByNotExistsCache(Object insert);
 
     /**
      * @see top.cardone.configuration.service.DictionaryTypeService#insertList
      */
     @CacheEvict(value = "top.cardone.configuration.service.DictionaryTypeService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateDictionaryTypeTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateDictionaryTypeTreeAction")})
     int[] insertListCache(List<Object> insertList);
 
     /**
      * @see top.cardone.configuration.service.DictionaryTypeService#insertListByNotExists
      */
     @CacheEvict(value = "top.cardone.configuration.service.DictionaryTypeService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateDictionaryTypeTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateDictionaryTypeTreeAction")})
     int[] insertListByNotExistsCache(List<Object> insertList);
 
     /**
@@ -143,28 +143,28 @@ public interface DictionaryTypeService extends PageService {
      * @see top.cardone.configuration.service.DictionaryTypeService#save
      */
     @CacheEvict(value = "top.cardone.configuration.service.DictionaryTypeService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateDictionaryTypeTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateDictionaryTypeTreeAction")})
     int saveCache(Object save);
 
     /**
      * @see top.cardone.configuration.service.DictionaryTypeService#update
      */
     @CacheEvict(value = "top.cardone.configuration.service.DictionaryTypeService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateDictionaryTypeTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateDictionaryTypeTreeAction")})
     int updateCache(Object update);
 
     /**
      * @see top.cardone.configuration.service.DictionaryTypeService#updateList
      */
     @CacheEvict(value = "top.cardone.configuration.service.DictionaryTypeService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateDictionaryTypeTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateDictionaryTypeTreeAction")})
     int[] updateListCache(List<Object> updateList);
 
     /**
      * @see top.cardone.configuration.service.DictionaryTypeService#saveList
      */
     @CacheEvict(value = "top.cardone.configuration.service.DictionaryTypeService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateDictionaryTypeTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateDictionaryTypeTreeAction")})
     int[][] saveListCache(List<Object> saveList);
 
     /**

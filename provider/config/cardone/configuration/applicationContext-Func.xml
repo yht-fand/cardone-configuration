@@ -27,22 +27,4 @@
     </bean>
 
     <bean name="readOneErrorInfoContentFunc" class="top.cardone.configuration.func.ReadOneErrorInfoContentFunc"/>
-
-    <bean id="generateDictionaryTypeTreeFunc"
-          class="top.cardone.data.func.GenerateTreeFunc">
-        <property name="codePutKey" value="dictionaryTypeCode"/>
-        <property name="codeGetKey" value="DICTIONARY_TYPE_CODE"/>
-        <property name="pkPutKey" value="dictionaryTypeId"/>
-        <property name="pkGetKey" value="DICTIONARY_TYPE_ID"/>
-        <property name="service" ref="top.cardone.configuration.service.DictionaryTypeService"/>
-    </bean>
-
-    <bean id="generateNavigationTreeFunc"
-          class="top.cardone.data.func.GenerateTreeFunc">
-        <property name="codePutKey" value="navigationCode"/>
-        <property name="codeGetKey" value="NAVIGATION_CODE"/>
-        <property name="pkPutKey" value="navigationId"/>
-        <property name="pkGetKey" value="NAVIGATION_ID"/>
-        <property name="service" ref="top.cardone.configuration.service.NavigationService"/>
-    </bean>
 </beans>

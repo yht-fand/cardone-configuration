@@ -58,28 +58,28 @@ public interface NavigationService extends PageService {
      * @see top.cardone.configuration.service.NavigationService#delete
      */
     @CacheEvict(value = "top.cardone.configuration.service.NavigationService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateNavigationTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateNavigationTreeAction")})
     int deleteCache(Object delete);
 
 	/**
      * @see top.cardone.configuration.service.NavigationService#deleteAll
      */
     @CacheEvict(value = "top.cardone.configuration.service.NavigationService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateNavigationTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateNavigationTreeAction")})
     int deleteAllCache();
 
 	/**
      * @see top.cardone.configuration.service.NavigationService#deleteByIds
      */
     @CacheEvict(value = "top.cardone.configuration.service.NavigationService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateNavigationTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateNavigationTreeAction")})
     int deleteByIdsCache(Object ids);
 
 	/**
      * @see top.cardone.configuration.service.NavigationService#deleteList
      */
     @CacheEvict(value = "top.cardone.configuration.service.NavigationService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateNavigationTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateNavigationTreeAction")})
     int[] deleteListCache(List<Object> deleteList);
 
 	/**
@@ -98,21 +98,21 @@ public interface NavigationService extends PageService {
      * @see top.cardone.configuration.service.NavigationService#insert
      */
     @CacheEvict(value = "top.cardone.configuration.service.NavigationService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateNavigationTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateNavigationTreeAction")})
     int insertCache(Object insert);
 
 	/**
      * @see top.cardone.configuration.service.NavigationService#insertByNotExists
      */
     @CacheEvict(value = "top.cardone.configuration.service.NavigationService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateNavigationTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateNavigationTreeAction")})
     int insertByNotExistsCache(Object insert);
 
 	/**
      * @see top.cardone.configuration.service.NavigationService#insertList
      */
     @CacheEvict(value = "top.cardone.configuration.service.NavigationService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateNavigationTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateNavigationTreeAction")})
     int[] insertListCache(List<Object> insertList);
 
 	/**
@@ -137,28 +137,28 @@ public interface NavigationService extends PageService {
      * @see top.cardone.configuration.service.NavigationService#save
      */
     @CacheEvict(value = "top.cardone.configuration.service.NavigationService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateNavigationTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateNavigationTreeAction")})
     int saveCache(Object save);
 
 	/**
      * @see top.cardone.configuration.service.NavigationService#update
      */
     @CacheEvict(value = "top.cardone.configuration.service.NavigationService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateNavigationTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateNavigationTreeAction")})
     int updateCache(Object update);
 
 	/**
      * @see top.cardone.configuration.service.NavigationService#updateList
      */
     @CacheEvict(value = "top.cardone.configuration.service.NavigationService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateNavigationTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateNavigationTreeAction")})
     int[] updateListCache(List<Object> updateList);
 
 	/**
      * @see top.cardone.configuration.service.NavigationService#saveList
      */
     @CacheEvict(value = "top.cardone.configuration.service.NavigationService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateNavigationTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateNavigationTreeAction")})
     int[][] saveListCache(List<Object> saveList);
 	
     /**
@@ -191,7 +191,7 @@ public interface NavigationService extends PageService {
      * @return
      */
     @CacheEvict(value = "top.cardone.configuration.service.NavigationService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateNavigationTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateNavigationTreeAction")})
     int generateData();
 
     /**
@@ -201,6 +201,6 @@ public interface NavigationService extends PageService {
      * @return
      */
     @CacheEvict(value = "top.cardone.configuration.service.NavigationService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateNavigationTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateNavigationTreeAction")})
     int generateData(String flagObjectCode);
 }
