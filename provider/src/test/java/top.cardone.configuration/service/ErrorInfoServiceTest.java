@@ -13,10 +13,10 @@ import top.cardone.context.ApplicationContextHolder;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = ProviderApplication.class)
 public class ErrorInfoServiceTest {
-	@Test
-	public void readContentByCode() throws Exception {
-		String content = ApplicationContextHolder.getBean(ErrorInfoService.class).readOneContentByCode("1", "10000001", "test");
+    @Test
+    public void readContentByCode() throws Exception {
+        String content = ApplicationContextHolder.getBean(ErrorInfoService.class).readOneContentByCode("1", "10000001", "test");
 
-		System.out.println(content);
-	}
+        System.out.println(content);
+    }
 }

@@ -13,10 +13,10 @@ import top.cardone.context.ApplicationContextHolder;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = ProviderApplication.class)
 public class DictionaryServiceTest {
-	@Test
-	public void readNameByCode() throws Exception {
-		String name = ApplicationContextHolder.getBean(DictionaryService.class).readOneNameByCode("yesOrNo", "0", "test");
+    @Test
+    public void readNameByCode() throws Exception {
+        String name = ApplicationContextHolder.getBean(DictionaryService.class).readOneNameByCode("yesOrNo", "0", "test");
 
-		System.out.println(name);
-	}
+        System.out.println(name);
+    }
 }

@@ -1,7 +1,6 @@
 package top.cardone.func.vx.configuration.i18nInfo;
 
 import com.google.common.base.Charsets;
-import top.cardone.ConsumerApplication;
 import lombok.extern.log4j.Log4j2;
 import lombok.val;
 import org.apache.commons.io.FileUtils;
@@ -18,6 +17,7 @@ import org.springframework.http.MediaType;
 import org.springframework.scheduling.support.TaskUtils;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.util.StopWatch;
+import top.cardone.ConsumerApplication;
 import top.cardone.context.ApplicationContextHolder;
 import top.cardone.core.util.func.Func1;
 

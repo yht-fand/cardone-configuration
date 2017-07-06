@@ -6,7 +6,6 @@ import top.cardone.configuration.service.DictionaryService;
 import top.cardone.context.ApplicationContextHolder;
 import top.cardone.core.util.func.Func0;
 import top.cardone.core.util.func.Func2;
-import top.cardone.mapper.BeanMapper;
 
 import java.util.Map;
 

@@ -18,14 +18,6 @@ public interface DictionaryTypeDao extends PageDao {
      * @return 字典类别对象
      */
     Map<String, Object> findOneByDictionaryTypeId(Map<String, Object> findOne);
-	
-    /**
-     * 查询字典类别下拉列表
-     *
-     * @param findList 关键字
-     * @return 字典类别下拉列表
-     */
-    List<Map<String, Object>> findListByKeyword(Map<String, Object> findList);
 
     /**
      * 查询字典类别树

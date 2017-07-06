@@ -112,13 +112,13 @@ import org.springframework.context.annotation.ImportResource;
 @EnableEurekaClient
 @ImportResource({"${app.root}/config/applicationContext.xml"})
 public class ProviderApplication {
-	/**
-	 * 主方法
-	 *
-	 * @param args 参数
-	 * @throws Exception 异常
-	 */
-	public static void main(String[] args) throws Exception {
-		SpringApplication.run(ProviderApplication.class, args);
-	}
+    /**
+     * 主方法
+     *
+     * @param args 参数
+     * @throws Exception 异常
+     */
+    public static void main(String[] args) throws Exception {
+        SpringApplication.run(ProviderApplication.class, args);
+    }
 }

@@ -5,7 +5,6 @@ import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import org.apache.commons.collections.CollectionUtils;
 import org.springframework.core.task.TaskExecutor;
-import org.springframework.data.domain.Page;
 import org.springframework.scheduling.support.TaskUtils;
 import org.springframework.transaction.annotation.Transactional;
 import top.cardone.configuration.dao.DictionaryDao;
@@ -28,127 +27,6 @@ import java.util.Set;
 @Transactional(readOnly = true)
 public class DictionaryServiceImpl extends PageServiceImpl<DictionaryDao> implements top.cardone.configuration.service.DictionaryService {
     @Override
-    public Page<Map<String, Object>> pageCache(Object page) {
-        return this.page(page);
-    }
-
-    @Override
-    public <P> Page<P> pageCache(Class<P> mappedClass, Object page) {
-        return this.page(mappedClass, page);
-    }
-
-    @Override
-    public <P> List<P> findListCache(Class<P> mappedClass, Object findList) {
-        return this.findList(mappedClass, findList);
-    }
-
-    @Override
-    public <P> P findOneCache(Class<P> mappedClass, Object findOne) {
-        return this.findOne(mappedClass, findOne);
-    }
-
-    @Override
-    public <R> List<R> readListCache(Class<R> requiredType, Object readList) {
-        return this.readList(requiredType, readList);
-    }
-
-    @Override
-    public <R> R readOneCache(Class<R> requiredType, Object readOne) {
-        return this.readOne(requiredType, readOne);
-    }
-
-    @Override
-    @Transactional
-    public int deleteCache(Object delete) {
-        return this.delete(delete);
-    }
-
-    @Override
-    @Transactional
-    public int deleteAllCache() {
-        return this.deleteAll();
-    }
-
-    @Override
-    @Transactional
-    public int deleteByIdsCache(Object ids) {
-        return this.deleteByIds(ids);
-    }
-
-    @Override
-    @Transactional
-    public int[] deleteListCache(List<Object> deleteList) {
-        return this.deleteList(deleteList);
-    }
-
-    @Override
-    public List<Map<String, Object>> findListCache(Object findList) {
-        return this.findList(findList);
-    }
-
-    @Override
-    public Map<String, Object> findOneCache(Object findOne) {
-        return this.findOne(findOne);
-    }
-
-    @Override
-    @Transactional
-    public int insertCache(Object insert) {
-        return this.insert(insert);
-    }
-
-    @Override
-    @Transactional
-    public int insertByNotExistsCache(Object insert) {
-        return this.insertByNotExists(insert);
-    }
-
-    @Override
-    @Transactional
-    public int[] insertListCache(List<Object> insertList) {
-        return this.insertList(insertList);
-    }
-
-    @Override
-    @Transactional
-    public int[] insertListByNotExistsCache(List<Object> insertList) {
-        return this.insertListByNotExists(insertList);
-    }
-
-    @Override
-    public List<Object> readListCache(Object readList) {
-        return this.readList(readList);
-    }
-
-    @Override
-    public Object readOneCache(Object readOne) {
-        return this.readOne(readOne);
-    }
-
-    @Override
-    @Transactional
-    public int saveCache(Object save) {
-        return this.save(save);
-    }
-
-    @Override
-    @Transactional
-    public int updateCache(Object update) {
-        return this.update(update);
-    }
-
-    @Override
-    @Transactional
-    public int[] updateListCache(List<Object> updateList) {
-        return this.updateList(updateList);
-    }
-
-    @Override
-    public Page<Map<String, Object>> pageByCode(Map<String, Object> page) {
-        return this.dao.pageByCode(page);
-    }
-
-    @Override
     public List<Map<String, Object>> findListByDictionaryTypeCode(String dictionaryTypeCode) {
         return this.dao.findlistByDictionaryTypeCode(dictionaryTypeCode);
     }
@@ -156,11 +34,6 @@ public class DictionaryServiceImpl extends PageServiceImpl<DictionaryDao> implem
     @Override
     public Map<String, Object> findOneByDictionaryId(Map<String, Object> findOne) {
         return this.dao.findOneByDictionaryId(findOne);
-    }
-
-    @Override
-    public List<Map<String, Object>> findListByKeyword(Map<String, Object> findList) {
-        return this.dao.findListByKeyword(findList);
     }
 
     @Override

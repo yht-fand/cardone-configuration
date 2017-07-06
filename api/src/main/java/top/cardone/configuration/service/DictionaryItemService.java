@@ -1,9 +1,15 @@
 package top.cardone.configuration.service;
 
+import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
+import org.springframework.transaction.annotation.Transactional;
 import top.cardone.cache.Caches;
+import top.cardone.context.annotation.Event;
+import top.cardone.context.annotation.Events;
+import top.cardone.context.event.SimpleErrorEvent;
+import top.cardone.context.event.SimpleEvent;
 import top.cardone.data.service.PageService;
 
 import java.util.List;
@@ -14,139 +20,199 @@ import java.util.Map;
  *
  * @author yao hai tao
  */
+@Transactional(readOnly = true)
+@CacheConfig(cacheNames = {"top.cardone.configuration.service.DictionaryItemService"})
+@Events({@Event(applicationEvent = SimpleErrorEvent.class, configs = {"insertOperateLogAction"}),
+        @Event(applicationEvent = SimpleEvent.class, configs = {"insertOperateLogAction"})})
 public interface DictionaryItemService extends PageService {
-	/**
+    /**
      * @see top.cardone.configuration.service.DictionaryItemService#page
      */
-    @Cacheable(value = "top.cardone.configuration.service.DictionaryItemService", key = Caches.KEY_1)
-    Page<Map<String, Object>> pageCache(Object page);
+    @Cacheable(key = Caches.KEY_1)
+    default Page<Map<String, Object>> pageCache(Object page) {
+        return this.page(page);
+    }
 
-	/**
+    /**
      * @see top.cardone.configuration.service.DictionaryItemService#page
      */
-    @Cacheable(value = "top.cardone.configuration.service.DictionaryItemService", key = Caches.KEY_2)
-    <P> Page<P> pageCache(Class<P> mappedClass, Object page);
+    @Cacheable(key = Caches.KEY_2)
+    default <P> Page<P> pageCache(Class<P> mappedClass, Object page) {
+        return this.page(mappedClass, page);
+    }
 
-	/**
+    /**
      * @see top.cardone.configuration.service.DictionaryItemService#findList
      */
-    @Cacheable(value = "top.cardone.configuration.service.DictionaryItemService", key = Caches.KEY_2)
-    <P> List<P> findListCache(Class<P> mappedClass, Object findList);
+    @Cacheable(key = Caches.KEY_2)
+    default <P> List<P> findListCache(Class<P> mappedClass, Object findList) {
+        return this.findList(mappedClass, findList);
+    }
 
-	/**
+    /**
      * @see top.cardone.configuration.service.DictionaryItemService#findOne
      */
-    @Cacheable(value = "top.cardone.configuration.service.DictionaryItemService", key = Caches.KEY_2)
-    <P> P findOneCache(Class<P> mappedClass, Object findOne);
+    @Cacheable(key = Caches.KEY_2)
+    default <P> P findOneCache(Class<P> mappedClass, Object findOne) {
+        return this.findOne(mappedClass, findOne);
+    }
 
-	/**
+    /**
      * @see top.cardone.configuration.service.DictionaryItemService#readList
      */
-    @Cacheable(value = "top.cardone.configuration.service.DictionaryItemService", key = Caches.KEY_2)
-    <R> List<R> readListCache(Class<R> requiredType, Object readList);
+    @Cacheable(key = Caches.KEY_2)
+    default <R> List<R> readListCache(Class<R> requiredType, Object readList) {
+        return this.readList(requiredType, readList);
+    }
 
-	/**
+    /**
      * @see top.cardone.configuration.service.DictionaryItemService#readOne
      */
-    @Cacheable(value = "top.cardone.configuration.service.DictionaryItemService", key = Caches.KEY_2)
-    <R> R readOneCache(Class<R> requiredType, Object readOne);
+    @Cacheable(key = Caches.KEY_2)
+    default <R> R readOneCache(Class<R> requiredType, Object readOne) {
+        return this.readOne(requiredType, readOne);
+    }
 
-	/**
+    /**
      * @see top.cardone.configuration.service.DictionaryItemService#delete
      */
-    @CacheEvict(value = "top.cardone.configuration.service.DictionaryItemService", allEntries = true)
-    int deleteCache(Object delete);
+    @CacheEvict(allEntries = true)
+    @Transactional
+    default int deleteCache(Object delete) {
+        return this.delete(delete);
+    }
 
-	/**
+    /**
      * @see top.cardone.configuration.service.DictionaryItemService#deleteAll
      */
-    @CacheEvict(value = "top.cardone.configuration.service.DictionaryItemService", allEntries = true)
-    int deleteAllCache();
+    @CacheEvict(allEntries = true)
+    @Transactional
+    default int deleteAllCache() {
+        return this.deleteAll();
+    }
 
-	/**
+    /**
      * @see top.cardone.configuration.service.DictionaryItemService#deleteByIds
      */
-    @CacheEvict(value = "top.cardone.configuration.service.DictionaryItemService", allEntries = true)
-    int deleteByIdsCache(Object ids);
+    @CacheEvict(allEntries = true)
+    @Transactional
+    default int deleteByIdsCache(Object ids) {
+        return this.deleteByIds(ids);
+    }
 
-	/**
+    /**
      * @see top.cardone.configuration.service.DictionaryItemService#deleteList
      */
-    @CacheEvict(value = "top.cardone.configuration.service.DictionaryItemService", allEntries = true)
-    int[] deleteListCache(List<Object> deleteList);
+    @CacheEvict(allEntries = true)
+    @Transactional
+    default int[] deleteListCache(List<Object> deleteList) {
+        return this.deleteList(deleteList);
+    }
 
-	/**
+    /**
      * @see top.cardone.configuration.service.DictionaryItemService#findList
      */
-    @Cacheable(value = "top.cardone.configuration.service.DictionaryItemService", key = Caches.KEY_1)
-    List<Map<String, Object>> findListCache(Object findList);
+    @Cacheable(key = Caches.KEY_1)
+    default List<Map<String, Object>> findListCache(Object findList) {
+        return this.findList(findList);
+    }
 
-	/**
+    /**
      * @see top.cardone.configuration.service.DictionaryItemService#findOne
      */
-    @Cacheable(value = "top.cardone.configuration.service.DictionaryItemService", key = Caches.KEY_1)
-    Map<String, Object> findOneCache(Object findOne);
+    @Cacheable(key = Caches.KEY_1)
+    default Map<String, Object> findOneCache(Object findOne) {
+        return this.findOne(findOne);
+    }
 
-	/**
+    /**
      * @see top.cardone.configuration.service.DictionaryItemService#insert
      */
-    @CacheEvict(value = "top.cardone.configuration.service.DictionaryItemService", allEntries = true)
-    int insertCache(Object insert);
+    @CacheEvict(allEntries = true)
+    @Transactional
+    default int insertCache(Object insert) {
+        return this.insert(insert);
+    }
 
-	/**
+    /**
      * @see top.cardone.configuration.service.DictionaryItemService#insertByNotExists
      */
-    @CacheEvict(value = "top.cardone.configuration.service.DictionaryItemService", allEntries = true)
-    int insertByNotExistsCache(Object insert);
+    @CacheEvict(allEntries = true)
+    @Transactional
+    default int insertByNotExistsCache(Object insert) {
+        return this.insertByNotExists(insert);
+    }
 
-	/**
+    /**
      * @see top.cardone.configuration.service.DictionaryItemService#insertList
      */
-    @CacheEvict(value = "top.cardone.configuration.service.DictionaryItemService", allEntries = true)
-    int[] insertListCache(List<Object> insertList);
+    @CacheEvict(allEntries = true)
+    @Transactional
+    default int[] insertListCache(List<Object> insertList) {
+        return this.insertList(insertList);
+    }
 
-	/**
+    /**
      * @see top.cardone.configuration.service.DictionaryItemService#insertListByNotExists
      */
-    @CacheEvict(value = "top.cardone.configuration.service.DictionaryItemService", allEntries = true)
-    int[] insertListByNotExistsCache(List<Object> insertList);
+    @CacheEvict(allEntries = true)
+    @Transactional
+    default int[] insertListByNotExistsCache(List<Object> insertList) {
+        return this.insertListByNotExists(insertList);
+    }
 
-	/**
+    /**
      * @see top.cardone.configuration.service.DictionaryItemService#readList
      */
-    @Cacheable(value = "top.cardone.configuration.service.DictionaryItemService", key = Caches.KEY_1)
-    List<Object> readListCache(Object readList);
+    @Cacheable(key = Caches.KEY_1)
+    default List<Object> readListCache(Object readList) {
+        return this.readList(readList);
+    }
 
-	/**
+    /**
      * @see top.cardone.configuration.service.DictionaryItemService#readOne
      */
-    @Cacheable(value = "top.cardone.configuration.service.DictionaryItemService", key = Caches.KEY_1)
-    Object readOneCache(Object readOne);
+    @Cacheable(key = Caches.KEY_1)
+    default Object readOneCache(Object readOne) {
+        return this.readOne(readOne);
+    }
 
-	/**
+    /**
      * @see top.cardone.configuration.service.DictionaryItemService#save
      */
-    @CacheEvict(value = "top.cardone.configuration.service.DictionaryItemService", allEntries = true)
-    int saveCache(Object save);
+    @CacheEvict(allEntries = true)
+    @Transactional
+    default int saveCache(Object save) {
+        return this.save(save);
+    }
 
-	/**
+    /**
      * @see top.cardone.configuration.service.DictionaryItemService#update
      */
-    @CacheEvict(value = "top.cardone.configuration.service.DictionaryItemService", allEntries = true)
-    int updateCache(Object update);
+    @CacheEvict(allEntries = true)
+    @Transactional
+    default int updateCache(Object update) {
+        return this.update(update);
+    }
 
-	/**
+    /**
      * @see top.cardone.configuration.service.DictionaryItemService#updateList
      */
-    @CacheEvict(value = "top.cardone.configuration.service.DictionaryItemService", allEntries = true)
-    int[] updateListCache(List<Object> updateList);
+    @CacheEvict(allEntries = true)
+    @Transactional
+    default int[] updateListCache(List<Object> updateList) {
+        return this.updateList(updateList);
+    }
 
-	/**
+    /**
      * @see top.cardone.configuration.service.DictionaryItemService#saveList
      */
-    @CacheEvict(value = "top.cardone.configuration.service.DictionaryItemService", allEntries = true)
-    int[][] saveListCache(List<Object> saveList);
-	
+    @CacheEvict(allEntries = true)
+    @Transactional
+    default int[][] saveListCache(List<Object> saveList) {
+        return this.saveList(saveList);
+    }
+
     /**
      * 查询字典项对象
      *
@@ -154,12 +220,25 @@ public interface DictionaryItemService extends PageService {
      * @return 字典项对象
      */
     Map<String, Object> findOneByDictionaryItemId(Map<String, Object> findOne);
-	
+
+    /**
+     * 查询字典项对象
+     *
+     * @param findOne 字典项标识
+     * @return 字典项对象
+     */
+    default Map<String, Object> findOneByDictionaryItemIdCache(Map<String, Object> findOne) {
+        return this.findOneByDictionaryItemId(findOne);
+    }
+
     /**
      * 查询字典项下拉列表
      *
      * @param findList 关键字
      * @return 字典项下拉列表
      */
-    List<Map<String, Object>> findListByKeyword(Map<String, Object> findList);
+    @Cacheable(key = Caches.KEY_1)
+    default List<Map<String, Object>> findListByKeywordCache(Map<String, Object> findList) {
+        return this.findListByKeyword(findList);
+    }
 }

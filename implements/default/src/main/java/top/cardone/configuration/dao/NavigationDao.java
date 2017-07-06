@@ -18,14 +18,6 @@ public interface NavigationDao extends PageDao {
      * @return 导航对象
      */
     Map<String, Object> findOneByNavigationId(Map<String, Object> findOne);
-	
-    /**
-     * 查询导航下拉列表
-     *
-     * @param findList 关键字
-     * @return 导航下拉列表
-     */
-    List<Map<String, Object>> findListByKeyword(Map<String, Object> findList);
 
     /**
      * 查询树

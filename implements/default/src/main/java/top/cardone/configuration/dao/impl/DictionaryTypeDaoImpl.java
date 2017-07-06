@@ -14,15 +14,8 @@ public class DictionaryTypeDaoImpl extends PageDaoImpl implements top.cardone.co
     @Override
     public Map<String, Object> findOneByDictionaryTypeId(Map<String, Object> findOne) {
         String findOneSqlFilePath = this.getSqlFilePath("page.find");
-		
+
         return this.findOne(findOneSqlFilePath, findOne);
-    }
-
-    @Override
-    public List<Map<String, Object>> findListByKeyword(Map<String, Object> findList) {
-        String findListByKeywordSqlFilePath = this.getSqlFilePath("findListByKeyword");
-
-        return this.findList(findListByKeywordSqlFilePath, findList);
     }
 
     @Override
