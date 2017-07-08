@@ -12,8 +12,8 @@
 
     <groupId>top.cardone</groupId>
     <artifactId>cardone-configuration-api</artifactId>
-    <version>${project.parent.version}</version>
-    <name>${project.artifactId}</name>
+    <version>1.1.1-SNAPSHOT</version>
+    <name>top.cardone cardone-configuration-api</name>
     <description>top.cardone cardone-configuration-api</description>
     <packaging>jar</packaging>
 
@@ -36,6 +36,8 @@
         <dependency>
             <groupId>top.cardone</groupId>
             <artifactId>cardone-web-api</artifactId>
+            <scope>provided</scope>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 </project>
