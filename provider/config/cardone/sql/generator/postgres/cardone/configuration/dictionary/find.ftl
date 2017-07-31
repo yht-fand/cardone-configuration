@@ -12,6 +12,10 @@ ${prefixName?string('  ', ', ')}"begin_date"
 ${prefixName?string('  ', ', ')}"created_by_code"
 <#assign prefixName = false>
 </#if>
+<#if (select_createdById??)>
+${prefixName?string('  ', ', ')}"created_by_id"
+<#assign prefixName = false>
+</#if>
 <#if (select_createdDate??)>
 ${prefixName?string('  ', ', ')}"created_date"
 <#assign prefixName = false>
@@ -34,6 +38,10 @@ ${prefixName?string('  ', ', ')}"dictionary_id"
 </#if>
 <#if (select_dictionaryTypeCode??)>
 ${prefixName?string('  ', ', ')}"dictionary_type_code"
+<#assign prefixName = false>
+</#if>
+<#if (select_dictionaryTypeId??)>
+${prefixName?string('  ', ', ')}"dictionary_type_id"
 <#assign prefixName = false>
 </#if>
 <#if (select_endDate??)>
@@ -60,6 +68,10 @@ ${prefixName?string('  ', ', ')}"json_data"
 ${prefixName?string('  ', ', ')}"last_modified_by_code"
 <#assign prefixName = false>
 </#if>
+<#if (select_lastModifiedById??)>
+${prefixName?string('  ', ', ')}"last_modified_by_id"
+<#assign prefixName = false>
+</#if>
 <#if (select_lastModifiedDate??)>
 ${prefixName?string('  ', ', ')}"last_modified_date"
 <#assign prefixName = false>
@@ -80,12 +92,20 @@ ${prefixName?string('  ', ', ')}"org_code"
 ${prefixName?string('  ', ', ')}"personal_code"
 <#assign prefixName = false>
 </#if>
+<#if (select_personalId??)>
+${prefixName?string('  ', ', ')}"personal_id"
+<#assign prefixName = false>
+</#if>
 <#if (select_remark??)>
 ${prefixName?string('  ', ', ')}"remark"
 <#assign prefixName = false>
 </#if>
 <#if (select_siteCode??)>
 ${prefixName?string('  ', ', ')}"site_code"
+<#assign prefixName = false>
+</#if>
+<#if (select_siteId??)>
+${prefixName?string('  ', ', ')}"site_id"
 <#assign prefixName = false>
 </#if>
 <#if (select_stateCode??)>
@@ -122,6 +142,10 @@ ${prefixName?string('ORDER BY ', ', ')}"begin_date" ${order_by_beginDate_value!}
 ${prefixName?string('ORDER BY ', ', ')}"created_by_code" ${order_by_createdByCode_value!}
 <#assign prefixName = false>
 </#if>
+<#if (order_by_createdById??)>
+${prefixName?string('ORDER BY ', ', ')}"created_by_id" ${order_by_createdById_value!}
+<#assign prefixName = false>
+</#if>
 <#if (order_by_createdDate??)>
 ${prefixName?string('ORDER BY ', ', ')}"created_date" ${order_by_createdDate_value!}
 <#assign prefixName = false>
@@ -144,6 +168,10 @@ ${prefixName?string('ORDER BY ', ', ')}"dictionary_id" ${order_by_dictionaryId_v
 </#if>
 <#if (order_by_dictionaryTypeCode??)>
 ${prefixName?string('ORDER BY ', ', ')}"dictionary_type_code" ${order_by_dictionaryTypeCode_value!}
+<#assign prefixName = false>
+</#if>
+<#if (order_by_dictionaryTypeId??)>
+${prefixName?string('ORDER BY ', ', ')}"dictionary_type_id" ${order_by_dictionaryTypeId_value!}
 <#assign prefixName = false>
 </#if>
 <#if (order_by_endDate??)>
@@ -170,6 +198,10 @@ ${prefixName?string('ORDER BY ', ', ')}"json_data" ${order_by_jsonData_value!}
 ${prefixName?string('ORDER BY ', ', ')}"last_modified_by_code" ${order_by_lastModifiedByCode_value!}
 <#assign prefixName = false>
 </#if>
+<#if (order_by_lastModifiedById??)>
+${prefixName?string('ORDER BY ', ', ')}"last_modified_by_id" ${order_by_lastModifiedById_value!}
+<#assign prefixName = false>
+</#if>
 <#if (order_by_lastModifiedDate??)>
 ${prefixName?string('ORDER BY ', ', ')}"last_modified_date" ${order_by_lastModifiedDate_value!}
 <#assign prefixName = false>
@@ -190,12 +222,20 @@ ${prefixName?string('ORDER BY ', ', ')}"org_code" ${order_by_orgCode_value!}
 ${prefixName?string('ORDER BY ', ', ')}"personal_code" ${order_by_personalCode_value!}
 <#assign prefixName = false>
 </#if>
+<#if (order_by_personalId??)>
+${prefixName?string('ORDER BY ', ', ')}"personal_id" ${order_by_personalId_value!}
+<#assign prefixName = false>
+</#if>
 <#if (order_by_remark??)>
 ${prefixName?string('ORDER BY ', ', ')}"remark" ${order_by_remark_value!}
 <#assign prefixName = false>
 </#if>
 <#if (order_by_siteCode??)>
 ${prefixName?string('ORDER BY ', ', ')}"site_code" ${order_by_siteCode_value!}
+<#assign prefixName = false>
+</#if>
+<#if (order_by_siteId??)>
+${prefixName?string('ORDER BY ', ', ')}"site_id" ${order_by_siteId_value!}
 <#assign prefixName = false>
 </#if>
 <#if (order_by_stateCode??)>

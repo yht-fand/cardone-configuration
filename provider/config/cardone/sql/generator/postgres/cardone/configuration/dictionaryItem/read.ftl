@@ -9,6 +9,9 @@ SELECT
 <#case "createdByCode">
 "created_by_code"
 <#break>
+<#case "createdById">
+"created_by_id"
+<#break>
 <#case "createdDate">
 "created_date"
 <#break>
@@ -21,6 +24,9 @@ SELECT
 <#case "dictionaryCode">
 "dictionary_code"
 <#break>
+<#case "dictionaryId">
+"dictionary_id"
+<#break>
 <#case "dictionaryItemCode">
 "dictionary_item_code"
 <#break>
@@ -29,6 +35,9 @@ SELECT
 <#break>
 <#case "dictionaryTypeCode">
 "dictionary_type_code"
+<#break>
+<#case "dictionaryTypeId">
+"dictionary_type_id"
 <#break>
 <#case "endDate">
 "end_date"
@@ -48,6 +57,9 @@ SELECT
 <#case "lastModifiedByCode">
 "last_modified_by_code"
 <#break>
+<#case "lastModifiedById">
+"last_modified_by_id"
+<#break>
 <#case "lastModifiedDate">
 "last_modified_date"
 <#break>
@@ -62,6 +74,9 @@ SELECT
 <#break>
 <#case "personalCode">
 "personal_code"
+<#break>
+<#case "personalId">
+"personal_id"
 <#break>
 <#case "remark">
 "remark"

@@ -13,6 +13,7 @@ class m0001 implements java.io.Serializable {
 		newInput?.beginDate = input?.beginDate
 		newInput?.content = input?.content
 		newInput?.createdByCode = input?.createdByCode
+		newInput?.createdById = input?.createdById
 		newInput?.createdDate = input?.createdDate
 		newInput?.dataStateCode = input?.dataStateCode
 		newInput?.departmentCode = input?.departmentCode
@@ -23,6 +24,7 @@ class m0001 implements java.io.Serializable {
 		newInput?.flagObjectCode = input?.flagObjectCode
 		newInput?.jsonData = input?.jsonData
 		newInput?.lastModifiedByCode = input?.lastModifiedByCode
+		newInput?.lastModifiedById = input?.lastModifiedById
 		newInput?.lastModifiedDate = input?.lastModifiedDate
 		newInput?.objectCode = input?.objectCode
 		newInput?.objectId = input?.objectId
@@ -30,7 +32,9 @@ class m0001 implements java.io.Serializable {
 		newInput?.orderBy = input?.orderBy
 		newInput?.orgCode = input?.orgCode
 		newInput?.personalCode = input?.personalCode
+		newInput?.personalId = input?.personalId
 		newInput?.siteCode = input?.siteCode
+		newInput?.siteId = input?.siteId
 		newInput?.stateCode = input?.stateCode
 		newInput?.systemInfoCode = input?.systemInfoCode
 		newInput?.typeCode = input?.typeCode
@@ -85,6 +89,7 @@ class m0001 implements java.io.Serializable {
 		newOutput?.beginDate = output?.begin_date
 		newOutput?.content = output?.content
 		newOutput?.createdByCode = output?.created_by_code
+		newOutput?.createdById = output?.created_by_id
 		newOutput?.createdDate = output?.created_date
 		newOutput?.dataStateCode = output?.data_state_code
 		newOutput?.departmentCode = output?.department_code
@@ -95,6 +100,7 @@ class m0001 implements java.io.Serializable {
 		newOutput?.flagObjectCode = output?.flag_object_code
 		newOutput?.jsonData = output?.json_data
 		newOutput?.lastModifiedByCode = output?.last_modified_by_code
+		newOutput?.lastModifiedById = output?.last_modified_by_id
 		newOutput?.lastModifiedDate = output?.last_modified_date
 		newOutput?.objectCode = output?.object_code
 		newOutput?.objectId = output?.object_id
@@ -102,7 +108,9 @@ class m0001 implements java.io.Serializable {
 		newOutput?.orderBy = output?.order_by_
 		newOutput?.orgCode = output?.org_code
 		newOutput?.personalCode = output?.personal_code
+		newOutput?.personalId = output?.personal_id
 		newOutput?.siteCode = output?.site_code
+		newOutput?.siteId = output?.site_id
 		newOutput?.stateCode = output?.state_code
 		newOutput?.systemInfoCode = output?.system_info_code
 		newOutput?.typeCode = output?.type_code

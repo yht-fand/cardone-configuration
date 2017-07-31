@@ -80,6 +80,8 @@ class r0003 implements java.io.Serializable {
 
             data['createdByCode'] = contentItem['created_by_code']
 
+            data['createdById'] = contentItem['created_by_id']
+
             data['createdDate'] = contentItem['created_date']
 
             data['dataStateCode'] = contentItem['data_state_code']
@@ -88,11 +90,15 @@ class r0003 implements java.io.Serializable {
 
             data['dictionaryCode'] = contentItem['dictionary_code']
 
+            data['dictionaryId'] = contentItem['dictionary_id']
+
             data['dictionaryItemCode'] = contentItem['dictionary_item_code']
 
             data['dictionaryItemId'] = contentItem['dictionary_item_id']
 
             data['dictionaryTypeCode'] = contentItem['dictionary_type_code']
+
+            data['dictionaryTypeId'] = contentItem['dictionary_type_id']
 
             data['endDate'] = contentItem['end_date']
 
@@ -106,6 +112,8 @@ class r0003 implements java.io.Serializable {
 
             data['lastModifiedByCode'] = contentItem['last_modified_by_code']
 
+            data['lastModifiedById'] = contentItem['last_modified_by_id']
+
             data['lastModifiedDate'] = contentItem['last_modified_date']
 
             data['name'] = contentItem['name']
@@ -115,6 +123,8 @@ class r0003 implements java.io.Serializable {
             data['orgCode'] = contentItem['org_code']
 
             data['personalCode'] = contentItem['personal_code']
+
+            data['personalId'] = contentItem['personal_id']
 
             data['remark'] = contentItem['remark']
 

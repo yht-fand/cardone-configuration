@@ -18,6 +18,10 @@ ${prefixName?string('  ', ', ')}"content"
 ${prefixName?string('  ', ', ')}"created_by_code"
 <#assign prefixName = false>
 </#if>
+<#if (insert_createdById??) && (insert_createdById_value??)>
+${prefixName?string('  ', ', ')}"created_by_id"
+<#assign prefixName = false>
+</#if>
 <#if (insert_createdDate??) && (insert_createdDate_value??)>
 ${prefixName?string('  ', ', ')}"created_date"
 <#assign prefixName = false>
@@ -58,6 +62,10 @@ ${prefixName?string('  ', ', ')}"json_data"
 ${prefixName?string('  ', ', ')}"last_modified_by_code"
 <#assign prefixName = false>
 </#if>
+<#if (insert_lastModifiedById??) && (insert_lastModifiedById_value??)>
+${prefixName?string('  ', ', ')}"last_modified_by_id"
+<#assign prefixName = false>
+</#if>
 <#if (insert_lastModifiedDate??) && (insert_lastModifiedDate_value??)>
 ${prefixName?string('  ', ', ')}"last_modified_date"
 <#assign prefixName = false>
@@ -86,8 +94,16 @@ ${prefixName?string('  ', ', ')}"org_code"
 ${prefixName?string('  ', ', ')}"personal_code"
 <#assign prefixName = false>
 </#if>
+<#if (insert_personalId??) && (insert_personalId_value??)>
+${prefixName?string('  ', ', ')}"personal_id"
+<#assign prefixName = false>
+</#if>
 <#if (insert_siteCode??) && (insert_siteCode_value??)>
 ${prefixName?string('  ', ', ')}"site_code"
+<#assign prefixName = false>
+</#if>
+<#if (insert_siteId??) && (insert_siteId_value??)>
+${prefixName?string('  ', ', ')}"site_id"
 <#assign prefixName = false>
 </#if>
 <#if (insert_stateCode??) && (insert_stateCode_value??)>
@@ -127,6 +143,10 @@ ${prefixName?string('  ', ', ')}:insert_content_value
 </#if>
 <#if (insert_createdByCode??) && (insert_createdByCode_value??)>
 ${prefixName?string('  ', ', ')}:insert_createdByCode_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_createdById??) && (insert_createdById_value??)>
+${prefixName?string('  ', ', ')}:insert_createdById_value
 <#assign prefixName = false>
 </#if>
 <#if (insert_createdDate??) && (insert_createdDate_value??)>
@@ -169,6 +189,10 @@ ${prefixName?string('  ', ', ')}:insert_jsonData_value
 ${prefixName?string('  ', ', ')}:insert_lastModifiedByCode_value
 <#assign prefixName = false>
 </#if>
+<#if (insert_lastModifiedById??) && (insert_lastModifiedById_value??)>
+${prefixName?string('  ', ', ')}:insert_lastModifiedById_value
+<#assign prefixName = false>
+</#if>
 <#if (insert_lastModifiedDate??) && (insert_lastModifiedDate_value??)>
 ${prefixName?string('  ', ', ')}:insert_lastModifiedDate_value
 <#assign prefixName = false>
@@ -197,8 +221,16 @@ ${prefixName?string('  ', ', ')}:insert_orgCode_value
 ${prefixName?string('  ', ', ')}:insert_personalCode_value
 <#assign prefixName = false>
 </#if>
+<#if (insert_personalId??) && (insert_personalId_value??)>
+${prefixName?string('  ', ', ')}:insert_personalId_value
+<#assign prefixName = false>
+</#if>
 <#if (insert_siteCode??) && (insert_siteCode_value??)>
 ${prefixName?string('  ', ', ')}:insert_siteCode_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_siteId??) && (insert_siteId_value??)>
+${prefixName?string('  ', ', ')}:insert_siteId_value
 <#assign prefixName = false>
 </#if>
 <#if (insert_stateCode??) && (insert_stateCode_value??)>
@@ -252,6 +284,14 @@ ${prefixName?string('WHERE ', 'AND ')}(E."content" IS NULL OR E."content" = '')
 ${prefixName?string('WHERE ', 'AND ')}E."created_by_code" = :where_and_eq_createdByCode_value
 <#else>
 ${prefixName?string('WHERE ', 'AND ')}(E."created_by_code" IS NULL OR E."created_by_code" = '')
+</#if>
+<#assign prefixName = false>
+</#if>
+<#if (where_and_eq_createdById??)>
+<#if (where_and_eq_createdById_value??)>
+${prefixName?string('WHERE ', 'AND ')}E."created_by_id" = :where_and_eq_createdById_value
+<#else>
+${prefixName?string('WHERE ', 'AND ')}(E."created_by_id" IS NULL OR E."created_by_id" = '')
 </#if>
 <#assign prefixName = false>
 </#if>
@@ -335,6 +375,14 @@ ${prefixName?string('WHERE ', 'AND ')}(E."last_modified_by_code" IS NULL OR E."l
 </#if>
 <#assign prefixName = false>
 </#if>
+<#if (where_and_eq_lastModifiedById??)>
+<#if (where_and_eq_lastModifiedById_value??)>
+${prefixName?string('WHERE ', 'AND ')}E."last_modified_by_id" = :where_and_eq_lastModifiedById_value
+<#else>
+${prefixName?string('WHERE ', 'AND ')}(E."last_modified_by_id" IS NULL OR E."last_modified_by_id" = '')
+</#if>
+<#assign prefixName = false>
+</#if>
 <#if (where_and_eq_lastModifiedDate??)>
 <#if (where_and_eq_lastModifiedDate_value??)>
 ${prefixName?string('WHERE ', 'AND ')}E."last_modified_date" = :where_and_eq_lastModifiedDate_value
@@ -391,11 +439,27 @@ ${prefixName?string('WHERE ', 'AND ')}(E."personal_code" IS NULL OR E."personal_
 </#if>
 <#assign prefixName = false>
 </#if>
+<#if (where_and_eq_personalId??)>
+<#if (where_and_eq_personalId_value??)>
+${prefixName?string('WHERE ', 'AND ')}E."personal_id" = :where_and_eq_personalId_value
+<#else>
+${prefixName?string('WHERE ', 'AND ')}(E."personal_id" IS NULL OR E."personal_id" = '')
+</#if>
+<#assign prefixName = false>
+</#if>
 <#if (where_and_eq_siteCode??)>
 <#if (where_and_eq_siteCode_value??)>
 ${prefixName?string('WHERE ', 'AND ')}E."site_code" = :where_and_eq_siteCode_value
 <#else>
 ${prefixName?string('WHERE ', 'AND ')}(E."site_code" IS NULL OR E."site_code" = '')
+</#if>
+<#assign prefixName = false>
+</#if>
+<#if (where_and_eq_siteId??)>
+<#if (where_and_eq_siteId_value??)>
+${prefixName?string('WHERE ', 'AND ')}E."site_id" = :where_and_eq_siteId_value
+<#else>
+${prefixName?string('WHERE ', 'AND ')}(E."site_id" IS NULL OR E."site_id" = '')
 </#if>
 <#assign prefixName = false>
 </#if>
