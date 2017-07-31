@@ -31,6 +31,7 @@ class c0004 implements java.io.Serializable {
 		newInput?.orderBy = input?.orderBy
 		newInput?.orgCode = input?.orgCode
 		newInput?.parentCode = input?.parentCode
+		newInput?.parentId = input?.parentId
 		newInput?.parentTreeCode = input?.parentTreeCode
 		newInput?.parentTreeId = input?.parentTreeId
 		newInput?.parentTreeName = input?.parentTreeName

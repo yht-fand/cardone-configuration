@@ -61,6 +61,9 @@ create index IF NOT EXISTS idx_c1_navigation_org_code ON c1_navigation ("org_cod
 --父级编号
 drop index IF EXISTS idx_c1_navigation_parent_code;
 create index IF NOT EXISTS idx_c1_navigation_parent_code ON c1_navigation ("parent_code" varchar_pattern_ops);
+--父级标识
+drop index IF EXISTS idx_c1_navigation_parent_id;
+create index IF NOT EXISTS idx_c1_navigation_parent_id ON c1_navigation ("parent_id" varchar_pattern_ops);
 --父级树编号
 drop index IF EXISTS idx_c1_navigation_parent_tree_code;
 create index IF NOT EXISTS idx_c1_navigation_parent_tree_code ON c1_navigation ("parent_tree_code" varchar_pattern_ops);
@@ -145,6 +148,9 @@ create index IF NOT EXISTS idx_c1_dictionary_type_org_code ON c1_dictionary_type
 --父级编号
 drop index IF EXISTS idx_c1_dictionary_type_parent_code;
 create index IF NOT EXISTS idx_c1_dictionary_type_parent_code ON c1_dictionary_type ("parent_code" varchar_pattern_ops);
+--父级标识
+drop index IF EXISTS idx_c1_dictionary_type_parent_id;
+create index IF NOT EXISTS idx_c1_dictionary_type_parent_id ON c1_dictionary_type ("parent_id" varchar_pattern_ops);
 --父级树编号
 drop index IF EXISTS idx_c1_dictionary_type_parent_tree_code;
 create index IF NOT EXISTS idx_c1_dictionary_type_parent_tree_code ON c1_dictionary_type ("parent_tree_code" varchar_pattern_ops);

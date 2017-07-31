@@ -151,6 +151,13 @@ public class DictionaryType implements java.io.Serializable {
     protected String parentCode;
 
     /**
+     * 父级标识
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String parentId;
+
+    /**
      * 父级树编号
      */
     @lombok.Getter
