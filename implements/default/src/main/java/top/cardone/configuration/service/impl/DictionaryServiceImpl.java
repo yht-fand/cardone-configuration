@@ -56,23 +56,7 @@ public class DictionaryServiceImpl extends PageServiceImpl<DictionaryDao> implem
     private String readOneByCode(Map<String, Object> readOne, String defaultValue) {
         String str = this.dao.readOne(String.class, readOne);
 
-        if (StringUtils.isBlank(str)) {
-            this.asynchronousInsert(Maps.newHashMap(readOne), defaultValue);
-        }
-
         return StringUtils.defaultIfBlank(str, defaultValue);
-    }
-
-    private void asynchronousInsert(Map<String, Object> insert, String defaultValue) {
-        if (StringUtils.isNotBlank(defaultValue)) {
-            return;
-        }
-
-        insert.put(MapUtils.getString(insert, "object_id"), defaultValue);
-
-        ApplicationContextHolder.getBean(TaskExecutor.class).execute(TaskUtils.decorateTaskWithErrorHandler(() -> {
-            this.insertByNotExistsCache(insert);
-        }, null, true));
     }
 
     @Override
@@ -133,8 +117,6 @@ public class DictionaryServiceImpl extends PageServiceImpl<DictionaryDao> implem
             if ((obj instanceof String) && CollectionUtils.isNotEmpty(insertDictionaryTypeCodes)) {
                 for (String insertDictionaryTypeCode : insertDictionaryTypeCodes) {
                     readOne.put("dictionaryTypeCode", insertDictionaryTypeCode);
-
-                    this.asynchronousInsert(Maps.newHashMap(readOne), (String) obj);
                 }
             }
 
@@ -145,8 +127,6 @@ public class DictionaryServiceImpl extends PageServiceImpl<DictionaryDao> implem
 
         for (String insertDictionaryTypeCode : insertDictionaryTypeCodes) {
             readOne.put("dictionaryTypeCode", insertDictionaryTypeCode);
-
-            this.asynchronousInsert(Maps.newHashMap(readOne), defaultValue);
         }
 
         return StringUtils.defaultIfBlank(defaultValue, MapUtils.getString(readOne, "dictionaryCode"));
