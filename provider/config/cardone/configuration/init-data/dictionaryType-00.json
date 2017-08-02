@@ -12,8 +12,8 @@
     "flagCode": "init"
   },
   {
-    "dictionaryTypeId": "lang",
-    "dictionaryTypeCode": "lang",
+    "dictionaryTypeId": "i18nInfoType",
+    "dictionaryTypeCode": "i18nInfoType",
     "name": "国际化语言",
     "flagCode": "init"
   },

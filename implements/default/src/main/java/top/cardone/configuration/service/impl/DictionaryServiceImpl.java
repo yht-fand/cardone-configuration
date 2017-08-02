@@ -2,10 +2,7 @@ package top.cardone.configuration.service.impl;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import com.google.common.collect.Sets;
 import org.apache.commons.collections.CollectionUtils;
-import org.springframework.core.task.TaskExecutor;
-import org.springframework.scheduling.support.TaskUtils;
 import org.springframework.transaction.annotation.Transactional;
 import top.cardone.configuration.dao.DictionaryDao;
 import top.cardone.configuration.service.DictionaryService;
@@ -17,7 +14,6 @@ import top.cardone.data.service.impl.PageServiceImpl;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 
 /**
  * 字典服务
@@ -50,13 +46,7 @@ public class DictionaryServiceImpl extends PageServiceImpl<DictionaryDao> implem
         readOne.put("dataStateCode", MapUtils.getString(readOne, "dataStateCode", "1"));
         readOne.put("object_id", objectId);
 
-        return this.readOneByCode(readOne, defaultValue);
-    }
-
-    private String readOneByCode(Map<String, Object> readOne, String defaultValue) {
-        String str = this.dao.readOne(String.class, readOne);
-
-        return StringUtils.defaultIfBlank(str, defaultValue);
+        return StringUtils.defaultIfBlank(this.dao.readOne(String.class, readOne), defaultValue);
     }
 
     @Override
@@ -101,34 +91,18 @@ public class DictionaryServiceImpl extends PageServiceImpl<DictionaryDao> implem
             return null;
         }
 
-        Set<String> insertDictionaryTypeCodes = Sets.newHashSet();
-
         for (String dictionaryTypeCode : dictionaryTypeCodeArray) {
             readOne.put("dictionaryTypeCode", dictionaryTypeCode);
 
-            Object obj = this.readOneByCode(readOne, null);
+            Object obj = this.dao.readOne(String.class, readOne);
 
             if (Objects.isNull(obj) || (obj instanceof String && StringUtils.isBlank((String) obj))) {
-                insertDictionaryTypeCodes.add(dictionaryTypeCode);
-
                 continue;
-            }
-
-            if ((obj instanceof String) && CollectionUtils.isNotEmpty(insertDictionaryTypeCodes)) {
-                for (String insertDictionaryTypeCode : insertDictionaryTypeCodes) {
-                    readOne.put("dictionaryTypeCode", insertDictionaryTypeCode);
-                }
             }
 
             return obj;
         }
 
-        String defaultValue = MapUtils.getString(readOne, "defaultValue");
-
-        for (String insertDictionaryTypeCode : insertDictionaryTypeCodes) {
-            readOne.put("dictionaryTypeCode", insertDictionaryTypeCode);
-        }
-
-        return StringUtils.defaultIfBlank(defaultValue, MapUtils.getString(readOne, "dictionaryCode"));
+        return null;
     }
 }

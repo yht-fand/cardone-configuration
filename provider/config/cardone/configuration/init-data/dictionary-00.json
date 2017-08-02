@@ -2,7 +2,6 @@
   {
     "dictionaryTypeId": "accessType",
     "dictionaryTypeCode": "accessType",
-    "dictionaryId": "all",
     "dictionaryCode": "all",
     "name": "全部",
     "flagCode": "init"
@@ -10,7 +9,6 @@
   {
     "dictionaryTypeId": "accessType",
     "dictionaryTypeCode": "accessType",
-    "dictionaryId": "department",
     "dictionaryCode": "department",
     "name": "部门",
     "flagCode": "init"
@@ -18,7 +16,6 @@
   {
     "dictionaryTypeId": "accessType",
     "dictionaryTypeCode": "accessType",
-    "dictionaryId": "person",
     "dictionaryCode": "person",
     "name": "个人",
     "flagCode": "init"
@@ -26,7 +23,6 @@
   {
     "dictionaryTypeId": "actionType",
     "dictionaryTypeCode": "actionType",
-    "dictionaryId": "serch",
     "dictionaryCode": "serch",
     "name": "查询",
     "flagCode": "init"
@@ -34,7 +30,6 @@
   {
     "dictionaryTypeId": "actionType",
     "dictionaryTypeCode": "actionType",
-    "dictionaryId": "login",
     "dictionaryCode": "login",
     "name": "登录",
     "flagCode": "init"
@@ -42,7 +37,6 @@
   {
     "dictionaryTypeId": "actionType",
     "dictionaryTypeCode": "actionType",
-    "dictionaryId": "delete",
     "dictionaryCode": "delete",
     "name": "删除",
     "flagCode": "init"
@@ -50,7 +44,6 @@
   {
     "dictionaryTypeId": "actionType",
     "dictionaryTypeCode": "actionType",
-    "dictionaryId": "modify",
     "dictionaryCode": "modify",
     "name": "修改",
     "flagCode": "init"
@@ -58,7 +51,6 @@
   {
     "dictionaryTypeId": "actionType",
     "dictionaryTypeCode": "actionType",
-    "dictionaryId": "alert",
     "dictionaryCode": "alert",
     "name": "修改",
     "flagCode": "init"
@@ -66,7 +58,6 @@
   {
     "dictionaryTypeId": "actionType",
     "dictionaryTypeCode": "actionType",
-    "dictionaryId": "add",
     "dictionaryCode": "add",
     "name": "新增",
     "flagCode": "init"
@@ -74,7 +65,6 @@
   {
     "dictionaryTypeId": "actionType",
     "dictionaryTypeCode": "actionType",
-    "dictionaryId": "append",
     "dictionaryCode": "append",
     "name": "新增",
     "flagCode": "init"
@@ -82,7 +72,6 @@
   {
     "dictionaryTypeId": "actionType",
     "dictionaryTypeCode": "actionType",
-    "dictionaryId": "download",
     "dictionaryCode": "download",
     "name": "下载",
     "flagCode": "init"
@@ -90,7 +79,6 @@
   {
     "dictionaryTypeId": "actionType",
     "dictionaryTypeCode": "actionType",
-    "dictionaryId": "exit",
     "dictionaryCode": "exit",
     "name": "退出",
     "flagCode": "init"
@@ -98,7 +86,6 @@
   {
     "dictionaryTypeId": "fuctionType",
     "dictionaryTypeCode": "fuctionType",
-    "dictionaryId": "menu",
     "dictionaryCode": "menu",
     "name": "菜单",
     "flagCode": "init"
@@ -106,7 +93,6 @@
   {
     "dictionaryTypeId": "fuctionType",
     "dictionaryTypeCode": "fuctionType",
-    "dictionaryId": "button",
     "dictionaryCode": "button",
     "name": "按钮",
     "flagCode": "init"
@@ -114,15 +100,13 @@
   {
     "dictionaryTypeId": "lang",
     "dictionaryTypeCode": "lang",
-    "dictionaryId": "zh-cn",
-    "dictionaryCode": "zh-cn",
+    "dictionaryCode": "zh_CN",
     "name": "中文",
     "flagCode": "init"
   },
   {
     "dictionaryTypeId": "lang",
     "dictionaryTypeCode": "lang",
-    "dictionaryId": "en",
     "dictionaryCode": "en",
     "name": "英文",
     "flagCode": "init"
@@ -130,7 +114,6 @@
   {
     "dictionaryTypeId": "objectType",
     "dictionaryTypeCode": "objectType",
-    "dictionaryId": "authority",
     "dictionaryCode": "authority",
     "name": "权限",
     "flagCode": "init"
@@ -138,7 +121,6 @@
   {
     "dictionaryTypeId": "objectType",
     "dictionaryTypeCode": "objectType",
-    "dictionaryId": "other",
     "dictionaryCode": "other",
     "name": "其他",
     "flagCode": "init"
@@ -146,7 +128,6 @@
   {
     "dictionaryTypeId": "objectType",
     "dictionaryTypeCode": "objectType",
-    "dictionaryId": "role",
     "dictionaryCode": "role",
     "name": "角色",
     "flagCode": "init"
@@ -154,7 +135,6 @@
   {
     "dictionaryTypeId": "objectType",
     "dictionaryTypeCode": "objectType",
-    "dictionaryId": "department",
     "dictionaryCode": "department",
     "name": "部门",
     "flagCode": "init"
@@ -162,7 +142,6 @@
   {
     "dictionaryTypeId": "recordStatus",
     "dictionaryTypeCode": "recordStatus",
-    "dictionaryId": "1",
     "dictionaryCode": "1",
     "name": "启用",
     "flagCode": "init"
@@ -170,7 +149,6 @@
   {
     "dictionaryTypeId": "recordStatus",
     "dictionaryTypeCode": "recordStatus",
-    "dictionaryId": "0",
     "dictionaryCode": "0",
     "name": "禁用",
     "flagCode": "init"
@@ -178,7 +156,6 @@
   {
     "dictionaryTypeId": "sex",
     "dictionaryTypeCode": "sex",
-    "dictionaryId": "1",
     "dictionaryCode": "1",
     "name": "男",
     "flagCode": "init"
@@ -186,7 +163,6 @@
   {
     "dictionaryTypeId": "sex",
     "dictionaryTypeCode": "sex",
-    "dictionaryId": "0",
     "dictionaryCode": "0",
     "name": "女",
     "flagCode": "init"
@@ -194,7 +170,6 @@
   {
     "dictionaryTypeId": "statType",
     "dictionaryTypeCode": "statType",
-    "dictionaryId": "yearStat",
     "dictionaryCode": "yearStat",
     "name": "年统计",
     "flagCode": "init"
@@ -202,7 +177,6 @@
   {
     "dictionaryTypeId": "statType",
     "dictionaryTypeCode": "statType",
-    "dictionaryId": "monthStat",
     "dictionaryCode": "monthStat",
     "name": "月统计",
     "flagCode": "init"
@@ -210,7 +184,6 @@
   {
     "dictionaryTypeId": "statType",
     "dictionaryTypeCode": "statType",
-    "dictionaryId": "weekStat",
     "dictionaryCode": "weekStat",
     "name": "周统计",
     "flagCode": "init"
@@ -218,7 +191,6 @@
   {
     "dictionaryTypeId": "statType",
     "dictionaryTypeCode": "statType",
-    "dictionaryId": "dayStat",
     "dictionaryCode": "dayStat",
     "name": "日统计",
     "flagCode": "init"
@@ -226,7 +198,6 @@
   {
     "dictionaryTypeId": "yesOrNo",
     "dictionaryTypeCode": "yesOrNo",
-    "dictionaryId": "1",
     "dictionaryCode": "1",
     "name": "是",
     "flagCode": "init"
@@ -234,7 +205,6 @@
   {
     "dictionaryTypeId": "yesOrNo",
     "dictionaryTypeCode": "yesOrNo",
-    "dictionaryId": "0",
     "dictionaryCode": "0",
     "name": "否",
     "flagCode": "init"
@@ -242,7 +212,6 @@
   {
     "dictionaryTypeId": "flag",
     "dictionaryTypeCode": "flag",
-    "dictionaryId": "sync",
     "dictionaryCode": "sync",
     "name": "同步",
     "flagCode": "init"
@@ -250,7 +219,6 @@
   {
     "dictionaryTypeId": "flag",
     "dictionaryTypeCode": "flag",
-    "dictionaryId": "input",
     "dictionaryCode": "input",
     "name": "录入",
     "flagCode": "init"
@@ -258,7 +226,6 @@
   {
     "dictionaryTypeId": "flag",
     "dictionaryTypeCode": "flag",
-    "dictionaryId": "import",
     "dictionaryCode": "import",
     "name": "导入",
     "flagCode": "init"
@@ -266,7 +233,6 @@
   {
     "dictionaryTypeId": "flag",
     "dictionaryTypeCode": "flag",
-    "dictionaryId": "generate",
     "dictionaryCode": "generate",
     "name": "生成",
     "flagCode": "init"
@@ -274,7 +240,6 @@
   {
     "dictionaryTypeId": "flag",
     "dictionaryTypeCode": "flag",
-    "dictionaryId": "init",
     "dictionaryCode": "init",
     "name": "初始化",
     "flagCode": "init"
@@ -282,7 +247,6 @@
   {
     "dictionaryTypeId": "state",
     "dictionaryTypeCode": "state",
-    "dictionaryId": "1",
     "dictionaryCode": "1",
     "name": "启用",
     "flagCode": "init"
@@ -290,7 +254,6 @@
   {
     "dictionaryTypeId": "state",
     "dictionaryTypeCode": "state",
-    "dictionaryId": "0",
     "dictionaryCode": "0",
     "name": "禁用",
     "flagCode": "init"
@@ -298,7 +261,6 @@
   {
     "dictionaryTypeId": "dataState",
     "dictionaryTypeCode": "dataState",
-    "dictionaryId": "1",
     "dictionaryCode": "1",
     "name": "有效",
     "flagCode": "init"
@@ -306,7 +268,6 @@
   {
     "dictionaryTypeId": "dataState",
     "dictionaryTypeCode": "dataState",
-    "dictionaryId": "0",
     "dictionaryCode": "0",
     "name": "已删除",
     "flagCode": "init"
@@ -314,7 +275,6 @@
   {
     "dictionaryTypeId": "userGroupType",
     "dictionaryTypeCode": "userGroupType",
-    "dictionaryId": "init",
     "dictionaryCode": "init",
     "name": "初始化",
     "flagCode": "init"
@@ -322,7 +282,6 @@
   {
     "dictionaryTypeId": "userGroupType",
     "dictionaryTypeCode": "userGroupType",
-    "dictionaryId": "department",
     "dictionaryCode": "department",
     "name": "部门",
     "flagCode": "init"
@@ -330,7 +289,6 @@
   {
     "dictionaryTypeId": "roleType",
     "dictionaryTypeCode": "roleType",
-    "dictionaryId": "init",
     "dictionaryCode": "init",
     "name": "初始化",
     "flagCode": "init"
@@ -338,7 +296,6 @@
   {
     "dictionaryTypeId": "roleType",
     "dictionaryTypeCode": "roleType",
-    "dictionaryId": "department",
     "dictionaryCode": "department",
     "name": "部门",
     "flagCode": "init"
@@ -346,7 +303,6 @@
   {
     "dictionaryTypeId": "permissionType",
     "dictionaryTypeCode": "permissionType",
-    "dictionaryId": "init",
     "dictionaryCode": "init",
     "name": "初始化",
     "flagCode": "init"
@@ -354,7 +310,6 @@
   {
     "dictionaryTypeId": "permissionType",
     "dictionaryTypeCode": "permissionType",
-    "dictionaryId": "user",
     "dictionaryCode": "user",
     "name": "用户",
     "flagCode": "init"
@@ -362,7 +317,6 @@
   {
     "dictionaryTypeId": "permissionType",
     "dictionaryTypeCode": "permissionType",
-    "dictionaryId": "navigation",
     "dictionaryCode": "navigation",
     "name": "导航",
     "flagCode": "init"
@@ -370,9 +324,30 @@
   {
     "dictionaryTypeId": "permissionType",
     "dictionaryTypeCode": "permissionType",
-    "dictionaryId": "department",
     "dictionaryCode": "department",
     "name": "部门",
+    "flagCode": "init"
+  },
+  {
+    "dictionaryTypeId": "sys",
+    "dictionaryTypeCode": "sys",
+    "dictionaryCode": "language",
+    "name": "语言",
+    "value": "zh_CN",
+    "flagCode": "init"
+  },
+  {
+    "dictionaryTypeId": "i18nInfoType",
+    "dictionaryTypeCode": "i18nInfoType",
+    "dictionaryCode": "zh_CN",
+    "name": "中文",
+    "flagCode": "init"
+  },
+  {
+    "dictionaryTypeId": "i18nInfoType",
+    "dictionaryTypeCode": "i18nInfoType",
+    "dictionaryCode": "en",
+    "name": "英文",
     "flagCode": "init"
   }
 ]
