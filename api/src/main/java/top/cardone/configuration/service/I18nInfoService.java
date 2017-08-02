@@ -11,6 +11,7 @@ import top.cardone.context.annotation.Event;
 import top.cardone.context.annotation.Events;
 import top.cardone.context.event.SimpleErrorEvent;
 import top.cardone.context.event.SimpleEvent;
+import top.cardone.context.util.MapUtils;
 import top.cardone.data.service.PageService;
 
 import java.util.List;
@@ -241,22 +242,5 @@ public interface I18nInfoService extends PageService {
     @Cacheable(key = Caches.KEY_1)
     default List<Map<String, Object>> findListByKeywordCache(Map<String, Object> findList) {
         return this.findListByKeyword(findList);
-    }
-
-    @Cacheable(key = Caches.KEY_2)
-    default Map<String, Object> getMap(String typeCode, String prefix) {
-        Map<String, Object> findList = Maps.newHashMap();
-
-        findList.put("typeCode", typeCode);
-
-        List<Map<String, Object>> mapList = this.findList(findList);
-
-        Map<String, Object> newMap = Maps.newHashMap();
-
-        for (Map<String, Object> map : mapList) {
-            newMap.put(prefix + map.get("i18n_info_code"), map.get("content"));
-        }
-
-        return newMap;
     }
 }
