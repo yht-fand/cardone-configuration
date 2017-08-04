@@ -1,4 +1,8 @@
-SELECT t.DICTIONARY_TYPE_CODE, t.NAME FROM c1_dictionary_type t
+SELECT
+t.DICTIONARY_TYPE_ID
+, t.DICTIONARY_TYPE_CODE
+, t.NAME
+FROM c1_dictionary_type t
 where t.state_code ='1' and t.data_state_code = '1'
 <#if cardone.StringUtils.isBlank(notTerm) >
     <#if cardone.StringUtils.isNotBlank(term)>

@@ -1,4 +1,5 @@
-SELECT t.DICTIONARY_ID
+SELECT
+t.DICTIONARY_ID
 , t.DICTIONARY_CODE
 , t.NAME FROM c1_dictionary t
 where t.state_code ='1' and t.data_state_code = '1'

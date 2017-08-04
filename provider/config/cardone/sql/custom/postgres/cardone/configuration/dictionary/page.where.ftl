@@ -1,12 +1,18 @@
 <#assign prefixName = true>
-<#if cardone.StringUtils.isNotBlank(dictionaryTypeCode)>
+<#if cardone.StringUtils.isNotBlank(dictionaryTypeId)>
+${prefixName?string('WHERE ', 'AND ')}(t.DICTIONARY_TYPE_ID = :dictionaryTypeId OR :dictionaryTypeId = ANY(string_to_array(d.parent_tree_id, ',')))
+    <#assign prefixName = false>
+<#elseif cardone.StringUtils.isNotBlank(dictionaryTypeCode)>
 ${prefixName?string('WHERE ', 'AND ')}(t.DICTIONARY_TYPE_CODE = :dictionaryTypeCode OR :dictionaryTypeCode = ANY(string_to_array(d.parent_tree_code, ',')))
     <#assign prefixName = false>
 <#elseif cardone.StringUtils.isNotBlank(dictionaryTypeTreeName)>
 ${prefixName?string('WHERE ', 'AND ')}(POSITION(:dictionaryTypeTreeName in t.DICTIONARY_TYPE_CODE) > 0 OR POSITION(:dictionaryTypeTreeName in d.NAME) > 0)
     <#assign prefixName = false>
 </#if>
-<#if cardone.StringUtils.isNotBlank(dictionaryCode)>
+<#if cardone.StringUtils.isNotBlank(dictionaryId)>
+${prefixName?string('WHERE ', 'AND ')}t.DICTIONARY_ID = :dictionaryId
+    <#assign prefixName = false>
+<#elseif cardone.StringUtils.isNotBlank(dictionaryCode)>
 ${prefixName?string('WHERE ', 'AND ')}t.DICTIONARY_CODE = :dictionaryCode
     <#assign prefixName = false>
 <#elseif cardone.StringUtils.isNotBlank(name)>
