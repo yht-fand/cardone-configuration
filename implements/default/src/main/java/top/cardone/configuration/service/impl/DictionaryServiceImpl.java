@@ -5,8 +5,6 @@ import com.google.common.collect.Maps;
 import org.apache.commons.collections.CollectionUtils;
 import org.springframework.transaction.annotation.Transactional;
 import top.cardone.configuration.dao.DictionaryDao;
-import top.cardone.configuration.service.DictionaryService;
-import top.cardone.context.ApplicationContextHolder;
 import top.cardone.context.util.MapUtils;
 import top.cardone.context.util.StringUtils;
 import top.cardone.data.service.impl.PageServiceImpl;
@@ -73,7 +71,7 @@ public class DictionaryServiceImpl extends PageServiceImpl<DictionaryDao> implem
         }
 
         for (String dictionaryTypeCode : dictionaryTypeCodeArray) {
-            List<Map<String, Object>> mapList = ApplicationContextHolder.getBean(DictionaryService.class).findListByDictionaryTypeCode(dictionaryTypeCode);
+            List<Map<String, Object>> mapList = this.findListByDictionaryTypeCode(dictionaryTypeCode);
 
             if (!CollectionUtils.isEmpty(mapList)) {
                 return mapList;

@@ -241,4 +241,18 @@ public interface DictionaryItemService extends PageService {
     default List<Map<String, Object>> findListByKeywordCache(Map<String, Object> findList) {
         return this.findListByKeyword(findList);
     }
+
+    List<Map<String, Object>> findListByDictionaryCode(String dictionaryTypeCode, String dictionaryCode);
+
+    @Cacheable(key = Caches.KEY_1)
+    default List<Map<String, Object>> findListByDictionaryCodeCache(String dictionaryTypeCode, String dictionaryCode) {
+        return this.findListByDictionaryCode(dictionaryTypeCode, dictionaryCode);
+    }
+
+    List<Map<String, Object>> findListByDictionaryCodes(String dictionaryTypeCode, String dictionaryCodes);
+
+    @Cacheable(key = Caches.KEY_1)
+    default List<Map<String, Object>> findListByDictionaryCodesCache(String dictionaryTypeCode, String dictionaryCodes) {
+        return this.findListByDictionaryCodes(dictionaryTypeCode, dictionaryCodes);
+    }
 }
