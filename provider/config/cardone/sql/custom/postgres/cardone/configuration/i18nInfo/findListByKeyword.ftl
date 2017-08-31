@@ -5,5 +5,5 @@ where t.state_code ='1' and t.data_state_code = '1'
     and (strpos(t.NAME, :term) > 0 OR strpos(t.I18N_INFO_CODE, :term) > 0) OR strpos(t.content, :term) > 0)
     </#if>
 </#if>
-ORDER BY t.ORDER_, t.I18NINFO_CODE
+ORDER BY t.ORDER_, t.I18N_INFO_CODE
 LIMIT 20
