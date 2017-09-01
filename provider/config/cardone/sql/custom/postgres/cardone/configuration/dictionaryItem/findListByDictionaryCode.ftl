@@ -8,4 +8,4 @@ and c1_di.DICTIONARY_TYPE_CODE = :dictionaryTypeCode
 <#if cardone.StringUtils.isNotBlank(dictionaryCode)>
 and c1_di.dictionary_code = :dictionaryCode
 </#if>
-ORDER BY order_by_
+ORDER BY order_by_, c1_di.dictionary_item_code
