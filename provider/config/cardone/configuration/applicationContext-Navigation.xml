@@ -37,16 +37,6 @@
                 </entry>
                 <entry key="select">
                 <map>
-                    <entry key="permission_departments">
-                        <bean class="top.cardone.authority.func.ReadOnePermissionsFunc">
-                            <property name="permission" value="department:view:"/>
-                        </bean>
-                    </entry>
-                    <entry key="permission_users">
-                        <bean class="top.cardone.authority.func.ReadOnePermissionsFunc">
-                            <property name="permission" value="user:view:"/>
-                        </bean>
-                    </entry>
                     <entry key="permissions">
                         <bean class="top.cardone.authority.func.ReadOnePermissionsFunc">
                             <property name="permission" value="navigation:view:"/>
