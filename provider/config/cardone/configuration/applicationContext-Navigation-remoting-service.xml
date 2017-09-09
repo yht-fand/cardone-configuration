@@ -16,8 +16,7 @@
     <rabbit:queue
             name="queue:cardone-configuration-${cardone-configuration-version}:top.cardone.configuration.service.NavigationService"/>
 
-    <bean id="top.cardone.configuration.service.NavigationServiceExporter"
-          class="org.springframework.amqp.remoting.service.AmqpInvokerServiceExporter">
+    <bean id="top.cardone.configuration.service.NavigationServiceExporter" parent="remoteInvocationExecutorParnet">
         <property name="serviceInterface" value="top.cardone.configuration.service.NavigationService"/>
         <property name="service" ref="top.cardone.configuration.service.NavigationService"/>
         <property name="amqpTemplate" ref="org.springframework.amqp.core.AmqpTemplate"/>

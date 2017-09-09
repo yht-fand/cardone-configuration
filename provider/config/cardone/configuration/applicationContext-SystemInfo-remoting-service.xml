@@ -16,8 +16,7 @@
     <rabbit:queue
             name="queue:cardone-configuration-${cardone-configuration-version}:top.cardone.configuration.service.SystemInfoService"/>
 
-    <bean id="top.cardone.configuration.service.SystemInfoServiceExporter"
-          class="org.springframework.amqp.remoting.service.AmqpInvokerServiceExporter">
+    <bean id="top.cardone.configuration.service.SystemInfoServiceExporter" parent="remoteInvocationExecutorParnet">
         <property name="serviceInterface" value="top.cardone.configuration.service.SystemInfoService"/>
         <property name="service" ref="top.cardone.configuration.service.SystemInfoService"/>
         <property name="amqpTemplate" ref="org.springframework.amqp.core.AmqpTemplate"/>

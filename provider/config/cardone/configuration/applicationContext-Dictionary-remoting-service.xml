@@ -16,8 +16,7 @@
     <rabbit:queue
             name="queue:cardone-configuration-${cardone-configuration-version}:top.cardone.configuration.service.DictionaryService"/>
 
-    <bean id="top.cardone.configuration.service.DictionaryServiceExporter"
-          class="org.springframework.amqp.remoting.service.AmqpInvokerServiceExporter">
+    <bean id="top.cardone.configuration.service.DictionaryServiceExporter" parent="remoteInvocationExecutorParnet">
         <property name="serviceInterface" value="top.cardone.configuration.service.DictionaryService"/>
         <property name="service" ref="top.cardone.configuration.service.DictionaryService"/>
         <property name="amqpTemplate" ref="org.springframework.amqp.core.AmqpTemplate"/>
