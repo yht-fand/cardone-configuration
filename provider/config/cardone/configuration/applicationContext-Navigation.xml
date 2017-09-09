@@ -36,27 +36,24 @@
                     </map>
                 </entry>
                 <entry key="select">
-                    <map>
-                        <entry key="permission_departments">
-                            <bean class="top.cardone.authority.func.ReadOnePermissionFunc">
-                                <property name="key" value="permission_departments"/>
-                                <property name="functionCode" value="navigation"/>
-                            </bean>
-                        </entry>
-                        <entry key="permission_users">
-                            <bean class="top.cardone.authority.func.ReadOnePermissionFunc">
-                                <property name="key" value="permission_users"/>
-                                <property name="functionCode" value="navigation"/>
-                            </bean>
-                        </entry>
-                        <entry key="permissions">
-                            <bean class="top.cardone.authority.func.ReadOnePermissionFunc">
-                                <property name="key" value="permissions"/>
-                                <property name="functionCode" value="navigation"/>
-                            </bean>
-                        </entry>
-                    </map>
-                </entry>
+                <map>
+                    <entry key="permission_departments">
+                        <bean class="top.cardone.authority.func.ReadOnePermissionFunc">
+                            <property name="permission" value="department:view:"/>
+                        </bean>
+                    </entry>
+                    <entry key="permission_users">
+                        <bean class="top.cardone.authority.func.ReadOnePermissionFunc">
+                            <property name="permission" value="user:view:"/>
+                        </bean>
+                    </entry>
+                    <entry key="permissions">
+                        <bean class="top.cardone.authority.func.ReadOnePermissionFunc">
+                            <property name="permission" value="navigation:view:"/>
+                        </bean>
+                    </entry>
+                </map>
+            </entry>
             </map>
         </property>
     </bean>
