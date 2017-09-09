@@ -19,7 +19,6 @@
     <bean id="top.cardone.configuration.service.ErrorInfoServiceExporter" parent="remoteInvocationExecutorParnet">
         <property name="serviceInterface" value="top.cardone.configuration.service.ErrorInfoService"/>
         <property name="service" ref="top.cardone.configuration.service.ErrorInfoService"/>
-        <property name="amqpTemplate" ref="org.springframework.amqp.core.AmqpTemplate"/>
     </bean>
 
     <rabbit:listener-container acknowledge="none" max-concurrency="128" prefetch="10">
