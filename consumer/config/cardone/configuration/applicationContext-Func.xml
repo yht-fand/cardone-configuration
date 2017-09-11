@@ -27,4 +27,9 @@
     </bean>
 
     <bean name="readOneErrorInfoContentFunc" class="top.cardone.configuration.func.ReadOneErrorInfoContentFunc"/>
+
+    <bean name="readOneDictionaryValueByCodeFunc"
+          class="top.cardone.configuration.func.ReadOneDictionaryValueByCodeFunc"/>
+
+    <bean name="saveDictionaryFunc" class="top.cardone.configuration.func.SaveDictionaryFunc"/>
 </beans>
