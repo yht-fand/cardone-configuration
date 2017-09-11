@@ -8,7 +8,7 @@
         <#return >
     </#if>
 
-    <#if cardone.StringUtils.isNotBlank(permission_departments) || cardone.StringUtils.isNotBlank(permission_users) || cardone.StringUtils.isNotBlank(permission)>
+    <#if cardone.StringUtils.isNotBlank(permission_departments) || cardone.StringUtils.isNotBlank(permission_users) || cardone.StringUtils.isNotBlank(permissions)>
         ${prefixName?string('WHERE (', 'AND (')}
         <#assign andOrPrefixName = true>
         <#if cardone.StringUtils.isNotBlank(permission_departments)>
