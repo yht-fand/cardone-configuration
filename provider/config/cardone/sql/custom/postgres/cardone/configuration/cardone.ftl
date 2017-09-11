@@ -3,8 +3,8 @@
 <#assign ObjectUtils = beansWrapperFn.getStaticModels()["org.apache.commons.lang3.ObjectUtils"]>
 <#assign SecurityUtils = beansWrapperFn.getStaticModels()["org.apache.shiro.SecurityUtils"]>
 
-<#macro permissionSql prefixName = true role="administrator" permission="*:view:*"  permission_departments="" departmentColumnName="t.DEPARTMENT_CODE" permission_users="" userColumnName="t.personal_code" permissions="" permissionColumnName="t.personal_code">
-    <#if permission_departments == "*" || permission_users == "*"|| permissions == "*" || SecurityUtils.getSubject().hasRole(role)|| SecurityUtils.getSubject().isPermitted(permission)>
+<#macro permissionSql prefixName = true permission_departments="" departmentColumnName="t.DEPARTMENT_CODE" permission_users="" userColumnName="t.personal_code" permissions="" permissionColumnName="t.personal_code">
+    <#if permission_departments == "*" || permission_users == "*"|| permissions == "*">
         <#return >
     </#if>
 
@@ -19,7 +19,7 @@
         ${andOrPrefixName?string('', ' or ')}${userColumnName} = ANY(string_to_array(:permission_users, ','))
             <#assign andOrPrefixName = false>
         </#if>
-        <#if cardone.StringUtils.isNotBlank(permission)>
+        <#if cardone.StringUtils.isNotBlank(permissions)>
         ${andOrPrefixName?string('', ' or ')}${permissionColumnName} = ANY(string_to_array(:permissions, ','))
             <#assign andOrPrefixName = false>
         </#if>
