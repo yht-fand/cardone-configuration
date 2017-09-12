@@ -282,6 +282,13 @@
   {
     "dictionaryTypeId": "permissionType",
     "dictionaryTypeCode": "permissionType",
+    "dictionaryCode": "button",
+    "name": "按钮",
+    "flagCode": "init"
+  },
+  {
+    "dictionaryTypeId": "permissionType",
+    "dictionaryTypeCode": "permissionType",
     "dictionaryCode": "user",
     "name": "用户",
     "flagCode": "init"
