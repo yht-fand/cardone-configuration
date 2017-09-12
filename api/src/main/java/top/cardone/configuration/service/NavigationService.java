@@ -261,6 +261,7 @@ public interface NavigationService extends PageService {
      * @return
      */
     @CacheEvict(allEntries = true)
+    @Transactional
     int generateData();
 
     /**
