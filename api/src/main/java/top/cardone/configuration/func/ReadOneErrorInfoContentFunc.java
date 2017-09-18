@@ -49,7 +49,7 @@ public class ReadOneErrorInfoContentFunc implements Func3<String, String, String
                 insert.put("errorInfoCode", readOne.get("errorInfoCode"));
                 insert.put("content", defaultContent);
 
-                ApplicationContextHolder.getBean(ErrorInfoService.class).insertByNotExistsCache(insert);
+                ApplicationContextHolder.getBean(ErrorInfoService.class).saveCache(insert);
             }, null, false));
         }
 
