@@ -217,6 +217,13 @@
     "flagCode": "init"
   },
   {
+    "dictionaryTypeId": "flag",
+    "dictionaryTypeCode": "flag",
+    "dictionaryCode": "openapi",
+    "name": "接入",
+    "flagCode": "openapi"
+  },
+  {
     "dictionaryTypeId": "state",
     "dictionaryTypeCode": "state",
     "dictionaryCode": "1",
