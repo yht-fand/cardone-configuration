@@ -29,15 +29,15 @@ public class NavigationServiceImpl extends PageServiceImpl<NavigationDao> implem
 
     @Override
     @Transactional
-    public int generateData() {
-        return this.generateData(UUID.randomUUID().toString());
+    public void generateData() {
+        this.generateData(UUID.randomUUID().toString());
     }
 
     @Override
     @Transactional
-    public int generateData(String flagObjectCode) {
+    public void generateData(String flagObjectCode) {
         ApplicationContextHolder.action(InitDataAction.class, action -> action.action(), "top.cardone.configuration.service.NavigationService.init");
 
-        return this.dao.generateData(flagObjectCode);
+        this.dao.generateData(flagObjectCode);
     }
 }

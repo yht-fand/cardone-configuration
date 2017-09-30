@@ -262,7 +262,7 @@ public interface NavigationService extends PageService {
      */
     @CacheEvict(allEntries = true)
     @Transactional
-    int generateData();
+    void generateData();
 
     /**
      * 生成
@@ -271,5 +271,5 @@ public interface NavigationService extends PageService {
      * @return
      */
     @CacheEvict(allEntries = true)
-    int generateData(String flagObjectCode);
+    void generateData(String flagObjectCode);
 }
