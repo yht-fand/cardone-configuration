@@ -368,6 +368,6 @@
     "url": "cms/notice/index",
     "orderBy": 2002,
     "flagCode": "init",
-    "dataStateCode": "0"
+    "dataStateCode": "1"
   }
 ]
