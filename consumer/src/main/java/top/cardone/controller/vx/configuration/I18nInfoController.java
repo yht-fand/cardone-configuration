@@ -142,7 +142,7 @@ public class I18nInfoController {
      **xx/
      @RequestMapping("/m0004.json")
      @ResponseBody public Object m0004Json(HttpServletRequest request, HttpServletResponse response) throws Exception {
-     return ApplicationContextHolder.getBean(WebSupport.class).importExcel(request, response,
+     ApplicationContextHolder.getBean(WebSupport.class).importExcel(request, response,
      (Func1<Object, List<Map<String, Object>>>) inputList -> ApplicationContextHolder.getBean(I18nInfoService.class).insertListByNotExistsCache(Lists.newArrayList(inputList)));
      }
      /** /m0004.json end **/
