@@ -31,5 +31,5 @@
     <bean name="readOneDictionaryValueByCodeFunc"
           class="top.cardone.configuration.func.ReadOneDictionaryValueByCodeFunc"/>
 
-    <bean name="saveDictionaryFunc" class="top.cardone.configuration.func.SaveDictionaryFunc"/>
+    <bean name="saveListDictionaryFunc" class="top.cardone.configuration.func.SaveListDictionaryFunc"/>
 </beans>

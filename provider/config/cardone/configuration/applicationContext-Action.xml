@@ -46,7 +46,7 @@
         </property>
     </bean>
 
-    <bean class="top.cardone.data.action.GenerateTreeAction">
+    <bean name="dictionaryTypeGenerateTreeAction" class="top.cardone.data.action.GenerateTreeAction">
         <property name="codePutKey" value="dictionaryTypeCode"/>
         <property name="codeGetKey" value="DICTIONARY_TYPE_CODE"/>
         <property name="pkPutKey" value="dictionaryTypeId"/>
@@ -54,7 +54,7 @@
         <property name="serviceBeanId" value="top.cardone.configuration.service.DictionaryTypeService"/>
     </bean>
 
-    <bean class="top.cardone.data.action.GenerateTreeAction">
+    <bean name="navigationGenerateTreeAction" class="top.cardone.data.action.GenerateTreeAction">
         <property name="codePutKey" value="navigationCode"/>
         <property name="codeGetKey" value="NAVIGATION_CODE"/>
         <property name="pkPutKey" value="navigationId"/>
