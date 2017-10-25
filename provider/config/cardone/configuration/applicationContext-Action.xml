@@ -45,4 +45,20 @@
             </list>
         </property>
     </bean>
+
+    <bean class="top.cardone.data.action.GenerateTreeAction">
+        <property name="codePutKey" value="dictionaryTypeCode"/>
+        <property name="codeGetKey" value="DICTIONARY_TYPE_CODE"/>
+        <property name="pkPutKey" value="dictionaryTypeId"/>
+        <property name="pkGetKey" value="DICTIONARY_TYPE_ID"/>
+        <property name="serviceBeanId" value="top.cardone.configuration.service.DictionaryTypeService"/>
+    </bean>
+
+    <bean class="top.cardone.data.action.GenerateTreeAction">
+        <property name="codePutKey" value="navigationCode"/>
+        <property name="codeGetKey" value="NAVIGATION_CODE"/>
+        <property name="pkPutKey" value="navigationId"/>
+        <property name="pkGetKey" value="NAVIGATION_ID"/>
+        <property name="serviceBeanId" value="top.cardone.configuration.service.NavigationService"/>
+    </bean>
 </beans>

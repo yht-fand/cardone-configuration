@@ -2,19 +2,36 @@
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean class="top.cardone.data.listener.GenerateTreeListener">
-        <property name="codePutKey" value="dictionaryTypeCode"/>
-        <property name="codeGetKey" value="DICTIONARY_TYPE_CODE"/>
-        <property name="pkPutKey" value="dictionaryTypeId"/>
-        <property name="pkGetKey" value="DICTIONARY_TYPE_ID"/>
+    <bean class="top.cardone.data.listener.GenerateListener">
         <property name="serviceBeanId" value="top.cardone.configuration.service.DictionaryTypeService"/>
+        <property name="saveListActionBeanId" value="saveListDictionaryFunc"/>
+        <property name="saveList">
+            <list>
+                <map>
+                    <entry key="dictionaryTypeCode" value="generate"/>
+                    <entry key="dictionaryCode" value="dictionaryTypeTree"/>
+                    <entry key="value" value="yes"/>
+                </map>
+            </list>
+        </property>
     </bean>
 
-    <bean class="top.cardone.data.listener.GenerateTreeListener">
-        <property name="codePutKey" value="navigationCode"/>
-        <property name="codeGetKey" value="NAVIGATION_CODE"/>
-        <property name="pkPutKey" value="navigationId"/>
-        <property name="pkGetKey" value="NAVIGATION_ID"/>
+    <bean class="top.cardone.data.listener.GenerateListener">
         <property name="serviceBeanId" value="top.cardone.configuration.service.NavigationService"/>
+        <property name="saveListActionBeanId" value="saveListDictionaryFunc"/>
+        <property name="saveList">
+            <list>
+                <map>
+                    <entry key="dictionaryTypeCode" value="generate"/>
+                    <entry key="dictionaryCode" value="navigationTree"/>
+                    <entry key="value" value="yes"/>
+                </map>
+                <map>
+                    <entry key="dictionaryTypeCode" value="generate"/>
+                    <entry key="dictionaryCode" value="userGroup"/>
+                    <entry key="value" value="yes"/>
+                </map>
+            </list>
+        </property>
     </bean>
 </beans>
