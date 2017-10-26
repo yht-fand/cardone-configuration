@@ -2,8 +2,8 @@ package top.cardone.configuration.action;
 
 import com.google.common.collect.Maps;
 import lombok.Setter;
+import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.BooleanUtils;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.util.CollectionUtils;
 import top.cardone.configuration.service.DictionaryService;
 import top.cardone.context.ApplicationContextHolder;
@@ -24,14 +24,14 @@ public class IfAction implements Action0 {
     private Map<String, String> findOne;
 
     @Setter
-    private String actionBeanId;
+    private String[] actionBeanIds;
 
     @Setter
     private Integer delay = 120;
 
     @Override
     public void action() {
-        if (StringUtils.isBlank(actionBeanId)) {
+        if (ArrayUtils.isEmpty(actionBeanIds)) {
             return;
         }
 
@@ -39,7 +39,9 @@ public class IfAction implements Action0 {
             return;
         }
 
-        Map<String, Object> dictionary = ApplicationContextHolder.getBean(DictionaryService.class).findOne(findOne);
+        System.out.println(findOne.toString());
+
+        Map<String, Object> dictionary = ApplicationContextHolder.getBean(DictionaryService.class).findOneCache(findOne);
 
         if (CollectionUtils.isEmpty(dictionary)) {
             return;
@@ -64,8 +66,10 @@ public class IfAction implements Action0 {
         save.putAll(findOne);
         save.put("value", "no");
 
-        ApplicationContextHolder.getBean(DictionaryService.class).save(save);
+        ApplicationContextHolder.getBean(DictionaryService.class).saveCache(save);
 
-        ApplicationContextHolder.action(Action0.class, action0 -> action0.action(), actionBeanId);
+        for (String actionBeanId : actionBeanIds) {
+            ApplicationContextHolder.action(Action0.class, action0 -> action0.action(), actionBeanId);
+        }
     }
 }

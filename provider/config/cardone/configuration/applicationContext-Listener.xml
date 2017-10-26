@@ -26,11 +26,6 @@
                     <entry key="dictionaryCode" value="navigationTree"/>
                     <entry key="value" value="yes"/>
                 </map>
-                <map>
-                    <entry key="dictionaryTypeCode" value="generate"/>
-                    <entry key="dictionaryCode" value="userGroup"/>
-                    <entry key="value" value="yes"/>
-                </map>
             </list>
         </property>
     </bean>
