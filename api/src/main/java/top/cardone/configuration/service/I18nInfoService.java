@@ -211,7 +211,7 @@ public interface I18nInfoService extends PageService {
      */
     @CacheEvict(allEntries = true)
     @Transactional
-    default int[][] saveListCache(List<Object> saveList) {
+    default int[] saveListCache(List<Object> saveList) {
         return this.saveList(saveList);
     }
 

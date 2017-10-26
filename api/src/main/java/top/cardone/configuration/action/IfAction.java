@@ -55,7 +55,7 @@ public class IfAction implements Action0 {
 
         LocalDateTime delayTime = LocalDateTime.ofInstant(Instant.ofEpochMilli(lastModifiedDate.getTime()), ZoneId.systemDefault()).plusSeconds(delay);
 
-        if (delayTime.isBefore(LocalDateTime.now())) {
+        if (delayTime.isAfter(LocalDateTime.now())) {
             return;
         }
 
