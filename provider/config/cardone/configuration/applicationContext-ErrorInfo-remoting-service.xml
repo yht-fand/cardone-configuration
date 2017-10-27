@@ -21,7 +21,7 @@
         <property name="service" ref="top.cardone.configuration.service.ErrorInfoService"/>
     </bean>
 
-    <rabbit:listener-container acknowledge="none" max-concurrency="128" prefetch="10">
+    <rabbit:listener-container acknowledge="none" concurrency="128" prefetch="10">
         <rabbit:listener ref="top.cardone.configuration.service.ErrorInfoServiceExporter"
                          queue-names="queue:cardone-configuration-${cardone-configuration-version}:top.cardone.configuration.service.ErrorInfoService"/>
     </rabbit:listener-container>
