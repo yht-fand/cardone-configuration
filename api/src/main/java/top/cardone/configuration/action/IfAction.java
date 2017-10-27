@@ -39,9 +39,7 @@ public class IfAction implements Action0 {
             return;
         }
 
-        System.out.println(findOne.toString());
-
-        Map<String, Object> dictionary = ApplicationContextHolder.getBean(DictionaryService.class).findOneCache(findOne);
+        Map<String, Object> dictionary = ApplicationContextHolder.getBean(DictionaryService.class).findOne(findOne);
 
         if (CollectionUtils.isEmpty(dictionary)) {
             return;
@@ -66,7 +64,7 @@ public class IfAction implements Action0 {
         save.putAll(findOne);
         save.put("value", "no");
 
-        ApplicationContextHolder.getBean(DictionaryService.class).saveCache(save);
+        ApplicationContextHolder.getBean(DictionaryService.class).save(save);
 
         for (String actionBeanId : actionBeanIds) {
             ApplicationContextHolder.action(Action0.class, action0 -> action0.action(), actionBeanId);
