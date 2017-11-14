@@ -94,5 +94,11 @@
     "dictionaryTypeCode": "permissionType",
     "name": "许可类别",
     "flagCode": "init"
+  },
+  {
+    "dictionaryTypeId": "userLogType",
+    "dictionaryTypeCode": "userLogType",
+    "name": "用户日志类别",
+    "flagCode": "init"
   }
 ]

@@ -335,5 +335,61 @@
     "dictionaryCode": "en",
     "name": "英文",
     "flagCode": "init"
+  },
+  {
+    "dictionaryTypeId": "userLogType",
+    "dictionaryTypeCode": "userLogType",
+    "dictionaryCode": "insert",
+    "name": "新增",
+    "flagCode": "init"
+  },
+  {
+    "dictionaryTypeId": "userLogType",
+    "dictionaryTypeCode": "userLogType",
+    "dictionaryCode": "update",
+    "name": "更新",
+    "flagCode": "init"
+  },
+  {
+    "dictionaryTypeId": "userLogType",
+    "dictionaryTypeCode": "userLogType",
+    "dictionaryCode": "delete",
+    "name": "删除",
+    "flagCode": "init"
+  },
+  {
+    "dictionaryTypeId": "userLogType",
+    "dictionaryTypeCode": "userLogType",
+    "dictionaryCode": "save",
+    "name": "保存",
+    "flagCode": "init"
+  },
+  {
+    "dictionaryTypeId": "userLogType",
+    "dictionaryTypeCode": "userLogType",
+    "dictionaryCode": "generate",
+    "name": "生成",
+    "flagCode": "init"
+  },
+  {
+    "dictionaryTypeId": "userLogType",
+    "dictionaryTypeCode": "userLogType",
+    "dictionaryCode": "page",
+    "name": "分页查询",
+    "flagCode": "init"
+  },
+  {
+    "dictionaryTypeId": "userLogType",
+    "dictionaryTypeCode": "userLogType",
+    "dictionaryCode": "find",
+    "name": "某条记录查询",
+    "flagCode": "init"
+  },
+  {
+    "dictionaryTypeId": "userLogType",
+    "dictionaryTypeCode": "userLogType",
+    "dictionaryCode": "read",
+    "name": "某个值查询",
+    "flagCode": "init"
   }
 ]
