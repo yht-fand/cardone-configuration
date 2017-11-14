@@ -25,6 +25,7 @@ WHERE t.dictionary_id = :dictionaryId
 <#else>
 <#include "page.where.ftl">
 ORDER BY t.DICTIONARY_TYPE_CODE,
+t.ORDER_BY_,
 t.DICTIONARY_CODE,
 t.CREATED_DATE
 limit <#if pageSize??>:pageSize<#else>10</#if> OFFSET <#if offset??>:offset<#else>0</#if>
