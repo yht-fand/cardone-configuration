@@ -14,7 +14,7 @@
     "url": "log/operateLog/index",
     "orderBy": 3001,
     "flagCode": "init",
-    "dataStateCode": "1"
+    "dataStateCode": "0"
   },
   {
     "navigationCode": "usercenter",
