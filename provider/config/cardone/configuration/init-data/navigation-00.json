@@ -112,7 +112,7 @@
     "url": "usercenter/userDepartment/index",
     "orderBy": 1110,
     "flagCode": "init",
-    "dataStateCode": "0"
+    "dataStateCode": "1"
   },
   {
     "navigationCode": "usercenter/userAddress/index",
