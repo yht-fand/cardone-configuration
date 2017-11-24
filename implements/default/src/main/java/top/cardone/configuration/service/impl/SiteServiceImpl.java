@@ -4,6 +4,7 @@ import org.springframework.transaction.annotation.Transactional;
 import top.cardone.configuration.dao.SiteDao;
 import top.cardone.data.service.impl.PageServiceImpl;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -16,5 +17,10 @@ public class SiteServiceImpl extends PageServiceImpl<SiteDao> implements top.car
     @Override
     public Map<String, Object> findOneBySiteId(Map<String, Object> findOne) {
         return this.dao.findOneBySiteId(findOne);
+    }
+
+    @Override
+    public List<Map<String, Object>> findListForTree(Map<String, Object> findList) {
+        return this.dao.findListForTree(findList);
     }
 }

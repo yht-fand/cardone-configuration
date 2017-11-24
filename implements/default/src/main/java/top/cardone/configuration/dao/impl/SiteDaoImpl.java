@@ -2,6 +2,7 @@ package top.cardone.configuration.dao.impl;
 
 import top.cardone.data.jdbc.dao.impl.PageDaoImpl;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -15,5 +16,13 @@ public class SiteDaoImpl extends PageDaoImpl implements top.cardone.configuratio
         String findOneSqlFilePath = this.getSqlFilePath("page.find");
 
         return this.findOne(findOneSqlFilePath, findOne);
+    }
+
+
+    @Override
+    public List<Map<String, Object>> findListForTree(Map<String, Object> findList) {
+        String findListSqlFilePath = this.getSqlFilePath("findListForTree");
+
+        return this.findList(findListSqlFilePath, this.toMap(findList, "select"));
     }
 }

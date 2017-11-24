@@ -241,4 +241,17 @@ public interface SiteService extends PageService {
     default List<Map<String, Object>> findListByKeywordCache(Map<String, Object> findList) {
         return this.findListByKeyword(findList);
     }
+
+    /**
+     * 查询站点树
+     *
+     * @param findList 关键字
+     * @return
+     */
+    List<Map<String, Object>> findListForTree(Map<String, Object> findList);
+
+    @Cacheable(key = Caches.KEY_1)
+    default List<Map<String, Object>> findListForTreeCache(Map<String, Object> findList) {
+        return this.findListForTree(findList);
+    }
 }
