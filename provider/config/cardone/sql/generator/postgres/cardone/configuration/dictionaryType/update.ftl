@@ -1,4 +1,4 @@
-UPDATE c1_dictionary_type
+UPDATE "c1_dictionary_type"
 <#assign prefixName = true>
 <#if (update_batchNo??)>
 ${prefixName?string('SET ', ', ')}"batch_no" = :update_batchNo_value

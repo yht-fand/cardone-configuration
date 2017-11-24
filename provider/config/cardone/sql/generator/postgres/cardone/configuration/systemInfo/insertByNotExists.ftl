@@ -1,6 +1,6 @@
 INSERT
 INTO
-c1_system_info
+"c1_system_info"
 (<#assign prefixName = true>
 <#if (insert_batchNo??) && (insert_batchNo_value??)>
 ${prefixName?string('  ', ', ')}"batch_no"
@@ -213,7 +213,7 @@ ${prefixName?string('  ', ', ')}:insert_systemInfoId_value
 ${prefixName?string('  ', ', ')}:insert_version_value
 <#assign prefixName = false>
 </#if>
-WHERE NOT EXISTS (SELECT 1 FROM c1_system_info E
+WHERE NOT EXISTS (SELECT 1 FROM "c1_system_info" E
 <#assign prefixName = true>
 <#if (where_and_eq_batchNo??)>
 <#if (where_and_eq_batchNo_value??)>

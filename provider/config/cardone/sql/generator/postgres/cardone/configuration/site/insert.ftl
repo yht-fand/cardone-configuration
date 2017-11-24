@@ -1,5 +1,5 @@
 INSERT
-INTO c1_site
+INTO "c1_site"
 (<#assign prefixName = true>
 <#if (insert_batchNo??) && (insert_batchNo_value??)>
 ${prefixName?string('  ', ', ')}"batch_no"
@@ -77,12 +77,36 @@ ${prefixName?string('  ', ', ')}"order_by_"
 ${prefixName?string('  ', ', ')}"org_code"
 <#assign prefixName = false>
 </#if>
+<#if (insert_parentCode??) && (insert_parentCode_value??)>
+${prefixName?string('  ', ', ')}"parent_code"
+<#assign prefixName = false>
+</#if>
+<#if (insert_parentId??) && (insert_parentId_value??)>
+${prefixName?string('  ', ', ')}"parent_id"
+<#assign prefixName = false>
+</#if>
+<#if (insert_parentTreeCode??) && (insert_parentTreeCode_value??)>
+${prefixName?string('  ', ', ')}"parent_tree_code"
+<#assign prefixName = false>
+</#if>
+<#if (insert_parentTreeId??) && (insert_parentTreeId_value??)>
+${prefixName?string('  ', ', ')}"parent_tree_id"
+<#assign prefixName = false>
+</#if>
+<#if (insert_parentTreeName??) && (insert_parentTreeName_value??)>
+${prefixName?string('  ', ', ')}"parent_tree_name"
+<#assign prefixName = false>
+</#if>
 <#if (insert_personalCode??) && (insert_personalCode_value??)>
 ${prefixName?string('  ', ', ')}"personal_code"
 <#assign prefixName = false>
 </#if>
 <#if (insert_personalId??) && (insert_personalId_value??)>
 ${prefixName?string('  ', ', ')}"personal_id"
+<#assign prefixName = false>
+</#if>
+<#if (insert_remark??) && (insert_remark_value??)>
+${prefixName?string('  ', ', ')}"remark"
 <#assign prefixName = false>
 </#if>
 <#if (insert_siteCode??) && (insert_siteCode_value??)>
@@ -188,12 +212,36 @@ ${prefixName?string('  ', ', ')}:insert_orderBy_value
 ${prefixName?string('  ', ', ')}:insert_orgCode_value
 <#assign prefixName = false>
 </#if>
+<#if (insert_parentCode??) && (insert_parentCode_value??)>
+${prefixName?string('  ', ', ')}:insert_parentCode_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_parentId??) && (insert_parentId_value??)>
+${prefixName?string('  ', ', ')}:insert_parentId_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_parentTreeCode??) && (insert_parentTreeCode_value??)>
+${prefixName?string('  ', ', ')}:insert_parentTreeCode_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_parentTreeId??) && (insert_parentTreeId_value??)>
+${prefixName?string('  ', ', ')}:insert_parentTreeId_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_parentTreeName??) && (insert_parentTreeName_value??)>
+${prefixName?string('  ', ', ')}:insert_parentTreeName_value
+<#assign prefixName = false>
+</#if>
 <#if (insert_personalCode??) && (insert_personalCode_value??)>
 ${prefixName?string('  ', ', ')}:insert_personalCode_value
 <#assign prefixName = false>
 </#if>
 <#if (insert_personalId??) && (insert_personalId_value??)>
 ${prefixName?string('  ', ', ')}:insert_personalId_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_remark??) && (insert_remark_value??)>
+${prefixName?string('  ', ', ')}:insert_remark_value
 <#assign prefixName = false>
 </#if>
 <#if (insert_siteCode??) && (insert_siteCode_value??)>

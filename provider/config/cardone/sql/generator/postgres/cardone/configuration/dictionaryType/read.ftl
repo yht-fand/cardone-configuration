@@ -99,5 +99,5 @@ SELECT
 <#default>
 COUNT(*) AS COUNT_
 </#switch>
-FROM c1_dictionary_type
+FROM "c1_dictionary_type"
 <#include "where.ftl">

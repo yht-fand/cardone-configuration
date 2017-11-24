@@ -144,6 +144,41 @@ public class Site implements java.io.Serializable {
     protected String orgCode;
 
     /**
+     * 父级编号
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String parentCode;
+
+    /**
+     * 父级标识
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String parentId;
+
+    /**
+     * 父级树编号
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String parentTreeCode;
+
+    /**
+     * 父级树标识
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String parentTreeId;
+
+    /**
+     * 父级树名称
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String parentTreeName;
+
+    /**
      * 个人编号
      */
     @lombok.Getter
@@ -156,6 +191,13 @@ public class Site implements java.io.Serializable {
     @lombok.Getter
     @lombok.Setter
     protected String personalId;
+
+    /**
+     * 备注
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String remark;
 
     /**
      * 站点编号

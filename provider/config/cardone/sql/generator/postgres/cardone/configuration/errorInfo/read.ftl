@@ -96,5 +96,5 @@ SELECT
 <#default>
 COUNT(*) AS COUNT_
 </#switch>
-FROM c1_error_info
+FROM "c1_error_info"
 <#include "where.ftl">

@@ -1,4 +1,4 @@
-UPDATE c1_error_info
+UPDATE "c1_error_info"
 <#assign prefixName = true>
 <#if (update_batchNo??)>
 ${prefixName?string('SET ', ', ')}"batch_no" = :update_batchNo_value

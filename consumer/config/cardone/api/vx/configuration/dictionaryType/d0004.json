@@ -1,0 +1,14 @@
+{
+  "validation": {
+    "rules": {
+      "dictionaryTypeIds": {
+        "required": true
+      }
+    },
+    "messages": {
+      "dictionaryTypeIds": {
+        "required": "字典类别标识集合必填"
+      }
+    }
+  }
+}

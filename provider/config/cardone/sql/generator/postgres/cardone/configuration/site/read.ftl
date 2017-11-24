@@ -57,11 +57,29 @@ SELECT
 <#case "orgCode">
 "org_code"
 <#break>
+<#case "parentCode">
+"parent_code"
+<#break>
+<#case "parentId">
+"parent_id"
+<#break>
+<#case "parentTreeCode">
+"parent_tree_code"
+<#break>
+<#case "parentTreeId">
+"parent_tree_id"
+<#break>
+<#case "parentTreeName">
+"parent_tree_name"
+<#break>
 <#case "personalCode">
 "personal_code"
 <#break>
 <#case "personalId">
 "personal_id"
+<#break>
+<#case "remark">
+"remark"
 <#break>
 <#case "siteCode">
 "site_code"
@@ -84,5 +102,5 @@ SELECT
 <#default>
 COUNT(*) AS COUNT_
 </#switch>
-FROM c1_site
+FROM "c1_site"
 <#include "where.ftl">

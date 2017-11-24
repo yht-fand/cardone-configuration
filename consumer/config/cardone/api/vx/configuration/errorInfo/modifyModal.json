@@ -1,0 +1,14 @@
+{
+  "validation": {
+    "rules": {
+      "errorInfoId": {
+        "required": true
+      }
+    },
+    "messages": {
+      "errorInfoId": {
+        "required": "错误信息标识必填"
+      }
+    }
+  }
+}

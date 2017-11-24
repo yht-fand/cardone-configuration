@@ -1,4 +1,4 @@
-UPDATE c1_site
+UPDATE "c1_site"
 <#assign prefixName = true>
 <#if (update_batchNo??)>
 ${prefixName?string('SET ', ', ')}"batch_no" = :update_batchNo_value
@@ -76,12 +76,36 @@ ${prefixName?string('SET ', ', ')}"order_by_" = :update_orderBy_value
 ${prefixName?string('SET ', ', ')}"org_code" = :update_orgCode_value
 <#assign prefixName = false>
 </#if>
+<#if (update_parentCode??)>
+${prefixName?string('SET ', ', ')}"parent_code" = :update_parentCode_value
+<#assign prefixName = false>
+</#if>
+<#if (update_parentId??)>
+${prefixName?string('SET ', ', ')}"parent_id" = :update_parentId_value
+<#assign prefixName = false>
+</#if>
+<#if (update_parentTreeCode??)>
+${prefixName?string('SET ', ', ')}"parent_tree_code" = :update_parentTreeCode_value
+<#assign prefixName = false>
+</#if>
+<#if (update_parentTreeId??)>
+${prefixName?string('SET ', ', ')}"parent_tree_id" = :update_parentTreeId_value
+<#assign prefixName = false>
+</#if>
+<#if (update_parentTreeName??)>
+${prefixName?string('SET ', ', ')}"parent_tree_name" = :update_parentTreeName_value
+<#assign prefixName = false>
+</#if>
 <#if (update_personalCode??)>
 ${prefixName?string('SET ', ', ')}"personal_code" = :update_personalCode_value
 <#assign prefixName = false>
 </#if>
 <#if (update_personalId??)>
 ${prefixName?string('SET ', ', ')}"personal_id" = :update_personalId_value
+<#assign prefixName = false>
+</#if>
+<#if (update_remark??)>
+${prefixName?string('SET ', ', ')}"remark" = :update_remark_value
 <#assign prefixName = false>
 </#if>
 <#if (update_siteCode??)>

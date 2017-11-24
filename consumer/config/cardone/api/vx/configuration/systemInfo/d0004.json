@@ -1,0 +1,14 @@
+{
+  "validation": {
+    "rules": {
+      "systemInfoIds": {
+        "required": true
+      }
+    },
+    "messages": {
+      "systemInfoIds": {
+        "required": "系统信息标识集合必填"
+      }
+    }
+  }
+}

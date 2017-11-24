@@ -1,5 +1,5 @@
 INSERT
-INTO c1_dictionary
+INTO "c1_dictionary"
 (<#assign prefixName = true>
 <#if (insert_batchNo??) && (insert_batchNo_value??)>
 ${prefixName?string('  ', ', ')}"batch_no"

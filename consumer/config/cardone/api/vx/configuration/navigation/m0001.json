@@ -1,0 +1,28 @@
+{
+  "validation": {
+    "rules": {
+      "navigationCode": {
+        "required": true,
+        "minlength": 4,
+        "maxlength": 255
+      },
+      "name": {
+        "required": true,
+        "minlength": 4,
+        "maxlength": 255
+      }
+    },
+    "messages": {
+      "navigationCode": {
+        "required": "导航编号必填",
+        "minlength": "导航编号需{0}个字符以上",
+        "maxlength": "导航编号需小于{0}个字符"
+      },
+      "name": {
+        "required": "导航名称必填",
+        "minlength": "导航名称需{0}个字符以上",
+        "maxlength": "导航名称需小于{0}个字符"
+      }
+    }
+  }
+}

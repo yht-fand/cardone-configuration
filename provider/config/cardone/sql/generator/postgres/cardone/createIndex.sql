@@ -628,6 +628,21 @@
 --组织编号
 --drop index IF EXISTS idx_c1_site_org_code;
 --create index IF NOT EXISTS idx_c1_site_org_code ON c1_site ("org_code" varchar_pattern_ops);
+--父级编号
+--drop index IF EXISTS idx_c1_site_parent_code;
+--create index IF NOT EXISTS idx_c1_site_parent_code ON c1_site ("parent_code" varchar_pattern_ops);
+--父级标识
+--drop index IF EXISTS idx_c1_site_parent_id;
+--create index IF NOT EXISTS idx_c1_site_parent_id ON c1_site ("parent_id" varchar_pattern_ops);
+--父级树编号
+--drop index IF EXISTS idx_c1_site_parent_tree_code;
+--create index IF NOT EXISTS idx_c1_site_parent_tree_code ON c1_site ("parent_tree_code" varchar_pattern_ops);
+--父级树标识
+--drop index IF EXISTS idx_c1_site_parent_tree_id;
+--create index IF NOT EXISTS idx_c1_site_parent_tree_id ON c1_site ("parent_tree_id" varchar_pattern_ops);
+--父级树名称
+--drop index IF EXISTS idx_c1_site_parent_tree_name;
+--create index IF NOT EXISTS idx_c1_site_parent_tree_name ON c1_site ("parent_tree_name" varchar_pattern_ops);
 --个人编号
 --drop index IF EXISTS idx_c1_site_personal_code;
 --create index IF NOT EXISTS idx_c1_site_personal_code ON c1_site ("personal_code" varchar_pattern_ops);

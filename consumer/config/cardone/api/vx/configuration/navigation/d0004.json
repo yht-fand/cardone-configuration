@@ -1,0 +1,14 @@
+{
+  "validation": {
+    "rules": {
+      "navigationIds": {
+        "required": true
+      }
+    },
+    "messages": {
+      "navigationIds": {
+        "required": "导航标识集合必填"
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 INSERT
 INTO
-c1_site
+"c1_site"
 (<#assign prefixName = true>
 <#if (insert_batchNo??) && (insert_batchNo_value??)>
 ${prefixName?string('  ', ', ')}"batch_no"
@@ -78,12 +78,36 @@ ${prefixName?string('  ', ', ')}"order_by_"
 ${prefixName?string('  ', ', ')}"org_code"
 <#assign prefixName = false>
 </#if>
+<#if (insert_parentCode??) && (insert_parentCode_value??)>
+${prefixName?string('  ', ', ')}"parent_code"
+<#assign prefixName = false>
+</#if>
+<#if (insert_parentId??) && (insert_parentId_value??)>
+${prefixName?string('  ', ', ')}"parent_id"
+<#assign prefixName = false>
+</#if>
+<#if (insert_parentTreeCode??) && (insert_parentTreeCode_value??)>
+${prefixName?string('  ', ', ')}"parent_tree_code"
+<#assign prefixName = false>
+</#if>
+<#if (insert_parentTreeId??) && (insert_parentTreeId_value??)>
+${prefixName?string('  ', ', ')}"parent_tree_id"
+<#assign prefixName = false>
+</#if>
+<#if (insert_parentTreeName??) && (insert_parentTreeName_value??)>
+${prefixName?string('  ', ', ')}"parent_tree_name"
+<#assign prefixName = false>
+</#if>
 <#if (insert_personalCode??) && (insert_personalCode_value??)>
 ${prefixName?string('  ', ', ')}"personal_code"
 <#assign prefixName = false>
 </#if>
 <#if (insert_personalId??) && (insert_personalId_value??)>
 ${prefixName?string('  ', ', ')}"personal_id"
+<#assign prefixName = false>
+</#if>
+<#if (insert_remark??) && (insert_remark_value??)>
+${prefixName?string('  ', ', ')}"remark"
 <#assign prefixName = false>
 </#if>
 <#if (insert_siteCode??) && (insert_siteCode_value??)>
@@ -189,12 +213,36 @@ ${prefixName?string('  ', ', ')}:insert_orderBy_value
 ${prefixName?string('  ', ', ')}:insert_orgCode_value
 <#assign prefixName = false>
 </#if>
+<#if (insert_parentCode??) && (insert_parentCode_value??)>
+${prefixName?string('  ', ', ')}:insert_parentCode_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_parentId??) && (insert_parentId_value??)>
+${prefixName?string('  ', ', ')}:insert_parentId_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_parentTreeCode??) && (insert_parentTreeCode_value??)>
+${prefixName?string('  ', ', ')}:insert_parentTreeCode_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_parentTreeId??) && (insert_parentTreeId_value??)>
+${prefixName?string('  ', ', ')}:insert_parentTreeId_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_parentTreeName??) && (insert_parentTreeName_value??)>
+${prefixName?string('  ', ', ')}:insert_parentTreeName_value
+<#assign prefixName = false>
+</#if>
 <#if (insert_personalCode??) && (insert_personalCode_value??)>
 ${prefixName?string('  ', ', ')}:insert_personalCode_value
 <#assign prefixName = false>
 </#if>
 <#if (insert_personalId??) && (insert_personalId_value??)>
 ${prefixName?string('  ', ', ')}:insert_personalId_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_remark??) && (insert_remark_value??)>
+${prefixName?string('  ', ', ')}:insert_remark_value
 <#assign prefixName = false>
 </#if>
 <#if (insert_siteCode??) && (insert_siteCode_value??)>
@@ -221,7 +269,7 @@ ${prefixName?string('  ', ', ')}:insert_systemInfoId_value
 ${prefixName?string('  ', ', ')}:insert_version_value
 <#assign prefixName = false>
 </#if>
-WHERE NOT EXISTS (SELECT 1 FROM c1_site E
+WHERE NOT EXISTS (SELECT 1 FROM "c1_site" E
 <#assign prefixName = true>
 <#if (where_and_eq_batchNo??)>
 <#if (where_and_eq_batchNo_value??)>
@@ -375,6 +423,46 @@ ${prefixName?string('WHERE ', 'AND ')}(E."org_code" IS NULL OR E."org_code" = ''
 </#if>
 <#assign prefixName = false>
 </#if>
+<#if (where_and_eq_parentCode??)>
+<#if (where_and_eq_parentCode_value??)>
+${prefixName?string('WHERE ', 'AND ')}E."parent_code" = :where_and_eq_parentCode_value
+<#else>
+${prefixName?string('WHERE ', 'AND ')}(E."parent_code" IS NULL OR E."parent_code" = '')
+</#if>
+<#assign prefixName = false>
+</#if>
+<#if (where_and_eq_parentId??)>
+<#if (where_and_eq_parentId_value??)>
+${prefixName?string('WHERE ', 'AND ')}E."parent_id" = :where_and_eq_parentId_value
+<#else>
+${prefixName?string('WHERE ', 'AND ')}(E."parent_id" IS NULL OR E."parent_id" = '')
+</#if>
+<#assign prefixName = false>
+</#if>
+<#if (where_and_eq_parentTreeCode??)>
+<#if (where_and_eq_parentTreeCode_value??)>
+${prefixName?string('WHERE ', 'AND ')}E."parent_tree_code" = :where_and_eq_parentTreeCode_value
+<#else>
+${prefixName?string('WHERE ', 'AND ')}(E."parent_tree_code" IS NULL OR E."parent_tree_code" = '')
+</#if>
+<#assign prefixName = false>
+</#if>
+<#if (where_and_eq_parentTreeId??)>
+<#if (where_and_eq_parentTreeId_value??)>
+${prefixName?string('WHERE ', 'AND ')}E."parent_tree_id" = :where_and_eq_parentTreeId_value
+<#else>
+${prefixName?string('WHERE ', 'AND ')}(E."parent_tree_id" IS NULL OR E."parent_tree_id" = '')
+</#if>
+<#assign prefixName = false>
+</#if>
+<#if (where_and_eq_parentTreeName??)>
+<#if (where_and_eq_parentTreeName_value??)>
+${prefixName?string('WHERE ', 'AND ')}E."parent_tree_name" = :where_and_eq_parentTreeName_value
+<#else>
+${prefixName?string('WHERE ', 'AND ')}(E."parent_tree_name" IS NULL OR E."parent_tree_name" = '')
+</#if>
+<#assign prefixName = false>
+</#if>
 <#if (where_and_eq_personalCode??)>
 <#if (where_and_eq_personalCode_value??)>
 ${prefixName?string('WHERE ', 'AND ')}E."personal_code" = :where_and_eq_personalCode_value
@@ -388,6 +476,14 @@ ${prefixName?string('WHERE ', 'AND ')}(E."personal_code" IS NULL OR E."personal_
 ${prefixName?string('WHERE ', 'AND ')}E."personal_id" = :where_and_eq_personalId_value
 <#else>
 ${prefixName?string('WHERE ', 'AND ')}(E."personal_id" IS NULL OR E."personal_id" = '')
+</#if>
+<#assign prefixName = false>
+</#if>
+<#if (where_and_eq_remark??)>
+<#if (where_and_eq_remark_value??)>
+${prefixName?string('WHERE ', 'AND ')}E."remark" = :where_and_eq_remark_value
+<#else>
+${prefixName?string('WHERE ', 'AND ')}(E."remark" IS NULL OR E."remark" = '')
 </#if>
 <#assign prefixName = false>
 </#if>
