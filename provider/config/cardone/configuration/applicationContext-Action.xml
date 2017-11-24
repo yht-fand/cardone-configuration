@@ -61,4 +61,12 @@
         <property name="pkGetKey" value="NAVIGATION_ID"/>
         <property name="serviceBeanId" value="top.cardone.configuration.service.NavigationService"/>
     </bean>
+
+    <bean name="siteGenerateTreeAction" class="top.cardone.data.action.GenerateTreeAction">
+        <property name="codePutKey" value="siteCode"/>
+        <property name="codeGetKey" value="SITE_CODE"/>
+        <property name="pkPutKey" value="siteId"/>
+        <property name="pkGetKey" value="SITE_ID"/>
+        <property name="serviceBeanId" value="top.cardone.configuration.service.SiteService"/>
+    </bean>
 </beans>

@@ -29,4 +29,18 @@
             </list>
         </property>
     </bean>
+
+    <bean class="top.cardone.data.listener.GenerateListener">
+        <property name="serviceBeanId" value="top.cardone.configuration.service.SiteService"/>
+        <property name="saveListFuncBeanId" value="saveListDictionaryFunc"/>
+        <property name="saveList">
+            <list>
+                <map>
+                    <entry key="dictionaryTypeCode" value="generate"/>
+                    <entry key="dictionaryCode" value="siteTree"/>
+                    <entry key="value" value="yes"/>
+                </map>
+            </list>
+        </property>
+    </bean>
 </beans>
