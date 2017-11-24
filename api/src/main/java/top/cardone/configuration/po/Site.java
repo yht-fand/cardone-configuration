@@ -235,6 +235,13 @@ public class Site implements java.io.Serializable {
     protected String systemInfoId;
 
     /**
+     * url
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String url;
+
+    /**
      * 版本
      */
     @lombok.Getter

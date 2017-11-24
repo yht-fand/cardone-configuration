@@ -55,6 +55,7 @@ class modifyModal implements java.io.Serializable {
 		newOutput?.stateCode = output?.state_code
 		newOutput?.systemInfoCode = output?.system_info_code
 		newOutput?.systemInfoId = output?.system_info_id
+		newOutput?.url = output?.url
 		newOutput?.version = output?.version_
 
         newOutput

@@ -128,6 +128,10 @@ ${prefixName?string('  ', ', ')}"system_info_code"
 ${prefixName?string('  ', ', ')}"system_info_id"
 <#assign prefixName = false>
 </#if>
+<#if (select_url??)>
+${prefixName?string('  ', ', ')}"url"
+<#assign prefixName = false>
+</#if>
 <#if (select_version??)>
 ${prefixName?string('  ', ', ')}"version_"
 <#assign prefixName = false>
@@ -264,6 +268,10 @@ ${prefixName?string('ORDER BY ', ', ')}"system_info_code" ${order_by_systemInfoC
 </#if>
 <#if (order_by_systemInfoId??)>
 ${prefixName?string('ORDER BY ', ', ')}"system_info_id" ${order_by_systemInfoId_value!}
+<#assign prefixName = false>
+</#if>
+<#if (order_by_url??)>
+${prefixName?string('ORDER BY ', ', ')}"url" ${order_by_url_value!}
 <#assign prefixName = false>
 </#if>
 <#if (order_by_version??)>

@@ -130,6 +130,10 @@ ${prefixName?string('  ', ', ')}"system_info_code"
 ${prefixName?string('  ', ', ')}"system_info_id"
 <#assign prefixName = false>
 </#if>
+<#if (insert_url??) && (insert_url_value??)>
+${prefixName?string('  ', ', ')}"url"
+<#assign prefixName = false>
+</#if>
 <#if (insert_version??) && (insert_version_value??)>
 ${prefixName?string('  ', ', ')}"version_"
 <#assign prefixName = false>
@@ -263,6 +267,10 @@ ${prefixName?string('  ', ', ')}:insert_systemInfoCode_value
 </#if>
 <#if (insert_systemInfoId??) && (insert_systemInfoId_value??)>
 ${prefixName?string('  ', ', ')}:insert_systemInfoId_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_url??) && (insert_url_value??)>
+${prefixName?string('  ', ', ')}:insert_url_value
 <#assign prefixName = false>
 </#if>
 <#if (insert_version??) && (insert_version_value??)>
@@ -524,6 +532,14 @@ ${prefixName?string('WHERE ', 'AND ')}(E."system_info_code" IS NULL OR E."system
 ${prefixName?string('WHERE ', 'AND ')}E."system_info_id" = :where_and_eq_systemInfoId_value
 <#else>
 ${prefixName?string('WHERE ', 'AND ')}(E."system_info_id" IS NULL OR E."system_info_id" = '')
+</#if>
+<#assign prefixName = false>
+</#if>
+<#if (where_and_eq_url??)>
+<#if (where_and_eq_url_value??)>
+${prefixName?string('WHERE ', 'AND ')}E."url" = :where_and_eq_url_value
+<#else>
+${prefixName?string('WHERE ', 'AND ')}(E."url" IS NULL OR E."url" = '')
 </#if>
 <#assign prefixName = false>
 </#if>

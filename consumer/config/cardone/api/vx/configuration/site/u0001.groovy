@@ -41,6 +41,7 @@ class u0001 implements java.io.Serializable {
 		newInput?.stateCode = input?.stateCode
 		newInput?.systemInfoCode = input?.systemInfoCode
 		newInput?.systemInfoId = input?.systemInfoId
+		newInput?.url = input?.url
 		newInput?.version = input?.version
 
         newInput.flagCode = StringUtils.defaultIfBlank(input.flagCode, "input")

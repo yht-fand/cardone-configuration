@@ -129,6 +129,10 @@ ${prefixName?string('  ', ', ')}"system_info_code"
 ${prefixName?string('  ', ', ')}"system_info_id"
 <#assign prefixName = false>
 </#if>
+<#if (insert_url??) && (insert_url_value??)>
+${prefixName?string('  ', ', ')}"url"
+<#assign prefixName = false>
+</#if>
 <#if (insert_version??) && (insert_version_value??)>
 ${prefixName?string('  ', ', ')}"version_"
 <#assign prefixName = false>
@@ -262,6 +266,10 @@ ${prefixName?string('  ', ', ')}:insert_systemInfoCode_value
 </#if>
 <#if (insert_systemInfoId??) && (insert_systemInfoId_value??)>
 ${prefixName?string('  ', ', ')}:insert_systemInfoId_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_url??) && (insert_url_value??)>
+${prefixName?string('  ', ', ')}:insert_url_value
 <#assign prefixName = false>
 </#if>
 <#if (insert_version??) && (insert_version_value??)>

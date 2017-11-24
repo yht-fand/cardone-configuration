@@ -255,6 +255,14 @@ ${prefixName?string('WHERE ', 'AND ')}("system_info_id" IS NULL OR "system_info_
 </#if>
 <#assign prefixName = false>
 </#if>
+<#if (where_and_eq_url??)>
+<#if (where_and_eq_url_value??)>
+${prefixName?string('WHERE ', 'AND ')}"url" = :where_and_eq_url_value
+<#else>
+${prefixName?string('WHERE ', 'AND ')}("url" IS NULL OR "url" = '')
+</#if>
+<#assign prefixName = false>
+</#if>
 <#if (where_and_eq_version??)>
 <#if (where_and_eq_version_value??)>
 ${prefixName?string('WHERE ', 'AND ')}"version_" = :where_and_eq_version_value

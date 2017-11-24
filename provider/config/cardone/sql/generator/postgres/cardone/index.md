@@ -292,4 +292,5 @@ site_id|NO|String(255)|站点标识
 state_code|YES|String(255)|状态编号(数据字典)
 system_info_code|YES|String(255)|系统信息编号
 system_info_id|YES|String(255)|系统信息标识
+url|YES|String(1023)|url
 version_|YES|Integer(10)|版本

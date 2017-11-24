@@ -96,6 +96,9 @@ SELECT
 <#case "systemInfoId">
 "system_info_id"
 <#break>
+<#case "url">
+"url"
+<#break>
 <#case "version">
 "version_"
 <#break>

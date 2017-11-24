@@ -132,6 +132,8 @@ class r0003 implements java.io.Serializable {
 
             data['systemInfoId'] = contentItem['system_info_id']
 
+            data['url'] = contentItem['url']
+
             data['version'] = contentItem['version_']
 
             data['flagName'] = ApplicationContextHolder.getBean(DictionaryService.class).readOneByDictionaryTypeCodesCache(['dictionaryTypeCodes': 'siteFlag,flag', 'dictionaryCode': contentItem['flag_code'], 'stateCode': '1', 'dataStateCode': '1',  'object_id': 'name'])

@@ -128,6 +128,10 @@ ${prefixName?string('SET ', ', ')}"system_info_code" = :update_systemInfoCode_va
 ${prefixName?string('SET ', ', ')}"system_info_id" = :update_systemInfoId_value
 <#assign prefixName = false>
 </#if>
+<#if (update_url??)>
+${prefixName?string('SET ', ', ')}"url" = :update_url_value
+<#assign prefixName = false>
+</#if>
 <#if (update_version??)>
 ${prefixName?string('SET ', ', ')}"version_" = :update_version_value
 <#assign prefixName = false>
