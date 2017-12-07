@@ -350,7 +350,7 @@
     "name": "内容",
     "orderBy": 2000,
     "flagCode": "init",
-    "dataStateCode": "1"
+    "dataStateCode": "0"
   },
   {
     "navigationCode": "cms/article/index",
@@ -368,6 +368,6 @@
     "url": "cms/notice/index",
     "orderBy": 2002,
     "flagCode": "init",
-    "dataStateCode": "1"
+    "dataStateCode": "0"
   }
 ]
