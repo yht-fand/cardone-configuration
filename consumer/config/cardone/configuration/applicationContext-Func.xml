@@ -3,21 +3,18 @@
        xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
        default-lazy-init="true">
-    <bean name="dictionarySelectFunc"
-          class="top.cardone.data.func.FindListFunc">
+    <bean name="dictionarySelectFunc" class="top.cardone.data.func.FindListFunc">
         <property name="serviceBeanName" value="top.cardone.configuration.service.DictionaryService"/>
     </bean>
 
-    <bean name="readOneDictionaryFunc"
-          class="top.cardone.data.func.ReadOneFunc">
+    <bean name="readOneDictionaryFunc" class="top.cardone.data.func.ReadOneFunc">
         <property name="serviceBeanName" value="top.cardone.configuration.service.DictionaryService"/>
     </bean>
 
     <bean name="readOneDictionaryByDictionaryTypeCodesFunc"
           class="top.cardone.configuration.func.ReadOneDictionaryByDictionaryTypeCodesFunc"/>
 
-    <bean name="dictionaryTypeSelectFunc"
-          class="top.cardone.data.func.FindListFunc">
+    <bean name="dictionaryTypeSelectFunc" class="top.cardone.data.func.FindListFunc">
         <property name="serviceBeanName" value="top.cardone.configuration.service.DictionaryTypeService"/>
     </bean>
 
@@ -28,8 +25,9 @@
 
     <bean name="readOneErrorInfoContentFunc" class="top.cardone.configuration.func.ReadOneErrorInfoContentFunc"/>
 
-    <bean name="readOneDictionaryValueByCodeFunc"
-          class="top.cardone.configuration.func.ReadOneDictionaryValueByCodeFunc"/>
+    <bean name="readOneDictionaryValueByCodeFunc" class="top.cardone.configuration.func.ReadOneDictionaryValueByCodeFunc"/>
 
     <bean name="saveListDictionaryFunc" class="top.cardone.configuration.func.SaveListDictionaryFunc"/>
+
+    <bean name="findListDictionaryFunc" class="top.cardone.configuration.func.FindListDictionaryFunc"/>
 </beans>
