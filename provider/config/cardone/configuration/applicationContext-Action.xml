@@ -40,6 +40,7 @@
                 <bean class="top.cardone.data.action.InitDataAction">
                     <property name="serviceBeanId" value="top.cardone.configuration.service.DictionaryItemService"/>
                     <property name="jsonFiles" value="${app.root}/config/*/configuration/init-data/dictionaryItem-*.json"/>
+                    <property name="reinit" value="true"/>
                 </bean>
                 <ref bean="top.cardone.configuration.service.NavigationService.init"/>
             </list>
