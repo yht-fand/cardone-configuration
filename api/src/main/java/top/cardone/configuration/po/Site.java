@@ -95,6 +95,34 @@ public class Site implements java.io.Serializable {
     protected String flagObjectCode;
 
     /**
+     * ftp ip
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String ftpIp;
+
+    /**
+     * FTP_PASSWORD
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String ftpPassword;
+
+    /**
+     * ftp端口
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String ftpPort;
+
+    /**
+     * ftp 用户名
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String ftpUsername;
+
+    /**
      * json数据
      */
     @lombok.Getter

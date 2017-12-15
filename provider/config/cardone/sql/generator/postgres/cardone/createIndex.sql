@@ -610,6 +610,18 @@
 --标记编号(数据字典：工作流、同步、生成、录入、审批)
 --drop index IF EXISTS idx_c1_site_flag_code;
 --create index IF NOT EXISTS idx_c1_site_flag_code ON c1_site ("flag_code" varchar_pattern_ops);
+--ftp ip
+--drop index IF EXISTS idx_c1_site_ftp_ip;
+--create index IF NOT EXISTS idx_c1_site_ftp_ip ON c1_site ("ftp_ip" varchar_pattern_ops);
+--FTP_PASSWORD
+--drop index IF EXISTS idx_c1_site_ftp_password;
+--create index IF NOT EXISTS idx_c1_site_ftp_password ON c1_site ("ftp_password" varchar_pattern_ops);
+--ftp端口
+--drop index IF EXISTS idx_c1_site_ftp_port;
+--create index IF NOT EXISTS idx_c1_site_ftp_port ON c1_site ("ftp_port" varchar_pattern_ops);
+--ftp 用户名
+--drop index IF EXISTS idx_c1_site_ftp_username;
+--create index IF NOT EXISTS idx_c1_site_ftp_username ON c1_site ("ftp_username" varchar_pattern_ops);
 --最后修改人编号
 --drop index IF EXISTS idx_c1_site_last_modified_by_code;
 --create index IF NOT EXISTS idx_c1_site_last_modified_by_code ON c1_site ("last_modified_by_code" varchar_pattern_ops);

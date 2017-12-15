@@ -15,12 +15,10 @@ class r0003 implements java.io.Serializable {
 
         input.endTime = DateUtils.parseDate(input.endTime)
 
-        if (!Objects.isNull(input.endTime)) {
-            input.endTime = Objects.isNull(input.endTime) ? LocalDateTime.now() : LocalDateTime.ofInstant(Instant.ofEpochMilli(input.endTime.getTime()), ZoneId.systemDefault())
+        if (Objects.nonNull(input.endTime)) {
+            input.endTime = LocalDateTime.ofInstant(Instant.ofEpochMilli(input.endTime.getTime()), ZoneId.systemDefault())
 
-            input.endTime = LocalDateTime.of(input.endTime.getYear(), input.endTime.getMonth(), input.endTime.getDayOfMonth(), 0, 0, 0).plusDays(1)
-
-            input.endTime = Date.from(input.endTime.atZone(ZoneId.systemDefault()).toInstant())
+            input.endTime = Date.from(LocalDateTime.of(input.endTime.getYear(), input.endTime.getMonth(), input.endTime.getDayOfMonth(), 0, 0, 0).plusDays(1).atZone(ZoneId.systemDefault()).toInstant())
         }
 
         input

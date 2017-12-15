@@ -36,6 +36,18 @@ SELECT
 <#case "flagObjectCode">
 "flag_object_code"
 <#break>
+<#case "ftpIp">
+"ftp_ip"
+<#break>
+<#case "ftpPassword">
+"ftp_password"
+<#break>
+<#case "ftpPort">
+"ftp_port"
+<#break>
+<#case "ftpUsername">
+"ftp_username"
+<#break>
 <#case "jsonData">
 "json_data"
 <#break>

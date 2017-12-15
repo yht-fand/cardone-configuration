@@ -21,6 +21,10 @@ class m0003 implements java.io.Serializable {
 		newInput?.explain = input?.explain
 		newInput?.flagCode = input?.flagCode
 		newInput?.flagObjectCode = input?.flagObjectCode
+		newInput?.ftpIp = input?.ftpIp
+		newInput?.ftpPassword = input?.ftpPassword
+		newInput?.ftpPort = input?.ftpPort
+		newInput?.ftpUsername = input?.ftpUsername
 		newInput?.jsonData = input?.jsonData
 		newInput?.lastModifiedByCode = input?.lastModifiedByCode
 		newInput?.lastModifiedById = input?.lastModifiedById
@@ -100,6 +104,10 @@ class m0003 implements java.io.Serializable {
 		newOutput?.explain = output?.explain_
 		newOutput?.flagCode = output?.flag_code
 		newOutput?.flagObjectCode = output?.flag_object_code
+		newOutput?.ftpIp = output?.ftp_ip
+		newOutput?.ftpPassword = output?.ftp_password
+		newOutput?.ftpPort = output?.ftp_port
+		newOutput?.ftpUsername = output?.ftp_username
 		newOutput?.jsonData = output?.json_data
 		newOutput?.lastModifiedByCode = output?.last_modified_by_code
 		newOutput?.lastModifiedById = output?.last_modified_by_id

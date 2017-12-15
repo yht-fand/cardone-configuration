@@ -48,6 +48,22 @@ ${prefixName?string('SET ', ', ')}"flag_code" = :update_flagCode_value
 ${prefixName?string('SET ', ', ')}"flag_object_code" = :update_flagObjectCode_value
 <#assign prefixName = false>
 </#if>
+<#if (update_ftpIp??)>
+${prefixName?string('SET ', ', ')}"ftp_ip" = :update_ftpIp_value
+<#assign prefixName = false>
+</#if>
+<#if (update_ftpPassword??)>
+${prefixName?string('SET ', ', ')}"ftp_password" = :update_ftpPassword_value
+<#assign prefixName = false>
+</#if>
+<#if (update_ftpPort??)>
+${prefixName?string('SET ', ', ')}"ftp_port" = :update_ftpPort_value
+<#assign prefixName = false>
+</#if>
+<#if (update_ftpUsername??)>
+${prefixName?string('SET ', ', ')}"ftp_username" = :update_ftpUsername_value
+<#assign prefixName = false>
+</#if>
 <#if (update_jsonData??)>
 ${prefixName?string('SET ', ', ')}"json_data" = :update_jsonData_value
 <#assign prefixName = false>

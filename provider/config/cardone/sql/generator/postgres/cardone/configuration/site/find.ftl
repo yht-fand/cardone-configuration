@@ -48,6 +48,22 @@ ${prefixName?string('  ', ', ')}"flag_code"
 ${prefixName?string('  ', ', ')}"flag_object_code"
 <#assign prefixName = false>
 </#if>
+<#if (select_ftpIp??)>
+${prefixName?string('  ', ', ')}"ftp_ip"
+<#assign prefixName = false>
+</#if>
+<#if (select_ftpPassword??)>
+${prefixName?string('  ', ', ')}"ftp_password"
+<#assign prefixName = false>
+</#if>
+<#if (select_ftpPort??)>
+${prefixName?string('  ', ', ')}"ftp_port"
+<#assign prefixName = false>
+</#if>
+<#if (select_ftpUsername??)>
+${prefixName?string('  ', ', ')}"ftp_username"
+<#assign prefixName = false>
+</#if>
 <#if (select_jsonData??)>
 ${prefixName?string('  ', ', ')}"json_data"
 <#assign prefixName = false>
@@ -188,6 +204,22 @@ ${prefixName?string('ORDER BY ', ', ')}"flag_code" ${order_by_flagCode_value!}
 </#if>
 <#if (order_by_flagObjectCode??)>
 ${prefixName?string('ORDER BY ', ', ')}"flag_object_code" ${order_by_flagObjectCode_value!}
+<#assign prefixName = false>
+</#if>
+<#if (order_by_ftpIp??)>
+${prefixName?string('ORDER BY ', ', ')}"ftp_ip" ${order_by_ftpIp_value!}
+<#assign prefixName = false>
+</#if>
+<#if (order_by_ftpPassword??)>
+${prefixName?string('ORDER BY ', ', ')}"ftp_password" ${order_by_ftpPassword_value!}
+<#assign prefixName = false>
+</#if>
+<#if (order_by_ftpPort??)>
+${prefixName?string('ORDER BY ', ', ')}"ftp_port" ${order_by_ftpPort_value!}
+<#assign prefixName = false>
+</#if>
+<#if (order_by_ftpUsername??)>
+${prefixName?string('ORDER BY ', ', ')}"ftp_username" ${order_by_ftpUsername_value!}
 <#assign prefixName = false>
 </#if>
 <#if (order_by_jsonData??)>

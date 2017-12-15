@@ -95,6 +95,38 @@ ${prefixName?string('WHERE ', 'AND ')}("flag_object_code" IS NULL OR "flag_objec
 </#if>
 <#assign prefixName = false>
 </#if>
+<#if (where_and_eq_ftpIp??)>
+<#if (where_and_eq_ftpIp_value??)>
+${prefixName?string('WHERE ', 'AND ')}"ftp_ip" = :where_and_eq_ftpIp_value
+<#else>
+${prefixName?string('WHERE ', 'AND ')}("ftp_ip" IS NULL OR "ftp_ip" = '')
+</#if>
+<#assign prefixName = false>
+</#if>
+<#if (where_and_eq_ftpPassword??)>
+<#if (where_and_eq_ftpPassword_value??)>
+${prefixName?string('WHERE ', 'AND ')}"ftp_password" = :where_and_eq_ftpPassword_value
+<#else>
+${prefixName?string('WHERE ', 'AND ')}("ftp_password" IS NULL OR "ftp_password" = '')
+</#if>
+<#assign prefixName = false>
+</#if>
+<#if (where_and_eq_ftpPort??)>
+<#if (where_and_eq_ftpPort_value??)>
+${prefixName?string('WHERE ', 'AND ')}"ftp_port" = :where_and_eq_ftpPort_value
+<#else>
+${prefixName?string('WHERE ', 'AND ')}("ftp_port" IS NULL OR "ftp_port" = '')
+</#if>
+<#assign prefixName = false>
+</#if>
+<#if (where_and_eq_ftpUsername??)>
+<#if (where_and_eq_ftpUsername_value??)>
+${prefixName?string('WHERE ', 'AND ')}"ftp_username" = :where_and_eq_ftpUsername_value
+<#else>
+${prefixName?string('WHERE ', 'AND ')}("ftp_username" IS NULL OR "ftp_username" = '')
+</#if>
+<#assign prefixName = false>
+</#if>
 <#if (where_and_eq_jsonData??)>
 <#if (where_and_eq_jsonData_value??)>
 ${prefixName?string('WHERE ', 'AND ')}"json_data" = :where_and_eq_jsonData_value

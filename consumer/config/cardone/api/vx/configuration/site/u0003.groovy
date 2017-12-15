@@ -21,6 +21,10 @@ class u0003 implements java.io.Serializable {
 		newInput?.explain = input?.explain
 		newInput?.flagCode = input?.flagCode
 		newInput?.flagObjectCode = input?.flagObjectCode
+		newInput?.ftpIp = input?.ftpIp
+		newInput?.ftpPassword = input?.ftpPassword
+		newInput?.ftpPort = input?.ftpPort
+		newInput?.ftpUsername = input?.ftpUsername
 		newInput?.jsonData = input?.jsonData
 		newInput?.lastModifiedByCode = input?.lastModifiedByCode
 		newInput?.lastModifiedById = input?.lastModifiedById

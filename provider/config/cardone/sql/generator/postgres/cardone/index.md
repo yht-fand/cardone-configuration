@@ -272,6 +272,10 @@ end_date|YES|Date(29)|结束日期
 explain_|YES|String(511)|解释
 flag_code|YES|String(255)|标记编号(数据字典：工作流、同步、生成、录入、审批)
 flag_object_code|YES|String(255)|标识对象编号(工作流：工作流标识、同步：批次号、生成：操作者编号、录入：操作者编号、审批：操作者编号)
+ftp_ip|YES|String(255)|ftp ip
+ftp_password|YES|String(255)|FTP_PASSWORD
+ftp_port|YES|String(255)|ftp端口
+ftp_username|YES|String(255)|ftp 用户名
 json_data|YES|Object(2147483647)|json数据
 last_modified_by_code|YES|String(255)|最后修改人编号
 last_modified_by_id|YES|String(255)|最后修改人标识
@@ -292,5 +296,5 @@ site_id|NO|String(255)|站点标识
 state_code|YES|String(255)|状态编号(数据字典)
 system_info_code|YES|String(255)|系统信息编号
 system_info_id|YES|String(255)|系统信息标识
-url|YES|String(1023)|url
+url|YES|String(255)|url
 version_|YES|Integer(10)|版本

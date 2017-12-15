@@ -15,12 +15,10 @@ class r0003 implements java.io.Serializable {
 
         input.endTime = DateUtils.parseDate(input.endTime)
 
-        if (!Objects.isNull(input.endTime)) {
-            input.endTime = Objects.isNull(input.endTime) ? LocalDateTime.now() : LocalDateTime.ofInstant(Instant.ofEpochMilli(input.endTime.getTime()), ZoneId.systemDefault())
+        if (Objects.nonNull(input.endTime)) {
+            input.endTime = LocalDateTime.ofInstant(Instant.ofEpochMilli(input.endTime.getTime()), ZoneId.systemDefault())
 
-            input.endTime = LocalDateTime.of(input.endTime.getYear(), input.endTime.getMonth(), input.endTime.getDayOfMonth(), 0, 0, 0).plusDays(1)
-
-            input.endTime = Date.from(input.endTime.atZone(ZoneId.systemDefault()).toInstant())
+            input.endTime = Date.from(LocalDateTime.of(input.endTime.getYear(), input.endTime.getMonth(), input.endTime.getDayOfMonth(), 0, 0, 0).plusDays(1).atZone(ZoneId.systemDefault()).toInstant())
         }
 
         input
@@ -91,6 +89,14 @@ class r0003 implements java.io.Serializable {
             data['flagCode'] = contentItem['flag_code']
 
             data['flagObjectCode'] = contentItem['flag_object_code']
+
+            data['ftpIp'] = contentItem['ftp_ip']
+
+            data['ftpPassword'] = contentItem['ftp_password']
+
+            data['ftpPort'] = contentItem['ftp_port']
+
+            data['ftpUsername'] = contentItem['ftp_username']
 
             data['jsonData'] = contentItem['json_data']
 

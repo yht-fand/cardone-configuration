@@ -50,6 +50,22 @@ ${prefixName?string('  ', ', ')}"flag_code"
 ${prefixName?string('  ', ', ')}"flag_object_code"
 <#assign prefixName = false>
 </#if>
+<#if (insert_ftpIp??) && (insert_ftpIp_value??)>
+${prefixName?string('  ', ', ')}"ftp_ip"
+<#assign prefixName = false>
+</#if>
+<#if (insert_ftpPassword??) && (insert_ftpPassword_value??)>
+${prefixName?string('  ', ', ')}"ftp_password"
+<#assign prefixName = false>
+</#if>
+<#if (insert_ftpPort??) && (insert_ftpPort_value??)>
+${prefixName?string('  ', ', ')}"ftp_port"
+<#assign prefixName = false>
+</#if>
+<#if (insert_ftpUsername??) && (insert_ftpUsername_value??)>
+${prefixName?string('  ', ', ')}"ftp_username"
+<#assign prefixName = false>
+</#if>
 <#if (insert_jsonData??) && (insert_jsonData_value??)>
 ${prefixName?string('  ', ', ')}"json_data"
 <#assign prefixName = false>
@@ -187,6 +203,22 @@ ${prefixName?string('  ', ', ')}:insert_flagCode_value
 </#if>
 <#if (insert_flagObjectCode??) && (insert_flagObjectCode_value??)>
 ${prefixName?string('  ', ', ')}:insert_flagObjectCode_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_ftpIp??) && (insert_ftpIp_value??)>
+${prefixName?string('  ', ', ')}:insert_ftpIp_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_ftpPassword??) && (insert_ftpPassword_value??)>
+${prefixName?string('  ', ', ')}:insert_ftpPassword_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_ftpPort??) && (insert_ftpPort_value??)>
+${prefixName?string('  ', ', ')}:insert_ftpPort_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_ftpUsername??) && (insert_ftpUsername_value??)>
+${prefixName?string('  ', ', ')}:insert_ftpUsername_value
 <#assign prefixName = false>
 </#if>
 <#if (insert_jsonData??) && (insert_jsonData_value??)>
@@ -372,6 +404,38 @@ ${prefixName?string('WHERE ', 'AND ')}(E."flag_code" IS NULL OR E."flag_code" = 
 ${prefixName?string('WHERE ', 'AND ')}E."flag_object_code" = :where_and_eq_flagObjectCode_value
 <#else>
 ${prefixName?string('WHERE ', 'AND ')}(E."flag_object_code" IS NULL OR E."flag_object_code" = '')
+</#if>
+<#assign prefixName = false>
+</#if>
+<#if (where_and_eq_ftpIp??)>
+<#if (where_and_eq_ftpIp_value??)>
+${prefixName?string('WHERE ', 'AND ')}E."ftp_ip" = :where_and_eq_ftpIp_value
+<#else>
+${prefixName?string('WHERE ', 'AND ')}(E."ftp_ip" IS NULL OR E."ftp_ip" = '')
+</#if>
+<#assign prefixName = false>
+</#if>
+<#if (where_and_eq_ftpPassword??)>
+<#if (where_and_eq_ftpPassword_value??)>
+${prefixName?string('WHERE ', 'AND ')}E."ftp_password" = :where_and_eq_ftpPassword_value
+<#else>
+${prefixName?string('WHERE ', 'AND ')}(E."ftp_password" IS NULL OR E."ftp_password" = '')
+</#if>
+<#assign prefixName = false>
+</#if>
+<#if (where_and_eq_ftpPort??)>
+<#if (where_and_eq_ftpPort_value??)>
+${prefixName?string('WHERE ', 'AND ')}E."ftp_port" = :where_and_eq_ftpPort_value
+<#else>
+${prefixName?string('WHERE ', 'AND ')}(E."ftp_port" IS NULL OR E."ftp_port" = '')
+</#if>
+<#assign prefixName = false>
+</#if>
+<#if (where_and_eq_ftpUsername??)>
+<#if (where_and_eq_ftpUsername_value??)>
+${prefixName?string('WHERE ', 'AND ')}E."ftp_username" = :where_and_eq_ftpUsername_value
+<#else>
+${prefixName?string('WHERE ', 'AND ')}(E."ftp_username" IS NULL OR E."ftp_username" = '')
 </#if>
 <#assign prefixName = false>
 </#if>

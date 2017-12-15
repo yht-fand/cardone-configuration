@@ -35,6 +35,10 @@ class modifyModal implements java.io.Serializable {
 		newOutput?.explain = output?.explain_
 		newOutput?.flagCode = output?.flag_code
 		newOutput?.flagObjectCode = output?.flag_object_code
+		newOutput?.ftpIp = output?.ftp_ip
+		newOutput?.ftpPassword = output?.ftp_password
+		newOutput?.ftpPort = output?.ftp_port
+		newOutput?.ftpUsername = output?.ftp_username
 		newOutput?.jsonData = output?.json_data
 		newOutput?.lastModifiedByCode = output?.last_modified_by_code
 		newOutput?.lastModifiedById = output?.last_modified_by_id

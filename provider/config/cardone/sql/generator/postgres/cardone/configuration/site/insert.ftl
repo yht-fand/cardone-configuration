@@ -49,6 +49,22 @@ ${prefixName?string('  ', ', ')}"flag_code"
 ${prefixName?string('  ', ', ')}"flag_object_code"
 <#assign prefixName = false>
 </#if>
+<#if (insert_ftpIp??) && (insert_ftpIp_value??)>
+${prefixName?string('  ', ', ')}"ftp_ip"
+<#assign prefixName = false>
+</#if>
+<#if (insert_ftpPassword??) && (insert_ftpPassword_value??)>
+${prefixName?string('  ', ', ')}"ftp_password"
+<#assign prefixName = false>
+</#if>
+<#if (insert_ftpPort??) && (insert_ftpPort_value??)>
+${prefixName?string('  ', ', ')}"ftp_port"
+<#assign prefixName = false>
+</#if>
+<#if (insert_ftpUsername??) && (insert_ftpUsername_value??)>
+${prefixName?string('  ', ', ')}"ftp_username"
+<#assign prefixName = false>
+</#if>
 <#if (insert_jsonData??) && (insert_jsonData_value??)>
 ${prefixName?string('  ', ', ')}"json_data"
 <#assign prefixName = false>
@@ -186,6 +202,22 @@ ${prefixName?string('  ', ', ')}:insert_flagCode_value
 </#if>
 <#if (insert_flagObjectCode??) && (insert_flagObjectCode_value??)>
 ${prefixName?string('  ', ', ')}:insert_flagObjectCode_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_ftpIp??) && (insert_ftpIp_value??)>
+${prefixName?string('  ', ', ')}:insert_ftpIp_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_ftpPassword??) && (insert_ftpPassword_value??)>
+${prefixName?string('  ', ', ')}:insert_ftpPassword_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_ftpPort??) && (insert_ftpPort_value??)>
+${prefixName?string('  ', ', ')}:insert_ftpPort_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_ftpUsername??) && (insert_ftpUsername_value??)>
+${prefixName?string('  ', ', ')}:insert_ftpUsername_value
 <#assign prefixName = false>
 </#if>
 <#if (insert_jsonData??) && (insert_jsonData_value??)>
