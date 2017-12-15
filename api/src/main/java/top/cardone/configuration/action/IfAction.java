@@ -2,6 +2,7 @@ package top.cardone.configuration.action;
 
 import com.google.common.collect.Maps;
 import lombok.Setter;
+import lombok.extern.log4j.Log4j2;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.BooleanUtils;
 import org.springframework.util.CollectionUtils;
@@ -19,12 +20,16 @@ import java.util.Map;
 /**
  * Created by cardo on 2017/10/25 0025.
  */
+@Log4j2
 public class IfAction implements Action0 {
     @Setter
     private Map<String, String> findOne;
 
     @Setter
     private String[] actionBeanIds;
+
+    @Setter
+    private Action0[] actionBeans;
 
     @Setter
     private Integer delay = 120;
@@ -67,7 +72,19 @@ public class IfAction implements Action0 {
         ApplicationContextHolder.getBean(DictionaryService.class).save(save);
 
         for (String actionBeanId : actionBeanIds) {
-            ApplicationContextHolder.action(Action0.class, action0 -> action0.action(), actionBeanId);
+            try {
+                ApplicationContextHolder.action(Action0.class, action0 -> action0.action(), actionBeanId);
+            } catch (Exception e) {
+                log.error(e);
+            }
+        }
+
+        for (Action0 action : actionBeans) {
+            try {
+                action.action();
+            } catch (Exception e) {
+                log.error(e);
+            }
         }
     }
 }
