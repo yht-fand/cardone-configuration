@@ -71,19 +71,23 @@ public class IfAction implements Action0 {
 
         ApplicationContextHolder.getBean(DictionaryService.class).save(save);
 
-        for (String actionBeanId : actionBeanIds) {
-            try {
-                ApplicationContextHolder.action(Action0.class, action0 -> action0.action(), actionBeanId);
-            } catch (Exception e) {
-                log.error(e);
+        if (ArrayUtils.isNotEmpty(actionBeanIds)) {
+            for (String actionBeanId : actionBeanIds) {
+                try {
+                    ApplicationContextHolder.action(Action0.class, action0 -> action0.action(), actionBeanId);
+                } catch (Exception e) {
+                    log.error(e);
+                }
             }
         }
 
-        for (Action0 action : actionBeans) {
-            try {
-                action.action();
-            } catch (Exception e) {
-                log.error(e);
+        if (ArrayUtils.isNotEmpty(actionBeans)) {
+            for (Action0 action : actionBeans) {
+                try {
+                    action.action();
+                } catch (Exception e) {
+                    log.error(e);
+                }
             }
         }
     }
