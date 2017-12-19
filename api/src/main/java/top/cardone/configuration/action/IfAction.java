@@ -36,7 +36,7 @@ public class IfAction implements Action0 {
 
     @Override
     public void action() {
-        if (ArrayUtils.isEmpty(actionBeanIds)) {
+        if (ArrayUtils.isEmpty(actionBeanIds) && ArrayUtils.isEmpty(actionBeans)) {
             return;
         }
 
