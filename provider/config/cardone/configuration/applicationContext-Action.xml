@@ -7,6 +7,7 @@
           class="top.cardone.data.action.InitDataAction">
         <property name="serviceBeanId" value="top.cardone.configuration.service.NavigationService"/>
         <property name="jsonFiles" value="${app.root}/config/*/configuration/init-data/navigation-*.json"/>
+        <property name="reinit" value="true"/>
     </bean>
 
     <bean class="top.cardone.context.action.Actions" init-method="action">
