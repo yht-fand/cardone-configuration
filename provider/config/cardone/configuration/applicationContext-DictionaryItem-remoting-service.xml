@@ -21,7 +21,7 @@
         <property name="service" ref="top.cardone.configuration.service.DictionaryItemService"/>
     </bean>
 
-    <rabbit:listener-container acknowledge="none" concurrency="100" prefetch="10">
+    <rabbit:listener-container acknowledge="none" concurrency="20" prefetch="5">
         <rabbit:listener ref="top.cardone.configuration.service.DictionaryItemServiceExporter"
                          queue-names="queue:cardone-configuration-${cardone-configuration-version}:top.cardone.configuration.service.DictionaryItemService"/>
     </rabbit:listener-container>
