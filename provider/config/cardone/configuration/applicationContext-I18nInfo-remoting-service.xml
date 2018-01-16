@@ -13,7 +13,7 @@
         </rabbit:bindings>
     </rabbit:direct-exchange>
 
-    <rabbit:queue
+    <rabbit:queue exclusive="true"
             name="queue:cardone-configuration-${cardone-configuration-version}:top.cardone.configuration.service.I18nInfoService"/>
 
     <bean id="top.cardone.configuration.service.I18nInfoServiceExporter" parent="remoteInvocationExecutorParnet">
@@ -21,7 +21,7 @@
         <property name="service" ref="top.cardone.configuration.service.I18nInfoService"/>
     </bean>
 
-    <rabbit:listener-container acknowledge="none" concurrency="5" prefetch="10">
+    <rabbit:listener-container acknowledge="none" concurrency="1" prefetch="20">
         <rabbit:listener ref="top.cardone.configuration.service.I18nInfoServiceExporter"
                          queue-names="queue:cardone-configuration-${cardone-configuration-version}:top.cardone.configuration.service.I18nInfoService"/>
     </rabbit:listener-container>
