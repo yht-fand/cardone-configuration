@@ -21,7 +21,7 @@
         <property name="service" ref="top.cardone.configuration.service.SystemInfoService"/>
     </bean>
 
-    <rabbit:listener-container acknowledge="none" concurrency="20" prefetch="5">
+    <rabbit:listener-container acknowledge="none" concurrency="10" prefetch="5">
         <rabbit:listener ref="top.cardone.configuration.service.SystemInfoServiceExporter"
                          queue-names="queue:cardone-configuration-${cardone-configuration-version}:top.cardone.configuration.service.SystemInfoService"/>
     </rabbit:listener-container>
