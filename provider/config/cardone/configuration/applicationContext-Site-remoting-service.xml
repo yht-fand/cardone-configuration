@@ -21,7 +21,7 @@
         <property name="service" ref="top.cardone.configuration.service.SiteService"/>
     </bean>
 
-    <rabbit:listener-container acknowledge="none" concurrency="10" prefetch="5">
+    <rabbit:listener-container acknowledge="none" concurrency="5" prefetch="10">
         <rabbit:listener ref="top.cardone.configuration.service.SiteServiceExporter"
                          queue-names="queue:cardone-configuration-${cardone-configuration-version}:top.cardone.configuration.service.SiteService"/>
     </rabbit:listener-container>
