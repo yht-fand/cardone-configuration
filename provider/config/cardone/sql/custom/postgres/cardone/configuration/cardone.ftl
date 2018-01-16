@@ -11,21 +11,21 @@
     <#if cardone.StringUtils.isNotBlank(permission_departments) || cardone.StringUtils.isNotBlank(permission_users) || cardone.StringUtils.isNotBlank(permissions)>
         ${prefixName?string('WHERE (', 'AND (')}
         <#assign andOrPrefixName = true>
-        <#if permission_departments == "#">
+        <#if permission_departments == "#permissionsEmpty#">
         ${andOrPrefixName?string('', ' or ')}${departmentColumnName} = :permission_departments)
             <#assign andOrPrefixName = false>
         <#elseif cardone.StringUtils.isNotBlank(permission_departments)>
         ${andOrPrefixName?string('', ' or ')}${departmentColumnName} = ANY(string_to_array(:permission_departments, ','))
             <#assign andOrPrefixName = false>
         </#if>
-        <#if permission_users == "#">
+        <#if permission_users == "#permissionsEmpty#">
         ${andOrPrefixName?string('', ' or ')}${userColumnName} = :permission_users)
             <#assign andOrPrefixName = false>
         <#elseif cardone.StringUtils.isNotBlank(permission_users)>
         ${andOrPrefixName?string('', ' or ')}${userColumnName} = ANY(string_to_array(:permission_users, ','))
             <#assign andOrPrefixName = false>
         </#if>
-        <#if permissions == "#">
+        <#if permissions == "#permissionsEmpty#">
         ${andOrPrefixName?string('', ' or ')}${permissionColumnName} = :permissions)
             <#assign andOrPrefixName = false>
         <#elseif cardone.StringUtils.isNotBlank(permissions)>
