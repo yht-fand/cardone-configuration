@@ -73,7 +73,7 @@
     "dictionaryTypeId": "actionType",
     "dictionaryTypeCode": "actionType",
     "dictionaryCode": "download",
-    "name": "下载",
+    "name": "download",
     "flagCode": "init"
   },
   {
