@@ -20,7 +20,7 @@ import java.util.Map;
  */
 public class ReadOneErrorInfoContentFunc implements Func3<String, String, String, String> {
     @Override
-    @Synchronized
+
     public String func(String url, String errorInfoCode, String defaultContent) {
         Map<String, Object> findOne = Maps.newHashMap();
 

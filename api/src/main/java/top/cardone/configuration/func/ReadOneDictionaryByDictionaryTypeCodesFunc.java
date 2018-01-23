@@ -15,7 +15,7 @@ import java.util.Map;
  */
 public class ReadOneDictionaryByDictionaryTypeCodesFunc implements Func2<Object, Map<String, Object>, Map<String, Object>> {
     @Override
-    @Synchronized
+
     public Object func(Map<String, Object> map, Map<String, Object> config) {
         Map<String, Object> readOne = top.cardone.context.util.MapUtils.newHashMap(map, config);
 

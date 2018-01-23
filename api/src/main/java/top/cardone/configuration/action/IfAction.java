@@ -36,7 +36,7 @@ public class IfAction implements Action0 {
     private Integer delay = 120;
 
     @Override
-    @Synchronized
+
     public void action() {
         if (ArrayUtils.isEmpty(actionBeanIds) && ArrayUtils.isEmpty(actionBeans)) {
             return;

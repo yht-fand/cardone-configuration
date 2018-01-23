@@ -10,7 +10,7 @@ import top.cardone.core.util.func.Func2;
  */
 public class ReadOneDictionaryValueByCodeFunc implements Func2<String, String, String> {
     @Override
-    @Synchronized
+
     public String func(String dictionTypeCode, String dictionCode) {
         return ApplicationContextHolder.getBean(DictionaryService.class).readOneValueByCode(dictionTypeCode, dictionCode, null);
     }
