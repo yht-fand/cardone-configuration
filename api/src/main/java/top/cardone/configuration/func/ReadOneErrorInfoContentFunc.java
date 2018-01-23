@@ -1,6 +1,7 @@
 package top.cardone.configuration.func;
 
 import com.google.common.collect.Maps;
+import lombok.Synchronized;
 import org.springframework.core.task.TaskExecutor;
 import org.springframework.scheduling.support.TaskUtils;
 import org.springframework.web.context.request.RequestContextHolder;
@@ -19,6 +20,7 @@ import java.util.Map;
  */
 public class ReadOneErrorInfoContentFunc implements Func3<String, String, String, String> {
     @Override
+    @Synchronized
     public String func(String url, String errorInfoCode, String defaultContent) {
         Map<String, Object> findOne = Maps.newHashMap();
 
