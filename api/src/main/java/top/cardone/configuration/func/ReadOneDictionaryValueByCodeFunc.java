@@ -1,6 +1,6 @@
 package top.cardone.configuration.func;
 
-import lombok.Synchronized;
+
 import top.cardone.configuration.service.DictionaryService;
 import top.cardone.context.ApplicationContextHolder;
 import top.cardone.core.util.func.Func2;

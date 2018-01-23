@@ -1,6 +1,6 @@
 package top.cardone.configuration.func;
 
-import lombok.Synchronized;
+
 import org.apache.commons.collections.MapUtils;
 import top.cardone.cache.Cache;
 import top.cardone.configuration.service.DictionaryService;

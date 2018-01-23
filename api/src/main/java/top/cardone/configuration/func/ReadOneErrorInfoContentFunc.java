@@ -1,7 +1,7 @@
 package top.cardone.configuration.func;
 
 import com.google.common.collect.Maps;
-import lombok.Synchronized;
+
 import org.springframework.core.task.TaskExecutor;
 import org.springframework.scheduling.support.TaskUtils;
 import org.springframework.web.context.request.RequestContextHolder;
