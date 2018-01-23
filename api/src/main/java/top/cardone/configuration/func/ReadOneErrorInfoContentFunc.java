@@ -8,6 +8,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import top.cardone.configuration.service.ErrorInfoService;
 import top.cardone.context.ApplicationContextHolder;
 import top.cardone.context.i18n.LocaleContextHolder;
+import top.cardone.context.util.MapUtils;
 import top.cardone.context.util.StringUtils;
 import top.cardone.core.util.func.Func3;
 
@@ -19,7 +20,7 @@ import java.util.Map;
 public class ReadOneErrorInfoContentFunc implements Func3<String, String, String, String> {
     @Override
     public String func(String url, String errorInfoCode, String defaultContent) {
-        Map<String, Object> readOne = Maps.newHashMap();
+        Map<String, Object> findOne = Maps.newHashMap();
 
         if (StringUtils.isBlank(url) && RequestContextHolder.getRequestAttributes() != null) {
             ServletRequestAttributes servletRequestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
@@ -27,31 +28,28 @@ public class ReadOneErrorInfoContentFunc implements Func3<String, String, String
             url = servletRequestAttributes.getRequest().getServletPath();
         }
 
-        readOne.put("url", StringUtils.EMPTY);
-        readOne.put("errorInfoCode", errorInfoCode);
-        readOne.put("typeCode", LocaleContextHolder.getLocale().toString());
-        readOne.put("object_id", "content");
+        findOne.put("url", url);
+        findOne.put("errorInfoCode", errorInfoCode);
+        findOne.put("typeCode", LocaleContextHolder.getLocale().toString());
 
-        String content = ApplicationContextHolder.getBean(ErrorInfoService.class).readOneCache(String.class, readOne);
+        Map<String, Object> errorInfo = ApplicationContextHolder.getBean(ErrorInfoService.class).findOneCache(findOne);
 
-        if (StringUtils.isBlank(content)) {
-            readOne.put("url", StringUtils.defaultIfBlank(url, StringUtils.EMPTY));
+        String content = MapUtils.getString(errorInfo, "content");
 
-            content = ApplicationContextHolder.getBean(ErrorInfoService.class).readOneCache(String.class, readOne);
+        if (MapUtils.isNotEmpty(errorInfo)) {
+            return StringUtils.defaultIfBlank(content, defaultContent);
         }
 
-        if (StringUtils.isBlank(content)) {
-            ApplicationContextHolder.getBean(TaskExecutor.class).execute(TaskUtils.decorateTaskWithErrorHandler(() -> {
-                Map<String, Object> insert = Maps.newHashMap();
+        ApplicationContextHolder.getBean(TaskExecutor.class).execute(TaskUtils.decorateTaskWithErrorHandler(() -> {
+            Map<String, Object> insert = Maps.newHashMap();
 
-                insert.put("url", readOne.get("url"));
-                insert.put("typeCode", readOne.get("typeCode"));
-                insert.put("errorInfoCode", readOne.get("errorInfoCode"));
-                insert.put("content", defaultContent);
+            insert.put("url", findOne.get("url"));
+            insert.put("typeCode", findOne.get("typeCode"));
+            insert.put("errorInfoCode", findOne.get("errorInfoCode"));
+            insert.put("content", defaultContent);
 
-                ApplicationContextHolder.getBean(ErrorInfoService.class).saveCache(insert);
-            }, null, false));
-        }
+            ApplicationContextHolder.getBean(ErrorInfoService.class).saveCache(insert);
+        }, null, false));
 
         return StringUtils.defaultIfBlank(content, defaultContent);
     }
