@@ -1,5 +1,6 @@
 package top.cardone.configuration.func;
 
+import lombok.Synchronized;
 import top.cardone.configuration.service.DictionaryService;
 import top.cardone.context.ApplicationContextHolder;
 import top.cardone.core.util.func.Func1;
@@ -11,6 +12,7 @@ import java.util.List;
  */
 public class SaveListDictionaryFunc implements Func1<Object, List<Object>> {
     @Override
+    @Synchronized
     public Object func(List<Object> saveList) {
         return ApplicationContextHolder.getBean(DictionaryService.class).saveList(saveList);
     }
