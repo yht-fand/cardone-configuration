@@ -2,7 +2,6 @@ package top.cardone.configuration.action;
 
 import com.google.common.collect.Maps;
 import lombok.Setter;
-import lombok.Synchronized;
 import lombok.extern.log4j.Log4j2;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.BooleanUtils;
@@ -36,7 +35,6 @@ public class IfAction implements Action0 {
     private Integer delay = 120;
 
     @Override
-    @Synchronized
     public void action() {
         if (ArrayUtils.isEmpty(actionBeanIds) && ArrayUtils.isEmpty(actionBeans)) {
             return;

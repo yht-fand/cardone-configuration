@@ -1,6 +1,5 @@
 package top.cardone.configuration.func;
 
-import lombok.Synchronized;
 import top.cardone.configuration.service.DictionaryService;
 import top.cardone.context.ApplicationContextHolder;
 import top.cardone.core.util.func.Func2;
@@ -10,7 +9,6 @@ import top.cardone.core.util.func.Func2;
  */
 public class ReadOneDictionaryValueByCodeFunc implements Func2<String, String, String> {
     @Override
-    @Synchronized
     public String func(String dictionTypeCode, String dictionCode) {
         return ApplicationContextHolder.getBean(DictionaryService.class).readOneValueByCode(dictionTypeCode, dictionCode, null);
     }
