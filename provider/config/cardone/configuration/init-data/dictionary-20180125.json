@@ -1,0 +1,30 @@
+[
+  {
+    "dictionaryTypeId": "i18nInfoDataType",
+    "dictionaryTypeCode": "i18nInfoDataType",
+    "dictionaryCode": "dictionary",
+    "name": "数据字典",
+    "flagCode": "init"
+  },
+  {
+    "dictionaryTypeId": "i18nInfoDataType",
+    "dictionaryTypeCode": "i18nInfoDataType",
+    "dictionaryCode": "page",
+    "name": "页面",
+    "flagCode": "init"
+  },
+  {
+    "dictionaryTypeId": "i18nInfoDataType",
+    "dictionaryTypeCode": "i18nInfoDataType",
+    "dictionaryCode": "navigation",
+    "name": "导航",
+    "flagCode": "init"
+  },
+  {
+    "dictionaryTypeId": "i18nInfoDataType",
+    "dictionaryTypeCode": "i18nInfoDataType",
+    "dictionaryCode": "errorInfo",
+    "name": "错误信息",
+    "flagCode": "init"
+  }
+]
