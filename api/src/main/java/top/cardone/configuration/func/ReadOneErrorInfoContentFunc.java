@@ -1,19 +1,19 @@
 package top.cardone.configuration.func;
 
 import com.google.common.collect.Maps;
-
 import org.springframework.core.task.TaskExecutor;
 import org.springframework.scheduling.support.TaskUtils;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
-import top.cardone.configuration.service.ErrorInfoService;
+import top.cardone.configuration.service.DictionaryService;
+import top.cardone.configuration.service.I18nInfoService;
 import top.cardone.context.ApplicationContextHolder;
-import top.cardone.context.i18n.LocaleContextHolder;
 import top.cardone.context.util.MapUtils;
 import top.cardone.context.util.StringUtils;
 import top.cardone.core.util.func.Func3;
 
 import java.util.Map;
+import java.util.regex.Pattern;
 
 /**
  * Created by cardo on 2017/5/4 0004.
@@ -22,37 +22,31 @@ public class ReadOneErrorInfoContentFunc implements Func3<String, String, String
     @Override
 
     public String func(String url, String errorInfoCode, String defaultContent) {
-        Map<String, Object> findOne = Maps.newHashMap();
+        String language = ApplicationContextHolder.getBean(DictionaryService.class).readOneValueByCodeCache("sys", "language", "en");
 
-        if (StringUtils.isBlank(url) && RequestContextHolder.getRequestAttributes() != null) {
-            ServletRequestAttributes servletRequestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        Map<String, Object> findOneI18nInfo = Maps.newHashMap();
 
-            url = servletRequestAttributes.getRequest().getServletPath();
+        String i18nInfoCode = Pattern.compile("[^0-9a-zA-Z]").matcher(errorInfoCode).replaceAll("_");
+
+        findOneI18nInfo.put("typeCode", "errorInfo");
+        findOneI18nInfo.put("language", language);
+        findOneI18nInfo.put("i18nInfoCode", i18nInfoCode);
+
+        Map<String, Object> errorInfo = ApplicationContextHolder.getBean(I18nInfoService.class).findOneCache(findOneI18nInfo);
+
+        if (MapUtils.isEmpty(errorInfo)) {
+            ApplicationContextHolder.getBean(TaskExecutor.class).execute(TaskUtils.decorateTaskWithErrorHandler(() -> {
+                Map<String, Object> insertI18nInfo = Maps.newHashMap();
+
+                insertI18nInfo.put("typeCode", "errorInfo");
+                insertI18nInfo.put("language", language);
+                insertI18nInfo.put("i18nInfoCode", i18nInfoCode);
+                insertI18nInfo.put("content", defaultContent);
+
+                ApplicationContextHolder.getBean(I18nInfoService.class).insertCache(insertI18nInfo);
+            }, null, false));
         }
 
-        findOne.put("url", url);
-        findOne.put("errorInfoCode", errorInfoCode);
-        findOne.put("typeCode", LocaleContextHolder.getLocale().toString());
-
-        Map<String, Object> errorInfo = ApplicationContextHolder.getBean(ErrorInfoService.class).findOneCache(findOne);
-
-        String content = MapUtils.getString(errorInfo, "content");
-
-        if (MapUtils.isNotEmpty(errorInfo)) {
-            return StringUtils.defaultIfBlank(content, defaultContent);
-        }
-
-        ApplicationContextHolder.getBean(TaskExecutor.class).execute(TaskUtils.decorateTaskWithErrorHandler(() -> {
-            Map<String, Object> insert = Maps.newHashMap();
-
-            insert.put("url", findOne.get("url"));
-            insert.put("typeCode", findOne.get("typeCode"));
-            insert.put("errorInfoCode", findOne.get("errorInfoCode"));
-            insert.put("content", defaultContent);
-
-            ApplicationContextHolder.getBean(ErrorInfoService.class).saveCache(insert);
-        }, null, false));
-
-        return StringUtils.defaultIfBlank(content, defaultContent);
+        return StringUtils.defaultIfBlank(MapUtils.getString(errorInfo, "content"), defaultContent);
     }
 }
