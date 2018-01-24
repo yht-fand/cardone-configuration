@@ -13,3 +13,10 @@ ${prefixName?string('WHERE ', 'AND ')}t.type_Code = :typeCode
 ${prefixName?string('WHERE ', 'AND ')}(POSITION(:typeCode in t.type_Code) > 0)
     <#assign prefixName = false>
 </#if>
+<#if cardone.StringUtils.isNotBlank(language)>
+${prefixName?string('WHERE ', 'AND ')}t.language = :language
+    <#assign prefixName = false>
+<#elseif cardone.StringUtils.isNotBlank(languageName)>
+${prefixName?string('WHERE ', 'AND ')}(POSITION(:languageName in t.language) > 0)
+    <#assign prefixName = false>
+</#if>
