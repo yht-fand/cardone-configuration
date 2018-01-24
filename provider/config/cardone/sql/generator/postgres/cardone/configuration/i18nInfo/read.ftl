@@ -42,6 +42,9 @@ SELECT
 <#case "jsonData">
 "json_data"
 <#break>
+<#case "language">
+"language"
+<#break>
 <#case "lastModifiedByCode">
 "last_modified_by_code"
 <#break>

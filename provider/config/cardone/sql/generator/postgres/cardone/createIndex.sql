@@ -388,6 +388,9 @@
 --国际化信息标识
 --drop index IF EXISTS idx_c1_i18n_info_i18n_info_id;
 --create index IF NOT EXISTS idx_c1_i18n_info_i18n_info_id ON c1_i18n_info ("i18n_info_id" varchar_pattern_ops);
+--语言
+--drop index IF EXISTS idx_c1_i18n_info_language;
+--create index IF NOT EXISTS idx_c1_i18n_info_language ON c1_i18n_info ("language" varchar_pattern_ops);
 --最后修改人编号
 --drop index IF EXISTS idx_c1_i18n_info_last_modified_by_code;
 --create index IF NOT EXISTS idx_c1_i18n_info_last_modified_by_code ON c1_i18n_info ("last_modified_by_code" varchar_pattern_ops);
@@ -676,5 +679,74 @@
 --系统信息标识
 --drop index IF EXISTS idx_c1_site_system_info_id;
 --create index IF NOT EXISTS idx_c1_site_system_info_id ON c1_site ("system_info_id" varchar_pattern_ops);
+
+-- 变量（c1_variable）
+
+--业务代码
+--drop index IF EXISTS idx_c1_variable_business_code;
+--create UNIQUE index IF NOT EXISTS idx_c1_variable_business_code ON c1_variable ("code");
+--批次编号
+--drop index IF EXISTS idx_c1_variable_batch_no;
+--create index IF NOT EXISTS idx_c1_variable_batch_no ON c1_variable ("batch_no" varchar_pattern_ops);
+--开始日期
+--drop index IF EXISTS idx_c1_variable_begin_date;
+--create index IF NOT EXISTS idx_c1_variable_begin_date ON c1_variable ("begin_date");
+--创建人编号
+--drop index IF EXISTS idx_c1_variable_created_by_code;
+--create index IF NOT EXISTS idx_c1_variable_created_by_code ON c1_variable ("created_by_code" varchar_pattern_ops);
+--创建人标识
+--drop index IF EXISTS idx_c1_variable_created_by_id;
+--create index IF NOT EXISTS idx_c1_variable_created_by_id ON c1_variable ("created_by_id" varchar_pattern_ops);
+--创建日期
+--drop index IF EXISTS idx_c1_variable_created_date;
+--create index IF NOT EXISTS idx_c1_variable_created_date ON c1_variable ("created_date");
+--数据状态编号(数据字典)
+--drop index IF EXISTS idx_c1_variable_data_state_code;
+--create index IF NOT EXISTS idx_c1_variable_data_state_code ON c1_variable ("data_state_code" varchar_pattern_ops);
+--部门编号
+--drop index IF EXISTS idx_c1_variable_department_code;
+--create index IF NOT EXISTS idx_c1_variable_department_code ON c1_variable ("department_code" varchar_pattern_ops);
+--结束日期
+--drop index IF EXISTS idx_c1_variable_end_date;
+--create index IF NOT EXISTS idx_c1_variable_end_date ON c1_variable ("end_date");
+--标记编号(数据字典：工作流、同步、生成、录入、审批)
+--drop index IF EXISTS idx_c1_variable_flag_code;
+--create index IF NOT EXISTS idx_c1_variable_flag_code ON c1_variable ("flag_code" varchar_pattern_ops);
+--最后修改人编号
+--drop index IF EXISTS idx_c1_variable_last_modified_by_code;
+--create index IF NOT EXISTS idx_c1_variable_last_modified_by_code ON c1_variable ("last_modified_by_code" varchar_pattern_ops);
+--最后修改人标识
+--drop index IF EXISTS idx_c1_variable_last_modified_by_id;
+--create index IF NOT EXISTS idx_c1_variable_last_modified_by_id ON c1_variable ("last_modified_by_id" varchar_pattern_ops);
+--最后修改日期
+--drop index IF EXISTS idx_c1_variable_last_modified_date;
+--create index IF NOT EXISTS idx_c1_variable_last_modified_date ON c1_variable ("last_modified_date");
+--排序
+--drop index IF EXISTS idx_c1_variable_order_by_;
+--create index IF NOT EXISTS idx_c1_variable_order_by_ ON c1_variable ("order_by_");
+--组织编号
+--drop index IF EXISTS idx_c1_variable_org_code;
+--create index IF NOT EXISTS idx_c1_variable_org_code ON c1_variable ("org_code" varchar_pattern_ops);
+--个人编号
+--drop index IF EXISTS idx_c1_variable_personal_code;
+--create index IF NOT EXISTS idx_c1_variable_personal_code ON c1_variable ("personal_code" varchar_pattern_ops);
+--个人标识
+--drop index IF EXISTS idx_c1_variable_personal_id;
+--create index IF NOT EXISTS idx_c1_variable_personal_id ON c1_variable ("personal_id" varchar_pattern_ops);
+--站点编号
+--drop index IF EXISTS idx_c1_variable_site_code;
+--create index IF NOT EXISTS idx_c1_variable_site_code ON c1_variable ("site_code" varchar_pattern_ops);
+--状态编号(数据字典)
+--drop index IF EXISTS idx_c1_variable_state_code;
+--create index IF NOT EXISTS idx_c1_variable_state_code ON c1_variable ("state_code" varchar_pattern_ops);
+--系统信息编号
+--drop index IF EXISTS idx_c1_variable_system_info_code;
+--create index IF NOT EXISTS idx_c1_variable_system_info_code ON c1_variable ("system_info_code" varchar_pattern_ops);
+--变量编号
+--drop index IF EXISTS idx_c1_variable_variable_code;
+--create index IF NOT EXISTS idx_c1_variable_variable_code ON c1_variable ("variable_code" varchar_pattern_ops);
+--变量标识
+--drop index IF EXISTS idx_c1_variable_variable_id;
+--create index IF NOT EXISTS idx_c1_variable_variable_id ON c1_variable ("variable_id" varchar_pattern_ops);
 
 

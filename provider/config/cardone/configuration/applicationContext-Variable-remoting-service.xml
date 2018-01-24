@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/rabbit http://www.springframework.org/schema/rabbit/spring-rabbit.xsd">
+    <rabbit:direct-exchange
+            name="exchange:cardone-configuration-${cardone-configuration-version}:top.cardone.configuration.service.VariableService">
+        <rabbit:bindings>
+            <rabbit:binding
+                    queue="queue:cardone-configuration-${cardone-configuration-version}:top.cardone.configuration.service.VariableService"
+                    key="queue:cardone-configuration-${cardone-configuration-version}:top.cardone.configuration.service.VariableService"/>
+        </rabbit:bindings>
+    </rabbit:direct-exchange>
+
+    <rabbit:queue
+            name="queue:cardone-configuration-${cardone-configuration-version}:top.cardone.configuration.service.VariableService"/>
+
+    <bean id="top.cardone.configuration.service.VariableServiceExporter" parent="remoteInvocationExecutorParnet">
+        <property name="serviceInterface" value="top.cardone.configuration.service.VariableService"/>
+        <property name="service" ref="top.cardone.configuration.service.VariableService"/>
+    </bean>
+
+    <rabbit:listener-container connection-factory="rabbitConnectionFactory" concurrency="2">
+        <rabbit:listener ref="top.cardone.configuration.service.VariableServiceExporter"
+                         queue-names="queue:cardone-configuration-${cardone-configuration-version}:top.cardone.configuration.service.VariableService"/>
+    </rabbit:listener-container>
+</beans>

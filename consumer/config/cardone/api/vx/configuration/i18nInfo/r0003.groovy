@@ -94,6 +94,8 @@ class r0003 implements java.io.Serializable {
 
             data['jsonData'] = contentItem['json_data']
 
+            data['language'] = contentItem['language']
+
             data['lastModifiedByCode'] = contentItem['last_modified_by_code']
 
             data['lastModifiedById'] = contentItem['last_modified_by_id']

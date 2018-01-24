@@ -111,6 +111,14 @@ ${prefixName?string('WHERE ', 'AND ')}"json_data" IS NULL
 </#if>
 <#assign prefixName = false>
 </#if>
+<#if (where_and_eq_language??)>
+<#if (where_and_eq_language_value??)>
+${prefixName?string('WHERE ', 'AND ')}"language" = :where_and_eq_language_value
+<#else>
+${prefixName?string('WHERE ', 'AND ')}("language" IS NULL OR "language" = '')
+</#if>
+<#assign prefixName = false>
+</#if>
 <#if (where_and_eq_lastModifiedByCode??)>
 <#if (where_and_eq_lastModifiedByCode_value??)>
 ${prefixName?string('WHERE ', 'AND ')}"last_modified_by_code" = :where_and_eq_lastModifiedByCode_value

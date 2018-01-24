@@ -56,6 +56,10 @@ ${prefixName?string('  ', ', ')}"i18n_info_id"
 ${prefixName?string('  ', ', ')}"json_data"
 <#assign prefixName = false>
 </#if>
+<#if (select_language??)>
+${prefixName?string('  ', ', ')}"language"
+<#assign prefixName = false>
+</#if>
 <#if (select_lastModifiedByCode??)>
 ${prefixName?string('  ', ', ')}"last_modified_by_code"
 <#assign prefixName = false>
@@ -168,6 +172,10 @@ ${prefixName?string('ORDER BY ', ', ')}"i18n_info_id" ${order_by_i18nInfoId_valu
 </#if>
 <#if (order_by_jsonData??)>
 ${prefixName?string('ORDER BY ', ', ')}"json_data" ${order_by_jsonData_value!}
+<#assign prefixName = false>
+</#if>
+<#if (order_by_language??)>
+${prefixName?string('ORDER BY ', ', ')}"language" ${order_by_language_value!}
 <#assign prefixName = false>
 </#if>
 <#if (order_by_lastModifiedByCode??)>

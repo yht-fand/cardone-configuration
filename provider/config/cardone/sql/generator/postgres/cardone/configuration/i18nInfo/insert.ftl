@@ -57,6 +57,10 @@ ${prefixName?string('  ', ', ')}"i18n_info_id"
 ${prefixName?string('  ', ', ')}"json_data"
 <#assign prefixName = false>
 </#if>
+<#if (insert_language??) && (insert_language_value??)>
+${prefixName?string('  ', ', ')}"language"
+<#assign prefixName = false>
+</#if>
 <#if (insert_lastModifiedByCode??) && (insert_lastModifiedByCode_value??)>
 ${prefixName?string('  ', ', ')}"last_modified_by_code"
 <#assign prefixName = false>
@@ -166,6 +170,10 @@ ${prefixName?string('  ', ', ')}:insert_i18nInfoId_value
 </#if>
 <#if (insert_jsonData??) && (insert_jsonData_value??)>
 ${prefixName?string('  ', ', ')}:insert_jsonData_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_language??) && (insert_language_value??)>
+${prefixName?string('  ', ', ')}:insert_language_value
 <#assign prefixName = false>
 </#if>
 <#if (insert_lastModifiedByCode??) && (insert_lastModifiedByCode_value??)>

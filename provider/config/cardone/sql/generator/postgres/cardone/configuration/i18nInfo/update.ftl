@@ -56,6 +56,10 @@ ${prefixName?string('SET ', ', ')}"i18n_info_id" = :update_i18nInfoId_value
 ${prefixName?string('SET ', ', ')}"json_data" = :update_jsonData_value
 <#assign prefixName = false>
 </#if>
+<#if (update_language??)>
+${prefixName?string('SET ', ', ')}"language" = :update_language_value
+<#assign prefixName = false>
+</#if>
 <#if (update_lastModifiedByCode??)>
 ${prefixName?string('SET ', ', ')}"last_modified_by_code" = :update_lastModifiedByCode_value
 <#assign prefixName = false>

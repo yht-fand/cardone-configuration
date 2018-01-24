@@ -109,6 +109,13 @@ public class I18nInfo implements java.io.Serializable {
     protected Object jsonData;
 
     /**
+     * 语言
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String language;
+
+    /**
      * 最后修改人编号
      */
     @lombok.Getter

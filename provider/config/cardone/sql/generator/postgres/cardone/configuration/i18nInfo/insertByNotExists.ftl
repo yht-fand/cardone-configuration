@@ -58,6 +58,10 @@ ${prefixName?string('  ', ', ')}"i18n_info_id"
 ${prefixName?string('  ', ', ')}"json_data"
 <#assign prefixName = false>
 </#if>
+<#if (insert_language??) && (insert_language_value??)>
+${prefixName?string('  ', ', ')}"language"
+<#assign prefixName = false>
+</#if>
 <#if (insert_lastModifiedByCode??) && (insert_lastModifiedByCode_value??)>
 ${prefixName?string('  ', ', ')}"last_modified_by_code"
 <#assign prefixName = false>
@@ -167,6 +171,10 @@ ${prefixName?string('  ', ', ')}:insert_i18nInfoId_value
 </#if>
 <#if (insert_jsonData??) && (insert_jsonData_value??)>
 ${prefixName?string('  ', ', ')}:insert_jsonData_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_language??) && (insert_language_value??)>
+${prefixName?string('  ', ', ')}:insert_language_value
 <#assign prefixName = false>
 </#if>
 <#if (insert_lastModifiedByCode??) && (insert_lastModifiedByCode_value??)>
@@ -332,6 +340,14 @@ ${prefixName?string('WHERE ', 'AND ')}(E."i18n_info_id" IS NULL OR E."i18n_info_
 ${prefixName?string('WHERE ', 'AND ')}E."json_data" = :where_and_eq_jsonData_value
 <#else>
 ${prefixName?string('WHERE ', 'AND ')}E."json_data" IS NULL
+</#if>
+<#assign prefixName = false>
+</#if>
+<#if (where_and_eq_language??)>
+<#if (where_and_eq_language_value??)>
+${prefixName?string('WHERE ', 'AND ')}E."language" = :where_and_eq_language_value
+<#else>
+${prefixName?string('WHERE ', 'AND ')}(E."language" IS NULL OR E."language" = '')
 </#if>
 <#assign prefixName = false>
 </#if>

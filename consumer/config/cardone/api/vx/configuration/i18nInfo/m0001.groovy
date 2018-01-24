@@ -23,6 +23,7 @@ class m0001 implements java.io.Serializable {
 		newInput?.i18nInfoCode = input?.i18nInfoCode
 		newInput?.i18nInfoId = input?.i18nInfoId
 		newInput?.jsonData = input?.jsonData
+		newInput?.language = input?.language
 		newInput?.lastModifiedByCode = input?.lastModifiedByCode
 		newInput?.lastModifiedById = input?.lastModifiedById
 		newInput?.lastModifiedDate = input?.lastModifiedDate
@@ -95,6 +96,7 @@ class m0001 implements java.io.Serializable {
 		newOutput?.i18nInfoCode = output?.i18n_info_code
 		newOutput?.i18nInfoId = output?.i18n_info_id
 		newOutput?.jsonData = output?.json_data
+		newOutput?.language = output?.language
 		newOutput?.lastModifiedByCode = output?.last_modified_by_code
 		newOutput?.lastModifiedById = output?.last_modified_by_id
 		newOutput?.lastModifiedDate = output?.last_modified_date

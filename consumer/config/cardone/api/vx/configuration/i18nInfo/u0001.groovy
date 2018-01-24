@@ -23,6 +23,7 @@ class u0001 implements java.io.Serializable {
 		newInput?.i18nInfoCode = input?.i18nInfoCode
 		newInput?.i18nInfoId = input?.i18nInfoId
 		newInput?.jsonData = input?.jsonData
+		newInput?.language = input?.language
 		newInput?.lastModifiedByCode = input?.lastModifiedByCode
 		newInput?.lastModifiedById = input?.lastModifiedById
 		newInput?.lastModifiedDate = input?.lastModifiedDate
