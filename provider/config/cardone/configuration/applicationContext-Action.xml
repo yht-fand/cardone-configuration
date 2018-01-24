@@ -8,6 +8,18 @@
         <property name="serviceBeanId" value="top.cardone.configuration.service.NavigationService"/>
         <property name="jsonFiles" value="${app.root}/config/*/configuration/init-data/navigation-*.json"/>
         <property name="reinit" value="true"/>
+        <property name="postActions">
+            <list>
+                <bean class="top.cardone.configuration.action.InitI18nInfoAction">
+                    <property name="typeCode" value="navigation"/>
+                    <property name="i18nInfoCodeKeys">
+                        <list>
+                            <value>navigationCode</value>
+                        </list>
+                    </property>
+                </bean>
+            </list>
+        </property>
     </bean>
 
     <bean class="top.cardone.context.action.Actions" init-method="action">
@@ -37,11 +49,38 @@
                 <bean class="top.cardone.data.action.InitDataAction">
                     <property name="serviceBeanId" value="top.cardone.configuration.service.DictionaryService"/>
                     <property name="jsonFiles" value="${app.root}/config/*/configuration/init-data/dictionary-*.json"/>
+                    <property name="postActions">
+                        <list>
+                            <bean class="top.cardone.configuration.action.InitI18nInfoAction">
+                                <property name="typeCode" value="dictionary"/>
+                                <property name="i18nInfoCodeKeys">
+                                    <list>
+                                        <value>dictionaryTypeCode</value>
+                                        <value>dictionaryCode</value>
+                                    </list>
+                                </property>
+                            </bean>
+                        </list>
+                    </property>
                 </bean>
                 <bean class="top.cardone.data.action.InitDataAction">
                     <property name="serviceBeanId" value="top.cardone.configuration.service.DictionaryItemService"/>
                     <property name="jsonFiles" value="${app.root}/config/*/configuration/init-data/dictionaryItem-*.json"/>
                     <property name="reinit" value="true"/>
+                    <property name="postActions">
+                        <list>
+                            <bean class="top.cardone.configuration.action.InitI18nInfoAction">
+                                <property name="typeCode" value="dictionaryItem"/>
+                                <property name="i18nInfoCodeKeys">
+                                    <list>
+                                        <value>dictionaryTypeCode</value>
+                                        <value>dictionaryCode</value>
+                                        <value>dictionaryItemCode</value>
+                                    </list>
+                                </property>
+                            </bean>
+                        </list>
+                    </property>
                 </bean>
                 <ref bean="top.cardone.configuration.service.NavigationService.init"/>
             </list>

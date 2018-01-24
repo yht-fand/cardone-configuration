@@ -26,11 +26,9 @@ public class ReadOneErrorInfoContentFunc implements Func3<String, String, String
 
         Map<String, Object> findOneI18nInfo = Maps.newHashMap();
 
-        String i18nInfoCode = Pattern.compile("[^0-9a-zA-Z]").matcher(errorInfoCode).replaceAll("_");
-
         findOneI18nInfo.put("typeCode", "errorInfo");
         findOneI18nInfo.put("language", language);
-        findOneI18nInfo.put("i18nInfoCode", i18nInfoCode);
+        findOneI18nInfo.put("i18nInfoCode", errorInfoCode);
 
         Map<String, Object> errorInfo = ApplicationContextHolder.getBean(I18nInfoService.class).findOneCache(findOneI18nInfo);
 
@@ -40,10 +38,10 @@ public class ReadOneErrorInfoContentFunc implements Func3<String, String, String
 
                 insertI18nInfo.put("typeCode", "errorInfo");
                 insertI18nInfo.put("language", language);
-                insertI18nInfo.put("i18nInfoCode", i18nInfoCode);
+                insertI18nInfo.put("i18nInfoCode", errorInfoCode);
                 insertI18nInfo.put("content", defaultContent);
 
-                ApplicationContextHolder.getBean(I18nInfoService.class).insertCache(insertI18nInfo);
+                ApplicationContextHolder.getBean(I18nInfoService.class).insertByNotExistsCache(insertI18nInfo);
             }, null, false));
         }
 
