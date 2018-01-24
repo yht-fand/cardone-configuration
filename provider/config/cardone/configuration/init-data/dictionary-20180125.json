@@ -9,6 +9,13 @@
   {
     "dictionaryTypeId": "i18nInfoDataType",
     "dictionaryTypeCode": "i18nInfoDataType",
+    "dictionaryCode": "dictionaryItem",
+    "name": "数据字典项",
+    "flagCode": "init"
+  },
+  {
+    "dictionaryTypeId": "i18nInfoDataType",
+    "dictionaryTypeCode": "i18nInfoDataType",
     "dictionaryCode": "page",
     "name": "页面",
     "flagCode": "init"
