@@ -6,7 +6,6 @@ import org.apache.commons.collections.CollectionUtils;
 import org.springframework.transaction.annotation.Transactional;
 import top.cardone.configuration.dao.DictionaryDao;
 import top.cardone.configuration.service.DictionaryService;
-import top.cardone.configuration.service.I18nInfoService;
 import top.cardone.context.ApplicationContextHolder;
 import top.cardone.context.util.MapUtils;
 import top.cardone.context.util.StringUtils;
@@ -79,21 +78,6 @@ public class DictionaryServiceImpl extends PageServiceImpl<DictionaryDao> implem
             List<Map<String, Object>> mapList = this.findListByDictionaryTypeCode(dictionaryTypeCode);
 
             if (!CollectionUtils.isEmpty(mapList)) {
-                for (Map<String, Object> map : mapList) {
-                    Map<String, Object> readOneI18nInfo = Maps.newHashMap();
-
-                    readOneI18nInfo.put("typeCode", "dictionary");
-                    readOneI18nInfo.put("language", language);
-                    readOneI18nInfo.put("i18nInfoCode", dictionaryTypeCode + "," + map.get("dictionary_code"));
-                    readOneI18nInfo.put("object_id", "content");
-
-                    String content = ApplicationContextHolder.getBean(I18nInfoService.class).readOneCache(String.class, readOneI18nInfo);
-
-                    if (StringUtils.isNotEmpty(content)) {
-                        map.put("name", content);
-                    }
-                }
-
                 return mapList;
             }
         }
@@ -112,24 +96,7 @@ public class DictionaryServiceImpl extends PageServiceImpl<DictionaryDao> implem
         for (String dictionaryTypeCode : dictionaryTypeCodeArray) {
             readOne.put("dictionaryTypeCode", dictionaryTypeCode);
 
-            Object obj = null;
-
-            if ("name".equals(readOne.get("object_id"))) {
-                String language = ApplicationContextHolder.getBean(DictionaryService.class).readOneValueByCodeCache("sys", "language", "en");
-
-                Map<String, Object> readOneI18nInfo = Maps.newHashMap();
-
-                readOneI18nInfo.put("typeCode", "dictionary");
-                readOneI18nInfo.put("language", language);
-                readOneI18nInfo.put("i18nInfoCode", dictionaryTypeCode + "," + readOne.get("dictionaryCode"));
-                readOneI18nInfo.put("object_id", "content");
-
-                obj = ApplicationContextHolder.getBean(I18nInfoService.class).readOneCache(String.class, readOneI18nInfo);
-            }
-
-            if (Objects.isNull(obj) || (obj instanceof String && StringUtils.isEmpty((String) obj))) {
-                obj = this.dao.readOne(String.class, readOne);
-            }
+            Object obj = this.dao.readOne(String.class, readOne);
 
             if (Objects.isNull(obj) || (obj instanceof String && StringUtils.isEmpty((String) obj))) {
                 continue;

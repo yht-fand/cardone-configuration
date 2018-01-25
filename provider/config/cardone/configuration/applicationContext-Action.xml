@@ -28,23 +28,54 @@
                 <bean class="top.cardone.data.action.InitDataAction">
                     <property name="serviceBeanId" value="top.cardone.configuration.service.SystemInfoService"/>
                     <property name="jsonFiles" value="${app.root}/config/*/configuration/init-data/systemInfo-*.json"/>
+                    <property name="postActions">
+                        <list>
+                            <bean class="top.cardone.configuration.action.InitI18nInfoAction">
+                                <property name="typeCode" value="systemInfo"/>
+                                <property name="i18nInfoCodeKeys">
+                                    <list>
+                                        <value>systemInfoCode</value>
+                                    </list>
+                                </property>
+                            </bean>
+                        </list>
+                    </property>
                 </bean>
                 <bean class="top.cardone.data.action.InitDataAction">
                     <property name="serviceBeanId" value="top.cardone.configuration.service.SiteService"/>
                     <property name="jsonFiles" value="${app.root}/config/*/configuration/init-data/site-*.json"/>
+                    <property name="postActions">
+                        <list>
+                            <bean class="top.cardone.configuration.action.InitI18nInfoAction">
+                                <property name="typeCode" value="site"/>
+                                <property name="i18nInfoCodeKeys">
+                                    <list>
+                                        <value>siteCode</value>
+                                    </list>
+                                </property>
+                            </bean>
+                        </list>
+                    </property>
                 </bean>
                 <bean class="top.cardone.data.action.InitDataAction">
                     <property name="serviceBeanId" value="top.cardone.configuration.service.I18nInfoService"/>
                     <property name="jsonFiles" value="${app.root}/config/*/configuration/init-data/i18nInfo-*.json"/>
                 </bean>
                 <bean class="top.cardone.data.action.InitDataAction">
-                    <property name="serviceBeanId" value="top.cardone.configuration.service.ErrorInfoService"/>
-                    <property name="jsonFiles" value="${app.root}/config/*/configuration/init-data/errorInfo-*.json"/>
-                </bean>
-                <bean class="top.cardone.data.action.InitDataAction">
                     <property name="serviceBeanId" value="top.cardone.configuration.service.DictionaryTypeService"/>
-                    <property name="jsonFiles"
-                              value="${app.root}/config/*/configuration/init-data/dictionaryType-*.json"/>
+                    <property name="jsonFiles" value="${app.root}/config/*/configuration/init-data/dictionaryType-*.json"/>
+                    <property name="postActions">
+                        <list>
+                            <bean class="top.cardone.configuration.action.InitI18nInfoAction">
+                                <property name="typeCode" value="dictionaryType"/>
+                                <property name="i18nInfoCodeKeys">
+                                    <list>
+                                        <value>dictionaryTypeCode</value>
+                                    </list>
+                                </property>
+                            </bean>
+                        </list>
+                    </property>
                 </bean>
                 <bean class="top.cardone.data.action.InitDataAction">
                     <property name="serviceBeanId" value="top.cardone.configuration.service.DictionaryService"/>
