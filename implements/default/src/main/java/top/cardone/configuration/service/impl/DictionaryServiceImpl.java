@@ -89,7 +89,7 @@ public class DictionaryServiceImpl extends PageServiceImpl<DictionaryDao> implem
 
                     String content = ApplicationContextHolder.getBean(I18nInfoService.class).readOneCache(String.class, readOneI18nInfo);
 
-                    if (StringUtils.isNotBlank(content)) {
+                    if (StringUtils.isNotEmpty(content)) {
                         map.put("name", content);
                     }
                 }
@@ -127,11 +127,11 @@ public class DictionaryServiceImpl extends PageServiceImpl<DictionaryDao> implem
                 obj = ApplicationContextHolder.getBean(I18nInfoService.class).readOneCache(String.class, readOneI18nInfo);
             }
 
-            if (Objects.isNull(obj) || (obj instanceof String && StringUtils.isBlank((String) obj))) {
+            if (Objects.isNull(obj) || (obj instanceof String && StringUtils.isEmpty((String) obj))) {
                 obj = this.dao.readOne(String.class, readOne);
             }
 
-            if (Objects.isNull(obj) || (obj instanceof String && StringUtils.isBlank((String) obj))) {
+            if (Objects.isNull(obj) || (obj instanceof String && StringUtils.isEmpty((String) obj))) {
                 continue;
             }
 
