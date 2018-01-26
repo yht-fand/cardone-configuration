@@ -17,4 +17,6 @@ public interface I18nInfoDao extends PageDao {
      * @return 国际化信息对象
      */
     Map<String, Object> findOneByI18nInfoId(Map<String, Object> findOne);
+
+    Map<String, Integer> updateOther(String language);
 }

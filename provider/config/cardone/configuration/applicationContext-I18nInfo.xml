@@ -35,6 +35,15 @@
                         <entry key="siteCode" value="siteCodeDefaultValueFunc"/>
                     </map>
                 </entry>
+                <entry key="updateOther">
+                    <map>
+                        <entry key="site" value="updateSite"/>
+                        <entry key="navigation" value="updateNavigation"/>
+                        <entry key="dictionaryType" value="updateDictionaryType"/>
+                        <entry key="dictionaryItem" value="updateDictionaryItem"/>
+                        <entry key="dictionary" value="updateDictionary"/>
+                    </map>
+                </entry>
             </map>
         </property>
     </bean>

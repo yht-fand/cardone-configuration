@@ -17,4 +17,9 @@ public class I18nInfoServiceImpl extends PageServiceImpl<I18nInfoDao> implements
     public Map<String, Object> findOneByI18nInfoId(Map<String, Object> findOne) {
         return this.dao.findOneByI18nInfoId(findOne);
     }
+
+    @Override
+    public Map<String, Integer> updateOther(String language) {
+        return this.dao.updateOther(language);
+    }
 }

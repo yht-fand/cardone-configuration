@@ -6,6 +6,7 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.transaction.annotation.Transactional;
 import top.cardone.cache.Caches;
+import top.cardone.context.ApplicationContextHolder;
 import top.cardone.context.annotation.Event;
 import top.cardone.context.annotation.Events;
 import top.cardone.context.event.SimpleErrorEvent;
@@ -240,5 +241,15 @@ public interface I18nInfoService extends PageService {
     @Cacheable(key = Caches.KEY_1)
     default List<Map<String, Object>> findListByKeywordCache(Map<String, Object> findList) {
         return this.findListByKeyword(findList);
+    }
+
+    @Transactional
+    Map<String, Integer> updateOther(String language);
+
+    @Transactional
+    default Map<String, Integer> updateOther() {
+        String language = ApplicationContextHolder.getBean(DictionaryService.class).readOneValueByCodeCache("sys", "language", "en");
+
+        return this.updateOther(language);
     }
 }
