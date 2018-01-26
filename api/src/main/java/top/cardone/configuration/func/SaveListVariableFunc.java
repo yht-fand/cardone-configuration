@@ -13,7 +13,6 @@ import java.util.List;
  */
 public class SaveListVariableFunc implements Func1<Object, List<Object>> {
     @Override
-
     public Object func(List<Object> saveList) {
         return ApplicationContextHolder.getBean(VariableService.class).saveList(saveList);
     }
