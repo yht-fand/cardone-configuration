@@ -29,5 +29,7 @@
 
     <bean name="saveListDictionaryFunc" class="top.cardone.configuration.func.SaveListDictionaryFunc"/>
 
+    <bean name="saveListVariableFunc" class="top.cardone.configuration.func.SaveListVariableFunc"/>
+
     <bean name="findListDictionaryFunc" class="top.cardone.configuration.func.FindListDictionaryFunc"/>
 </beans>

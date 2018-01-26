@@ -4,12 +4,11 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     <bean class="top.cardone.data.listener.GenerateListener">
         <property name="serviceBeanId" value="top.cardone.configuration.service.DictionaryTypeService"/>
-        <property name="saveListFuncBeanId" value="saveListDictionaryFunc"/>
+        <property name="saveListFuncBeanId" value="saveListVariableFunc"/>
         <property name="saveList">
             <list>
                 <map>
-                    <entry key="dictionaryTypeCode" value="generate"/>
-                    <entry key="dictionaryCode" value="dictionaryTypeTree"/>
+                    <entry key="variableCode" value="dictionaryTypeTree"/>
                     <entry key="value" value="yes"/>
                 </map>
             </list>
@@ -18,12 +17,11 @@
 
     <bean class="top.cardone.data.listener.GenerateListener">
         <property name="serviceBeanId" value="top.cardone.configuration.service.NavigationService"/>
-        <property name="saveListFuncBeanId" value="saveListDictionaryFunc"/>
+        <property name="saveListFuncBeanId" value="saveListVariableFunc"/>
         <property name="saveList">
             <list>
                 <map>
-                    <entry key="dictionaryTypeCode" value="generate"/>
-                    <entry key="dictionaryCode" value="navigationTree"/>
+                    <entry key="variableCode" value="navigationTree"/>
                     <entry key="value" value="yes"/>
                 </map>
             </list>
@@ -32,12 +30,11 @@
 
     <bean class="top.cardone.data.listener.GenerateListener">
         <property name="serviceBeanId" value="top.cardone.configuration.service.SiteService"/>
-        <property name="saveListFuncBeanId" value="saveListDictionaryFunc"/>
+        <property name="saveListFuncBeanId" value="saveListVariableFunc"/>
         <property name="saveList">
             <list>
                 <map>
-                    <entry key="dictionaryTypeCode" value="generate"/>
-                    <entry key="dictionaryCode" value="siteTree"/>
+                    <entry key="variableCode" value="siteTree"/>
                     <entry key="value" value="yes"/>
                 </map>
             </list>
@@ -46,12 +43,11 @@
 
     <bean class="top.cardone.data.listener.GenerateListener">
         <property name="serviceBeanId" value="top.cardone.configuration.service.I18nInfoService"/>
-        <property name="saveListFuncBeanId" value="saveListDictionaryFunc"/>
+        <property name="saveListFuncBeanId" value="saveListVariableFunc"/>
         <property name="saveList">
             <list>
                 <map>
-                    <entry key="dictionaryTypeCode" value="generate"/>
-                    <entry key="dictionaryCode" value="i18nInfoUpdateOther"/>
+                    <entry key="variableCode" value="i18nInfoUpdateOther"/>
                     <entry key="value" value="yes"/>
                 </map>
             </list>
