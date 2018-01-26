@@ -4,7 +4,6 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import lombok.Setter;
 import org.apache.commons.lang3.StringUtils;
-import top.cardone.configuration.service.DictionaryService;
 import top.cardone.configuration.service.I18nInfoService;
 import top.cardone.context.ApplicationContextHolder;
 import top.cardone.context.util.MapUtils;
@@ -21,6 +20,9 @@ public class InitI18nInfoAction implements Action1<List<Map<String, Object>>> {
     private String[] i18nInfoCodeKeys;
 
     @Setter
+    private String[] languages = new String[]{"zh_CN", "en"};
+
+    @Setter
     private String contentKey = "name";
 
     @Setter
@@ -30,14 +32,7 @@ public class InitI18nInfoAction implements Action1<List<Map<String, Object>>> {
     public void action(List<Map<String, Object>> maps) {
         List<Map<String, Object>> newMaps = Lists.newArrayList();
 
-        Map<String, Object> putAllMap = Maps.newHashMap();
-
-        putAllMap.put("language", ApplicationContextHolder.getBean(DictionaryService.class).readOneValueByCodeCache("sys", "language", "en"));
-        putAllMap.put("typeCode", typeCode);
-
         for (Map<String, Object> map : maps) {
-            Map<String, Object> newMap = Maps.newHashMap();
-
             String i18nInfoCode = StringUtils.EMPTY;
 
             for (String i18nInfoCodeKey : i18nInfoCodeKeys) {
@@ -48,12 +43,16 @@ public class InitI18nInfoAction implements Action1<List<Map<String, Object>>> {
                 i18nInfoCode += MapUtils.getString(map, i18nInfoCodeKey);
             }
 
-            newMap.put("i18nInfoCode", i18nInfoCode);
-            newMap.put("content", MapUtils.getString(map, contentKey));
+            for (String language : languages) {
+                Map<String, Object> newMap = Maps.newHashMap();
 
-            newMap.putAll(putAllMap);
+                newMap.put("i18nInfoCode", i18nInfoCode);
+                newMap.put("language", language);
+                newMap.put("content", MapUtils.getString(map, contentKey));
+                newMap.put("typeCode", typeCode);
 
-            newMaps.add(newMap);
+                newMaps.add(newMap);
+            }
         }
 
         ApplicationContextHolder.getBean(I18nInfoService.class).insertListByNotExistsCache(Lists.newArrayList(newMaps));

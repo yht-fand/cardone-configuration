@@ -2,6 +2,13 @@
   {
     "dictionaryTypeId": "i18nInfoDataType",
     "dictionaryTypeCode": "i18nInfoDataType",
+    "dictionaryCode": "dictionaryType",
+    "name": "数据字典类型",
+    "flagCode": "init"
+  },
+  {
+    "dictionaryTypeId": "i18nInfoDataType",
+    "dictionaryTypeCode": "i18nInfoDataType",
     "dictionaryCode": "dictionary",
     "name": "数据字典",
     "flagCode": "init"
@@ -32,6 +39,13 @@
     "dictionaryTypeCode": "i18nInfoDataType",
     "dictionaryCode": "errorInfo",
     "name": "错误信息",
+    "flagCode": "init"
+  },
+  {
+    "dictionaryTypeId": "i18nInfoDataType",
+    "dictionaryTypeCode": "i18nInfoDataType",
+    "dictionaryCode": "site",
+    "name": "站点",
     "flagCode": "init"
   }
 ]

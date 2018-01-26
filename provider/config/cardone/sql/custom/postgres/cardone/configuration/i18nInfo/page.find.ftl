@@ -5,7 +5,7 @@ WHERE t.i18n_info_id = :i18nInfoId
 <#else>
     <#include "page.where.ftl">
 ORDER BY t.TYPE_CODE,
-t.i18n_info_code,
-t.CREATED_DATE
+t.language,
+t.i18n_info_code
 limit <#if pageSize??>:pageSize<#else>10</#if> OFFSET <#if offset??>:offset<#else>0</#if>
 </#if>

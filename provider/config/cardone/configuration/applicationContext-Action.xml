@@ -7,7 +7,6 @@
           class="top.cardone.data.action.InitDataAction">
         <property name="serviceBeanId" value="top.cardone.configuration.service.NavigationService"/>
         <property name="jsonFiles" value="${app.root}/config/*/configuration/init-data/navigation-*.json"/>
-        <property name="reinit" value="true"/>
         <property name="postActions">
             <list>
                 <bean class="top.cardone.configuration.action.InitI18nInfoAction">
@@ -97,7 +96,6 @@
                 <bean class="top.cardone.data.action.InitDataAction">
                     <property name="serviceBeanId" value="top.cardone.configuration.service.DictionaryItemService"/>
                     <property name="jsonFiles" value="${app.root}/config/*/configuration/init-data/dictionaryItem-*.json"/>
-                    <property name="reinit" value="true"/>
                     <property name="postActions">
                         <list>
                             <bean class="top.cardone.configuration.action.InitI18nInfoAction">
