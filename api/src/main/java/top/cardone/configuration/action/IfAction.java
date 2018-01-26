@@ -2,12 +2,11 @@ package top.cardone.configuration.action;
 
 import com.google.common.collect.Maps;
 import lombok.Setter;
-
 import lombok.extern.log4j.Log4j2;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.BooleanUtils;
 import org.springframework.util.CollectionUtils;
-import top.cardone.configuration.service.DictionaryService;
+import top.cardone.configuration.service.VariableService;
 import top.cardone.context.ApplicationContextHolder;
 import top.cardone.context.util.MapUtils;
 import top.cardone.core.util.action.Action0;
@@ -46,19 +45,19 @@ public class IfAction implements Action0 {
             return;
         }
 
-        Map<String, Object> dictionary = ApplicationContextHolder.getBean(DictionaryService.class).findOne(findOne);
+        Map<String, Object> variable = ApplicationContextHolder.getBean(VariableService.class).findOne(findOne);
 
-        if (CollectionUtils.isEmpty(dictionary)) {
+        if (CollectionUtils.isEmpty(variable)) {
             return;
         }
 
-        String value = MapUtils.getString(dictionary, "value_", "no");
+        String value = MapUtils.getString(variable, "value_", "no");
 
         if (!BooleanUtils.toBoolean(value)) {
             return;
         }
 
-        Date lastModifiedDate = (Date) MapUtils.getObject(dictionary, "last_modified_date");
+        Date lastModifiedDate = (Date) MapUtils.getObject(variable, "last_modified_date");
 
         LocalDateTime delayTime = LocalDateTime.ofInstant(Instant.ofEpochMilli(lastModifiedDate.getTime()), ZoneId.systemDefault()).plusSeconds(delay);
 
@@ -71,7 +70,7 @@ public class IfAction implements Action0 {
         save.putAll(findOne);
         save.put("value", "no");
 
-        ApplicationContextHolder.getBean(DictionaryService.class).save(save);
+        ApplicationContextHolder.getBean(VariableService.class).save(save);
 
         if (ArrayUtils.isNotEmpty(actionBeanIds)) {
             for (String actionBeanId : actionBeanIds) {
