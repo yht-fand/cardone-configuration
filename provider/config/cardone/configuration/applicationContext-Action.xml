@@ -139,4 +139,7 @@
         <property name="pkGetKey" value="SITE_ID"/>
         <property name="serviceBeanId" value="top.cardone.configuration.service.SiteService"/>
     </bean>
+
+    <bean name="i18nInfoGenerateDataAction" class="top.cardone.configuration.action.I18nInfoGenerateDataAction">
+    </bean>
 </beans>
