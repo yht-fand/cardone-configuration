@@ -19,6 +19,7 @@ public class I18nInfoServiceImpl extends PageServiceImpl<I18nInfoDao> implements
     }
 
     @Override
+    @Transactional
     public Map<String, Integer> updateOther(String language) {
         return this.dao.updateOther(language);
     }

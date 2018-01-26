@@ -20,9 +20,6 @@ public class I18nInfoDaoImpl extends PageDaoImpl implements top.cardone.configur
         return this.findOne(findOneSqlFilePath, findOne);
     }
 
-    @Setter
-    private Map<String, String> updateOtherMap;
-
     @Override
     public Map<String, Integer> updateOther(String language) {
         Map<String, Integer> updateOtherCountMap = Maps.newHashMap();
