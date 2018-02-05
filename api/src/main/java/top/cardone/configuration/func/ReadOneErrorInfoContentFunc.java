@@ -1,6 +1,7 @@
 package top.cardone.configuration.func;
 
 import com.google.common.collect.Maps;
+import lombok.Setter;
 import org.springframework.core.task.TaskExecutor;
 import org.springframework.scheduling.support.TaskUtils;
 import org.springframework.web.context.request.RequestContextHolder;
@@ -19,10 +20,12 @@ import java.util.regex.Pattern;
  * Created by cardo on 2017/5/4 0004.
  */
 public class ReadOneErrorInfoContentFunc implements Func3<String, String, String, String> {
-    @Override
+    @Setter
+    private String taskExecutorBeanName = "logTaskExecutor";
 
+    @Override
     public String func(String url, String errorInfoCode, String defaultContent) {
-        String language = ApplicationContextHolder.getBean(DictionaryService.class).readOneValueByCodeCache("sys", "language", "en");
+        String language = ApplicationContextHolder.getBean(DictionaryService.class).readOneValueByCodeCache("sys", "language", "zh_CN");
 
         Map<String, Object> findOneI18nInfo = Maps.newHashMap();
 
@@ -33,7 +36,7 @@ public class ReadOneErrorInfoContentFunc implements Func3<String, String, String
         Map<String, Object> errorInfo = ApplicationContextHolder.getBean(I18nInfoService.class).findOneCache(findOneI18nInfo);
 
         if (MapUtils.isEmpty(errorInfo)) {
-            ApplicationContextHolder.getBean(TaskExecutor.class).execute(TaskUtils.decorateTaskWithErrorHandler(() -> {
+            ApplicationContextHolder.getBean(TaskExecutor.class, this.taskExecutorBeanName).execute(TaskUtils.decorateTaskWithErrorHandler(() -> {
                 Map<String, Object> insertI18nInfo = Maps.newHashMap();
 
                 insertI18nInfo.put("typeCode", "errorInfo");

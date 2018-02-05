@@ -72,7 +72,7 @@ public class DictionaryServiceImpl extends PageServiceImpl<DictionaryDao> implem
             return Lists.newArrayList();
         }
 
-        String language = ApplicationContextHolder.getBean(DictionaryService.class).readOneValueByCodeCache("sys", "language", "en");
+        String language = ApplicationContextHolder.getBean(DictionaryService.class).readOneValueByCodeCache("sys", "language", "zh_CN");
 
         for (String dictionaryTypeCode : dictionaryTypeCodeArray) {
             List<Map<String, Object>> mapList = this.findListByDictionaryTypeCode(dictionaryTypeCode);
