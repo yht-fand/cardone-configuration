@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by cardo on 2018/1/24 0024.
+ * @author cardo on 2018/1/24 0024.
  */
 public class InitI18nInfoAction implements Action1<List<Map<String, Object>>> {
     @Setter

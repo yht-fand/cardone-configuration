@@ -5,7 +5,7 @@ import top.cardone.context.ApplicationContextHolder;
 import top.cardone.core.util.action.Action0;
 
 /**
- * Created by cardo on 2018/1/26 0026.
+ * @author cardo on 2018/1/26 0026.
  */
 public class I18nInfoGenerateDataAction implements Action0 {
     @Override

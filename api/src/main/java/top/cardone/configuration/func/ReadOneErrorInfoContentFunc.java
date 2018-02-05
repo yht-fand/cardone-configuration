@@ -17,7 +17,7 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 /**
- * Created by cardo on 2017/5/4 0004.
+ * @author cardo on 2017/5/4 0004.
  */
 public class ReadOneErrorInfoContentFunc implements Func3<String, String, String, String> {
     @Setter

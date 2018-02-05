@@ -11,7 +11,7 @@ import top.cardone.core.util.func.Func2;
 import java.util.Map;
 
 /**
- * Created by yht on 16-3-28.
+ * @author yht on 16-3-28.
  */
 public class ReadOneDictionaryByDictionaryTypeCodesFunc implements Func2<Object, Map<String, Object>, Map<String, Object>> {
     @Override
