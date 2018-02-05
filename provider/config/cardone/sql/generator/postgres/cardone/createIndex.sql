@@ -428,90 +428,6 @@
 --drop index IF EXISTS idx_c1_i18n_info_type_code;
 --create index IF NOT EXISTS idx_c1_i18n_info_type_code ON c1_i18n_info ("type_code" varchar_pattern_ops);
 
--- 错误信息（c1_error_info）
-
---业务代码
---drop index IF EXISTS idx_c1_error_info_business_code;
---create UNIQUE index IF NOT EXISTS idx_c1_error_info_business_code ON c1_error_info ("code");
---批次编号
---drop index IF EXISTS idx_c1_error_info_batch_no;
---create index IF NOT EXISTS idx_c1_error_info_batch_no ON c1_error_info ("batch_no" varchar_pattern_ops);
---开始日期
---drop index IF EXISTS idx_c1_error_info_begin_date;
---create index IF NOT EXISTS idx_c1_error_info_begin_date ON c1_error_info ("begin_date");
---创建人编号
---drop index IF EXISTS idx_c1_error_info_created_by_code;
---create index IF NOT EXISTS idx_c1_error_info_created_by_code ON c1_error_info ("created_by_code" varchar_pattern_ops);
---创建人标识
---drop index IF EXISTS idx_c1_error_info_created_by_id;
---create index IF NOT EXISTS idx_c1_error_info_created_by_id ON c1_error_info ("created_by_id" varchar_pattern_ops);
---创建日期
---drop index IF EXISTS idx_c1_error_info_created_date;
---create index IF NOT EXISTS idx_c1_error_info_created_date ON c1_error_info ("created_date");
---数据状态编号(数据字典)
---drop index IF EXISTS idx_c1_error_info_data_state_code;
---create index IF NOT EXISTS idx_c1_error_info_data_state_code ON c1_error_info ("data_state_code" varchar_pattern_ops);
---部门编号
---drop index IF EXISTS idx_c1_error_info_department_code;
---create index IF NOT EXISTS idx_c1_error_info_department_code ON c1_error_info ("department_code" varchar_pattern_ops);
---结束日期
---drop index IF EXISTS idx_c1_error_info_end_date;
---create index IF NOT EXISTS idx_c1_error_info_end_date ON c1_error_info ("end_date");
---错误信息编号
---drop index IF EXISTS idx_c1_error_info_error_info_code;
---create index IF NOT EXISTS idx_c1_error_info_error_info_code ON c1_error_info ("error_info_code" varchar_pattern_ops);
---错误信息标识
---drop index IF EXISTS idx_c1_error_info_error_info_id;
---create index IF NOT EXISTS idx_c1_error_info_error_info_id ON c1_error_info ("error_info_id" varchar_pattern_ops);
---标记编号(数据字典：工作流、同步、生成、录入、审批)
---drop index IF EXISTS idx_c1_error_info_flag_code;
---create index IF NOT EXISTS idx_c1_error_info_flag_code ON c1_error_info ("flag_code" varchar_pattern_ops);
---最后修改人编号
---drop index IF EXISTS idx_c1_error_info_last_modified_by_code;
---create index IF NOT EXISTS idx_c1_error_info_last_modified_by_code ON c1_error_info ("last_modified_by_code" varchar_pattern_ops);
---最后修改人标识
---drop index IF EXISTS idx_c1_error_info_last_modified_by_id;
---create index IF NOT EXISTS idx_c1_error_info_last_modified_by_id ON c1_error_info ("last_modified_by_id" varchar_pattern_ops);
---最后修改日期
---drop index IF EXISTS idx_c1_error_info_last_modified_date;
---create index IF NOT EXISTS idx_c1_error_info_last_modified_date ON c1_error_info ("last_modified_date");
---对象编号
---drop index IF EXISTS idx_c1_error_info_object_code;
---create index IF NOT EXISTS idx_c1_error_info_object_code ON c1_error_info ("object_code" varchar_pattern_ops);
---对象标识
---drop index IF EXISTS idx_c1_error_info_object_id;
---create index IF NOT EXISTS idx_c1_error_info_object_id ON c1_error_info ("object_id" varchar_pattern_ops);
---对象类别编号(数据字典)
---drop index IF EXISTS idx_c1_error_info_object_type_code;
---create index IF NOT EXISTS idx_c1_error_info_object_type_code ON c1_error_info ("object_type_code" varchar_pattern_ops);
---排序
---drop index IF EXISTS idx_c1_error_info_order_by_;
---create index IF NOT EXISTS idx_c1_error_info_order_by_ ON c1_error_info ("order_by_");
---组织编号
---drop index IF EXISTS idx_c1_error_info_org_code;
---create index IF NOT EXISTS idx_c1_error_info_org_code ON c1_error_info ("org_code" varchar_pattern_ops);
---个人编号
---drop index IF EXISTS idx_c1_error_info_personal_code;
---create index IF NOT EXISTS idx_c1_error_info_personal_code ON c1_error_info ("personal_code" varchar_pattern_ops);
---个人标识
---drop index IF EXISTS idx_c1_error_info_personal_id;
---create index IF NOT EXISTS idx_c1_error_info_personal_id ON c1_error_info ("personal_id" varchar_pattern_ops);
---站点编号
---drop index IF EXISTS idx_c1_error_info_site_code;
---create index IF NOT EXISTS idx_c1_error_info_site_code ON c1_error_info ("site_code" varchar_pattern_ops);
---站点标识
---drop index IF EXISTS idx_c1_error_info_site_id;
---create index IF NOT EXISTS idx_c1_error_info_site_id ON c1_error_info ("site_id" varchar_pattern_ops);
---状态编号(数据字典)
---drop index IF EXISTS idx_c1_error_info_state_code;
---create index IF NOT EXISTS idx_c1_error_info_state_code ON c1_error_info ("state_code" varchar_pattern_ops);
---系统信息编号
---drop index IF EXISTS idx_c1_error_info_system_info_code;
---create index IF NOT EXISTS idx_c1_error_info_system_info_code ON c1_error_info ("system_info_code" varchar_pattern_ops);
---类别编号(数据字典)
---drop index IF EXISTS idx_c1_error_info_type_code;
---create index IF NOT EXISTS idx_c1_error_info_type_code ON c1_error_info ("type_code" varchar_pattern_ops);
-
 -- 系统信息（c1_system_info）
 
 --业务代码
@@ -634,6 +550,12 @@
 --最后修改日期
 --drop index IF EXISTS idx_c1_site_last_modified_date;
 --create index IF NOT EXISTS idx_c1_site_last_modified_date ON c1_site ("last_modified_date");
+--纬度
+--drop index IF EXISTS idx_c1_site_latitude;
+--create index IF NOT EXISTS idx_c1_site_latitude ON c1_site ("latitude" varchar_pattern_ops);
+--经度
+--drop index IF EXISTS idx_c1_site_longitude;
+--create index IF NOT EXISTS idx_c1_site_longitude ON c1_site ("longitude" varchar_pattern_ops);
 --名称
 --drop index IF EXISTS idx_c1_site_name;
 --create index IF NOT EXISTS idx_c1_site_name ON c1_site ("name" varchar_pattern_ops);
@@ -664,6 +586,9 @@
 --个人标识
 --drop index IF EXISTS idx_c1_site_personal_id;
 --create index IF NOT EXISTS idx_c1_site_personal_id ON c1_site ("personal_id" varchar_pattern_ops);
+--邮政编码
+--drop index IF EXISTS idx_c1_site_postal_code;
+--create index IF NOT EXISTS idx_c1_site_postal_code ON c1_site ("postal_code" varchar_pattern_ops);
 --站点编号
 --drop index IF EXISTS idx_c1_site_site_code;
 --create index IF NOT EXISTS idx_c1_site_site_code ON c1_site ("site_code" varchar_pattern_ops);

@@ -82,6 +82,14 @@ ${prefixName?string('  ', ', ')}"last_modified_by_id"
 ${prefixName?string('  ', ', ')}"last_modified_date"
 <#assign prefixName = false>
 </#if>
+<#if (insert_latitude??) && (insert_latitude_value??)>
+${prefixName?string('  ', ', ')}"latitude"
+<#assign prefixName = false>
+</#if>
+<#if (insert_longitude??) && (insert_longitude_value??)>
+${prefixName?string('  ', ', ')}"longitude"
+<#assign prefixName = false>
+</#if>
 <#if (insert_name??) && (insert_name_value??)>
 ${prefixName?string('  ', ', ')}"name"
 <#assign prefixName = false>
@@ -120,6 +128,10 @@ ${prefixName?string('  ', ', ')}"personal_code"
 </#if>
 <#if (insert_personalId??) && (insert_personalId_value??)>
 ${prefixName?string('  ', ', ')}"personal_id"
+<#assign prefixName = false>
+</#if>
+<#if (insert_postalCode??) && (insert_postalCode_value??)>
+${prefixName?string('  ', ', ')}"postal_code"
 <#assign prefixName = false>
 </#if>
 <#if (insert_remark??) && (insert_remark_value??)>
@@ -237,6 +249,14 @@ ${prefixName?string('  ', ', ')}:insert_lastModifiedById_value
 ${prefixName?string('  ', ', ')}:insert_lastModifiedDate_value
 <#assign prefixName = false>
 </#if>
+<#if (insert_latitude??) && (insert_latitude_value??)>
+${prefixName?string('  ', ', ')}:insert_latitude_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_longitude??) && (insert_longitude_value??)>
+${prefixName?string('  ', ', ')}:insert_longitude_value
+<#assign prefixName = false>
+</#if>
 <#if (insert_name??) && (insert_name_value??)>
 ${prefixName?string('  ', ', ')}:insert_name_value
 <#assign prefixName = false>
@@ -275,6 +295,10 @@ ${prefixName?string('  ', ', ')}:insert_personalCode_value
 </#if>
 <#if (insert_personalId??) && (insert_personalId_value??)>
 ${prefixName?string('  ', ', ')}:insert_personalId_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_postalCode??) && (insert_postalCode_value??)>
+${prefixName?string('  ', ', ')}:insert_postalCode_value
 <#assign prefixName = false>
 </#if>
 <#if (insert_remark??) && (insert_remark_value??)>
@@ -471,6 +495,22 @@ ${prefixName?string('WHERE ', 'AND ')}E."last_modified_date" IS NULL
 </#if>
 <#assign prefixName = false>
 </#if>
+<#if (where_and_eq_latitude??)>
+<#if (where_and_eq_latitude_value??)>
+${prefixName?string('WHERE ', 'AND ')}E."latitude" = :where_and_eq_latitude_value
+<#else>
+${prefixName?string('WHERE ', 'AND ')}(E."latitude" IS NULL OR E."latitude" = '')
+</#if>
+<#assign prefixName = false>
+</#if>
+<#if (where_and_eq_longitude??)>
+<#if (where_and_eq_longitude_value??)>
+${prefixName?string('WHERE ', 'AND ')}E."longitude" = :where_and_eq_longitude_value
+<#else>
+${prefixName?string('WHERE ', 'AND ')}(E."longitude" IS NULL OR E."longitude" = '')
+</#if>
+<#assign prefixName = false>
+</#if>
 <#if (where_and_eq_name??)>
 <#if (where_and_eq_name_value??)>
 ${prefixName?string('WHERE ', 'AND ')}E."name" = :where_and_eq_name_value
@@ -548,6 +588,14 @@ ${prefixName?string('WHERE ', 'AND ')}(E."personal_code" IS NULL OR E."personal_
 ${prefixName?string('WHERE ', 'AND ')}E."personal_id" = :where_and_eq_personalId_value
 <#else>
 ${prefixName?string('WHERE ', 'AND ')}(E."personal_id" IS NULL OR E."personal_id" = '')
+</#if>
+<#assign prefixName = false>
+</#if>
+<#if (where_and_eq_postalCode??)>
+<#if (where_and_eq_postalCode_value??)>
+${prefixName?string('WHERE ', 'AND ')}E."postal_code" = :where_and_eq_postalCode_value
+<#else>
+${prefixName?string('WHERE ', 'AND ')}(E."postal_code" IS NULL OR E."postal_code" = '')
 </#if>
 <#assign prefixName = false>
 </#if>

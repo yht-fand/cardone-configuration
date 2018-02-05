@@ -81,6 +81,14 @@ ${prefixName?string('  ', ', ')}"last_modified_by_id"
 ${prefixName?string('  ', ', ')}"last_modified_date"
 <#assign prefixName = false>
 </#if>
+<#if (insert_latitude??) && (insert_latitude_value??)>
+${prefixName?string('  ', ', ')}"latitude"
+<#assign prefixName = false>
+</#if>
+<#if (insert_longitude??) && (insert_longitude_value??)>
+${prefixName?string('  ', ', ')}"longitude"
+<#assign prefixName = false>
+</#if>
 <#if (insert_name??) && (insert_name_value??)>
 ${prefixName?string('  ', ', ')}"name"
 <#assign prefixName = false>
@@ -119,6 +127,10 @@ ${prefixName?string('  ', ', ')}"personal_code"
 </#if>
 <#if (insert_personalId??) && (insert_personalId_value??)>
 ${prefixName?string('  ', ', ')}"personal_id"
+<#assign prefixName = false>
+</#if>
+<#if (insert_postalCode??) && (insert_postalCode_value??)>
+${prefixName?string('  ', ', ')}"postal_code"
 <#assign prefixName = false>
 </#if>
 <#if (insert_remark??) && (insert_remark_value??)>
@@ -236,6 +248,14 @@ ${prefixName?string('  ', ', ')}:insert_lastModifiedById_value
 ${prefixName?string('  ', ', ')}:insert_lastModifiedDate_value
 <#assign prefixName = false>
 </#if>
+<#if (insert_latitude??) && (insert_latitude_value??)>
+${prefixName?string('  ', ', ')}:insert_latitude_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_longitude??) && (insert_longitude_value??)>
+${prefixName?string('  ', ', ')}:insert_longitude_value
+<#assign prefixName = false>
+</#if>
 <#if (insert_name??) && (insert_name_value??)>
 ${prefixName?string('  ', ', ')}:insert_name_value
 <#assign prefixName = false>
@@ -274,6 +294,10 @@ ${prefixName?string('  ', ', ')}:insert_personalCode_value
 </#if>
 <#if (insert_personalId??) && (insert_personalId_value??)>
 ${prefixName?string('  ', ', ')}:insert_personalId_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_postalCode??) && (insert_postalCode_value??)>
+${prefixName?string('  ', ', ')}:insert_postalCode_value
 <#assign prefixName = false>
 </#if>
 <#if (insert_remark??) && (insert_remark_value??)>

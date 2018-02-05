@@ -151,6 +151,20 @@ public class Site implements java.io.Serializable {
     protected Date lastModifiedDate;
 
     /**
+     * 纬度
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String latitude;
+
+    /**
+     * 经度
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String longitude;
+
+    /**
      * 名称
      */
     @lombok.Getter
@@ -219,6 +233,13 @@ public class Site implements java.io.Serializable {
     @lombok.Getter
     @lombok.Setter
     protected String personalId;
+
+    /**
+     * 邮政编码
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String postalCode;
 
     /**
      * 备注

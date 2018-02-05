@@ -190,42 +190,6 @@ system_info_code|YES|String(255)|系统信息编号
 type_code|YES|String(255)|类别编号(数据字典)
 version_|YES|Integer(10)|版本
 
-##### 错误信息（c1_error_info）
-
-字段名|可为空|类型及范围|说明
----|---|---|---
-batch_no|YES|String(255)|批次编号
-begin_date|YES|Date(29)|开始日期
-content|YES|String(4095)|正文
-created_by_code|YES|String(255)|创建人编号
-created_by_id|YES|String(255)|创建人标识
-created_date|YES|Date(29)|创建日期
-data_state_code|YES|String(255)|数据状态编号(数据字典)
-department_code|YES|String(255)|部门编号
-end_date|YES|Date(29)|结束日期
-error_info_code|NO|String(255)|错误信息编号
-error_info_id|NO|String(255)|错误信息标识
-flag_code|YES|String(255)|标记编号(数据字典：工作流、同步、生成、录入、审批)
-flag_object_code|YES|String(255)|标识对象编号(工作流：工作流标识、同步：批次号、生成：操作者编号、录入：操作者编号、审批：操作者编号)
-json_data|YES|Object(2147483647)|json数据
-last_modified_by_code|YES|String(255)|最后修改人编号
-last_modified_by_id|YES|String(255)|最后修改人标识
-last_modified_date|YES|Date(29)|最后修改日期
-object_code|YES|String(255)|对象编号
-object_id|YES|String(255)|对象标识
-object_type_code|YES|String(255)|对象类别编号(数据字典)
-order_by_|YES|Long(19)|排序
-org_code|YES|String(255)|组织编号
-personal_code|YES|String(255)|个人编号
-personal_id|YES|String(255)|个人标识
-site_code|YES|String(255)|站点编号
-site_id|YES|String(255)|站点标识
-state_code|YES|String(255)|状态编号(数据字典)
-system_info_code|YES|String(255)|系统信息编号
-type_code|YES|String(255)|类别编号(数据字典)
-url|YES|String(255)|url
-version_|YES|Integer(10)|版本
-
 ##### 系统信息（c1_system_info）
 
 字段名|可为空|类型及范围|说明
@@ -281,6 +245,8 @@ json_data|YES|Object(2147483647)|json数据
 last_modified_by_code|YES|String(255)|最后修改人编号
 last_modified_by_id|YES|String(255)|最后修改人标识
 last_modified_date|YES|Date(29)|最后修改日期
+latitude|YES|String(255)|纬度
+longitude|YES|String(511)|经度
 name|YES|String(255)|名称
 order_by_|YES|Long(19)|排序
 org_code|YES|String(255)|组织编号
@@ -291,6 +257,7 @@ parent_tree_id|YES|String(1023)|父级树标识
 parent_tree_name|YES|String(1023)|父级树名称
 personal_code|YES|String(255)|个人编号
 personal_id|YES|String(255)|个人标识
+postal_code|YES|String(255)|邮政编码
 remark|YES|String(511)|备注
 site_code|YES|String(255)|站点编号
 site_id|NO|String(255)|站点标识

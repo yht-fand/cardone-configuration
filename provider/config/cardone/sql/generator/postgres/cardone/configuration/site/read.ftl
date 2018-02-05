@@ -60,6 +60,12 @@ SELECT
 <#case "lastModifiedDate">
 "last_modified_date"
 <#break>
+<#case "latitude">
+"latitude"
+<#break>
+<#case "longitude">
+"longitude"
+<#break>
 <#case "name">
 "name"
 <#break>
@@ -89,6 +95,9 @@ SELECT
 <#break>
 <#case "personalId">
 "personal_id"
+<#break>
+<#case "postalCode">
+"postal_code"
 <#break>
 <#case "remark">
 "remark"

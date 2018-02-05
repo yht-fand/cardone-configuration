@@ -106,6 +106,10 @@ class r0004 implements java.io.Serializable {
 
             data['lastModifiedDate'] = contentItem['last_modified_date']
 
+            data['latitude'] = contentItem['latitude']
+
+            data['longitude'] = contentItem['longitude']
+
             data['name'] = contentItem['name']
 
             data['orderBy'] = contentItem['order_by_']
@@ -125,6 +129,8 @@ class r0004 implements java.io.Serializable {
             data['personalCode'] = contentItem['personal_code']
 
             data['personalId'] = contentItem['personal_id']
+
+            data['postalCode'] = contentItem['postal_code']
 
             data['remark'] = contentItem['remark']
 

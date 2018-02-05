@@ -29,6 +29,8 @@ class c0002 implements java.io.Serializable {
 		newInput?.lastModifiedByCode = input?.lastModifiedByCode
 		newInput?.lastModifiedById = input?.lastModifiedById
 		newInput?.lastModifiedDate = input?.lastModifiedDate
+		newInput?.latitude = input?.latitude
+		newInput?.longitude = input?.longitude
 		newInput?.name = input?.name
 		newInput?.orderBy = input?.orderBy
 		newInput?.orgCode = input?.orgCode
@@ -39,6 +41,7 @@ class c0002 implements java.io.Serializable {
 		newInput?.parentTreeName = input?.parentTreeName
 		newInput?.personalCode = input?.personalCode
 		newInput?.personalId = input?.personalId
+		newInput?.postalCode = input?.postalCode
 		newInput?.remark = input?.remark
 		newInput?.siteCode = input?.siteCode
 		newInput?.siteId = input?.siteId

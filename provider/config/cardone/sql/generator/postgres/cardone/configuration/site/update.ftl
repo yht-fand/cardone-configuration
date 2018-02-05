@@ -80,6 +80,14 @@ ${prefixName?string('SET ', ', ')}"last_modified_by_id" = :update_lastModifiedBy
 ${prefixName?string('SET ', ', ')}"last_modified_date" = :update_lastModifiedDate_value
 <#assign prefixName = false>
 </#if>
+<#if (update_latitude??)>
+${prefixName?string('SET ', ', ')}"latitude" = :update_latitude_value
+<#assign prefixName = false>
+</#if>
+<#if (update_longitude??)>
+${prefixName?string('SET ', ', ')}"longitude" = :update_longitude_value
+<#assign prefixName = false>
+</#if>
 <#if (update_name??)>
 ${prefixName?string('SET ', ', ')}"name" = :update_name_value
 <#assign prefixName = false>
@@ -118,6 +126,10 @@ ${prefixName?string('SET ', ', ')}"personal_code" = :update_personalCode_value
 </#if>
 <#if (update_personalId??)>
 ${prefixName?string('SET ', ', ')}"personal_id" = :update_personalId_value
+<#assign prefixName = false>
+</#if>
+<#if (update_postalCode??)>
+${prefixName?string('SET ', ', ')}"postal_code" = :update_postalCode_value
 <#assign prefixName = false>
 </#if>
 <#if (update_remark??)>

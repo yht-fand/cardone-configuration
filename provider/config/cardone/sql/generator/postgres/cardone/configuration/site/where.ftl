@@ -159,6 +159,22 @@ ${prefixName?string('WHERE ', 'AND ')}"last_modified_date" IS NULL
 </#if>
 <#assign prefixName = false>
 </#if>
+<#if (where_and_eq_latitude??)>
+<#if (where_and_eq_latitude_value??)>
+${prefixName?string('WHERE ', 'AND ')}"latitude" = :where_and_eq_latitude_value
+<#else>
+${prefixName?string('WHERE ', 'AND ')}("latitude" IS NULL OR "latitude" = '')
+</#if>
+<#assign prefixName = false>
+</#if>
+<#if (where_and_eq_longitude??)>
+<#if (where_and_eq_longitude_value??)>
+${prefixName?string('WHERE ', 'AND ')}"longitude" = :where_and_eq_longitude_value
+<#else>
+${prefixName?string('WHERE ', 'AND ')}("longitude" IS NULL OR "longitude" = '')
+</#if>
+<#assign prefixName = false>
+</#if>
 <#if (where_and_eq_name??)>
 <#if (where_and_eq_name_value??)>
 ${prefixName?string('WHERE ', 'AND ')}"name" = :where_and_eq_name_value
@@ -236,6 +252,14 @@ ${prefixName?string('WHERE ', 'AND ')}("personal_code" IS NULL OR "personal_code
 ${prefixName?string('WHERE ', 'AND ')}"personal_id" = :where_and_eq_personalId_value
 <#else>
 ${prefixName?string('WHERE ', 'AND ')}("personal_id" IS NULL OR "personal_id" = '')
+</#if>
+<#assign prefixName = false>
+</#if>
+<#if (where_and_eq_postalCode??)>
+<#if (where_and_eq_postalCode_value??)>
+${prefixName?string('WHERE ', 'AND ')}"postal_code" = :where_and_eq_postalCode_value
+<#else>
+${prefixName?string('WHERE ', 'AND ')}("postal_code" IS NULL OR "postal_code" = '')
 </#if>
 <#assign prefixName = false>
 </#if>

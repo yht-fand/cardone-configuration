@@ -29,6 +29,8 @@ class m0002 implements java.io.Serializable {
 		newInput?.lastModifiedByCode = input?.lastModifiedByCode
 		newInput?.lastModifiedById = input?.lastModifiedById
 		newInput?.lastModifiedDate = input?.lastModifiedDate
+		newInput?.latitude = input?.latitude
+		newInput?.longitude = input?.longitude
 		newInput?.name = input?.name
 		newInput?.orderBy = input?.orderBy
 		newInput?.orgCode = input?.orgCode
@@ -39,6 +41,7 @@ class m0002 implements java.io.Serializable {
 		newInput?.parentTreeName = input?.parentTreeName
 		newInput?.personalCode = input?.personalCode
 		newInput?.personalId = input?.personalId
+		newInput?.postalCode = input?.postalCode
 		newInput?.remark = input?.remark
 		newInput?.siteCode = input?.siteCode
 		newInput?.siteId = input?.siteId
@@ -112,6 +115,8 @@ class m0002 implements java.io.Serializable {
 		newOutput?.lastModifiedByCode = output?.last_modified_by_code
 		newOutput?.lastModifiedById = output?.last_modified_by_id
 		newOutput?.lastModifiedDate = output?.last_modified_date
+		newOutput?.latitude = output?.latitude
+		newOutput?.longitude = output?.longitude
 		newOutput?.name = output?.name
 		newOutput?.orderBy = output?.order_by_
 		newOutput?.orgCode = output?.org_code
@@ -122,6 +127,7 @@ class m0002 implements java.io.Serializable {
 		newOutput?.parentTreeName = output?.parent_tree_name
 		newOutput?.personalCode = output?.personal_code
 		newOutput?.personalId = output?.personal_id
+		newOutput?.postalCode = output?.postal_code
 		newOutput?.remark = output?.remark
 		newOutput?.siteCode = output?.site_code
 		newOutput?.siteId = output?.site_id

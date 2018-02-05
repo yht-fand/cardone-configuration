@@ -80,6 +80,14 @@ ${prefixName?string('  ', ', ')}"last_modified_by_id"
 ${prefixName?string('  ', ', ')}"last_modified_date"
 <#assign prefixName = false>
 </#if>
+<#if (select_latitude??)>
+${prefixName?string('  ', ', ')}"latitude"
+<#assign prefixName = false>
+</#if>
+<#if (select_longitude??)>
+${prefixName?string('  ', ', ')}"longitude"
+<#assign prefixName = false>
+</#if>
 <#if (select_name??)>
 ${prefixName?string('  ', ', ')}"name"
 <#assign prefixName = false>
@@ -118,6 +126,10 @@ ${prefixName?string('  ', ', ')}"personal_code"
 </#if>
 <#if (select_personalId??)>
 ${prefixName?string('  ', ', ')}"personal_id"
+<#assign prefixName = false>
+</#if>
+<#if (select_postalCode??)>
+${prefixName?string('  ', ', ')}"postal_code"
 <#assign prefixName = false>
 </#if>
 <#if (select_remark??)>
@@ -238,6 +250,14 @@ ${prefixName?string('ORDER BY ', ', ')}"last_modified_by_id" ${order_by_lastModi
 ${prefixName?string('ORDER BY ', ', ')}"last_modified_date" ${order_by_lastModifiedDate_value!}
 <#assign prefixName = false>
 </#if>
+<#if (order_by_latitude??)>
+${prefixName?string('ORDER BY ', ', ')}"latitude" ${order_by_latitude_value!}
+<#assign prefixName = false>
+</#if>
+<#if (order_by_longitude??)>
+${prefixName?string('ORDER BY ', ', ')}"longitude" ${order_by_longitude_value!}
+<#assign prefixName = false>
+</#if>
 <#if (order_by_name??)>
 ${prefixName?string('ORDER BY ', ', ')}"name" ${order_by_name_value!}
 <#assign prefixName = false>
@@ -276,6 +296,10 @@ ${prefixName?string('ORDER BY ', ', ')}"personal_code" ${order_by_personalCode_v
 </#if>
 <#if (order_by_personalId??)>
 ${prefixName?string('ORDER BY ', ', ')}"personal_id" ${order_by_personalId_value!}
+<#assign prefixName = false>
+</#if>
+<#if (order_by_postalCode??)>
+${prefixName?string('ORDER BY ', ', ')}"postal_code" ${order_by_postalCode_value!}
 <#assign prefixName = false>
 </#if>
 <#if (order_by_remark??)>
