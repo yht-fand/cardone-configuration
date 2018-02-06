@@ -21,7 +21,7 @@ import java.util.regex.Pattern;
  */
 public class ReadOneErrorInfoContentFunc implements Func3<String, String, String, String> {
     @Setter
-    private String taskExecutorBeanName = "logTaskExecutor";
+    private String taskExecutorBeanName = "slowTaskExecutor";
 
     @Override
     public String func(String url, String errorInfoCode, String defaultContent) {
