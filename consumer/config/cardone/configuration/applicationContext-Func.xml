@@ -25,8 +25,6 @@
 
     <bean name="readOneErrorInfoContentFunc" class="top.cardone.configuration.func.ReadOneErrorInfoContentFunc"/>
 
-    <bean name="readOneDictionaryValueByCodeFunc" class="top.cardone.configuration.func.ReadOneDictionaryValueByCodeFunc"/>
-
     <bean name="saveListDictionaryFunc" class="top.cardone.context.action.MethodInvokerFunc1">
         <property name="targetBeanName" value="top.cardone.configuration.service.DictionaryService"/>
         <property name="targetMethod" value="saveList"/>
