@@ -3,10 +3,6 @@
        xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
        default-lazy-init="true">
-    <bean name="readOneDictionaryFunc" class="top.cardone.data.func.ReadOneFunc">
-        <property name="serviceBeanName" value="top.cardone.configuration.service.DictionaryService"/>
-    </bean>
-
     <bean name="readOneDictionaryByDictionaryTypeCodesFunc"
           class="top.cardone.configuration.func.ReadOneDictionaryByDictionaryTypeCodesFunc"/>
 
