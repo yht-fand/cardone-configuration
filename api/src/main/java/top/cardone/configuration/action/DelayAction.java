@@ -21,7 +21,7 @@ import java.util.Map;
  * @author cardo on 2017/10/25 0025.
  */
 @Log4j2
-public class IfAction implements Action0 {
+public class DelayAction implements Action0 {
     @Setter
     private Map<String, String> findOne;
 
