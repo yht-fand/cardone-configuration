@@ -6,6 +6,7 @@ import lombok.extern.log4j.Log4j2;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.BooleanUtils;
 import org.springframework.util.CollectionUtils;
+import top.cardone.cache.Cache;
 import top.cardone.configuration.service.VariableService;
 import top.cardone.context.ApplicationContextHolder;
 import top.cardone.context.util.MapUtils;
@@ -34,8 +35,10 @@ public class DelayAction implements Action0 {
     @Setter
     private Integer delay = 120;
 
-    @Override
+    @Setter
+    private String[] clearCacheNames;
 
+    @Override
     public void action() {
         if (ArrayUtils.isEmpty(actionBeanIds) && ArrayUtils.isEmpty(actionBeans)) {
             return;
@@ -91,5 +94,7 @@ public class DelayAction implements Action0 {
                 }
             }
         }
+
+        ApplicationContextHolder.getBean(Cache.class).clear(clearCacheNames);
     }
 }
