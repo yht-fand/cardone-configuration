@@ -3,8 +3,9 @@
        xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
        default-lazy-init="true">
-    <bean name="readOneDictionaryByDictionaryTypeCodesFunc"
-          class="top.cardone.configuration.func.ReadOneDictionaryByDictionaryTypeCodesFunc"/>
+    <bean name="readOneDictionaryByDictionaryTypeCodesFunc" class="org.springframework.scripting.groovy.GroovyScriptFactory">
+        <constructor-arg value="${app.root}/config/cardone/configuration/groovy/top/cardone/configuration/func/ReadOneDictionaryByDictionaryTypeCodesFunc.groovy"/>
+    </bean>
 
     <bean name="readOneErrorInfoContentFunc" class="top.cardone.configuration.func.ReadOneErrorInfoContentFunc"/>
 
