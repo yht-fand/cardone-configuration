@@ -32,7 +32,7 @@ public class DateIncrementAction implements Action0 {
     private Map<String, Object> saveDictionaryValue;
 
     @Setter
-    private long minusDays = 30;
+    private long minusDays = 1;
 
     private Date date;
 
