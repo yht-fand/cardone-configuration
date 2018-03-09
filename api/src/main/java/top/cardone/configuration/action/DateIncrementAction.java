@@ -3,10 +3,9 @@ package top.cardone.configuration.action;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
 import org.apache.commons.collections.MapUtils;
-import org.apache.commons.lang3.time.DateFormatUtils;
+import org.apache.commons.lang3.math.NumberUtils;
 import top.cardone.configuration.service.DictionaryService;
 import top.cardone.context.ApplicationContextHolder;
-import top.cardone.context.util.DateUtils;
 import top.cardone.context.util.StringUtils;
 import top.cardone.core.util.action.Action0;
 import top.cardone.core.util.func.Func1;
@@ -32,9 +31,7 @@ public class DateIncrementAction implements Action0 {
     private Map<String, Object> saveDictionaryValue;
 
     @Setter
-    private long minusDays = 1;
-
-    private Date date;
+    private long minusHour = 0;
 
     @Override
     public void action() {
@@ -50,14 +47,18 @@ public class DateIncrementAction implements Action0 {
             return;
         }
 
-        String value;
+        String value = ApplicationContextHolder.getBean(DictionaryService.class).readOne(String.class, readOneDictionaryValue);
 
-        if (date == null) {
-            value = ApplicationContextHolder.getBean(DictionaryService.class).findOne(String.class, readOneDictionaryValue);
+        Date date;
 
-            date = DateUtils.parseDate(value);
+        if (StringUtils.isBlank(value)) {
+            date = null;
         } else {
-            LocalDateTime dateTime = LocalDateTime.ofInstant(Instant.ofEpochMilli(date.getTime()), ZoneId.systemDefault()).minusDays(minusDays);
+            date = new Date(NumberUtils.toLong(value, System.currentTimeMillis()));
+        }
+
+        if (date != null && minusHour > 0) {
+            LocalDateTime dateTime = LocalDateTime.ofInstant(Instant.ofEpochMilli(date.getTime()), ZoneId.systemDefault()).minusHours(minusHour);
 
             date = Date.from(dateTime.atZone(ZoneId.systemDefault()).toInstant());
         }
@@ -65,9 +66,7 @@ public class DateIncrementAction implements Action0 {
         date = incrementFunc.func(date);
 
         if (date != null) {
-            value = DateFormatUtils.format(date, StringUtils.remove(DateFormatUtils.ISO_8601_EXTENDED_DATETIME_FORMAT.getPattern(), "'T'"));
-
-            saveDictionaryValue.put("value", value);
+            saveDictionaryValue.put("value", date.getTime() + StringUtils.EMPTY);
 
             ApplicationContextHolder.getBean(DictionaryService.class).save(saveDictionaryValue);
         }
