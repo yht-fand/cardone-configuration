@@ -3,7 +3,6 @@ package top.cardone.context.func
 import com.google.common.collect.Maps
 import org.apache.commons.collections.MapUtils
 import org.apache.commons.lang3.StringUtils
-import top.cardone.context.util.ListUtils
 import top.cardone.core.util.func.Func3
 
 /**
@@ -67,7 +66,9 @@ class NewArrayListFunc implements Func3<Object, Map<String, Object>, Map<String,
 
         List list = (List) val
 
-        List<Map<String, Object>> newList = ListUtils.newArrayList(list, (Map) config)
+        def newList = []
+
+        list.parallelStream().forEachOrdered({ obj -> newList.add(top.cardone.context.util.MapUtils.newHashMap(top.cardone.context.util.MapUtils.toMap(obj), config)) })
 
         return newList
     }
