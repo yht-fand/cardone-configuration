@@ -27,7 +27,7 @@ public class DateIncrementAction implements Action0 {
     private Func1<Date, Date> incrementFunc;
 
     @Setter
-    private String[] trueNames = new String[]{"1"};
+    private String[] trueStrings = new String[]{"1"};
 
     @Setter
     private Map<String, Object> readOneDictionaryValueForSwitch;
@@ -59,7 +59,7 @@ public class DateIncrementAction implements Action0 {
             String value = ApplicationContextHolder.getBean(DictionaryService.class).readOne(String.class, readOneDictionaryValueForSwitch);
 
             if (BooleanUtils.isFalse(BooleanUtils.toBoolean(value))) {
-                if (!ArrayUtils.contains(trueNames, value)) {
+                if (!ArrayUtils.contains(trueStrings, value)) {
                     return;
                 }
             }
