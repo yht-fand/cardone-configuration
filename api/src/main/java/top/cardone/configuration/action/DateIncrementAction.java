@@ -3,6 +3,8 @@ package top.cardone.configuration.action;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
 import org.apache.commons.collections.MapUtils;
+import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.BooleanUtils;
 import org.apache.commons.lang3.math.NumberUtils;
 import top.cardone.configuration.service.DictionaryService;
 import top.cardone.context.ApplicationContextHolder;
@@ -23,6 +25,12 @@ import java.util.Map;
 public class DateIncrementAction implements Action0 {
     @Setter
     private Func1<Date, Date> incrementFunc;
+
+    @Setter
+    private String[] trueNames = new String[]{"1"};
+
+    @Setter
+    private Map<String, Object> readOneDictionaryValueForSwitch;
 
     @Setter
     private Map<String, Object> readOneDictionaryValue;
@@ -47,20 +55,32 @@ public class DateIncrementAction implements Action0 {
             return;
         }
 
-        String value = ApplicationContextHolder.getBean(DictionaryService.class).readOne(String.class, readOneDictionaryValue);
+        if (MapUtils.isNotEmpty(readOneDictionaryValueForSwitch)) {
+            String value = ApplicationContextHolder.getBean(DictionaryService.class).readOne(String.class, readOneDictionaryValueForSwitch);
 
-        Date date;
-
-        if (StringUtils.isBlank(value)) {
-            date = null;
-        } else {
-            date = new Date(NumberUtils.toLong(value, System.currentTimeMillis()));
+            if (BooleanUtils.isFalse(BooleanUtils.toBoolean(value))) {
+                if (!ArrayUtils.contains(trueNames, value)) {
+                    return;
+                }
+            }
         }
 
-        if (date != null && minusHour > 0) {
-            LocalDateTime dateTime = LocalDateTime.ofInstant(Instant.ofEpochMilli(date.getTime()), ZoneId.systemDefault()).minusHours(minusHour);
+        String value = ApplicationContextHolder.getBean(DictionaryService.class).readOne(String.class, readOneDictionaryValue);
 
-            date = Date.from(dateTime.atZone(ZoneId.systemDefault()).toInstant());
+        Date date = null;
+
+        if (StringUtils.isNotBlank(value)) {
+            Long time = NumberUtils.toLong(value);
+
+            if (time > 0L) {
+                if (minusHour > 0) {
+                    LocalDateTime dateTime = LocalDateTime.ofInstant(Instant.ofEpochMilli(time), ZoneId.systemDefault()).minusHours(minusHour);
+
+                    date = Date.from(dateTime.atZone(ZoneId.systemDefault()).toInstant());
+                } else {
+                    date = new Date(time);
+                }
+            }
         }
 
         date = incrementFunc.func(date);
