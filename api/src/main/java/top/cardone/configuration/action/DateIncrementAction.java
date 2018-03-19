@@ -47,14 +47,6 @@ public class DateIncrementAction implements Action0 {
             return;
         }
 
-        if (MapUtils.isEmpty(readOneDictionaryValue)) {
-            return;
-        }
-
-        if (MapUtils.isEmpty(saveDictionaryValue)) {
-            return;
-        }
-
         if (MapUtils.isNotEmpty(readOneDictionaryValueForSwitch)) {
             String value = ApplicationContextHolder.getBean(DictionaryService.class).readOne(String.class, readOneDictionaryValueForSwitch);
 
@@ -65,27 +57,29 @@ public class DateIncrementAction implements Action0 {
             }
         }
 
-        String value = ApplicationContextHolder.getBean(DictionaryService.class).readOne(String.class, readOneDictionaryValue);
-
         Date date = null;
 
-        if (StringUtils.isNotBlank(value)) {
-            Long time = NumberUtils.toLong(value);
+        if (MapUtils.isNotEmpty(readOneDictionaryValue)) {
+            String value = ApplicationContextHolder.getBean(DictionaryService.class).readOne(String.class, readOneDictionaryValue);
 
-            if (time > 0L) {
-                if (minusHour > 0) {
-                    LocalDateTime dateTime = LocalDateTime.ofInstant(Instant.ofEpochMilli(time), ZoneId.systemDefault()).minusHours(minusHour);
+            if (StringUtils.isNotBlank(value)) {
+                Long time = NumberUtils.toLong(value);
 
-                    date = Date.from(dateTime.atZone(ZoneId.systemDefault()).toInstant());
-                } else {
-                    date = new Date(time);
+                if (time > 0L) {
+                    if (minusHour > 0) {
+                        LocalDateTime dateTime = LocalDateTime.ofInstant(Instant.ofEpochMilli(time), ZoneId.systemDefault()).minusHours(minusHour);
+
+                        date = Date.from(dateTime.atZone(ZoneId.systemDefault()).toInstant());
+                    } else {
+                        date = new Date(time);
+                    }
                 }
             }
         }
 
         date = incrementFunc.func(date);
 
-        if (date != null) {
+        if (MapUtils.isNotEmpty(saveDictionaryValue) && (date != null)) {
             saveDictionaryValue.put("value", date.getTime() + StringUtils.EMPTY);
 
             ApplicationContextHolder.getBean(DictionaryService.class).save(saveDictionaryValue);
