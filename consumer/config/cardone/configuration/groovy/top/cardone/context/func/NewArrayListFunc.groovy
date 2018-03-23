@@ -10,17 +10,9 @@ import top.cardone.core.util.func.Func3
  * @date 2017/2/15
  */
 class NewArrayListFunc implements Func3<Object, Map<String, Object>, Map<String, Object>, String> {
-    private String[] valueKeys = ["content", "datas"]
+    def valueKeys = ["content", "datas"]
 
-    private String[] configKeys = ["config", "input", "output"]
-
-    void setValueKeys(String[] valueKeys) {
-        this.valueKeys = valueKeys
-    }
-
-    void setConfigKeys(String[] configKeys) {
-        this.configKeys = configKeys
-    }
+    def configKeys = ["config", "input", "output"]
 
     @Override
     Object func(Map<String, Object> map, Map<String, Object> params, String key) {

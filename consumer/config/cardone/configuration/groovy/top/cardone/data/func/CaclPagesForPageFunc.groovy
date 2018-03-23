@@ -10,11 +10,7 @@ import top.cardone.core.util.func.Func2
  * @date 2017/2/16
  */
 class CaclPagesForPageFunc implements Func2<Object, Map<String, Object>, String> {
-    void setPagesRange(int pagesRange) {
-        this.pagesRange = pagesRange
-    }
-
-    private int pagesRange = 6
+    def pagesRange = 6
 
     @Override
     Object func(Map<String, Object> map, String key) {
