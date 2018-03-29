@@ -36,8 +36,6 @@ public class NavigationServiceImpl extends PageServiceImpl<NavigationDao> implem
     @Override
     @Transactional
     public void generateData(String flagObjectCode) {
-        ApplicationContextHolder.action(InitDataAction.class, action -> action.action(), "top.cardone.configuration.service.NavigationService.init");
-
         this.dao.generateData(flagObjectCode);
     }
 }
