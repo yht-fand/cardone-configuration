@@ -9,17 +9,17 @@
 
     <bean name="readOneErrorInfoContentFunc" class="top.cardone.configuration.func.ReadOneErrorInfoContentFunc"/>
 
-    <bean name="saveListDictionaryFunc" class="top.cardone.context.action.MethodInvokerFunc1">
+    <bean name="saveListDictionaryFunc" class="top.cardone.context.func.MethodInvokerFunc1">
         <property name="targetBeanName" value="top.cardone.configuration.service.DictionaryService"/>
         <property name="targetMethod" value="saveList"/>
     </bean>
 
-    <bean name="saveListVariableFunc" class="top.cardone.context.action.MethodInvokerFunc1">
+    <bean name="saveListVariableFunc" class="top.cardone.context.func.MethodInvokerFunc1">
         <property name="targetBeanName" value="top.cardone.configuration.service.VariableService"/>
         <property name="targetMethod" value="saveList"/>
     </bean>
 
-    <bean name="findListDictionaryFunc" class="top.cardone.context.action.MethodInvokerFunc1">
+    <bean name="findListDictionaryFunc" class="top.cardone.context.func.MethodInvokerFunc1">
         <property name="targetBeanName" value="top.cardone.configuration.service.DictionaryService"/>
         <property name="targetMethod" value="findList"/>
     </bean>
