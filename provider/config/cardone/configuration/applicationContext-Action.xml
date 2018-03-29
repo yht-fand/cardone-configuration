@@ -21,7 +21,7 @@
         </property>
     </bean>
 
-    <bean class="top.cardone.context.action.Actions" init-method="action">
+    <bean class="top.cardone.context.action.BatchAction0" init-method="action">
         <property name="actions">
             <list>
                 <bean class="top.cardone.data.action.InitDataAction">
