@@ -1,7 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns="http://www.springframework.org/schema/beans"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:lang="http://www.springframework.org/schema/lang"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang.xsd">
+    <lang:groovy name="initI18nInfoForNavigation"
+                 script-source="${app.root}/config/cardone/configuration/groovy/top/cardone/configuration/action/InitI18nInfoAction.groovy">
+        <lang:property name="typeCode" value="navigation"/>
+        <lang:property name="i18nInfoCodeKeys">
+            <list>
+                <value>navigationCode</value>
+            </list>
+        </lang:property>
+    </lang:groovy>
+
+    <lang:groovy name="initI18nInfoForSystemInfo"
+                 script-source="${app.root}/config/cardone/configuration/groovy/top/cardone/configuration/action/InitI18nInfoAction.groovy">
+        <lang:property name="typeCode" value="systemInfo"/>
+        <lang:property name="i18nInfoCodeKeys">
+            <list>
+                <value>systemInfoCode</value>
+            </list>
+        </lang:property>
+    </lang:groovy>
+
+    <lang:groovy name="initI18nInfoForSite"
+                 script-source="${app.root}/config/cardone/configuration/groovy/top/cardone/configuration/action/InitI18nInfoAction.groovy">
+        <lang:property name="typeCode" value="site"/>
+        <lang:property name="i18nInfoCodeKeys">
+            <list>
+                <value>siteCode</value>
+            </list>
+        </lang:property>
+    </lang:groovy>
+
+    <lang:groovy name="initI18nInfoForDictionaryType"
+                 script-source="${app.root}/config/cardone/configuration/groovy/top/cardone/configuration/action/InitI18nInfoAction.groovy">
+        <lang:property name="typeCode" value="dictionaryType"/>
+        <lang:property name="i18nInfoCodeKeys">
+            <list>
+                <value>dictionaryTypeCode</value>
+            </list>
+        </lang:property>
+    </lang:groovy>
+
+    <lang:groovy name="initI18nInfoForDictionary"
+                 script-source="${app.root}/config/cardone/configuration/groovy/top/cardone/configuration/action/InitI18nInfoAction.groovy">
+        <lang:property name="typeCode" value="dictionary"/>
+        <lang:property name="i18nInfoCodeKeys">
+            <list>
+                <value>dictionaryTypeCode</value>
+                <value>dictionaryCode</value>
+            </list>
+        </lang:property>
+    </lang:groovy>
+
+    <lang:groovy name="initI18nInfoForDictionaryItem"
+                 script-source="${app.root}/config/cardone/configuration/groovy/top/cardone/configuration/action/InitI18nInfoAction.groovy">
+        <lang:property name="typeCode" value="dictionaryItem"/>
+        <lang:property name="i18nInfoCodeKeys">
+            <list>
+                <value>dictionaryTypeCode</value>
+                <value>dictionaryCode</value>
+                <value>dictionaryItemCode</value>
+            </list>
+        </lang:property>
+    </lang:groovy>
 
     <bean name="top.cardone.configuration.service.NavigationService.init"
           class="top.cardone.data.action.InitDataAction">
@@ -9,14 +73,7 @@
         <property name="jsonFiles" value="${app.root}/config/*/configuration/init-data/navigation-*.json"/>
         <property name="postActions">
             <list>
-                <bean class="top.cardone.configuration.action.InitI18nInfoAction">
-                    <property name="typeCode" value="navigation"/>
-                    <property name="i18nInfoCodeKeys">
-                        <list>
-                            <value>navigationCode</value>
-                        </list>
-                    </property>
-                </bean>
+                <ref bean="initI18nInfoForNavigation"/>
             </list>
         </property>
     </bean>
@@ -29,14 +86,7 @@
                     <property name="jsonFiles" value="${app.root}/config/*/configuration/init-data/systemInfo-*.json"/>
                     <property name="postActions">
                         <list>
-                            <bean class="top.cardone.configuration.action.InitI18nInfoAction">
-                                <property name="typeCode" value="systemInfo"/>
-                                <property name="i18nInfoCodeKeys">
-                                    <list>
-                                        <value>systemInfoCode</value>
-                                    </list>
-                                </property>
-                            </bean>
+                            <ref bean="initI18nInfoForSystemInfo"/>
                         </list>
                     </property>
                 </bean>
@@ -45,14 +95,7 @@
                     <property name="jsonFiles" value="${app.root}/config/*/configuration/init-data/site-*.json"/>
                     <property name="postActions">
                         <list>
-                            <bean class="top.cardone.configuration.action.InitI18nInfoAction">
-                                <property name="typeCode" value="site"/>
-                                <property name="i18nInfoCodeKeys">
-                                    <list>
-                                        <value>siteCode</value>
-                                    </list>
-                                </property>
-                            </bean>
+                            <ref bean="initI18nInfoForSite"/>
                         </list>
                     </property>
                 </bean>
@@ -65,14 +108,7 @@
                     <property name="jsonFiles" value="${app.root}/config/*/configuration/init-data/dictionaryType-*.json"/>
                     <property name="postActions">
                         <list>
-                            <bean class="top.cardone.configuration.action.InitI18nInfoAction">
-                                <property name="typeCode" value="dictionaryType"/>
-                                <property name="i18nInfoCodeKeys">
-                                    <list>
-                                        <value>dictionaryTypeCode</value>
-                                    </list>
-                                </property>
-                            </bean>
+                            <ref bean="initI18nInfoForDictionaryType"/>
                         </list>
                     </property>
                 </bean>
@@ -81,15 +117,7 @@
                     <property name="jsonFiles" value="${app.root}/config/*/configuration/init-data/dictionary-*.json"/>
                     <property name="postActions">
                         <list>
-                            <bean class="top.cardone.configuration.action.InitI18nInfoAction">
-                                <property name="typeCode" value="dictionary"/>
-                                <property name="i18nInfoCodeKeys">
-                                    <list>
-                                        <value>dictionaryTypeCode</value>
-                                        <value>dictionaryCode</value>
-                                    </list>
-                                </property>
-                            </bean>
+                            <ref bean="initI18nInfoForDictionary"/>
                         </list>
                     </property>
                 </bean>
@@ -98,16 +126,7 @@
                     <property name="jsonFiles" value="${app.root}/config/*/configuration/init-data/dictionaryItem-*.json"/>
                     <property name="postActions">
                         <list>
-                            <bean class="top.cardone.configuration.action.InitI18nInfoAction">
-                                <property name="typeCode" value="dictionaryItem"/>
-                                <property name="i18nInfoCodeKeys">
-                                    <list>
-                                        <value>dictionaryTypeCode</value>
-                                        <value>dictionaryCode</value>
-                                        <value>dictionaryItemCode</value>
-                                    </list>
-                                </property>
-                            </bean>
+                            <ref bean="initI18nInfoForDictionaryItem"/>
                         </list>
                     </property>
                 </bean>
