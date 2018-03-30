@@ -17,6 +17,6 @@
 
     <bean name="findListDictionaryFunc" class="top.cardone.context.func.MethodInvokerFunc1">
         <property name="targetBeanName" value="top.cardone.configuration.service.DictionaryService"/>
-        <property name="targetMethod" value="findList"/>
+        <property name="targetMethod" value="findListCache"/>
     </bean>
 </beans>
