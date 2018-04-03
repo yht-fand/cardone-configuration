@@ -30,4 +30,8 @@
         <property name="targetBeanName" value="top.cardone.configuration.service.I18nInfoService"/>
         <property name="targetMethod" value="updateOther"/>
     </bean>
+
+    <bean name="top.cardone.data.action.SaveListByGenerateListenerAction" class="top.cardone.data.action.SaveListByGenerateListenerAction">
+        <property name="saveListFuncBeanId" value="saveListVariableFunc"/>
+    </bean>
 </beans>
