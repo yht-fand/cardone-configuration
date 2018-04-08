@@ -250,32 +250,11 @@ public interface DictionaryService extends PageService {
         return this.findListByDictionaryTypeCode(dictionaryTypeCode);
     }
 
-    String readOneNameByCode(String dictionaryTypeCode, String dictionaryCode, String defaultValue);
-
-    @Cacheable(key = Caches.KEY_3)
-    default String readOneNameByCodeCache(String dictionaryTypeCode, String dictionaryCode, String defaultValue) {
-        return this.readOneNameByCode(dictionaryTypeCode, dictionaryCode, StringUtils.defaultIfBlank(defaultValue, dictionaryCode));
-    }
-
     String readOneValueByCode(String dictionaryTypeCode, String dictionaryCode, String defaultValue);
 
     @Cacheable(key = Caches.KEY_3)
     default String readOneValueByCodeCache(String dictionaryTypeCode, String dictionaryCode, String defaultValue) {
         return this.readOneValueByCode(dictionaryTypeCode, dictionaryCode, StringUtils.defaultIfBlank(defaultValue, dictionaryCode));
-    }
-
-    String readOneRemarkByCode(String dictionaryTypeCode, String dictionaryCode, String defaultValue);
-
-    @Cacheable(key = Caches.KEY_3)
-    default String readOneRemarkByCodeCache(String dictionaryTypeCode, String dictionaryCode, String defaultValue) {
-        return this.readOneRemarkByCode(dictionaryTypeCode, dictionaryCode, StringUtils.defaultIfBlank(defaultValue, dictionaryCode));
-    }
-
-    String readOneExplainByCode(String dictionaryTypeCode, String dictionaryCode, String defaultValue);
-
-    @Cacheable(key = Caches.KEY_3)
-    default String readOneExplainByCodeCache(String dictionaryTypeCode, String dictionaryCode, String defaultValue) {
-        return this.readOneExplainByCode(dictionaryTypeCode, dictionaryCode, StringUtils.defaultIfBlank(defaultValue, dictionaryCode));
     }
 
     List<Map<String, Object>> findListByDictionaryTypeCodes(String dictionaryTypeCodes);

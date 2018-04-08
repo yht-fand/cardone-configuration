@@ -5,8 +5,6 @@ import com.google.common.collect.Maps;
 import org.apache.commons.collections.CollectionUtils;
 import org.springframework.transaction.annotation.Transactional;
 import top.cardone.configuration.dao.DictionaryDao;
-import top.cardone.configuration.service.DictionaryService;
-import top.cardone.context.ApplicationContextHolder;
 import top.cardone.context.util.MapUtils;
 import top.cardone.context.util.StringUtils;
 import top.cardone.data.service.impl.PageServiceImpl;
@@ -33,35 +31,16 @@ public class DictionaryServiceImpl extends PageServiceImpl<DictionaryDao> implem
     }
 
     @Override
-    public String readOneNameByCode(String dictionaryTypeCode, String dictionaryCode, String defaultValue) {
-        return this.readOneByCode(dictionaryTypeCode, dictionaryCode, defaultValue, "name");
-    }
-
-    private String readOneByCode(String dictionaryTypeCode, String dictionaryCode, String defaultValue, String objectId) {
+    public String readOneValueByCode(String dictionaryTypeCode, String dictionaryCode, String defaultValue) {
         Map<String, Object> readOne = Maps.newHashMap();
 
         readOne.put("dictionaryTypeCode", dictionaryTypeCode);
         readOne.put("dictionaryCode", dictionaryCode);
         readOne.put("stateCode", MapUtils.getString(readOne, "stateCode", "1"));
         readOne.put("dataStateCode", MapUtils.getString(readOne, "dataStateCode", "1"));
-        readOne.put("object_id", objectId);
+        readOne.put("object_id", "value");
 
         return StringUtils.defaultIfBlank(this.dao.readOne(String.class, readOne), defaultValue);
-    }
-
-    @Override
-    public String readOneValueByCode(String dictionaryTypeCode, String dictionaryCode, String defaultValue) {
-        return this.readOneByCode(dictionaryTypeCode, dictionaryCode, defaultValue, "value");
-    }
-
-    @Override
-    public String readOneRemarkByCode(String dictionaryTypeCode, String dictionaryCode, String defaultValue) {
-        return this.readOneByCode(dictionaryTypeCode, dictionaryCode, defaultValue, "remark");
-    }
-
-    @Override
-    public String readOneExplainByCode(String dictionaryTypeCode, String dictionaryCode, String defaultValue) {
-        return this.readOneByCode(dictionaryTypeCode, dictionaryCode, defaultValue, "explain");
     }
 
     @Override
@@ -71,8 +50,6 @@ public class DictionaryServiceImpl extends PageServiceImpl<DictionaryDao> implem
         if (dictionaryTypeCodeArray == null) {
             return Lists.newArrayList();
         }
-
-        String language = ApplicationContextHolder.getBean(DictionaryService.class).readOneValueByCodeCache("sys", "language", "zh_CN");
 
         for (String dictionaryTypeCode : dictionaryTypeCodeArray) {
             List<Map<String, Object>> mapList = this.findListByDictionaryTypeCode(dictionaryTypeCode);
