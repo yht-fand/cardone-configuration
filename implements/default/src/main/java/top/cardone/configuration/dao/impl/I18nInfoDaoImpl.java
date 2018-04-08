@@ -24,7 +24,7 @@ public class I18nInfoDaoImpl extends PageDaoImpl implements top.cardone.configur
     public Map<String, Integer> updateOther(String language) {
         Map<String, Integer> updateOtherCountMap = Maps.newHashMap();
 
-        Map<String, Object> updateOtherMap = this.configTable.row("updateOther");
+        Map<String, Object> updateOtherMap = this.getConfigTable().row("updateOther");
 
         if (MapUtils.isEmpty(updateOtherMap)) {
             return updateOtherCountMap;
