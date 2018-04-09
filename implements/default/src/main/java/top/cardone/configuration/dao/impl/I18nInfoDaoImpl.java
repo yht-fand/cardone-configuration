@@ -1,7 +1,6 @@
 package top.cardone.configuration.dao.impl;
 
 import com.google.common.collect.Maps;
-import lombok.Setter;
 import top.cardone.context.util.MapUtils;
 import top.cardone.data.jdbc.dao.impl.PageDaoImpl;
 

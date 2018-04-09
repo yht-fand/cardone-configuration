@@ -4,8 +4,6 @@ import com.google.common.collect.Maps;
 import lombok.Setter;
 import org.springframework.core.task.TaskExecutor;
 import org.springframework.scheduling.support.TaskUtils;
-import org.springframework.web.context.request.RequestContextHolder;
-import org.springframework.web.context.request.ServletRequestAttributes;
 import top.cardone.configuration.service.DictionaryService;
 import top.cardone.configuration.service.I18nInfoService;
 import top.cardone.context.ApplicationContextHolder;
@@ -14,7 +12,6 @@ import top.cardone.context.util.StringUtils;
 import top.cardone.core.util.func.Func3;
 
 import java.util.Map;
-import java.util.regex.Pattern;
 
 /**
  * @author cardo on 2017/5/4 0004.

@@ -2,7 +2,6 @@ package top.cardone.configuration.dao.impl;
 
 import top.cardone.data.jdbc.dao.impl.PageDaoImpl;
 
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -14,7 +13,7 @@ public class VariableDaoImpl extends PageDaoImpl implements top.cardone.configur
     @Override
     public Map<String, Object> findOneByVariableId(Map<String, Object> findOne) {
         String findOneSqlFilePath = this.getSqlFilePath("page.find");
-		
+
         return this.findOne(findOneSqlFilePath, findOne);
     }
 }

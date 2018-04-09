@@ -2,8 +2,6 @@ package top.cardone.configuration.service.impl;
 
 import org.springframework.transaction.annotation.Transactional;
 import top.cardone.configuration.dao.NavigationDao;
-import top.cardone.context.ApplicationContextHolder;
-import top.cardone.data.action.InitDataAction;
 import top.cardone.data.service.impl.PageServiceImpl;
 
 import java.util.List;
