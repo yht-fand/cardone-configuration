@@ -37,21 +37,21 @@ public interface DictionaryItemService extends PageService {
      * @param findOne 字典项标识
      * @return 字典项对象
      */
-    @Cacheable(key = Caches.KEY_1)
+    @Cacheable
     default Map<String, Object> findOneByDictionaryItemIdCache(Map<String, Object> findOne) {
         return this.findOneByDictionaryItemId(findOne);
     }
 
     List<Map<String, Object>> findListByDictionaryCode(String dictionaryTypeCode, String dictionaryCode);
 
-    @Cacheable(key = Caches.KEY_2)
+    @Cacheable
     default List<Map<String, Object>> findListByDictionaryCodeCache(String dictionaryTypeCode, String dictionaryCode) {
         return this.findListByDictionaryCode(dictionaryTypeCode, dictionaryCode);
     }
 
     List<Map<String, Object>> findListByDictionaryCodes(String dictionaryTypeCode, String dictionaryCodes);
 
-    @Cacheable(key = Caches.KEY_2)
+    @Cacheable
     default List<Map<String, Object>> findListByDictionaryCodesCache(String dictionaryTypeCode, String dictionaryCodes) {
         return this.findListByDictionaryCodes(dictionaryTypeCode, dictionaryCodes);
     }

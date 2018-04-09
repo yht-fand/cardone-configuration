@@ -37,7 +37,7 @@ public interface DictionaryTypeService extends PageService {
      * @param findOne 字典类别标识
      * @return 字典类别对象
      */
-    @Cacheable(key = Caches.KEY_1)
+    @Cacheable
     default Map<String, Object> findOneByDictionaryTypeIdCache(Map<String, Object> findOne) {
         return this.findOneByDictionaryTypeId(findOne);
     }
@@ -50,7 +50,7 @@ public interface DictionaryTypeService extends PageService {
      */
     List<Map<String, Object>> findListForTree(Map<String, Object> findList);
 
-    @Cacheable(key = Caches.KEY_1)
+    @Cacheable
     default List<Map<String, Object>> findListForTreeCache(Map<String, Object> findList) {
         return this.findListForTree(findList);
     }

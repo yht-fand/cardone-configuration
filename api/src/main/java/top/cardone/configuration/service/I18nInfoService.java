@@ -37,7 +37,7 @@ public interface I18nInfoService extends PageService {
      * @param findOne 国际化信息标识
      * @return 国际化信息对象
      */
-    @Cacheable(key = Caches.KEY_1)
+    @Cacheable
     default Map<String, Object> findOneByI18nInfoIdCache(Map<String, Object> findOne) {
         return this.findOneByI18nInfoId(findOne);
     }

@@ -37,7 +37,7 @@ public interface SiteService extends PageService {
      * @param findOne 站点标识
      * @return 站点对象
      */
-    @Cacheable(key = Caches.KEY_1)
+    @Cacheable
     default Map<String, Object> findOneBySiteIdCache(Map<String, Object> findOne) {
         return this.findOneBySiteId(findOne);
     }
@@ -50,7 +50,7 @@ public interface SiteService extends PageService {
      */
     List<Map<String, Object>> findListForTree(Map<String, Object> findList);
 
-    @Cacheable(key = Caches.KEY_1)
+    @Cacheable
     default List<Map<String, Object>> findListForTreeCache(Map<String, Object> findList) {
         return this.findListForTree(findList);
     }

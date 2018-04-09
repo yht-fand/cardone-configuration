@@ -36,7 +36,7 @@ public interface VariableService extends PageService {
      * @param findOne 变量标识
      * @return 变量对象
      */
-    @Cacheable(key = Caches.KEY_1)
+    @Cacheable
     default Map<String, Object> findOneByVariableIdCache(Map<String, Object> findOne) {
         return this.findOneByVariableId(findOne);
     }

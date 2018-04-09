@@ -36,7 +36,7 @@ public interface SystemInfoService extends PageService {
      * @param findOne 系统信息标识
      * @return 系统信息对象
      */
-    @Cacheable(key = Caches.KEY_1)
+    @Cacheable
     default Map<String, Object> findOneBySystemInfoIdCache(Map<String, Object> findOne) {
         return this.findOneBySystemInfoId(findOne);
     }

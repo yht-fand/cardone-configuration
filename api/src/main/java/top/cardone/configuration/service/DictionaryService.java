@@ -38,35 +38,35 @@ public interface DictionaryService extends PageService {
      * @param findOne 字典标识
      * @return 字典对象
      */
-    @Cacheable(key = Caches.KEY_1)
+    @Cacheable
     default Map<String, Object> findOneByDictionaryIdCache(Map<String, Object> findOne) {
         return this.findOneByDictionaryId(findOne);
     }
 
     List<Map<String, Object>> findListByDictionaryTypeCode(String dictionaryTypeCode);
 
-    @Cacheable(key = Caches.KEY_1)
+    @Cacheable
     default List<Map<String, Object>> findListByDictionaryTypeCodeCache(String dictionaryTypeCode) {
         return this.findListByDictionaryTypeCode(dictionaryTypeCode);
     }
 
     String readOneValueByCode(String dictionaryTypeCode, String dictionaryCode, String defaultValue);
 
-    @Cacheable(key = Caches.KEY_3)
+    @Cacheable
     default String readOneValueByCodeCache(String dictionaryTypeCode, String dictionaryCode, String defaultValue) {
         return this.readOneValueByCode(dictionaryTypeCode, dictionaryCode, StringUtils.defaultIfBlank(defaultValue, dictionaryCode));
     }
 
     List<Map<String, Object>> findListByDictionaryTypeCodes(String dictionaryTypeCodes);
 
-    @Cacheable(key = Caches.KEY_1)
+    @Cacheable
     default List<Map<String, Object>> findListByDictionaryTypeCodesCache(String dictionaryTypeCodes) {
         return this.findListByDictionaryTypeCodes(dictionaryTypeCodes);
     }
 
     Object readOneByDictionaryTypeCodes(Map<String, Object> readOne);
 
-    @Cacheable(key = Caches.KEY_1)
+    @Cacheable
     default Object readOneByDictionaryTypeCodesCache(Map<String, Object> readOne) {
         return this.readOneByDictionaryTypeCodes(readOne);
     }
