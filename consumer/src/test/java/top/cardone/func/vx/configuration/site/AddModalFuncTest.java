@@ -32,10 +32,10 @@ public class AddModalFuncTest {
     @Value("http://localhost:${server.port:8765}${server.context-path:}/vx/configuration/site/addModal.json")
     private String funcUrl;
 
-    @Value("${app.root}/src/test/resources/top/cardone/func/vx/configuration/site/AddModalFuncTest.func.input.json")
+    @Value("file:src/test/resources/top/cardone/func/vx/configuration/site/AddModalFuncTest.func.input.json")
     private Resource funcInputResource;
 
-    @Value("${app.root}/src/test/resources/top/cardone/func/vx/configuration/site/AddModalFuncTest.func.output.json")
+    @Value("file:src/test/resources/top/cardone/func/vx/configuration/site/AddModalFuncTest.func.output.json")
     private Resource funcOutputResource;
 
     private HttpEntity<String> httpEntity;
