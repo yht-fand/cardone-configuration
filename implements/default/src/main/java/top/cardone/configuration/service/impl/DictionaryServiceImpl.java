@@ -22,7 +22,11 @@ import java.util.Objects;
 public class DictionaryServiceImpl extends PageServiceImpl<DictionaryDao> implements top.cardone.configuration.service.DictionaryService {
     @Override
     public List<Map<String, Object>> findListByDictionaryTypeCode(String dictionaryTypeCode) {
-        return this.dao.findlistByDictionaryTypeCode(dictionaryTypeCode);
+        Map<String, Object> findList = Maps.newHashMap();
+
+        findList.put("dictionaryTypeCode", dictionaryTypeCode);
+
+        return this.dao.findListBySqlFileName("selectByTypeCode", findList);
     }
 
     @Override
