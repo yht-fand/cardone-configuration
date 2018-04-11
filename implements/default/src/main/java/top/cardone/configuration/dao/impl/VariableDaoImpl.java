@@ -10,10 +10,4 @@ import java.util.Map;
  * @author yao hai tao
  */
 public class VariableDaoImpl extends PageDaoImpl implements top.cardone.configuration.dao.VariableDao {
-    @Override
-    public Map<String, Object> findOneByVariableId(Map<String, Object> findOne) {
-        String findOneSqlFilePath = this.getSqlFilePath("page.find");
-
-        return this.findOne(findOneSqlFilePath, findOne);
-    }
 }

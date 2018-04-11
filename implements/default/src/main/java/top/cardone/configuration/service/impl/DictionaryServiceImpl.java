@@ -27,7 +27,7 @@ public class DictionaryServiceImpl extends PageServiceImpl<DictionaryDao> implem
 
     @Override
     public Map<String, Object> findOneByDictionaryId(Map<String, Object> findOne) {
-        return this.dao.findOneByDictionaryId(findOne);
+        return this.dao.findOneBySqlFileName("page.find", findOne);
     }
 
     @Override

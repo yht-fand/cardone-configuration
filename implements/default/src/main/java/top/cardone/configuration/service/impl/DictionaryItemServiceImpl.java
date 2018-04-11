@@ -19,7 +19,7 @@ import java.util.Map;
 public class DictionaryItemServiceImpl extends PageServiceImpl<DictionaryItemDao> implements top.cardone.configuration.service.DictionaryItemService {
     @Override
     public Map<String, Object> findOneByDictionaryItemId(Map<String, Object> findOne) {
-        return this.dao.findOneByDictionaryItemId(findOne);
+        return this.dao.findOneBySqlFileName("page.find", findOne);
     }
 
     @Override

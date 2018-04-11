@@ -10,11 +10,4 @@ import java.util.Map;
  * @author yao hai tao
  */
 public interface VariableDao extends PageDao {
-    /**
-     * 查询变量对象
-     *
-     * @param findOne 变量标识
-     * @return 变量对象
-     */
-    Map<String, Object> findOneByVariableId(Map<String, Object> findOne);
 }

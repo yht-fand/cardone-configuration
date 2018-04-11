@@ -11,18 +11,4 @@ import java.util.Map;
  * @author yao hai tao
  */
 public class SiteDaoImpl extends PageDaoImpl implements top.cardone.configuration.dao.SiteDao {
-    @Override
-    public Map<String, Object> findOneBySiteId(Map<String, Object> findOne) {
-        String findOneSqlFilePath = this.getSqlFilePath("page.find");
-
-        return this.findOne(findOneSqlFilePath, findOne);
-    }
-
-
-    @Override
-    public List<Map<String, Object>> findListForTree(Map<String, Object> findList) {
-        String findListForTreeSqlFilePath = this.getSqlFilePath("findListForTree");
-
-        return this.findList(findListForTreeSqlFilePath, this.toMap(findList, "select"));
-    }
 }

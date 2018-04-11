@@ -17,12 +17,12 @@ import java.util.UUID;
 public class NavigationServiceImpl extends PageServiceImpl<NavigationDao> implements top.cardone.configuration.service.NavigationService {
     @Override
     public Map<String, Object> findOneByNavigationId(Map<String, Object> findOne) {
-        return this.dao.findOneByNavigationId(findOne);
+        return this.dao.findOneBySqlFileName("page.find", findOne);
     }
 
     @Override
     public List<Map<String, Object>> findListForTree(Map<String, Object> findList) {
-        return this.dao.findListForTree(findList);
+        return this.dao.findListBySqlFileName("findListForTree", findList);
     }
 
     @Override

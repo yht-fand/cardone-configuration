@@ -16,11 +16,11 @@ import java.util.Map;
 public class DictionaryTypeServiceImpl extends PageServiceImpl<DictionaryTypeDao> implements top.cardone.configuration.service.DictionaryTypeService {
     @Override
     public Map<String, Object> findOneByDictionaryTypeId(Map<String, Object> findOne) {
-        return this.dao.findOneByDictionaryTypeId(findOne);
+        return this.dao.findOneBySqlFileName("page.find", findOne);
     }
 
     @Override
     public List<Map<String, Object>> findListForTree(Map<String, Object> findList) {
-        return this.dao.findListForTree(findList);
+        return this.dao.findListBySqlFileName("findListForTree", findList);
     }
 }

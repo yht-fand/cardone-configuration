@@ -13,13 +13,6 @@ import java.util.Map;
  */
 public class I18nInfoDaoImpl extends PageDaoImpl implements top.cardone.configuration.dao.I18nInfoDao {
     @Override
-    public Map<String, Object> findOneByI18nInfoId(Map<String, Object> findOne) {
-        String findOneSqlFilePath = this.getSqlFilePath("page.find");
-
-        return this.findOne(findOneSqlFilePath, findOne);
-    }
-
-    @Override
     public Map<String, Integer> updateOther(String language) {
         Map<String, Integer> updateOtherCountMap = Maps.newHashMap();
 

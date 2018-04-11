@@ -12,21 +12,5 @@ import java.util.Map;
  * @author yao hai tao
  */
 public interface DictionaryDao extends PageDao {
-    /**
-     * 分页
-     *
-     * @param page 对象
-     * @return 分页对象
-     */
-    Page<Map<String, Object>> pageByCode(Map<String, Object> page);
-
     List<Map<String, Object>> findlistByDictionaryTypeCode(String dictionaryTypeCode);
-
-    /**
-     * 查询对象
-     *
-     * @param findOne 字典标识
-     * @return 字典对象
-     */
-    Map<String, Object> findOneByDictionaryId(Map<String, Object> findOne);
 }

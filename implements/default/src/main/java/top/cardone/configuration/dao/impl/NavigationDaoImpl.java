@@ -13,20 +13,6 @@ import java.util.Map;
  */
 public class NavigationDaoImpl extends PageDaoImpl implements top.cardone.configuration.dao.NavigationDao {
     @Override
-    public Map<String, Object> findOneByNavigationId(Map<String, Object> findOne) {
-        String findOneSqlFilePath = this.getSqlFilePath("page.find");
-
-        return this.findOne(findOneSqlFilePath, findOne);
-    }
-
-    @Override
-    public List<Map<String, Object>> findListForTree(Map<String, Object> findList) {
-        String findListForTreeSqlFilePath = this.getSqlFilePath("findListForTree");
-
-        return this.findList(findListForTreeSqlFilePath, this.toMap(findList, "select"));
-    }
-
-    @Override
     public int generateData(String flagObjectCode) {
 //        String findListForDepartmentSqlFilePath = this.getSqlFilePath("findListForDepartment");
 //

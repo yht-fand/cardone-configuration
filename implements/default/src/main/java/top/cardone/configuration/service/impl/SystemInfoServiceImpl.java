@@ -15,6 +15,6 @@ import java.util.Map;
 public class SystemInfoServiceImpl extends PageServiceImpl<SystemInfoDao> implements top.cardone.configuration.service.SystemInfoService {
     @Override
     public Map<String, Object> findOneBySystemInfoId(Map<String, Object> findOne) {
-        return this.dao.findOneBySystemInfoId(findOne);
+        return this.dao.findOneBySqlFileName("page.find", findOne);
     }
 }

@@ -15,7 +15,7 @@ import java.util.Map;
 public class I18nInfoServiceImpl extends PageServiceImpl<I18nInfoDao> implements top.cardone.configuration.service.I18nInfoService {
     @Override
     public Map<String, Object> findOneByI18nInfoId(Map<String, Object> findOne) {
-        return this.dao.findOneByI18nInfoId(findOne);
+        return this.dao.findOneBySqlFileName("page.find", findOne);
     }
 
     @Override

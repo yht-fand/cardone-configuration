@@ -14,15 +14,6 @@ import java.util.Map;
  */
 public class DictionaryDaoImpl extends PageDaoImpl implements top.cardone.configuration.dao.DictionaryDao {
     @Override
-    public Page<Map<String, Object>> pageByCode(Map<String, Object> page) {
-        String countSqlFilePath = this.getSqlFilePath("page.count");
-
-        String findListSqlFilePath = this.getSqlFilePath("page.find");
-
-        return this.page(countSqlFilePath, findListSqlFilePath, page);
-    }
-
-    @Override
     public List<Map<String, Object>> findlistByDictionaryTypeCode(String dictionaryTypeCode) {
         String findListSqlFilePath = this.getSqlFilePath("selectByTypeCode");
 
@@ -31,12 +22,5 @@ public class DictionaryDaoImpl extends PageDaoImpl implements top.cardone.config
         findList.put("dictionaryTypeCode", dictionaryTypeCode);
 
         return this.findList(findListSqlFilePath, findList);
-    }
-
-    @Override
-    public Map<String, Object> findOneByDictionaryId(Map<String, Object> findOne) {
-        String findOneSqlFilePath = this.getSqlFilePath("page.find");
-
-        return this.findOne(findOneSqlFilePath, findOne);
     }
 }

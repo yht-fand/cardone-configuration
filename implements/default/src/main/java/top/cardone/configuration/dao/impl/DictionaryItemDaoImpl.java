@@ -13,13 +13,6 @@ import java.util.Map;
  */
 public class DictionaryItemDaoImpl extends PageDaoImpl implements top.cardone.configuration.dao.DictionaryItemDao {
     @Override
-    public Map<String, Object> findOneByDictionaryItemId(Map<String, Object> findOne) {
-        String findOneSqlFilePath = this.getSqlFilePath("page.find");
-
-        return this.findOne(findOneSqlFilePath, findOne);
-    }
-
-    @Override
     public List<Map<String, Object>> findListByDictionaryCode(String dictionaryTypeCode, String dictionaryCode) {
         String findListByDictionaryCodeSqlFilePath = this.getSqlFilePath("findListByDictionaryCode");
 

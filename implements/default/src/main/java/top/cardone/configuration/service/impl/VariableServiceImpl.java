@@ -15,6 +15,6 @@ import java.util.Map;
 public class VariableServiceImpl extends PageServiceImpl<VariableDao> implements top.cardone.configuration.service.VariableService {
     @Override
     public Map<String, Object> findOneByVariableId(Map<String, Object> findOne) {
-        return this.dao.findOneByVariableId(findOne);
+        return this.dao.findOneBySqlFileName("page.find", findOne);
     }
 }
