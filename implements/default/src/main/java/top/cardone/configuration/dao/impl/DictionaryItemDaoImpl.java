@@ -12,15 +12,4 @@ import java.util.Map;
  * @author yao hai tao
  */
 public class DictionaryItemDaoImpl extends PageDaoImpl implements top.cardone.configuration.dao.DictionaryItemDao {
-    @Override
-    public List<Map<String, Object>> findListByDictionaryCode(String dictionaryTypeCode, String dictionaryCode) {
-        String findListByDictionaryCodeSqlFilePath = this.getSqlFilePath("findListByDictionaryCode");
-
-        Map<String, Object> findList = Maps.newHashMap();
-
-        findList.put("dictionaryTypeCode", dictionaryTypeCode);
-        findList.put("dictionaryCode", dictionaryCode);
-
-        return this.findList(findListByDictionaryCodeSqlFilePath, findList);
-    }
 }

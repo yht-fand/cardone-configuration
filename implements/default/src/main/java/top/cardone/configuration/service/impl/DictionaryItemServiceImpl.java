@@ -1,6 +1,7 @@
 package top.cardone.configuration.service.impl;
 
 import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 import org.apache.commons.collections.CollectionUtils;
 import org.springframework.transaction.annotation.Transactional;
 import top.cardone.configuration.dao.DictionaryItemDao;
@@ -24,7 +25,12 @@ public class DictionaryItemServiceImpl extends PageServiceImpl<DictionaryItemDao
 
     @Override
     public List<Map<String, Object>> findListByDictionaryCode(String dictionaryTypeCode, String dictionaryCode) {
-        return this.dao.findListByDictionaryCode(dictionaryTypeCode, dictionaryCode);
+        Map<String, Object> findList = Maps.newHashMap();
+
+        findList.put("dictionaryTypeCode", dictionaryTypeCode);
+        findList.put("dictionaryCode", dictionaryCode);
+
+        return this.dao.findListBySqlFileName("findListByDictionaryCode", findList);
     }
 
     @Override
