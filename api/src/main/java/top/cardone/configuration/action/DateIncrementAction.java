@@ -6,6 +6,7 @@ import org.apache.commons.collections.MapUtils;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.BooleanUtils;
 import org.apache.commons.lang3.math.NumberUtils;
+import org.springframework.data.convert.Jsr310Converters;
 import top.cardone.configuration.service.DictionaryService;
 import top.cardone.context.ApplicationContextHolder;
 import top.cardone.context.util.StringUtils;
@@ -69,7 +70,7 @@ public class DateIncrementAction implements Action0 {
                     if (minusHour > 0) {
                         LocalDateTime dateTime = LocalDateTime.ofInstant(Instant.ofEpochMilli(time), ZoneId.systemDefault()).minusHours(minusHour);
 
-                        date = Date.from(dateTime.atZone(ZoneId.systemDefault()).toInstant());
+                        date = Jsr310Converters.LocalDateTimeToDateConverter.INSTANCE.convert(dateTime);
                     } else {
                         date = new Date(time);
                     }
