@@ -42,7 +42,7 @@ public class ReadOneErrorInfoContentFunc implements Func3<String, String, String
                 insertI18nInfo.put("content", defaultContent);
 
                 ApplicationContextHolder.getBean(I18nInfoService.class).insertByNotExistsCache(insertI18nInfo);
-            }, null, false));
+            }, null, true));
         }
 
         return StringUtils.defaultIfBlank(MapUtils.getString(errorInfo, "content"), defaultContent);
