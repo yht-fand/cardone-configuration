@@ -21,6 +21,6 @@ public class SiteServiceImpl extends PageServiceImpl<SiteDao> implements top.car
 
     @Override
     public List<Map<String, Object>> findListForTree(Map<String, Object> findList) {
-        return this.dao.findList("findListForTree", findList);
+        return this.dao.findListBySqlFileName("findListForTree", findList);
     }
 }
