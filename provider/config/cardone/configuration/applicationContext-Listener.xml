@@ -2,7 +2,8 @@
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean class="top.cardone.data.listener.GenerateListener" lazy-init="${listener.DictionaryTypeService.lazyInit:false}">
+    <bean class="top.cardone.data.listener.GenerateListener">
+        <property name="skip" value="${GenerateListener.DictionaryTypeService.skip:false}"/>
         <property name="serviceBeanId" value="top.cardone.configuration.service.DictionaryTypeService"/>
         <property name="saveList">
             <list>
@@ -14,7 +15,8 @@
         </property>
     </bean>
 
-    <bean class="top.cardone.data.listener.GenerateListener" lazy-init="${listener.NavigationService.lazyInit:false}">
+    <bean class="top.cardone.data.listener.GenerateListener">
+        <property name="skip" value="${GenerateListener.NavigationService.skip:false}"/>
         <property name="serviceBeanId" value="top.cardone.configuration.service.NavigationService"/>
         <property name="saveList">
             <list>
@@ -26,7 +28,8 @@
         </property>
     </bean>
 
-    <bean class="top.cardone.data.listener.GenerateListener" lazy-init="${listener.SiteService.lazyInit:false}">
+    <bean class="top.cardone.data.listener.GenerateListener">
+        <property name="skip" value="${GenerateListener.SiteService.skip:false}"/>
         <property name="serviceBeanId" value="top.cardone.configuration.service.SiteService"/>
         <property name="saveList">
             <list>
@@ -38,7 +41,8 @@
         </property>
     </bean>
 
-    <bean class="top.cardone.data.listener.GenerateListener" lazy-init="${listener.I18nInfoService.lazyInit:false}">
+    <bean class="top.cardone.data.listener.GenerateListener">
+        <property name="skip" value="${GenerateListener.I18nInfoService.skip:false}"/>
         <property name="serviceBeanId" value="top.cardone.configuration.service.I18nInfoService"/>
         <property name="saveList">
             <list>
