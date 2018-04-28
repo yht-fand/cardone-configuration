@@ -2,7 +2,7 @@
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean class="top.cardone.data.listener.GenerateListener">
+    <bean class="top.cardone.data.listener.GenerateListener" lazy-init="${listener.DictionaryTypeService.lazyInit:false}">
         <property name="serviceBeanId" value="top.cardone.configuration.service.DictionaryTypeService"/>
         <property name="saveList">
             <list>
@@ -14,7 +14,7 @@
         </property>
     </bean>
 
-    <bean class="top.cardone.data.listener.GenerateListener">
+    <bean class="top.cardone.data.listener.GenerateListener" lazy-init="${listener.NavigationService.lazyInit:false}">
         <property name="serviceBeanId" value="top.cardone.configuration.service.NavigationService"/>
         <property name="saveList">
             <list>
@@ -26,7 +26,7 @@
         </property>
     </bean>
 
-    <bean class="top.cardone.data.listener.GenerateListener">
+    <bean class="top.cardone.data.listener.GenerateListener" lazy-init="${listener.SiteService.lazyInit:false}">
         <property name="serviceBeanId" value="top.cardone.configuration.service.SiteService"/>
         <property name="saveList">
             <list>
@@ -38,7 +38,7 @@
         </property>
     </bean>
 
-    <bean class="top.cardone.data.listener.GenerateListener">
+    <bean class="top.cardone.data.listener.GenerateListener" lazy-init="${listener.I18nInfoService.lazyInit:false}">
         <property name="serviceBeanId" value="top.cardone.configuration.service.I18nInfoService"/>
         <property name="saveList">
             <list>
