@@ -6,13 +6,13 @@
     <parent>
 		<groupId>top.cardone</groupId>
         <artifactId>cardone-configuration-parent</artifactId>
-        <version>1.1.1-SNAPSHOT</version>
+        <version>MANGO-SNAPSHOT</version>
         <relativePath>../parent</relativePath>
     </parent>
 
     <groupId>top.cardone</groupId>
     <artifactId>cardone-configuration-implements</artifactId>
-    <version>1.1.1-SNAPSHOT</version>
+    <version>MANGO-SNAPSHOT</version>
     <name>top.cardone cardone-configuration-implements</name>
     <description>top.cardone cardone-configuration-implements</description>
     <packaging>pom</packaging>
