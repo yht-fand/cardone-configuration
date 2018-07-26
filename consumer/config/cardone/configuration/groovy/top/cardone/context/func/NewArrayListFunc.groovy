@@ -60,7 +60,9 @@ class NewArrayListFunc implements Func3<Object, Map<String, Object>, Map<String,
 
         def newList = []
 
-        list.parallelStream().forEachOrdered({ obj -> newList.add(top.cardone.context.util.MapUtils.newHashMap(top.cardone.context.util.MapUtils.toMap(obj), config)) })
+        for (def obj : list) {
+            newList.add(top.cardone.context.util.MapUtils.newHashMap(top.cardone.context.util.MapUtils.toMap(obj), config))
+        }
 
         return newList
     }
