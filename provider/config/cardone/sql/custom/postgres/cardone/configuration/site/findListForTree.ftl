@@ -5,6 +5,7 @@ t.site_id
 , t.parent_id
 , t.parent_code
 , (select count(*) from c1_site s where s.PARENT_ID = t.site_id) as children_count
+, t.url
 FROM c1_site t
 WHERE t.state_code = '1' and t.data_state_code = '1'
 <#if cardone.StringUtils.isBlank(notId)>
