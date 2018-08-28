@@ -33,6 +33,15 @@
                         <entry key="systemInfoCode" value="systemInfoCodeDefaultValueFunc"/>
                     </map>
                 </entry>
+                <entry key="selectForPermission">
+                    <map>
+                        <entry key="permissions">
+                            <bean class="top.cardone.authority.func.ReadOnePermissionsFunc">
+                                <property name="permission" value="site:view:"/>
+                            </bean>
+                        </entry>
+                    </map>
+                </entry>
             </map>
         </property>
     </bean>
