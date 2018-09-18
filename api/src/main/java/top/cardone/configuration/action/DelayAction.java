@@ -68,18 +68,15 @@ public class DelayAction implements Action0 {
             return;
         }
 
-        Map<String, Object> save = Maps.newHashMap();
-
-        save.putAll(findOne);
-        save.put("value", "no");
-
-        ApplicationContextHolder.getBean(VariableService.class).save(save);
+        boolean isSave = true;
 
         if (ArrayUtils.isNotEmpty(actionBeanIds)) {
             for (String actionBeanId : actionBeanIds) {
                 try {
                     ApplicationContextHolder.action(Action0.class, action0 -> action0.action(), actionBeanId);
                 } catch (Exception e) {
+                    isSave = false;
+
                     log.error(e);
                 }
             }
@@ -90,11 +87,22 @@ public class DelayAction implements Action0 {
                 try {
                     action.action();
                 } catch (Exception e) {
+                    isSave = false;
+
                     log.error(e);
                 }
             }
         }
 
-        ApplicationContextHolder.getBean(Cache.class).clear(clearCacheNames);
+        if (isSave) {
+            Map<String, Object> save = Maps.newHashMap();
+
+            save.putAll(findOne);
+            save.put("value", "no");
+
+            ApplicationContextHolder.getBean(VariableService.class).save(save);
+
+            ApplicationContextHolder.getBean(Cache.class).clear(clearCacheNames);
+        }
     }
 }

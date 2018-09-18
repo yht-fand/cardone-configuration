@@ -28,6 +28,9 @@ public class DateIncrementAction implements Action0 {
     private Func1<Date, Date> incrementFunc;
 
     @Setter
+    private String incrementFuncBeanName;
+
+    @Setter
     private String[] trueStrings = new String[]{"1"};
 
     @Setter
@@ -44,7 +47,7 @@ public class DateIncrementAction implements Action0 {
 
     @Override
     public void action() {
-        if (incrementFunc == null) {
+        if (incrementFunc == null && StringUtils.isBlank(incrementFuncBeanName)) {
             return;
         }
 
@@ -78,7 +81,11 @@ public class DateIncrementAction implements Action0 {
             }
         }
 
-        date = incrementFunc.func(date);
+        if (incrementFunc != null) {
+            date = incrementFunc.func(date);
+        } else {
+            date = (Date) ApplicationContextHolder.getBean(Func1.class, incrementFuncBeanName).func(date);
+        }
 
         if (MapUtils.isNotEmpty(saveDictionaryValue) && (date != null)) {
             saveDictionaryValue.put("value", date.getTime() + StringUtils.EMPTY);
