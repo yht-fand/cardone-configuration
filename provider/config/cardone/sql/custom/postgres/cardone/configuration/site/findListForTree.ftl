@@ -15,5 +15,4 @@ WHERE t.state_code = '1' and t.data_state_code = '1'
     AND t.PARENT_ID = ''
     </#if>
 </#if>
-<@cardone.permissionSql prefixName=false permissions=permissions permissionColumnName="t.site_code"/>
 ORDER BY t.order_by_, t.site_code
