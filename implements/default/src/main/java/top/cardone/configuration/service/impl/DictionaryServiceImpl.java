@@ -79,7 +79,9 @@ public class DictionaryServiceImpl extends PageServiceImpl<DictionaryDao> implem
 
             Object obj = this.dao.readOne(String.class, readOne);
 
-            if (Objects.isNull(obj) || (obj instanceof String && StringUtils.isEmpty((String) obj))) {
+            boolean isSkip = Objects.isNull(obj) || (obj instanceof String && StringUtils.isEmpty((String) obj));
+
+            if (isSkip) {
                 continue;
             }
 
