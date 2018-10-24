@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/rabbit http://www.springframework.org/schema/rabbit/spring-rabbit.xsd">
+    <rabbit:direct-exchange name="exchange:${application-queue-name:cardone}-${app-version:0.0.1}:top.cardone.core.util.action.Action1">
+        <rabbit:bindings>
+            <rabbit:binding queue="queue:${application-queue-name:cardone}-${app-version:0.0.1}:top.cardone.core.util.action.Action1"
+                            key="queue:${application-queue-name:cardone}-${app-version:0.0.1}:top.cardone.core.util.action.Action1"/>
+        </rabbit:bindings>
+    </rabbit:direct-exchange>
+
+    <rabbit:queue name="queue:${application-queue-name:cardone}-${app-version:0.0.1}:top.cardone.core.util.action.Action1"/>
+
+    <bean id="top.cardone.core.util.action.Action1Exporter" parent="remoteInvocationExecutorParnet">
+        <property name="serviceInterface" value="top.cardone.core.util.action.Action1"/>
+        <property name="service">
+            <bean class="top.cardone.data.action.InvokeAction0Action"/>
+        </property>
+    </bean>
+
+    <rabbit:direct-exchange name="exchange:${application-queue-name:cardone}-${app-version:0.0.1}:top.cardone.core.util.action.Action2">
+        <rabbit:bindings>
+            <rabbit:binding queue="queue:${application-queue-name:cardone}-${app-version:0.0.1}:top.cardone.core.util.action.Action2"
+                            key="queue:${application-queue-name:cardone}-${app-version:0.0.1}:top.cardone.core.util.action.Action2"/>
+        </rabbit:bindings>
+    </rabbit:direct-exchange>
+
+    <rabbit:queue name="queue:${application-queue-name:cardone}-${app-version:0.0.1}:top.cardone.core.util.action.Action2"/>
+
+    <bean id="top.cardone.core.util.action.Action2Exporter" parent="remoteInvocationExecutorParnet">
+        <property name="serviceInterface" value="top.cardone.core.util.action.Action2"/>
+        <property name="service">
+            <bean class="top.cardone.data.action.InvokeAction1Action"/>
+        </property>
+    </bean>
+
+    <rabbit:direct-exchange name="exchange:${application-queue-name:cardone}-${app-version:0.0.1}:top.cardone.core.util.action.Action3">
+        <rabbit:bindings>
+            <rabbit:binding queue="queue:${application-queue-name:cardone}-${app-version:0.0.1}:top.cardone.core.util.action.Action3"
+                            key="queue:${application-queue-name:cardone}-${app-version:0.0.1}:top.cardone.core.util.action.Action3"/>
+        </rabbit:bindings>
+    </rabbit:direct-exchange>
+
+    <rabbit:queue name="queue:${application-queue-name:cardone}-${app-version:0.0.1}:top.cardone.core.util.action.Action3"/>
+
+    <bean id="top.cardone.core.util.action.Action3Exporter" parent="remoteInvocationExecutorParnet">
+        <property name="serviceInterface" value="top.cardone.core.util.action.Action3"/>
+        <property name="service">
+            <bean class="top.cardone.data.action.InvokeAction2Action"/>
+        </property>
+    </bean>
+
+    <rabbit:direct-exchange name="exchange:${application-queue-name:cardone}-${app-version:0.0.1}:top.cardone.core.util.action.Action4">
+        <rabbit:bindings>
+            <rabbit:binding queue="queue:${application-queue-name:cardone}-${app-version:0.0.1}:top.cardone.core.util.action.Action4"
+                            key="queue:${application-queue-name:cardone}-${app-version:0.0.1}:top.cardone.core.util.action.Action4"/>
+        </rabbit:bindings>
+    </rabbit:direct-exchange>
+
+    <rabbit:queue name="queue:${application-queue-name:cardone}-${app-version:0.0.1}:top.cardone.core.util.action.Action4"/>
+
+    <bean id="top.cardone.core.util.action.Action4Exporter" parent="remoteInvocationExecutorParnet">
+        <property name="serviceInterface" value="top.cardone.core.util.action.Action4"/>
+        <property name="service">
+            <bean class="top.cardone.data.action.InvokeAction3Action"/>
+        </property>
+    </bean>
+
+    <rabbit:direct-exchange name="exchange:${application-queue-name:cardone}-${app-version:0.0.1}:top.cardone.core.util.action.Action5">
+        <rabbit:bindings>
+            <rabbit:binding queue="queue:${application-queue-name:cardone}-${app-version:0.0.1}:top.cardone.core.util.action.Action5"
+                            key="queue:${application-queue-name:cardone}-${app-version:0.0.1}:top.cardone.core.util.action.Action5"/>
+        </rabbit:bindings>
+    </rabbit:direct-exchange>
+
+    <rabbit:queue name="queue:${application-queue-name:cardone}-${app-version:0.0.1}:top.cardone.core.util.action.Action5"/>
+
+    <bean id="top.cardone.core.util.action.Action5Exporter" parent="remoteInvocationExecutorParnet">
+        <property name="serviceInterface" value="top.cardone.core.util.action.Action5"/>
+        <property name="service">
+            <bean class="top.cardone.data.action.InvokeAction4Action"/>
+        </property>
+    </bean>
+
+    <rabbit:listener-container connection-factory="rabbitConnectionFactory" concurrency="2">
+        <rabbit:listener ref="top.cardone.core.util.action.Action1Exporter"
+                         queue-names="queue:${application-queue-name:cardone}-${app-version:0.0.1}:top.cardone.core.util.action.Action1"/>
+        <rabbit:listener ref="top.cardone.core.util.action.Action2Exporter"
+                         queue-names="queue:${application-queue-name:cardone}-${app-version:0.0.1}:top.cardone.core.util.action.Action2"/>
+        <rabbit:listener ref="top.cardone.core.util.action.Action3Exporter"
+                         queue-names="queue:${application-queue-name:cardone}-${app-version:0.0.1}:top.cardone.core.util.action.Action3"/>
+        <rabbit:listener ref="top.cardone.core.util.action.Action4Exporter"
+                         queue-names="queue:${application-queue-name:cardone}-${app-version:0.0.1}:top.cardone.core.util.action.Action4"/>
+        <rabbit:listener ref="top.cardone.core.util.action.Action5Exporter"
+                         queue-names="queue:${application-queue-name:cardone}-${app-version:0.0.1}:top.cardone.core.util.action.Action5"/>
+    </rabbit:listener-container>
+</beans>

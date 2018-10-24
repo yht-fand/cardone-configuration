@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-lazy-init="true">
+    <bean name="top.cardone.core.util.action.Action1"
+          p:serviceInterface="top.cardone.core.util.action.Action1"
+          p:routingKey="queue:${application-queue-name:cardone}-${app-version:0.0.1}:top.cardone.core.util.action.Action1"
+          parent="invokerProxyFactoryParnet">
+        <property name="amqpTemplate">
+            <bean parent="rabbitTemplateParnet">
+                <property name="queue"
+                          value="queue:${application-queue-name:cardone}-${app-version:0.0.1}:top.cardone.core.util.action.Action1"/>
+                <property name="exchange"
+                          value="exchange:${application-queue-name:cardone}-${app-version:0.0.1}:top.cardone.core.util.action.Action1"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean name="top.cardone.core.util.action.Action2"
+          p:serviceInterface="top.cardone.core.util.action.Action2"
+          p:routingKey="queue:${application-queue-name:cardone}-${app-version:0.0.1}:top.cardone.core.util.action.Action2"
+          parent="invokerProxyFactoryParnet">
+        <property name="amqpTemplate">
+            <bean parent="rabbitTemplateParnet">
+                <property name="queue"
+                          value="queue:${application-queue-name:cardone}-${app-version:0.0.1}:top.cardone.core.util.action.Action2"/>
+                <property name="exchange"
+                          value="exchange:${application-queue-name:cardone}-${app-version:0.0.1}:top.cardone.core.util.action.Action2"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean name="top.cardone.core.util.action.Action3"
+          p:serviceInterface="top.cardone.core.util.action.Action3"
+          p:routingKey="queue:${application-queue-name:cardone}-${app-version:0.0.1}:top.cardone.core.util.action.Action3"
+          parent="invokerProxyFactoryParnet">
+        <property name="amqpTemplate">
+            <bean parent="rabbitTemplateParnet">
+                <property name="queue"
+                          value="queue:${application-queue-name:cardone}-${app-version:0.0.1}:top.cardone.core.util.action.Action3"/>
+                <property name="exchange"
+                          value="exchange:${application-queue-name:cardone}-${app-version:0.0.1}:top.cardone.core.util.action.Action3"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean name="top.cardone.core.util.action.Action4"
+          p:serviceInterface="top.cardone.core.util.action.Action4"
+          p:routingKey="queue:${application-queue-name:cardone}-${app-version:0.0.1}:top.cardone.core.util.action.Action4"
+          parent="invokerProxyFactoryParnet">
+        <property name="amqpTemplate">
+            <bean parent="rabbitTemplateParnet">
+                <property name="queue"
+                          value="queue:${application-queue-name:cardone}-${app-version:0.0.1}:top.cardone.core.util.action.Action4"/>
+                <property name="exchange"
+                          value="exchange:${application-queue-name:cardone}-${app-version:0.0.1}:top.cardone.core.util.action.Action4"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean name="top.cardone.core.util.action.Action5"
+          p:serviceInterface="top.cardone.core.util.action.Action5"
+          p:routingKey="queue:${application-queue-name:cardone}-${app-version:0.0.1}:top.cardone.core.util.action.Action5"
+          parent="invokerProxyFactoryParnet">
+        <property name="amqpTemplate">
+            <bean parent="rabbitTemplateParnet">
+                <property name="queue"
+                          value="queue:${application-queue-name:cardone}-${app-version:0.0.1}:top.cardone.core.util.action.Action5"/>
+                <property name="exchange"
+                          value="exchange:${application-queue-name:cardone}-${app-version:0.0.1}:top.cardone.core.util.action.Action5"/>
+            </bean>
+        </property>
+    </bean>
+</beans>
