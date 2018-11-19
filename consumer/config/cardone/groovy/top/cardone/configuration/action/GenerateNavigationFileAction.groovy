@@ -38,7 +38,7 @@ class GenerateNavigationFileAction implements Action0 {
     }
 
     void generateFile(Resource defaultGenerateJsonFile) {
-        def navigationList = ApplicationContextHolder.getBean(NavigationService.class).findListByFuncId(
+        def navigationList = ApplicationContextHolder.getBean(NavigationService.class).findListByFuncIdCache(
                 "top/cardone/configuration/navigation/func/FindListFunc", null
         )
 
