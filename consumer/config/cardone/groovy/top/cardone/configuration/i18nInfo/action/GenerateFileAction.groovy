@@ -55,7 +55,7 @@ class GenerateFileAction implements Action0 {
     }
 
     void generateFile(Resource defaultGenerateJsonFile, Map staticMap) {
-        def languages = ApplicationContextHolder.getBean(DictionaryService.class).readListCache([
+         def languages = ApplicationContextHolder.getBean(DictionaryService.class).readListCache([
                 dictionaryTypeCode: "i18nInfoType",
                 object_id         : "dictionaryCode"
         ])
@@ -86,6 +86,10 @@ class GenerateFileAction implements Action0 {
             }
 
             staticMap.each {
+                if (!StringUtils.startsWithAny(it.key, "i18n_")) {
+                    return
+                }
+
                 if (map.containsKey(it.key)) {
                     return
                 }
