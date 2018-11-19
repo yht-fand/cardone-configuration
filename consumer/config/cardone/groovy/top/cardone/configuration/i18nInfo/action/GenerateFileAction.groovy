@@ -26,7 +26,7 @@ class GenerateFileAction implements Action0 {
         Resource defaultGenerateJsonFile = ApplicationContextHolder.applicationContext.getResource("${webRoot}/language.json")
 
         if (!defaultGenerateJsonFile.exists()) {
-            this.generateFile(defaultGenerateJsonFile)
+            this.generateFile(defaultGenerateJsonFile, null)
 
             return
         }
@@ -34,11 +34,15 @@ class GenerateFileAction implements Action0 {
         long defaultGenerateJsonFileLastModifiedTime = Files.readAttributes(defaultGenerateJsonFile.file.toPath(),
                 BasicFileAttributes.class).lastModifiedTime().toMillis()
 
+        def staticMap = null
+
         if (jsonFile && jsonFile.exists()) {
             BasicFileAttributes basicFileAttributes = Files.readAttributes(jsonFile.file.toPath(), BasicFileAttributes.class)
 
             if (basicFileAttributes.lastModifiedTime().toMillis() > defaultGenerateJsonFileLastModifiedTime) {
-                this.generateFile(defaultGenerateJsonFile)
+                staticMap = ApplicationContextHolder.getBean(Gson.class).fromJson(jsonFile.file.text, Map.class)
+
+                this.generateFile(defaultGenerateJsonFile, staticMap)
 
                 return
             }
@@ -48,11 +52,11 @@ class GenerateFileAction implements Action0 {
                 readOneByFuncIdCache(Date.class, "top/cardone/configuration/func/ReadOneMaxChangeDateFunc", null)
 
         if (dbLastModifyDate.getTime() > defaultGenerateJsonFileLastModifiedTime) {
-            this.generateFile(defaultGenerateJsonFile)
+            this.generateFile(defaultGenerateJsonFile, staticMap)
         }
     }
 
-    void generateFile(Resource defaultGenerateJsonFile) {
+    void generateFile(Resource defaultGenerateJsonFile, Map staticMap) {
         def languages = ApplicationContextHolder.getBean(DictionaryService.class).readListCache([
                 dictionaryTypeCode: "i18nInfoType",
                 object_id         : "dictionaryCode"
@@ -60,12 +64,6 @@ class GenerateFileAction implements Action0 {
 
         def defaultLanguage = ApplicationContextHolder.getBean(DictionaryService.class).readOneValueByCodeCache(
                 "sys", "language", "zh_CN")
-
-        def staticMap = null
-
-        if (jsonFile && jsonFile.exists()) {
-            staticMap = ApplicationContextHolder.getBean(Gson.class).fromJson(jsonFile.file.text, Map.class)
-        }
 
         def insertMapList = []
 
