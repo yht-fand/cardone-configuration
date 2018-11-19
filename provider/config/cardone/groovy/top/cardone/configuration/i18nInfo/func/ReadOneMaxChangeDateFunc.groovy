@@ -1,4 +1,4 @@
-package top.cardone.configuration.action
+package top.cardone.configuration.i18nInfo.func
 
 import top.cardone.core.util.func.Func3
 import top.cardone.data.dao.PageDao

@@ -1,4 +1,4 @@
-package top.cardone.configuration.i18nInfo.action
+package top.cardone.configuration.action
 
 import com.google.common.base.Charsets
 import com.google.gson.Gson
@@ -7,55 +7,33 @@ import org.apache.commons.lang3.StringUtils
 import org.springframework.core.io.Resource
 import top.cardone.configuration.service.DictionaryService
 import top.cardone.configuration.service.I18nInfoService
+import top.cardone.configuration.service.NavigationService
 import top.cardone.context.ApplicationContextHolder
 import top.cardone.core.util.action.Action0
 
-import java.nio.file.Files
-import java.nio.file.attribute.BasicFileAttributes
-import java.util.regex.Pattern
-
-class GenerateFileAction implements Action0 {
-    Resource jsonFile
-
+class GenerateNavigationFileAction implements Action0 {
     String webRoot
-
-    Pattern matche = Pattern.compile("[^0-9a-zA-Z]")
 
     @Override
     void action() {
-        Resource defaultGenerateJsonFile = ApplicationContextHolder.applicationContext.getResource("${webRoot}/language.json")
+        Resource navigationFile = ApplicationContextHolder.applicationContext.getResource("${webRoot}/navigation.json")
 
-        if (!defaultGenerateJsonFile.exists()) {
-            this.generateFile(defaultGenerateJsonFile, null)
+        if (!navigationFile.exists()) {
+            this.generateFile(navigationFile, null)
 
             return
         }
 
-        long defaultGenerateJsonFileLastModifiedTime = Files.readAttributes(defaultGenerateJsonFile.file.toPath(),
-                BasicFileAttributes.class).lastModifiedTime().toMillis()
-
-        if (jsonFile && jsonFile.exists()) {
-            BasicFileAttributes basicFileAttributes = Files.readAttributes(jsonFile.file.toPath(), BasicFileAttributes.class)
-
-            if (basicFileAttributes.lastModifiedTime().toMillis() > defaultGenerateJsonFileLastModifiedTime) {
-                def staticMap = ApplicationContextHolder.getBean(Gson.class).fromJson(jsonFile.file.text, Map.class)
-
-                this.generateFile(defaultGenerateJsonFile, staticMap)
-
-                return
-            }
-        }
-
-        Date dbLastModifyDate = ApplicationContextHolder.getBean(I18nInfoService.class).
-                readOneByFuncIdCache(Date.class, "top/cardone/configuration/func/ReadOneMaxChangeDateFunc", null)
+        Date dbLastModifyDate = ApplicationContextHolder.getBean(NavigationService.class).
+                readOneByFuncIdCache(Date.class, "top/cardone/configuration/i18nInfo/func/ReadOneMaxChangeDateFunc", null)
 
         if (dbLastModifyDate.getTime() > defaultGenerateJsonFileLastModifiedTime) {
-            this.generateFile(defaultGenerateJsonFile, null)
+            this.generateFile(navigationFile, null)
         }
     }
 
     void generateFile(Resource defaultGenerateJsonFile, Map staticMap) {
-         def languages = ApplicationContextHolder.getBean(DictionaryService.class).readListCache([
+        def languages = ApplicationContextHolder.getBean(DictionaryService.class).readListCache([
                 dictionaryTypeCode: "i18nInfoType",
                 object_id         : "dictionaryCode"
         ])
