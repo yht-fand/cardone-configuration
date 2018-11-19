@@ -34,13 +34,11 @@ class GenerateFileAction implements Action0 {
         long defaultGenerateJsonFileLastModifiedTime = Files.readAttributes(defaultGenerateJsonFile.file.toPath(),
                 BasicFileAttributes.class).lastModifiedTime().toMillis()
 
-        def staticMap = null
-
         if (jsonFile && jsonFile.exists()) {
             BasicFileAttributes basicFileAttributes = Files.readAttributes(jsonFile.file.toPath(), BasicFileAttributes.class)
 
             if (basicFileAttributes.lastModifiedTime().toMillis() > defaultGenerateJsonFileLastModifiedTime) {
-                staticMap = ApplicationContextHolder.getBean(Gson.class).fromJson(jsonFile.file.text, Map.class)
+                def staticMap = ApplicationContextHolder.getBean(Gson.class).fromJson(jsonFile.file.text, Map.class)
 
                 this.generateFile(defaultGenerateJsonFile, staticMap)
 
@@ -52,7 +50,7 @@ class GenerateFileAction implements Action0 {
                 readOneByFuncIdCache(Date.class, "top/cardone/configuration/func/ReadOneMaxChangeDateFunc", null)
 
         if (dbLastModifyDate.getTime() > defaultGenerateJsonFileLastModifiedTime) {
-            this.generateFile(defaultGenerateJsonFile, staticMap)
+            this.generateFile(defaultGenerateJsonFile, null)
         }
     }
 
