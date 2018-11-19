@@ -55,10 +55,14 @@ class Generatei18nInfoFileAction implements Action0 {
     }
 
     void generateFile(Resource defaultGenerateJsonFile, Map staticMap) {
-         def languages = ApplicationContextHolder.getBean(DictionaryService.class).readListCache([
+        def languages = ApplicationContextHolder.getBean(DictionaryService.class).readListCache([
                 dictionaryTypeCode: "i18nInfoType",
                 object_id         : "dictionaryCode"
         ])
+
+        if (!languages) {
+            return
+        }
 
         def defaultLanguage = ApplicationContextHolder.getBean(DictionaryService.class).readOneValueByCodeCache(
                 "sys", "language", "zh_CN")
