@@ -66,26 +66,38 @@ class GenerateNavigationFileAction implements Action0 {
 
             def map = [:]
 
-            for (def i18nMap : i18nMapList) {
-                map.put(i18nMap.i18n_info_code, i18nMap.content)
-            }
-
             def newNavigationList = []
 
-            navigationList.each {
-                def name = map.get(it.navigation_code, it.name)
+            try {
+                for (def i18nMap : i18nMapList) {
+                    map.put(i18nMap.i18n_info_code, i18nMap.content)
+                }
 
-                newNavigationList.add([
-                        navigation_id  : it.navigation_id,
-                        navigation_code: it.navigation_code,
-                        name           : name,
-                        parent_id      : it.parent_id,
-                        parent_code    : it.parent_code,
-                        url            : it.url
-                ])
+                navigationList.each {
+                    def name = map.get(it.navigation_code, it.name)
+
+                    newNavigationList.add([
+                            navigation_id  : it.navigation_id,
+                            navigation_code: it.navigation_code,
+                            name           : name,
+                            parent_id      : it.parent_id,
+                            parent_code    : it.parent_code,
+                            url            : it.url
+                    ])
+                }
+
+                this.generateFile(defaultGenerateJsonFile, newNavigationList, language, defaultLanguage)
+            } finally {
+                if (map) {
+                    map.clear()
+                    map = null
+                }
+
+                if (newNavigationList) {
+                    newNavigationList.clear()
+                    newNavigationList = null
+                }
             }
-
-            this.generateFile(defaultGenerateJsonFile, newNavigationList, language, defaultLanguage)
         }
     }
 
@@ -96,6 +108,8 @@ class GenerateNavigationFileAction implements Action0 {
                 "${webRoot}/navigation_${language}.json")
 
         FileUtils.writeStringToFile(generateJsonFile.file, jsonString, Charsets.UTF_8)
+
+        jsonString = null
 
         if (language.equals(defaultLanguage)) {
             FileUtils.copyFile(generateJsonFile.file, defaultGenerateJsonFile.file)

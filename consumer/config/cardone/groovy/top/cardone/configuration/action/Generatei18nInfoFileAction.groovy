@@ -77,40 +77,47 @@ class Generatei18nInfoFileAction implements Action0 {
 
             def map = [:]
 
-            for (def i18nMap : i18nMapList) {
-                def key = "i18n_" + matche.matcher(i18nMap.i18n_info_code).replaceAll("_")
+            try {
+                for (def i18nMap : i18nMapList) {
+                    def key = "i18n_" + matche.matcher(i18nMap.i18n_info_code).replaceAll("_")
 
-                map.put(key, i18nMap.content)
-            }
+                    map.put(key, i18nMap.content)
+                }
 
-            if (!staticMap) {
+                if (!staticMap) {
+                    this.generateFile(defaultGenerateJsonFile, map, language, defaultLanguage)
+
+                    continue
+                }
+
+                staticMap.each {
+                    if (!StringUtils.startsWithAny(it.key, "i18n_")) {
+                        return
+                    }
+
+                    if (map.containsKey(it.key)) {
+                        return
+                    }
+
+                    map.put(it.key, it.value)
+
+                    def i18nInfoCode = StringUtils.substring(it.key, "i18n_".length())
+
+                    insertMapList.add([
+                            "i18nInfoCode": i18nInfoCode,
+                            "content"     : it.value,
+                            "typeCode"    : "page",
+                            "language"    : language
+                    ])
+                }
+
                 this.generateFile(defaultGenerateJsonFile, map, language, defaultLanguage)
-
-                continue
-            }
-
-            staticMap.each {
-                if (!StringUtils.startsWithAny(it.key, "i18n_")) {
-                    return
+            } finally {
+                if (map) {
+                    map.clear()
+                    map = null
                 }
-
-                if (map.containsKey(it.key)) {
-                    return
-                }
-
-                map.put(it.key, it.value)
-
-                def i18nInfoCode = StringUtils.substring(it.key, "i18n_".length())
-
-                insertMapList.add([
-                        "i18nInfoCode": i18nInfoCode,
-                        "content"     : it.value,
-                        "typeCode"    : "page",
-                        "language"    : language
-                ])
             }
-
-            this.generateFile(defaultGenerateJsonFile, map, language, defaultLanguage)
         }
 
         if (insertMapList) {
@@ -125,6 +132,8 @@ class Generatei18nInfoFileAction implements Action0 {
                 "${webRoot}/language_${language}.json")
 
         FileUtils.writeStringToFile(generateJsonFile.file, jsonString, Charsets.UTF_8)
+
+        jsonString = null
 
         if (language.equals(defaultLanguage)) {
             FileUtils.copyFile(generateJsonFile.file, defaultGenerateJsonFile.file)
