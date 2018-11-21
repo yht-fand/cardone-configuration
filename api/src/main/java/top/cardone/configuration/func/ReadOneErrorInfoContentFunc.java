@@ -22,7 +22,7 @@ public class ReadOneErrorInfoContentFunc implements Func3<String, String, String
 
     @Override
     public String func(String url, String errorInfoCode, String defaultContent) {
-        String language = ApplicationContextHolder.getBean(DictionaryService.class).readOneValueByCodeCache("sys", "language", "zh_CN");
+        String language = top.cardone.configuration.utils.DictionaryUtils.readOneValueByCodeCache("sys", "language", "zh_CN");
 
         Map<String, Object> findOneI18nInfo = Maps.newHashMap();
 

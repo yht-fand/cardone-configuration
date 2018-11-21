@@ -10,6 +10,12 @@ import java.util.List;
 import java.util.Map;
 
 public class DictionaryUtils {
+    public static Map<String, Object> findOneCache(Object findOne) {
+        return ApplicationContextHolder.getBean(Cache.class).get(DictionaryService.class.getName(), findOne,
+                () -> ApplicationContextHolder.getBean(DictionaryService.class)
+                        .findOne(findOne));
+    }
+
     public static <P> P findOneCache(Class<P> mappedClass, Object findOne) {
         String key = StringUtils.arrayToCommaDelimitedString(new Object[]{mappedClass, findOne});
 

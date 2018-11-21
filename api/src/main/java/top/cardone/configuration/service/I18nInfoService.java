@@ -46,7 +46,7 @@ public interface I18nInfoService extends PageService {
 
     @Transactional
     default Map<String, Integer> updateOther() {
-        String language = ApplicationContextHolder.getBean(DictionaryService.class).readOneValueByCodeCache("sys", "language", "zh_CN");
+        String language = top.cardone.configuration.utils.DictionaryUtils.readOneValueByCodeCache("sys", "language", "zh_CN");
 
         return this.updateOther(language);
     }

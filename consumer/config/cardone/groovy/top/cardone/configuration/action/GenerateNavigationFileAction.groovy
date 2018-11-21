@@ -55,7 +55,7 @@ class GenerateNavigationFileAction implements Action0 {
             return
         }
 
-        def defaultLanguage = ApplicationContextHolder.getBean(DictionaryService.class).readOneValueByCodeCache(
+        def defaultLanguage = top.cardone.configuration.utils.DictionaryUtils.readOneValueByCodeCache(
                 "sys", "language", "zh_CN")
 
         for (def language : languages) {
