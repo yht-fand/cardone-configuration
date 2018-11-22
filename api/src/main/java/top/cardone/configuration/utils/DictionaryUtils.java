@@ -11,13 +11,19 @@ import java.util.Map;
 
 public class DictionaryUtils {
     public static Map<String, Object> findOneCache(Object findOne) {
-        return ApplicationContextHolder.getBean(Cache.class).get(DictionaryService.class.getName(), findOne,
+        String key = "findOne(" +
+                StringUtils.arrayToCommaDelimitedString(new Object[]{findOne}) +
+                ")";
+
+        return ApplicationContextHolder.getBean(Cache.class).get(DictionaryService.class.getName(), key,
                 () -> ApplicationContextHolder.getBean(DictionaryService.class)
                         .findOne(findOne));
     }
 
     public static <P> P findOneCache(Class<P> mappedClass, Object findOne) {
-        String key = StringUtils.arrayToCommaDelimitedString(new Object[]{mappedClass, findOne});
+        String key = "findOne(" +
+                StringUtils.arrayToCommaDelimitedString(new Object[]{mappedClass, findOne}) +
+                ")";
 
         return ApplicationContextHolder.getBean(Cache.class).get(DictionaryService.class.getName(), key,
                 () -> ApplicationContextHolder.getBean(DictionaryService.class)
@@ -25,7 +31,9 @@ public class DictionaryUtils {
     }
 
     public static <R> R readOneCache(@NonNull Class<R> requiredType, Object readOne) {
-        String key = StringUtils.arrayToCommaDelimitedString(new Object[]{requiredType, readOne});
+        String key = "readOne(" +
+                StringUtils.arrayToCommaDelimitedString(new Object[]{requiredType, readOne}) +
+                ")";
 
         return ApplicationContextHolder.getBean(Cache.class).get(DictionaryService.class.getName(), key,
                 () -> ApplicationContextHolder.getBean(DictionaryService.class)
@@ -33,19 +41,29 @@ public class DictionaryUtils {
     }
 
     public static Object readOneByDictionaryTypeCodesCache(Map<String, Object> readOne) {
-        return ApplicationContextHolder.getBean(Cache.class).get(DictionaryService.class.getName(), readOne,
+        String key = "readOneByDictionaryTypeCodes(" +
+                StringUtils.arrayToCommaDelimitedString(new Object[]{readOne}) +
+                ")";
+
+        return ApplicationContextHolder.getBean(Cache.class).get(DictionaryService.class.getName(), key,
                 () -> ApplicationContextHolder.getBean(DictionaryService.class)
                         .readOneByDictionaryTypeCodes(readOne));
     }
 
     public static List<Map<String, Object>> findListByDictionaryTypeCodesCache(String dictionaryTypeCodes) {
-        return ApplicationContextHolder.getBean(Cache.class).get(DictionaryService.class.getName(), dictionaryTypeCodes,
+        String key = "findListByDictionaryTypeCodes(" +
+                StringUtils.arrayToCommaDelimitedString(new Object[]{dictionaryTypeCodes}) +
+                ")";
+
+        return ApplicationContextHolder.getBean(Cache.class).get(DictionaryService.class.getName(), key,
                 () -> ApplicationContextHolder.getBean(DictionaryService.class)
                         .findListByDictionaryTypeCodes(dictionaryTypeCodes));
     }
 
     public static String readOneValueByCodeCache(String dictionaryTypeCode, String dictionaryCode, String defaultValue) {
-        String key = StringUtils.arrayToCommaDelimitedString(new String[]{dictionaryTypeCode, dictionaryCode});
+        String key = "readOneValueByCode(" +
+                StringUtils.arrayToCommaDelimitedString(new String[]{dictionaryTypeCode, dictionaryCode}) +
+                ")";
 
         return ApplicationContextHolder.getBean(Cache.class).get(DictionaryService.class.getName(), key,
                 () -> ApplicationContextHolder.getBean(DictionaryService.class)
@@ -53,7 +71,11 @@ public class DictionaryUtils {
     }
 
     public static List<Map<String, Object>> findListByDictionaryTypeCodeCache(String dictionaryTypeCode) {
-        return ApplicationContextHolder.getBean(Cache.class).get(DictionaryService.class.getName(), dictionaryTypeCode,
+        String key = "findListByDictionaryTypeCode(" +
+                StringUtils.arrayToCommaDelimitedString(new Object[]{dictionaryTypeCode}) +
+                ")";
+
+        return ApplicationContextHolder.getBean(Cache.class).get(DictionaryService.class.getName(), key,
                 () -> ApplicationContextHolder.getBean(DictionaryService.class)
                         .findListByDictionaryTypeCode(dictionaryTypeCode));
     }

@@ -1,6 +1,7 @@
 package top.cardone.configuration.func
 
 import org.apache.commons.collections.MapUtils
+import org.springframework.util.StringUtils
 import top.cardone.cache.Cache
 import top.cardone.configuration.service.DictionaryService
 import top.cardone.context.ApplicationContextHolder
@@ -17,7 +18,10 @@ class ReadOneDictionaryByDictionaryTypeCodesFunc implements Func2<Object, Map<St
         boolean cache = MapUtils.getBooleanValue(config, "cache", true)
 
         if (cache) {
-            return ApplicationContextHolder.getBean(Cache.class).get(ReadOneDictionaryByDictionaryTypeCodesFunc.class.getName() + ".func", readOne, {
+            def key = "func(${StringUtils.arrayToCommaDelimitedString([readOne])})"
+
+            return ApplicationContextHolder.getBean(Cache.class)
+                    .get(ReadOneDictionaryByDictionaryTypeCodesFunc.class.getName(), key, {
                 this.readOne(readOne)
             })
         }
