@@ -25,8 +25,14 @@ class Generatei18nInfoFileAction implements Action0 {
     void action() {
         Resource defaultGenerateJsonFile = ApplicationContextHolder.applicationContext.getResource("${webRoot}/language.json")
 
+        def staticMap = [:]
+
+        if (jsonFile && jsonFile.exists()) {
+            staticMap = ApplicationContextHolder.getBean(Gson.class).fromJson(jsonFile.file.text, Map.class)
+        }
+
         if (!defaultGenerateJsonFile.exists()) {
-            this.generateFile(defaultGenerateJsonFile, null)
+            this.generateFile(defaultGenerateJsonFile, staticMap)
 
             return
         }
@@ -34,12 +40,10 @@ class Generatei18nInfoFileAction implements Action0 {
         long defaultGenerateJsonFileLastModifiedTime = Files.readAttributes(defaultGenerateJsonFile.file.toPath(),
                 BasicFileAttributes.class).lastModifiedTime().toMillis()
 
-        if (jsonFile && jsonFile.exists()) {
+        if (staticMap) {
             BasicFileAttributes basicFileAttributes = Files.readAttributes(jsonFile.file.toPath(), BasicFileAttributes.class)
 
             if (basicFileAttributes.lastModifiedTime().toMillis() > defaultGenerateJsonFileLastModifiedTime) {
-                def staticMap = ApplicationContextHolder.getBean(Gson.class).fromJson(jsonFile.file.text, Map.class)
-
                 this.generateFile(defaultGenerateJsonFile, staticMap)
 
                 return
@@ -50,7 +54,7 @@ class Generatei18nInfoFileAction implements Action0 {
                 readOneByFuncIdCache(Date.class, "top/cardone/configuration/i18nInfo/func/ReadOneMaxChangeDateFunc", null)
 
         if (dbLastModifyDate.getTime() > defaultGenerateJsonFileLastModifiedTime) {
-            this.generateFile(defaultGenerateJsonFile, null)
+            this.generateFile(defaultGenerateJsonFile, staticMap)
         }
     }
 
