@@ -95,24 +95,18 @@ class Generatei18nInfoFileAction implements Action0 {
                 }
 
                 staticMap.each {
-                    if (!StringUtils.startsWithAny(it.key, "i18n_")) {
-                        return
-                    }
+                    if (!map.containsKey(it.key) && StringUtils.startsWithAny(it.key, "i18n_")) {
+                        def i18nInfoCode = StringUtils.substring(it.key, "i18n_".length())
 
-                    if (map.containsKey(it.key)) {
-                        return
+                        insertMapList.add([
+                                "i18nInfoCode": i18nInfoCode,
+                                "content"     : it.value,
+                                "typeCode"    : "page",
+                                "language"    : language
+                        ])
                     }
 
                     map.put(it.key, it.value)
-
-                    def i18nInfoCode = StringUtils.substring(it.key, "i18n_".length())
-
-                    insertMapList.add([
-                            "i18nInfoCode": i18nInfoCode,
-                            "content"     : it.value,
-                            "typeCode"    : "page",
-                            "language"    : language
-                    ])
                 }
 
                 this.generateFile(defaultGenerateJsonFile, map, language, defaultLanguage)
