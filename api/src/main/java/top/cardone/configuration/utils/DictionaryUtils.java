@@ -30,6 +30,16 @@ public class DictionaryUtils {
                         .findOne(mappedClass, findOne));
     }
 
+    public static Object readOneCache(Object readOne) {
+        String key = "readOne(" +
+                StringUtils.arrayToCommaDelimitedString(new Object[]{readOne}) +
+                ")";
+
+        return ApplicationContextHolder.getBean(Cache.class).get(DictionaryService.class.getName(), key,
+                () -> ApplicationContextHolder.getBean(DictionaryService.class)
+                        .readOne(readOne));
+    }
+
     public static <R> R readOneCache(@NonNull Class<R> requiredType, Object readOne) {
         String key = "readOne(" +
                 StringUtils.arrayToCommaDelimitedString(new Object[]{requiredType, readOne}) +
