@@ -2,7 +2,7 @@
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean class="top.cardone.data.listener.GenerateListener">
+    <bean name="top.cardone.configuration.listener.DictionaryTypeGenerateListener" class="top.cardone.data.listener.GenerateListener">
         <property name="skip" value="${GenerateListener.DictionaryTypeService.skip:false}"/>
         <property name="serviceBeanId" value="top.cardone.configuration.service.DictionaryTypeService"/>
         <property name="saveList">
@@ -15,7 +15,7 @@
         </property>
     </bean>
 
-    <bean class="top.cardone.data.listener.GenerateListener">
+    <bean name="top.cardone.configuration.listener.NavigationGenerateListener" class="top.cardone.data.listener.GenerateListener">
         <property name="skip" value="${GenerateListener.NavigationService.skip:false}"/>
         <property name="serviceBeanId" value="top.cardone.configuration.service.NavigationService"/>
         <property name="saveList">
@@ -28,7 +28,7 @@
         </property>
     </bean>
 
-    <bean class="top.cardone.data.listener.GenerateListener">
+    <bean name="top.cardone.configuration.listener.SiteGenerateListener" class="top.cardone.data.listener.GenerateListener">
         <property name="skip" value="${GenerateListener.SiteService.skip:false}"/>
         <property name="serviceBeanId" value="top.cardone.configuration.service.SiteService"/>
         <property name="saveList">
@@ -41,7 +41,7 @@
         </property>
     </bean>
 
-    <bean class="top.cardone.data.listener.GenerateListener">
+    <bean name="top.cardone.configuration.listener.I18nInfoGenerateListener" class="top.cardone.data.listener.GenerateListener">
         <property name="skip" value="${GenerateListener.I18nInfoService.skip:false}"/>
         <property name="serviceBeanId" value="top.cardone.configuration.service.I18nInfoService"/>
         <property name="saveList">
