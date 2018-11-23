@@ -4,7 +4,7 @@ import com.google.common.collect.Maps;
 import lombok.Setter;
 import org.springframework.core.task.TaskExecutor;
 import org.springframework.scheduling.support.TaskUtils;
-import top.cardone.configuration.service.DictionaryService;
+import top.cardone.cache.Cache;
 import top.cardone.configuration.service.I18nInfoService;
 import top.cardone.context.ApplicationContextHolder;
 import top.cardone.context.util.MapUtils;
@@ -30,7 +30,13 @@ public class ReadOneErrorInfoContentFunc implements Func3<String, String, String
         findOneI18nInfo.put("language", language);
         findOneI18nInfo.put("i18nInfoCode", errorInfoCode);
 
-        Map<String, Object> errorInfo = ApplicationContextHolder.getBean(I18nInfoService.class).findOneCache(findOneI18nInfo);
+        String key = "findOne(" +
+                org.springframework.util.StringUtils.arrayToCommaDelimitedString(new Object[]{findOneI18nInfo}) +
+                ")";
+
+        Map<String, Object> errorInfo = ApplicationContextHolder.getBean(Cache.class).get(I18nInfoService.class.getName(), key,
+                () -> ApplicationContextHolder.getBean(I18nInfoService.class)
+                        .findOne(findOneI18nInfo));
 
         if (MapUtils.isEmpty(errorInfo)) {
             ApplicationContextHolder.getBean(TaskExecutor.class, this.taskExecutorBeanName).execute(TaskUtils.decorateTaskWithErrorHandler(() -> {
