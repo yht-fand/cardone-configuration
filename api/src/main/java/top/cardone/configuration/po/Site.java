@@ -235,7 +235,7 @@ public class Site implements java.io.Serializable {
     protected String personalId;
 
     /**
-     * 邮政编码
+     * 行政编码
      */
     @lombok.Getter
     @lombok.Setter

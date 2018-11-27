@@ -586,7 +586,7 @@
 --个人标识
 --drop index IF EXISTS idx_c1_site_personal_id;
 --create index IF NOT EXISTS idx_c1_site_personal_id ON c1_site ("personal_id" varchar_pattern_ops);
---邮政编码
+--行政编码
 --drop index IF EXISTS idx_c1_site_postal_code;
 --create index IF NOT EXISTS idx_c1_site_postal_code ON c1_site ("postal_code" varchar_pattern_ops);
 --站点编号
@@ -673,5 +673,41 @@
 --变量标识
 --drop index IF EXISTS idx_c1_variable_variable_id;
 --create index IF NOT EXISTS idx_c1_variable_variable_id ON c1_variable ("variable_id" varchar_pattern_ops);
+
+
+
+
+ALTER TABLE "c1_navigation" ALTER COLUMN "json_data" TYPE jsonb;
+
+--- sql end ---
+
+ALTER TABLE "c1_dictionary_type" ALTER COLUMN "json_data" TYPE jsonb;
+
+--- sql end ---
+
+ALTER TABLE "c1_dictionary" ALTER COLUMN "json_data" TYPE jsonb;
+
+--- sql end ---
+
+ALTER TABLE "c1_dictionary_item" ALTER COLUMN "json_data" TYPE jsonb;
+
+--- sql end ---
+
+ALTER TABLE "c1_i18n_info" ALTER COLUMN "json_data" TYPE jsonb;
+
+--- sql end ---
+
+ALTER TABLE "c1_system_info" ALTER COLUMN "json_data" TYPE jsonb;
+
+--- sql end ---
+
+ALTER TABLE "c1_site" ALTER COLUMN "json_data" TYPE jsonb;
+
+--- sql end ---
+
+ALTER TABLE "c1_variable" ALTER COLUMN "json_data" TYPE jsonb;
+
+--- sql end ---
+
 
 

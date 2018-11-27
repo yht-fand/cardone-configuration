@@ -1,0 +1,14 @@
+{
+  "validation": {
+    "rules": {
+      "variableId": {
+        "required": true
+      }
+    },
+    "messages": {
+      "variableId": {
+        "required": "变量标识必填"
+      }
+    }
+  }
+}

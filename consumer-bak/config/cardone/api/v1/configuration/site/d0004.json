@@ -1,0 +1,14 @@
+{
+  "validation": {
+    "rules": {
+      "siteIds": {
+        "required": true
+      }
+    },
+    "messages": {
+      "siteIds": {
+        "required": "站点标识集合必填"
+      }
+    }
+  }
+}

@@ -257,7 +257,7 @@ parent_tree_id|YES|String(1023)|父级树标识
 parent_tree_name|YES|String(1023)|父级树名称
 personal_code|YES|String(255)|个人编号
 personal_id|YES|String(255)|个人标识
-postal_code|YES|String(255)|邮政编码
+postal_code|YES|String(255)|行政编码
 remark|YES|String(511)|备注
 site_code|YES|String(255)|站点编号
 site_id|NO|String(255)|站点标识

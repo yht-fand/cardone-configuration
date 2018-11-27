@@ -1,0 +1,14 @@
+{
+  "validation": {
+    "rules": {
+      "i18nInfoId": {
+        "required": true
+      }
+    },
+    "messages": {
+      "i18nInfoId": {
+        "required": "国际化信息标识必填"
+      }
+    }
+  }
+}
