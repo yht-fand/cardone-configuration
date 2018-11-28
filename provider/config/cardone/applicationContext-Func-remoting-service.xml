@@ -84,7 +84,7 @@
         </property>
     </bean>
 
-    <rabbit:listener-container concurrency="2">
+    <rabbit:listener-container message-converter="amqpMessageConverter" connection-factory="rabbitConnectionFactory" concurrency="2">
         <rabbit:listener ref="top.cardone.core.util.func.Func1Exporter"
                          queue-names="queue:${application-queue-name:cardone}-${app-version:0.0.1}:top.cardone.core.util.func.Func1"/>
         <rabbit:listener ref="top.cardone.core.util.func.Func2Exporter"
