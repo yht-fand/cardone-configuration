@@ -21,7 +21,7 @@
         <property name="service" ref="top.cardone.configuration.service.NavigationService"/>
     </bean>
 
-    <rabbit:listener-container connection-factory="rabbitConnectionFactory" concurrency="2">
+    <rabbit:listener-container message-converter="amqpMessageConverter" concurrency="2">
         <rabbit:listener ref="top.cardone.configuration.service.NavigationServiceExporter"
                          queue-names="queue:cardone-configuration-${cardone-configuration-version}:top.cardone.configuration.service.NavigationService"/>
     </rabbit:listener-container>

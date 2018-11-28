@@ -21,7 +21,7 @@
         <property name="service" ref="top.cardone.configuration.service.DictionaryItemService"/>
     </bean>
 
-    <rabbit:listener-container connection-factory="rabbitConnectionFactory" concurrency="2">
+    <rabbit:listener-container message-converter="amqpMessageConverter" concurrency="2">
         <rabbit:listener ref="top.cardone.configuration.service.DictionaryItemServiceExporter"
                          queue-names="queue:cardone-configuration-${cardone-configuration-version}:top.cardone.configuration.service.DictionaryItemService"/>
     </rabbit:listener-container>
