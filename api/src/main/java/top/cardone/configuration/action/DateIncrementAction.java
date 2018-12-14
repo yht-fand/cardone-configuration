@@ -1,11 +1,13 @@
 package top.cardone.configuration.action;
 
+import com.google.common.collect.Maps;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
 import org.apache.commons.collections.MapUtils;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.BooleanUtils;
 import org.apache.commons.lang3.math.NumberUtils;
+import org.apache.commons.lang3.time.DateFormatUtils;
 import org.springframework.data.convert.Jsr310Converters;
 import top.cardone.configuration.service.DictionaryService;
 import top.cardone.context.ApplicationContextHolder;
@@ -40,6 +42,9 @@ public class DateIncrementAction implements Action0 {
     private Map<String, Object> readOneDictionaryValue;
 
     @Setter
+    private String keySuffixFormat;
+
+    @Setter
     private Map<String, Object> saveDictionaryValue;
 
     @Setter
@@ -63,8 +68,18 @@ public class DateIncrementAction implements Action0 {
 
         Date date = null;
 
+        String dictionaryCode = null;
+
         if (MapUtils.isNotEmpty(readOneDictionaryValue)) {
-            String value = ApplicationContextHolder.getBean(DictionaryService.class).readOne(String.class, readOneDictionaryValue);
+            Map<String, Object> readOne = Maps.newHashMap(readOneDictionaryValue);
+
+            if (StringUtils.isNotBlank(keySuffixFormat)) {
+                dictionaryCode = readOne.get("dictionaryCode") + ":" + DateFormatUtils.format(new Date(), keySuffixFormat);
+
+                readOne.put("dictionaryCode", dictionaryCode);
+            }
+
+            String value = ApplicationContextHolder.getBean(DictionaryService.class).readOne(String.class, readOne);
 
             if (StringUtils.isNotBlank(value)) {
                 Long time = NumberUtils.toLong(value);
@@ -88,9 +103,15 @@ public class DateIncrementAction implements Action0 {
         }
 
         if (MapUtils.isNotEmpty(saveDictionaryValue) && (date != null)) {
-            saveDictionaryValue.put("value", date.getTime() + StringUtils.EMPTY);
+            Map<String, Object> save = Maps.newHashMap(saveDictionaryValue);
 
-            ApplicationContextHolder.getBean(DictionaryService.class).save(saveDictionaryValue);
+            save.put("value", date.getTime() + StringUtils.EMPTY);
+
+            if (StringUtils.isNotBlank(dictionaryCode)) {
+                save.put("dictionaryCode", dictionaryCode);
+            }
+
+            ApplicationContextHolder.getBean(DictionaryService.class).save(save);
         }
     }
 }
