@@ -4,6 +4,7 @@ import com.google.common.base.Charsets
 import com.google.gson.Gson
 import org.apache.commons.io.FileUtils
 import org.springframework.core.io.Resource
+import top.cardone.cache.Cache
 import top.cardone.configuration.service.DictionaryService
 import top.cardone.configuration.service.I18nInfoService
 import top.cardone.configuration.service.NavigationService
@@ -109,10 +110,20 @@ class GenerateNavigationFileAction implements Action0 {
 
         FileUtils.writeStringToFile(generateJsonFile.file, jsonString, Charsets.UTF_8)
 
+        ApplicationContextHolder.getBean(Cache.class, "cardone.bean.cache").evict(
+                "navigation",
+                1,
+                generateJsonFile.getURL())
+
         jsonString = null
 
         if (language.equals(defaultLanguage)) {
             FileUtils.copyFile(generateJsonFile.file, defaultGenerateJsonFile.file)
+
+            ApplicationContextHolder.getBean(Cache.class, "cardone.bean.cache").evict(
+                    "navigation",
+                    1,
+                    defaultGenerateJsonFile.getURL())
         }
     }
 }
