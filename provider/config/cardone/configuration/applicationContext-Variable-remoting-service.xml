@@ -21,7 +21,7 @@
         <property name="service" ref="top.cardone.configuration.service.VariableService"/>
     </bean>
 
-    <rabbit:listener-container message-converter="amqpMessageConverter" connection-factory="rabbitConnectionFactory" concurrency="1" max-concurrency="1">
+    <rabbit:listener-container message-converter="amqpMessageConverter" connection-factory="rabbitConnectionFactory" concurrency="1" max-concurrency="${spring.rabbitmq.listener.container.maxConcurrency:1}">
         <rabbit:listener ref="top.cardone.configuration.service.VariableServiceExporter"
                          queue-names="queue:cardone-configuration-${cardone-configuration-version}:top.cardone.configuration.service.VariableService"/>
     </rabbit:listener-container>

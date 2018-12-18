@@ -84,7 +84,7 @@
         </property>
     </bean>
 
-    <rabbit:listener-container message-converter="amqpMessageConverter" connection-factory="rabbitConnectionFactory" concurrency="1" max-concurrency="1">
+    <rabbit:listener-container message-converter="amqpMessageConverter" connection-factory="rabbitConnectionFactory" concurrency="1" max-concurrency="${spring.rabbitmq.listener.container.maxConcurrency:1}">
         <rabbit:listener ref="top.cardone.core.util.action.Action1Exporter"
                          queue-names="queue:${application-queue-name:cardone}-${app-version:0.0.1}:top.cardone.core.util.action.Action1"/>
         <rabbit:listener ref="top.cardone.core.util.action.Action2Exporter"
