@@ -5,11 +5,13 @@ import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.BooleanUtils;
+import org.apache.commons.lang3.time.DateFormatUtils;
 import org.springframework.util.CollectionUtils;
 import top.cardone.cache.Cache;
 import top.cardone.configuration.service.VariableService;
 import top.cardone.context.ApplicationContextHolder;
 import top.cardone.context.util.MapUtils;
+import top.cardone.context.util.StringUtils;
 import top.cardone.core.util.action.Action0;
 
 import java.time.Instant;
@@ -38,6 +40,9 @@ public class DelayAction implements Action0 {
     @Setter
     private String[] clearCacheNames;
 
+    @Setter
+    private String keySuffixFormat;
+
     @Override
     public void action() {
         if (ArrayUtils.isEmpty(actionBeanIds) && ArrayUtils.isEmpty(actionBeans)) {
@@ -48,24 +53,42 @@ public class DelayAction implements Action0 {
             return;
         }
 
-        Map<String, Object> variable = ApplicationContextHolder.getBean(VariableService.class).findOne(findOne);
+        Map<String, Object> newFindOne = Maps.newHashMap(findOne);
+
+        String variableCode = null;
+
+        if (StringUtils.isNotBlank(keySuffixFormat)) {
+            variableCode = findOne.get("variableCode") + ":" + DateFormatUtils.format(new Date(), keySuffixFormat);
+
+            newFindOne.put("variableCode", variableCode);
+        }
+
+        Map<String, Object> variable = ApplicationContextHolder.getBean(VariableService.class).findOne(newFindOne);
+
+        String value;
 
         if (CollectionUtils.isEmpty(variable)) {
-            return;
+            if (StringUtils.isBlank(variableCode)) {
+                return;
+            } else {
+                value = "y";
+            }
+        } else {
+            value = MapUtils.getString(variable, "value_", "no");
         }
 
-        String value = MapUtils.getString(variable, "value_", "no");
+        if (!"y".equals(value)) {
+            if (!BooleanUtils.toBoolean(value)) {
+                return;
+            }
 
-        if (!BooleanUtils.toBoolean(value)) {
-            return;
-        }
+            Date lastModifiedDate = (Date) MapUtils.getObject(variable, "last_modified_date");
 
-        Date lastModifiedDate = (Date) MapUtils.getObject(variable, "last_modified_date");
+            LocalDateTime delayTime = LocalDateTime.ofInstant(Instant.ofEpochMilli(lastModifiedDate.getTime()), ZoneId.systemDefault()).plusSeconds(delay);
 
-        LocalDateTime delayTime = LocalDateTime.ofInstant(Instant.ofEpochMilli(lastModifiedDate.getTime()), ZoneId.systemDefault()).plusSeconds(delay);
-
-        if (delayTime.isAfter(LocalDateTime.now())) {
-            return;
+            if (delayTime.isAfter(LocalDateTime.now())) {
+                return;
+            }
         }
 
         boolean isSave = true;
@@ -97,7 +120,7 @@ public class DelayAction implements Action0 {
         if (isSave) {
             Map<String, Object> save = Maps.newHashMap();
 
-            save.putAll(findOne);
+            save.putAll(newFindOne);
             save.put("value", "no");
 
             ApplicationContextHolder.getBean(VariableService.class).save(save);
