@@ -37,6 +37,14 @@
                     <entry key="variableCode" value="siteTree"/>
                     <entry key="value" value="yes"/>
                 </map>
+                <map>
+                    <entry key="variableCode" value="userSync"/>
+                    <entry key="value" value="yes"/>
+                </map>
+                <map>
+                    <entry key="variableCode" value="departmentSync"/>
+                    <entry key="value" value="yes"/>
+                </map>
             </list>
         </property>
     </bean>
