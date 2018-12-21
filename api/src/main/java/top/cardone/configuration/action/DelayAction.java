@@ -108,10 +108,6 @@ public class DelayAction implements Action0 {
         if (ArrayUtils.isNotEmpty(actionBeans)) {
             for (Action0 action : actionBeans) {
                 try {
-                    if (action instanceof DateIncrementAction) {
-                        ((DateIncrementAction) action).setKeySuffixFormat(keySuffixFormat);
-                    }
-
                     action.action();
                 } catch (Exception e) {
                     isSave = false;
