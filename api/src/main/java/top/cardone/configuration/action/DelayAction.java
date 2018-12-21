@@ -55,39 +55,39 @@ public class DelayAction implements Action0 {
 
         Map<String, Object> newFindOne = Maps.newHashMap(findOne);
 
-        String variableCode = null;
+        boolean first = false;
 
         if (StringUtils.isNotBlank(keySuffixFormat)) {
-            variableCode = findOne.get("variableCode") + ":" + DateFormatUtils.format(new Date(), keySuffixFormat);
+            String variableCode = findOne.get("variableCode") + ":" + DateFormatUtils.format(new Date(), keySuffixFormat);
 
             newFindOne.put("variableCode", variableCode);
+
+            Map<String, Object> variable = ApplicationContextHolder.getBean(VariableService.class).findOne(newFindOne);
+
+            first = CollectionUtils.isEmpty(variable);
         }
 
-        Map<String, Object> variable = ApplicationContextHolder.getBean(VariableService.class).findOne(newFindOne);
+        if (!first) {
+            Map<String, Object> variable = ApplicationContextHolder.getBean(VariableService.class).findOne(newFindOne);
 
-        String value;
-
-        if (CollectionUtils.isEmpty(variable)) {
-            if (StringUtils.isBlank(variableCode)) {
+            if (CollectionUtils.isEmpty(variable)) {
                 return;
-            } else {
-                value = "y";
             }
-        } else {
-            value = MapUtils.getString(variable, "value_", "no");
-        }
 
-        if (!"y".equals(value)) {
+            String value = MapUtils.getString(variable, "value_", "no");
+
             if (!BooleanUtils.toBoolean(value)) {
                 return;
             }
 
-            Date lastModifiedDate = (Date) MapUtils.getObject(variable, "last_modified_date");
+            if (delay > 0) {
+                Date lastModifiedDate = (Date) MapUtils.getObject(variable, "last_modified_date");
 
-            LocalDateTime delayTime = LocalDateTime.ofInstant(Instant.ofEpochMilli(lastModifiedDate.getTime()), ZoneId.systemDefault()).plusSeconds(delay);
+                LocalDateTime delayTime = LocalDateTime.ofInstant(Instant.ofEpochMilli(lastModifiedDate.getTime()), ZoneId.systemDefault()).plusSeconds(delay);
 
-            if (delayTime.isAfter(LocalDateTime.now())) {
-                return;
+                if (delayTime.isAfter(LocalDateTime.now())) {
+                    return;
+                }
             }
         }
 
@@ -118,7 +118,7 @@ public class DelayAction implements Action0 {
         }
 
         if (isSave) {
-            Map<String, Object> save = Maps.newHashMap();
+            Map<String, Object> save = Maps.newHashMap(newFindOne);
 
             save.putAll(newFindOne);
             save.put("value", "no");
