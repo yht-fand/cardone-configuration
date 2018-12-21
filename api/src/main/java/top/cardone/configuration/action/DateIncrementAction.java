@@ -105,7 +105,7 @@ public class DateIncrementAction implements Action0 {
         if (MapUtils.isNotEmpty(saveDictionaryValue) && (date != null)) {
             Map<String, Object> save = Maps.newHashMap(saveDictionaryValue);
 
-            save.put("value", (date.getTime() + 1) + StringUtils.EMPTY);
+            save.put("value", date.getTime() + StringUtils.EMPTY);
 
             if (StringUtils.isNotBlank(dictionaryCode)) {
                 save.put("dictionaryCode", dictionaryCode);
