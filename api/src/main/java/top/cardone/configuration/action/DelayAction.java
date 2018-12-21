@@ -68,6 +68,8 @@ public class DelayAction implements Action0 {
         }
 
         if (!first) {
+            newFindOne = Maps.newHashMap(findOne);
+
             Map<String, Object> variable = ApplicationContextHolder.getBean(VariableService.class).findOne(newFindOne);
 
             if (CollectionUtils.isEmpty(variable)) {
