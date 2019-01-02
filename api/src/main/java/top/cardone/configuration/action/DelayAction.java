@@ -122,7 +122,6 @@ public class DelayAction implements Action0 {
         if (isSave) {
             Map<String, Object> save = Maps.newHashMap(newFindOne);
 
-            save.putAll(newFindOne);
             save.put("value", "no");
 
             ApplicationContextHolder.getBean(VariableService.class).save(save);
