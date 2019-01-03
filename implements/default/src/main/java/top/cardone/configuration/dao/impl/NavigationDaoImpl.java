@@ -20,9 +20,7 @@ public class NavigationDaoImpl extends PageDaoImpl implements top.cardone.config
 
         int count = 0;
 
-        String deleteOtherByFlagObjectCodeSqlFilePath = this.getSqlFilePath("deleteOtherByFlagObjectCode");
-
-        count += this.update(deleteOtherByFlagObjectCodeSqlFilePath, putAll);
+        count += this.updateBySqlFileName("deleteOtherByFlagObjectCode", putAll);
 
         return count;
     }

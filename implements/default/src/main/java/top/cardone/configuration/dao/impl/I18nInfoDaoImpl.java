@@ -27,7 +27,7 @@ public class I18nInfoDaoImpl extends PageDaoImpl implements top.cardone.configur
         update.put("language", language);
 
         for (Map.Entry<String, Object> updateOtherMapEntry : updateOtherMap.entrySet()) {
-            updateOtherCountMap.put(updateOtherMapEntry.getKey(), this.update(this.getSqlFilePath((String) updateOtherMapEntry.getValue()), update));
+            updateOtherCountMap.put(updateOtherMapEntry.getKey(), this.updateBySqlFileName((String) updateOtherMapEntry.getValue(), update));
         }
 
         return updateOtherCountMap;
