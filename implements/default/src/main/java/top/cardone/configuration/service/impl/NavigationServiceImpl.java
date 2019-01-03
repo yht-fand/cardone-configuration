@@ -6,7 +6,6 @@ import top.cardone.data.service.impl.PageServiceImpl;
 
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 
 /**
  * 导航服务
@@ -23,12 +22,6 @@ public class NavigationServiceImpl extends PageServiceImpl<NavigationDao> implem
     @Override
     public List<Map<String, Object>> findListForTree(Map<String, Object> findList) {
         return this.dao.findListBySqlFileName("findListForTree", findList);
-    }
-
-    @Override
-    @Transactional
-    public void generateData() {
-        this.generateData(UUID.randomUUID().toString());
     }
 
     @Override
