@@ -2,6 +2,7 @@ package top.cardone.configuration.func;
 
 import com.google.common.collect.Maps;
 import lombok.Setter;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.core.task.TaskExecutor;
 import org.springframework.scheduling.support.TaskUtils;
 import top.cardone.cache.Cache;
@@ -16,6 +17,7 @@ import java.util.Map;
 /**
  * @author cardo on 2017/5/4 0004.
  */
+@Log4j2
 public class ReadOneErrorInfoContentFunc implements Func3<String, String, String, String> {
     @Setter
     private String taskExecutorBeanName = "slowTaskExecutor";
@@ -48,6 +50,12 @@ public class ReadOneErrorInfoContentFunc implements Func3<String, String, String
                 insertI18nInfo.put("content", defaultContent);
 
                 ApplicationContextHolder.getBean(I18nInfoService.class).insertByNotExistsCache(insertI18nInfo);
+
+                try {
+                    Thread.sleep(10);
+                } catch (InterruptedException e) {
+                    log.error(e);
+                }
             }, null, true));
         }
 
