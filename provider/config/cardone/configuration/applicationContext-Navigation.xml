@@ -5,7 +5,7 @@
        default-lazy-init="true">
     <!-- 导航 -->
     <bean id="top.cardone.configuration.dao.NavigationDao"
-          class="top.cardone.configuration.dao.impl.NavigationDaoImpl">
+          class="top.cardone.configuration.dao.impl.NavigationDaoImpl" lazy-init="true">
         <property name="configTable">
             <map>
                 <entry key="config">
@@ -49,7 +49,7 @@
     </bean>
 
     <bean id="top.cardone.configuration.service.NavigationService"
-          class="top.cardone.configuration.service.impl.NavigationServiceImpl">
+          class="top.cardone.configuration.service.impl.NavigationServiceImpl" lazy-init="true">
         <property name="dao" ref="top.cardone.configuration.dao.NavigationDao"/>
     </bean>
 </beans>
