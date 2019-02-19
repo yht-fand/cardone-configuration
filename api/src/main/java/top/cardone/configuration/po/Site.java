@@ -102,7 +102,7 @@ public class Site implements java.io.Serializable {
     protected String ftpIp;
 
     /**
-     * FTP_PASSWORD
+     * ftp 密码
      */
     @lombok.Getter
     @lombok.Setter

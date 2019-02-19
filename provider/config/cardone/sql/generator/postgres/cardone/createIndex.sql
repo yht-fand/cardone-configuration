@@ -532,7 +532,7 @@
 --ftp ip
 --drop index IF EXISTS idx_c1_site_ftp_ip;
 --create index IF NOT EXISTS idx_c1_site_ftp_ip ON c1_site ("ftp_ip" varchar_pattern_ops);
---FTP_PASSWORD
+--ftp 密码
 --drop index IF EXISTS idx_c1_site_ftp_password;
 --create index IF NOT EXISTS idx_c1_site_ftp_password ON c1_site ("ftp_password" varchar_pattern_ops);
 --ftp端口

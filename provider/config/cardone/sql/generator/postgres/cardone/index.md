@@ -238,7 +238,7 @@ explain_|YES|String(511)|解释
 flag_code|YES|String(255)|标记编号(数据字典：工作流、同步、生成、录入、审批)
 flag_object_code|YES|String(255)|标识对象编号(工作流：工作流标识、同步：批次号、生成：操作者编号、录入：操作者编号、审批：操作者编号)
 ftp_ip|YES|String(255)|ftp ip
-ftp_password|YES|String(255)|FTP_PASSWORD
+ftp_password|YES|String(255)|ftp 密码
 ftp_port|YES|String(255)|ftp端口
 ftp_username|YES|String(255)|ftp 用户名
 json_data|YES|Object(2147483647)|json数据
