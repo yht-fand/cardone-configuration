@@ -1,0 +1,713 @@
+
+-- 配置(configuration)
+
+
+-- 导航（C1_NAVIGATION）
+
+--业务代码
+--drop index IF EXISTS idx_C1_NAVIGATION_business_code;
+--create UNIQUE index IF NOT EXISTS idx_C1_NAVIGATION_business_code ON C1_NAVIGATION ("code");
+--批次编号
+--drop index IF EXISTS idx_C1_NAVIGATION_BATCH_NO;
+--create index IF NOT EXISTS idx_C1_NAVIGATION_BATCH_NO ON C1_NAVIGATION (BATCH_NO varchar_pattern_ops);
+--开始日期
+--drop index IF EXISTS idx_C1_NAVIGATION_BEGIN_DATE;
+--create index IF NOT EXISTS idx_C1_NAVIGATION_BEGIN_DATE ON C1_NAVIGATION (BEGIN_DATE);
+--创建人编号
+--drop index IF EXISTS idx_C1_NAVIGATION_CREATED_BY_CODE;
+--create index IF NOT EXISTS idx_C1_NAVIGATION_CREATED_BY_CODE ON C1_NAVIGATION (CREATED_BY_CODE varchar_pattern_ops);
+--创建人标识
+--drop index IF EXISTS idx_C1_NAVIGATION_CREATED_BY_ID;
+--create index IF NOT EXISTS idx_C1_NAVIGATION_CREATED_BY_ID ON C1_NAVIGATION (CREATED_BY_ID varchar_pattern_ops);
+--创建日期
+--drop index IF EXISTS idx_C1_NAVIGATION_CREATED_DATE;
+--create index IF NOT EXISTS idx_C1_NAVIGATION_CREATED_DATE ON C1_NAVIGATION (CREATED_DATE);
+--数据选项
+--drop index IF EXISTS idx_C1_NAVIGATION_DATA_OPTION;
+--create index IF NOT EXISTS idx_C1_NAVIGATION_DATA_OPTION ON C1_NAVIGATION (DATA_OPTION varchar_pattern_ops);
+--数据状态编号(数据字典)
+--drop index IF EXISTS idx_C1_NAVIGATION_DATA_STATE_CODE;
+--create index IF NOT EXISTS idx_C1_NAVIGATION_DATA_STATE_CODE ON C1_NAVIGATION (DATA_STATE_CODE varchar_pattern_ops);
+--部门编号
+--drop index IF EXISTS idx_C1_NAVIGATION_DEPARTMENT_CODE;
+--create index IF NOT EXISTS idx_C1_NAVIGATION_DEPARTMENT_CODE ON C1_NAVIGATION (DEPARTMENT_CODE varchar_pattern_ops);
+--结束日期
+--drop index IF EXISTS idx_C1_NAVIGATION_END_DATE;
+--create index IF NOT EXISTS idx_C1_NAVIGATION_END_DATE ON C1_NAVIGATION (END_DATE);
+--标记编号(数据字典：工作流、同步、生成、录入、审批)
+--drop index IF EXISTS idx_C1_NAVIGATION_FLAG_CODE;
+--create index IF NOT EXISTS idx_C1_NAVIGATION_FLAG_CODE ON C1_NAVIGATION (FLAG_CODE varchar_pattern_ops);
+--最后修改人编号
+--drop index IF EXISTS idx_C1_NAVIGATION_LAST_MODIFIED_BY_CODE;
+--create index IF NOT EXISTS idx_C1_NAVIGATION_LAST_MODIFIED_BY_CODE ON C1_NAVIGATION (LAST_MODIFIED_BY_CODE varchar_pattern_ops);
+--最后修改人标识
+--drop index IF EXISTS idx_C1_NAVIGATION_LAST_MODIFIED_BY_ID;
+--create index IF NOT EXISTS idx_C1_NAVIGATION_LAST_MODIFIED_BY_ID ON C1_NAVIGATION (LAST_MODIFIED_BY_ID varchar_pattern_ops);
+--最后修改日期
+--drop index IF EXISTS idx_C1_NAVIGATION_LAST_MODIFIED_DATE;
+--create index IF NOT EXISTS idx_C1_NAVIGATION_LAST_MODIFIED_DATE ON C1_NAVIGATION (LAST_MODIFIED_DATE);
+--名称
+--drop index IF EXISTS idx_C1_NAVIGATION_NAME;
+--create index IF NOT EXISTS idx_C1_NAVIGATION_NAME ON C1_NAVIGATION (NAME varchar_pattern_ops);
+--导航编号
+--drop index IF EXISTS idx_C1_NAVIGATION_NAVIGATION_CODE;
+--create index IF NOT EXISTS idx_C1_NAVIGATION_NAVIGATION_CODE ON C1_NAVIGATION (NAVIGATION_CODE varchar_pattern_ops);
+--导航标识
+--drop index IF EXISTS idx_C1_NAVIGATION_NAVIGATION_ID;
+--create index IF NOT EXISTS idx_C1_NAVIGATION_NAVIGATION_ID ON C1_NAVIGATION (NAVIGATION_ID varchar_pattern_ops);
+--排序
+--drop index IF EXISTS idx_C1_NAVIGATION_ORDER_BY_;
+--create index IF NOT EXISTS idx_C1_NAVIGATION_ORDER_BY_ ON C1_NAVIGATION (ORDER_BY_);
+--组织编号
+--drop index IF EXISTS idx_C1_NAVIGATION_ORG_CODE;
+--create index IF NOT EXISTS idx_C1_NAVIGATION_ORG_CODE ON C1_NAVIGATION (ORG_CODE varchar_pattern_ops);
+--父级编号
+--drop index IF EXISTS idx_C1_NAVIGATION_PARENT_CODE;
+--create index IF NOT EXISTS idx_C1_NAVIGATION_PARENT_CODE ON C1_NAVIGATION (PARENT_CODE varchar_pattern_ops);
+--父级标识
+--drop index IF EXISTS idx_C1_NAVIGATION_PARENT_ID;
+--create index IF NOT EXISTS idx_C1_NAVIGATION_PARENT_ID ON C1_NAVIGATION (PARENT_ID varchar_pattern_ops);
+--父级树编号
+--drop index IF EXISTS idx_C1_NAVIGATION_PARENT_TREE_CODE;
+--create index IF NOT EXISTS idx_C1_NAVIGATION_PARENT_TREE_CODE ON C1_NAVIGATION (PARENT_TREE_CODE varchar_pattern_ops);
+--父级树标识
+--drop index IF EXISTS idx_C1_NAVIGATION_PARENT_TREE_ID;
+--create index IF NOT EXISTS idx_C1_NAVIGATION_PARENT_TREE_ID ON C1_NAVIGATION (PARENT_TREE_ID varchar_pattern_ops);
+--父级树名称
+--drop index IF EXISTS idx_C1_NAVIGATION_PARENT_TREE_NAME;
+--create index IF NOT EXISTS idx_C1_NAVIGATION_PARENT_TREE_NAME ON C1_NAVIGATION (PARENT_TREE_NAME varchar_pattern_ops);
+--个人编号
+--drop index IF EXISTS idx_C1_NAVIGATION_PERSONAL_CODE;
+--create index IF NOT EXISTS idx_C1_NAVIGATION_PERSONAL_CODE ON C1_NAVIGATION (PERSONAL_CODE varchar_pattern_ops);
+--个人标识
+--drop index IF EXISTS idx_C1_NAVIGATION_PERSONAL_ID;
+--create index IF NOT EXISTS idx_C1_NAVIGATION_PERSONAL_ID ON C1_NAVIGATION (PERSONAL_ID varchar_pattern_ops);
+--站点编号
+--drop index IF EXISTS idx_C1_NAVIGATION_SITE_CODE;
+--create index IF NOT EXISTS idx_C1_NAVIGATION_SITE_CODE ON C1_NAVIGATION (SITE_CODE varchar_pattern_ops);
+--状态编号(数据字典)
+--drop index IF EXISTS idx_C1_NAVIGATION_STATE_CODE;
+--create index IF NOT EXISTS idx_C1_NAVIGATION_STATE_CODE ON C1_NAVIGATION (STATE_CODE varchar_pattern_ops);
+--系统信息编号
+--drop index IF EXISTS idx_C1_NAVIGATION_SYSTEM_INFO_CODE;
+--create index IF NOT EXISTS idx_C1_NAVIGATION_SYSTEM_INFO_CODE ON C1_NAVIGATION (SYSTEM_INFO_CODE varchar_pattern_ops);
+--类别编号(数据字典)
+--drop index IF EXISTS idx_C1_NAVIGATION_TYPE_CODE;
+--create index IF NOT EXISTS idx_C1_NAVIGATION_TYPE_CODE ON C1_NAVIGATION (TYPE_CODE varchar_pattern_ops);
+
+-- 字典类别（C1_DICTIONARY_TYPE）
+
+--业务代码
+--drop index IF EXISTS idx_C1_DICTIONARY_TYPE_business_code;
+--create UNIQUE index IF NOT EXISTS idx_C1_DICTIONARY_TYPE_business_code ON C1_DICTIONARY_TYPE ("code");
+--批次编号
+--drop index IF EXISTS idx_C1_DICTIONARY_TYPE_BATCH_NO;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_TYPE_BATCH_NO ON C1_DICTIONARY_TYPE (BATCH_NO varchar_pattern_ops);
+--开始日期
+--drop index IF EXISTS idx_C1_DICTIONARY_TYPE_BEGIN_DATE;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_TYPE_BEGIN_DATE ON C1_DICTIONARY_TYPE (BEGIN_DATE);
+--创建人编号
+--drop index IF EXISTS idx_C1_DICTIONARY_TYPE_CREATED_BY_CODE;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_TYPE_CREATED_BY_CODE ON C1_DICTIONARY_TYPE (CREATED_BY_CODE varchar_pattern_ops);
+--创建人标识
+--drop index IF EXISTS idx_C1_DICTIONARY_TYPE_CREATED_BY_ID;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_TYPE_CREATED_BY_ID ON C1_DICTIONARY_TYPE (CREATED_BY_ID varchar_pattern_ops);
+--创建日期
+--drop index IF EXISTS idx_C1_DICTIONARY_TYPE_CREATED_DATE;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_TYPE_CREATED_DATE ON C1_DICTIONARY_TYPE (CREATED_DATE);
+--数据状态编号(数据字典)
+--drop index IF EXISTS idx_C1_DICTIONARY_TYPE_DATA_STATE_CODE;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_TYPE_DATA_STATE_CODE ON C1_DICTIONARY_TYPE (DATA_STATE_CODE varchar_pattern_ops);
+--部门编号
+--drop index IF EXISTS idx_C1_DICTIONARY_TYPE_DEPARTMENT_CODE;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_TYPE_DEPARTMENT_CODE ON C1_DICTIONARY_TYPE (DEPARTMENT_CODE varchar_pattern_ops);
+--字典类别编号
+--drop index IF EXISTS idx_C1_DICTIONARY_TYPE_DICTIONARY_TYPE_CODE;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_TYPE_DICTIONARY_TYPE_CODE ON C1_DICTIONARY_TYPE (DICTIONARY_TYPE_CODE varchar_pattern_ops);
+--字典类别标识
+--drop index IF EXISTS idx_C1_DICTIONARY_TYPE_DICTIONARY_TYPE_ID;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_TYPE_DICTIONARY_TYPE_ID ON C1_DICTIONARY_TYPE (DICTIONARY_TYPE_ID varchar_pattern_ops);
+--结束日期
+--drop index IF EXISTS idx_C1_DICTIONARY_TYPE_END_DATE;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_TYPE_END_DATE ON C1_DICTIONARY_TYPE (END_DATE);
+--标记编号(数据字典：工作流、同步、生成、录入、审批)
+--drop index IF EXISTS idx_C1_DICTIONARY_TYPE_FLAG_CODE;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_TYPE_FLAG_CODE ON C1_DICTIONARY_TYPE (FLAG_CODE varchar_pattern_ops);
+--最后修改人编号
+--drop index IF EXISTS idx_C1_DICTIONARY_TYPE_LAST_MODIFIED_BY_CODE;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_TYPE_LAST_MODIFIED_BY_CODE ON C1_DICTIONARY_TYPE (LAST_MODIFIED_BY_CODE varchar_pattern_ops);
+--最后修改人标识
+--drop index IF EXISTS idx_C1_DICTIONARY_TYPE_LAST_MODIFIED_BY_ID;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_TYPE_LAST_MODIFIED_BY_ID ON C1_DICTIONARY_TYPE (LAST_MODIFIED_BY_ID varchar_pattern_ops);
+--最后修改日期
+--drop index IF EXISTS idx_C1_DICTIONARY_TYPE_LAST_MODIFIED_DATE;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_TYPE_LAST_MODIFIED_DATE ON C1_DICTIONARY_TYPE (LAST_MODIFIED_DATE);
+--名称
+--drop index IF EXISTS idx_C1_DICTIONARY_TYPE_NAME;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_TYPE_NAME ON C1_DICTIONARY_TYPE (NAME varchar_pattern_ops);
+--排序
+--drop index IF EXISTS idx_C1_DICTIONARY_TYPE_ORDER_BY_;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_TYPE_ORDER_BY_ ON C1_DICTIONARY_TYPE (ORDER_BY_);
+--组织编号
+--drop index IF EXISTS idx_C1_DICTIONARY_TYPE_ORG_CODE;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_TYPE_ORG_CODE ON C1_DICTIONARY_TYPE (ORG_CODE varchar_pattern_ops);
+--父级编号
+--drop index IF EXISTS idx_C1_DICTIONARY_TYPE_PARENT_CODE;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_TYPE_PARENT_CODE ON C1_DICTIONARY_TYPE (PARENT_CODE varchar_pattern_ops);
+--父级标识
+--drop index IF EXISTS idx_C1_DICTIONARY_TYPE_PARENT_ID;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_TYPE_PARENT_ID ON C1_DICTIONARY_TYPE (PARENT_ID varchar_pattern_ops);
+--父级树编号
+--drop index IF EXISTS idx_C1_DICTIONARY_TYPE_PARENT_TREE_CODE;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_TYPE_PARENT_TREE_CODE ON C1_DICTIONARY_TYPE (PARENT_TREE_CODE varchar_pattern_ops);
+--父级树标识
+--drop index IF EXISTS idx_C1_DICTIONARY_TYPE_PARENT_TREE_ID;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_TYPE_PARENT_TREE_ID ON C1_DICTIONARY_TYPE (PARENT_TREE_ID varchar_pattern_ops);
+--父级树名称
+--drop index IF EXISTS idx_C1_DICTIONARY_TYPE_PARENT_TREE_NAME;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_TYPE_PARENT_TREE_NAME ON C1_DICTIONARY_TYPE (PARENT_TREE_NAME varchar_pattern_ops);
+--个人编号
+--drop index IF EXISTS idx_C1_DICTIONARY_TYPE_PERSONAL_CODE;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_TYPE_PERSONAL_CODE ON C1_DICTIONARY_TYPE (PERSONAL_CODE varchar_pattern_ops);
+--个人标识
+--drop index IF EXISTS idx_C1_DICTIONARY_TYPE_PERSONAL_ID;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_TYPE_PERSONAL_ID ON C1_DICTIONARY_TYPE (PERSONAL_ID varchar_pattern_ops);
+--站点编号
+--drop index IF EXISTS idx_C1_DICTIONARY_TYPE_SITE_CODE;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_TYPE_SITE_CODE ON C1_DICTIONARY_TYPE (SITE_CODE varchar_pattern_ops);
+--站点标识
+--drop index IF EXISTS idx_C1_DICTIONARY_TYPE_SITE_ID;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_TYPE_SITE_ID ON C1_DICTIONARY_TYPE (SITE_ID varchar_pattern_ops);
+--状态编号(数据字典)
+--drop index IF EXISTS idx_C1_DICTIONARY_TYPE_STATE_CODE;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_TYPE_STATE_CODE ON C1_DICTIONARY_TYPE (STATE_CODE varchar_pattern_ops);
+--系统信息编号
+--drop index IF EXISTS idx_C1_DICTIONARY_TYPE_SYSTEM_INFO_CODE;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_TYPE_SYSTEM_INFO_CODE ON C1_DICTIONARY_TYPE (SYSTEM_INFO_CODE varchar_pattern_ops);
+
+-- 字典（C1_DICTIONARY）
+
+--业务代码
+--drop index IF EXISTS idx_C1_DICTIONARY_business_code;
+--create UNIQUE index IF NOT EXISTS idx_C1_DICTIONARY_business_code ON C1_DICTIONARY ("code");
+--批次编号
+--drop index IF EXISTS idx_C1_DICTIONARY_BATCH_NO;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_BATCH_NO ON C1_DICTIONARY (BATCH_NO varchar_pattern_ops);
+--开始日期
+--drop index IF EXISTS idx_C1_DICTIONARY_BEGIN_DATE;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_BEGIN_DATE ON C1_DICTIONARY (BEGIN_DATE);
+--创建人编号
+--drop index IF EXISTS idx_C1_DICTIONARY_CREATED_BY_CODE;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_CREATED_BY_CODE ON C1_DICTIONARY (CREATED_BY_CODE varchar_pattern_ops);
+--创建人标识
+--drop index IF EXISTS idx_C1_DICTIONARY_CREATED_BY_ID;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_CREATED_BY_ID ON C1_DICTIONARY (CREATED_BY_ID varchar_pattern_ops);
+--创建日期
+--drop index IF EXISTS idx_C1_DICTIONARY_CREATED_DATE;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_CREATED_DATE ON C1_DICTIONARY (CREATED_DATE);
+--数据状态编号(数据字典)
+--drop index IF EXISTS idx_C1_DICTIONARY_DATA_STATE_CODE;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_DATA_STATE_CODE ON C1_DICTIONARY (DATA_STATE_CODE varchar_pattern_ops);
+--部门编号
+--drop index IF EXISTS idx_C1_DICTIONARY_DEPARTMENT_CODE;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_DEPARTMENT_CODE ON C1_DICTIONARY (DEPARTMENT_CODE varchar_pattern_ops);
+--字典编号
+--drop index IF EXISTS idx_C1_DICTIONARY_DICTIONARY_CODE;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_DICTIONARY_CODE ON C1_DICTIONARY (DICTIONARY_CODE varchar_pattern_ops);
+--字典标识
+--drop index IF EXISTS idx_C1_DICTIONARY_DICTIONARY_ID;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_DICTIONARY_ID ON C1_DICTIONARY (DICTIONARY_ID varchar_pattern_ops);
+--字典类别编号
+--drop index IF EXISTS idx_C1_DICTIONARY_DICTIONARY_TYPE_CODE;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_DICTIONARY_TYPE_CODE ON C1_DICTIONARY (DICTIONARY_TYPE_CODE varchar_pattern_ops);
+--字典类别标识
+--drop index IF EXISTS idx_C1_DICTIONARY_DICTIONARY_TYPE_ID;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_DICTIONARY_TYPE_ID ON C1_DICTIONARY (DICTIONARY_TYPE_ID varchar_pattern_ops);
+--结束日期
+--drop index IF EXISTS idx_C1_DICTIONARY_END_DATE;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_END_DATE ON C1_DICTIONARY (END_DATE);
+--标记编号(数据字典：工作流、同步、生成、录入、审批)
+--drop index IF EXISTS idx_C1_DICTIONARY_FLAG_CODE;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_FLAG_CODE ON C1_DICTIONARY (FLAG_CODE varchar_pattern_ops);
+--最后修改人编号
+--drop index IF EXISTS idx_C1_DICTIONARY_LAST_MODIFIED_BY_CODE;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_LAST_MODIFIED_BY_CODE ON C1_DICTIONARY (LAST_MODIFIED_BY_CODE varchar_pattern_ops);
+--最后修改人标识
+--drop index IF EXISTS idx_C1_DICTIONARY_LAST_MODIFIED_BY_ID;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_LAST_MODIFIED_BY_ID ON C1_DICTIONARY (LAST_MODIFIED_BY_ID varchar_pattern_ops);
+--最后修改日期
+--drop index IF EXISTS idx_C1_DICTIONARY_LAST_MODIFIED_DATE;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_LAST_MODIFIED_DATE ON C1_DICTIONARY (LAST_MODIFIED_DATE);
+--名称
+--drop index IF EXISTS idx_C1_DICTIONARY_NAME;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_NAME ON C1_DICTIONARY (NAME varchar_pattern_ops);
+--排序
+--drop index IF EXISTS idx_C1_DICTIONARY_ORDER_BY_;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_ORDER_BY_ ON C1_DICTIONARY (ORDER_BY_);
+--组织编号
+--drop index IF EXISTS idx_C1_DICTIONARY_ORG_CODE;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_ORG_CODE ON C1_DICTIONARY (ORG_CODE varchar_pattern_ops);
+--个人编号
+--drop index IF EXISTS idx_C1_DICTIONARY_PERSONAL_CODE;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_PERSONAL_CODE ON C1_DICTIONARY (PERSONAL_CODE varchar_pattern_ops);
+--个人标识
+--drop index IF EXISTS idx_C1_DICTIONARY_PERSONAL_ID;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_PERSONAL_ID ON C1_DICTIONARY (PERSONAL_ID varchar_pattern_ops);
+--站点编号
+--drop index IF EXISTS idx_C1_DICTIONARY_SITE_CODE;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_SITE_CODE ON C1_DICTIONARY (SITE_CODE varchar_pattern_ops);
+--站点标识
+--drop index IF EXISTS idx_C1_DICTIONARY_SITE_ID;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_SITE_ID ON C1_DICTIONARY (SITE_ID varchar_pattern_ops);
+--状态编号(数据字典)
+--drop index IF EXISTS idx_C1_DICTIONARY_STATE_CODE;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_STATE_CODE ON C1_DICTIONARY (STATE_CODE varchar_pattern_ops);
+--系统信息编号
+--drop index IF EXISTS idx_C1_DICTIONARY_SYSTEM_INFO_CODE;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_SYSTEM_INFO_CODE ON C1_DICTIONARY (SYSTEM_INFO_CODE varchar_pattern_ops);
+
+-- 字典项（C1_DICTIONARY_ITEM）
+
+--业务代码
+--drop index IF EXISTS idx_C1_DICTIONARY_ITEM_business_code;
+--create UNIQUE index IF NOT EXISTS idx_C1_DICTIONARY_ITEM_business_code ON C1_DICTIONARY_ITEM ("code");
+--批次编号
+--drop index IF EXISTS idx_C1_DICTIONARY_ITEM_BATCH_NO;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_ITEM_BATCH_NO ON C1_DICTIONARY_ITEM (BATCH_NO varchar_pattern_ops);
+--开始日期
+--drop index IF EXISTS idx_C1_DICTIONARY_ITEM_BEGIN_DATE;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_ITEM_BEGIN_DATE ON C1_DICTIONARY_ITEM (BEGIN_DATE);
+--创建人编号
+--drop index IF EXISTS idx_C1_DICTIONARY_ITEM_CREATED_BY_CODE;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_ITEM_CREATED_BY_CODE ON C1_DICTIONARY_ITEM (CREATED_BY_CODE varchar_pattern_ops);
+--创建人标识
+--drop index IF EXISTS idx_C1_DICTIONARY_ITEM_CREATED_BY_ID;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_ITEM_CREATED_BY_ID ON C1_DICTIONARY_ITEM (CREATED_BY_ID varchar_pattern_ops);
+--创建日期
+--drop index IF EXISTS idx_C1_DICTIONARY_ITEM_CREATED_DATE;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_ITEM_CREATED_DATE ON C1_DICTIONARY_ITEM (CREATED_DATE);
+--数据状态编号(数据字典)
+--drop index IF EXISTS idx_C1_DICTIONARY_ITEM_DATA_STATE_CODE;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_ITEM_DATA_STATE_CODE ON C1_DICTIONARY_ITEM (DATA_STATE_CODE varchar_pattern_ops);
+--部门编号
+--drop index IF EXISTS idx_C1_DICTIONARY_ITEM_DEPARTMENT_CODE;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_ITEM_DEPARTMENT_CODE ON C1_DICTIONARY_ITEM (DEPARTMENT_CODE varchar_pattern_ops);
+--字典编号
+--drop index IF EXISTS idx_C1_DICTIONARY_ITEM_DICTIONARY_CODE;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_ITEM_DICTIONARY_CODE ON C1_DICTIONARY_ITEM (DICTIONARY_CODE varchar_pattern_ops);
+--字典标识
+--drop index IF EXISTS idx_C1_DICTIONARY_ITEM_DICTIONARY_ID;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_ITEM_DICTIONARY_ID ON C1_DICTIONARY_ITEM (DICTIONARY_ID varchar_pattern_ops);
+--字典项代码
+--drop index IF EXISTS idx_C1_DICTIONARY_ITEM_DICTIONARY_ITEM_CODE;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_ITEM_DICTIONARY_ITEM_CODE ON C1_DICTIONARY_ITEM (DICTIONARY_ITEM_CODE varchar_pattern_ops);
+--字典项标识
+--drop index IF EXISTS idx_C1_DICTIONARY_ITEM_DICTIONARY_ITEM_ID;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_ITEM_DICTIONARY_ITEM_ID ON C1_DICTIONARY_ITEM (DICTIONARY_ITEM_ID varchar_pattern_ops);
+--字典类别编号
+--drop index IF EXISTS idx_C1_DICTIONARY_ITEM_DICTIONARY_TYPE_CODE;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_ITEM_DICTIONARY_TYPE_CODE ON C1_DICTIONARY_ITEM (DICTIONARY_TYPE_CODE varchar_pattern_ops);
+--字典类别标识
+--drop index IF EXISTS idx_C1_DICTIONARY_ITEM_DICTIONARY_TYPE_ID;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_ITEM_DICTIONARY_TYPE_ID ON C1_DICTIONARY_ITEM (DICTIONARY_TYPE_ID varchar_pattern_ops);
+--结束日期
+--drop index IF EXISTS idx_C1_DICTIONARY_ITEM_END_DATE;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_ITEM_END_DATE ON C1_DICTIONARY_ITEM (END_DATE);
+--标记编号(数据字典：工作流、同步、生成、录入、审批)
+--drop index IF EXISTS idx_C1_DICTIONARY_ITEM_FLAG_CODE;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_ITEM_FLAG_CODE ON C1_DICTIONARY_ITEM (FLAG_CODE varchar_pattern_ops);
+--最后修改人编号
+--drop index IF EXISTS idx_C1_DICTIONARY_ITEM_LAST_MODIFIED_BY_CODE;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_ITEM_LAST_MODIFIED_BY_CODE ON C1_DICTIONARY_ITEM (LAST_MODIFIED_BY_CODE varchar_pattern_ops);
+--最后修改人标识
+--drop index IF EXISTS idx_C1_DICTIONARY_ITEM_LAST_MODIFIED_BY_ID;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_ITEM_LAST_MODIFIED_BY_ID ON C1_DICTIONARY_ITEM (LAST_MODIFIED_BY_ID varchar_pattern_ops);
+--最后修改日期
+--drop index IF EXISTS idx_C1_DICTIONARY_ITEM_LAST_MODIFIED_DATE;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_ITEM_LAST_MODIFIED_DATE ON C1_DICTIONARY_ITEM (LAST_MODIFIED_DATE);
+--名称
+--drop index IF EXISTS idx_C1_DICTIONARY_ITEM_NAME;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_ITEM_NAME ON C1_DICTIONARY_ITEM (NAME varchar_pattern_ops);
+--排序
+--drop index IF EXISTS idx_C1_DICTIONARY_ITEM_ORDER_BY_;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_ITEM_ORDER_BY_ ON C1_DICTIONARY_ITEM (ORDER_BY_);
+--组织编号
+--drop index IF EXISTS idx_C1_DICTIONARY_ITEM_ORG_CODE;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_ITEM_ORG_CODE ON C1_DICTIONARY_ITEM (ORG_CODE varchar_pattern_ops);
+--个人编号
+--drop index IF EXISTS idx_C1_DICTIONARY_ITEM_PERSONAL_CODE;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_ITEM_PERSONAL_CODE ON C1_DICTIONARY_ITEM (PERSONAL_CODE varchar_pattern_ops);
+--个人标识
+--drop index IF EXISTS idx_C1_DICTIONARY_ITEM_PERSONAL_ID;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_ITEM_PERSONAL_ID ON C1_DICTIONARY_ITEM (PERSONAL_ID varchar_pattern_ops);
+--站点编号
+--drop index IF EXISTS idx_C1_DICTIONARY_ITEM_SITE_CODE;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_ITEM_SITE_CODE ON C1_DICTIONARY_ITEM (SITE_CODE varchar_pattern_ops);
+--状态编号(数据字典)
+--drop index IF EXISTS idx_C1_DICTIONARY_ITEM_STATE_CODE;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_ITEM_STATE_CODE ON C1_DICTIONARY_ITEM (STATE_CODE varchar_pattern_ops);
+--系统信息编号
+--drop index IF EXISTS idx_C1_DICTIONARY_ITEM_SYSTEM_INFO_CODE;
+--create index IF NOT EXISTS idx_C1_DICTIONARY_ITEM_SYSTEM_INFO_CODE ON C1_DICTIONARY_ITEM (SYSTEM_INFO_CODE varchar_pattern_ops);
+
+-- 国际化信息（C1_I18N_INFO）
+
+--业务代码
+--drop index IF EXISTS idx_C1_I18N_INFO_business_code;
+--create UNIQUE index IF NOT EXISTS idx_C1_I18N_INFO_business_code ON C1_I18N_INFO ("code");
+--批次编号
+--drop index IF EXISTS idx_C1_I18N_INFO_BATCH_NO;
+--create index IF NOT EXISTS idx_C1_I18N_INFO_BATCH_NO ON C1_I18N_INFO (BATCH_NO varchar_pattern_ops);
+--开始日期
+--drop index IF EXISTS idx_C1_I18N_INFO_BEGIN_DATE;
+--create index IF NOT EXISTS idx_C1_I18N_INFO_BEGIN_DATE ON C1_I18N_INFO (BEGIN_DATE);
+--创建人编号
+--drop index IF EXISTS idx_C1_I18N_INFO_CREATED_BY_CODE;
+--create index IF NOT EXISTS idx_C1_I18N_INFO_CREATED_BY_CODE ON C1_I18N_INFO (CREATED_BY_CODE varchar_pattern_ops);
+--创建人标识
+--drop index IF EXISTS idx_C1_I18N_INFO_CREATED_BY_ID;
+--create index IF NOT EXISTS idx_C1_I18N_INFO_CREATED_BY_ID ON C1_I18N_INFO (CREATED_BY_ID varchar_pattern_ops);
+--创建日期
+--drop index IF EXISTS idx_C1_I18N_INFO_CREATED_DATE;
+--create index IF NOT EXISTS idx_C1_I18N_INFO_CREATED_DATE ON C1_I18N_INFO (CREATED_DATE);
+--数据状态编号(数据字典)
+--drop index IF EXISTS idx_C1_I18N_INFO_DATA_STATE_CODE;
+--create index IF NOT EXISTS idx_C1_I18N_INFO_DATA_STATE_CODE ON C1_I18N_INFO (DATA_STATE_CODE varchar_pattern_ops);
+--部门编号
+--drop index IF EXISTS idx_C1_I18N_INFO_DEPARTMENT_CODE;
+--create index IF NOT EXISTS idx_C1_I18N_INFO_DEPARTMENT_CODE ON C1_I18N_INFO (DEPARTMENT_CODE varchar_pattern_ops);
+--结束日期
+--drop index IF EXISTS idx_C1_I18N_INFO_END_DATE;
+--create index IF NOT EXISTS idx_C1_I18N_INFO_END_DATE ON C1_I18N_INFO (END_DATE);
+--标记编号(数据字典：工作流、同步、生成、录入、审批)
+--drop index IF EXISTS idx_C1_I18N_INFO_FLAG_CODE;
+--create index IF NOT EXISTS idx_C1_I18N_INFO_FLAG_CODE ON C1_I18N_INFO (FLAG_CODE varchar_pattern_ops);
+--国际化信息编号
+--drop index IF EXISTS idx_C1_I18N_INFO_I18N_INFO_CODE;
+--create index IF NOT EXISTS idx_C1_I18N_INFO_I18N_INFO_CODE ON C1_I18N_INFO (I18N_INFO_CODE varchar_pattern_ops);
+--国际化信息标识
+--drop index IF EXISTS idx_C1_I18N_INFO_I18N_INFO_ID;
+--create index IF NOT EXISTS idx_C1_I18N_INFO_I18N_INFO_ID ON C1_I18N_INFO (I18N_INFO_ID varchar_pattern_ops);
+--语言
+--drop index IF EXISTS idx_C1_I18N_INFO_LANGUAGE;
+--create index IF NOT EXISTS idx_C1_I18N_INFO_LANGUAGE ON C1_I18N_INFO (LANGUAGE varchar_pattern_ops);
+--最后修改人编号
+--drop index IF EXISTS idx_C1_I18N_INFO_LAST_MODIFIED_BY_CODE;
+--create index IF NOT EXISTS idx_C1_I18N_INFO_LAST_MODIFIED_BY_CODE ON C1_I18N_INFO (LAST_MODIFIED_BY_CODE varchar_pattern_ops);
+--最后修改人标识
+--drop index IF EXISTS idx_C1_I18N_INFO_LAST_MODIFIED_BY_ID;
+--create index IF NOT EXISTS idx_C1_I18N_INFO_LAST_MODIFIED_BY_ID ON C1_I18N_INFO (LAST_MODIFIED_BY_ID varchar_pattern_ops);
+--最后修改日期
+--drop index IF EXISTS idx_C1_I18N_INFO_LAST_MODIFIED_DATE;
+--create index IF NOT EXISTS idx_C1_I18N_INFO_LAST_MODIFIED_DATE ON C1_I18N_INFO (LAST_MODIFIED_DATE);
+--排序
+--drop index IF EXISTS idx_C1_I18N_INFO_ORDER_BY_;
+--create index IF NOT EXISTS idx_C1_I18N_INFO_ORDER_BY_ ON C1_I18N_INFO (ORDER_BY_);
+--组织编号
+--drop index IF EXISTS idx_C1_I18N_INFO_ORG_CODE;
+--create index IF NOT EXISTS idx_C1_I18N_INFO_ORG_CODE ON C1_I18N_INFO (ORG_CODE varchar_pattern_ops);
+--个人编号
+--drop index IF EXISTS idx_C1_I18N_INFO_PERSONAL_CODE;
+--create index IF NOT EXISTS idx_C1_I18N_INFO_PERSONAL_CODE ON C1_I18N_INFO (PERSONAL_CODE varchar_pattern_ops);
+--个人标识
+--drop index IF EXISTS idx_C1_I18N_INFO_PERSONAL_ID;
+--create index IF NOT EXISTS idx_C1_I18N_INFO_PERSONAL_ID ON C1_I18N_INFO (PERSONAL_ID varchar_pattern_ops);
+--站点编号
+--drop index IF EXISTS idx_C1_I18N_INFO_SITE_CODE;
+--create index IF NOT EXISTS idx_C1_I18N_INFO_SITE_CODE ON C1_I18N_INFO (SITE_CODE varchar_pattern_ops);
+--站点标识
+--drop index IF EXISTS idx_C1_I18N_INFO_SITE_ID;
+--create index IF NOT EXISTS idx_C1_I18N_INFO_SITE_ID ON C1_I18N_INFO (SITE_ID varchar_pattern_ops);
+--状态编号(数据字典)
+--drop index IF EXISTS idx_C1_I18N_INFO_STATE_CODE;
+--create index IF NOT EXISTS idx_C1_I18N_INFO_STATE_CODE ON C1_I18N_INFO (STATE_CODE varchar_pattern_ops);
+--系统信息编号
+--drop index IF EXISTS idx_C1_I18N_INFO_SYSTEM_INFO_CODE;
+--create index IF NOT EXISTS idx_C1_I18N_INFO_SYSTEM_INFO_CODE ON C1_I18N_INFO (SYSTEM_INFO_CODE varchar_pattern_ops);
+--类别编号(数据字典)
+--drop index IF EXISTS idx_C1_I18N_INFO_TYPE_CODE;
+--create index IF NOT EXISTS idx_C1_I18N_INFO_TYPE_CODE ON C1_I18N_INFO (TYPE_CODE varchar_pattern_ops);
+
+-- 系统信息（C1_SYSTEM_INFO）
+
+--业务代码
+--drop index IF EXISTS idx_C1_SYSTEM_INFO_business_code;
+--create UNIQUE index IF NOT EXISTS idx_C1_SYSTEM_INFO_business_code ON C1_SYSTEM_INFO ("code");
+--批次编号
+--drop index IF EXISTS idx_C1_SYSTEM_INFO_BATCH_NO;
+--create index IF NOT EXISTS idx_C1_SYSTEM_INFO_BATCH_NO ON C1_SYSTEM_INFO (BATCH_NO varchar_pattern_ops);
+--开始日期
+--drop index IF EXISTS idx_C1_SYSTEM_INFO_BEGIN_DATE;
+--create index IF NOT EXISTS idx_C1_SYSTEM_INFO_BEGIN_DATE ON C1_SYSTEM_INFO (BEGIN_DATE);
+--创建人编号
+--drop index IF EXISTS idx_C1_SYSTEM_INFO_CREATED_BY_CODE;
+--create index IF NOT EXISTS idx_C1_SYSTEM_INFO_CREATED_BY_CODE ON C1_SYSTEM_INFO (CREATED_BY_CODE varchar_pattern_ops);
+--创建人标识
+--drop index IF EXISTS idx_C1_SYSTEM_INFO_CREATED_BY_ID;
+--create index IF NOT EXISTS idx_C1_SYSTEM_INFO_CREATED_BY_ID ON C1_SYSTEM_INFO (CREATED_BY_ID varchar_pattern_ops);
+--创建日期
+--drop index IF EXISTS idx_C1_SYSTEM_INFO_CREATED_DATE;
+--create index IF NOT EXISTS idx_C1_SYSTEM_INFO_CREATED_DATE ON C1_SYSTEM_INFO (CREATED_DATE);
+--数据状态编号(数据字典)
+--drop index IF EXISTS idx_C1_SYSTEM_INFO_DATA_STATE_CODE;
+--create index IF NOT EXISTS idx_C1_SYSTEM_INFO_DATA_STATE_CODE ON C1_SYSTEM_INFO (DATA_STATE_CODE varchar_pattern_ops);
+--部门编号
+--drop index IF EXISTS idx_C1_SYSTEM_INFO_DEPARTMENT_CODE;
+--create index IF NOT EXISTS idx_C1_SYSTEM_INFO_DEPARTMENT_CODE ON C1_SYSTEM_INFO (DEPARTMENT_CODE varchar_pattern_ops);
+--结束日期
+--drop index IF EXISTS idx_C1_SYSTEM_INFO_END_DATE;
+--create index IF NOT EXISTS idx_C1_SYSTEM_INFO_END_DATE ON C1_SYSTEM_INFO (END_DATE);
+--标记编号(数据字典：工作流、同步、生成、录入、审批)
+--drop index IF EXISTS idx_C1_SYSTEM_INFO_FLAG_CODE;
+--create index IF NOT EXISTS idx_C1_SYSTEM_INFO_FLAG_CODE ON C1_SYSTEM_INFO (FLAG_CODE varchar_pattern_ops);
+--最后修改人编号
+--drop index IF EXISTS idx_C1_SYSTEM_INFO_LAST_MODIFIED_BY_CODE;
+--create index IF NOT EXISTS idx_C1_SYSTEM_INFO_LAST_MODIFIED_BY_CODE ON C1_SYSTEM_INFO (LAST_MODIFIED_BY_CODE varchar_pattern_ops);
+--最后修改人标识
+--drop index IF EXISTS idx_C1_SYSTEM_INFO_LAST_MODIFIED_BY_ID;
+--create index IF NOT EXISTS idx_C1_SYSTEM_INFO_LAST_MODIFIED_BY_ID ON C1_SYSTEM_INFO (LAST_MODIFIED_BY_ID varchar_pattern_ops);
+--最后修改日期
+--drop index IF EXISTS idx_C1_SYSTEM_INFO_LAST_MODIFIED_DATE;
+--create index IF NOT EXISTS idx_C1_SYSTEM_INFO_LAST_MODIFIED_DATE ON C1_SYSTEM_INFO (LAST_MODIFIED_DATE);
+--名称
+--drop index IF EXISTS idx_C1_SYSTEM_INFO_NAME;
+--create index IF NOT EXISTS idx_C1_SYSTEM_INFO_NAME ON C1_SYSTEM_INFO (NAME varchar_pattern_ops);
+--排序
+--drop index IF EXISTS idx_C1_SYSTEM_INFO_ORDER_BY_;
+--create index IF NOT EXISTS idx_C1_SYSTEM_INFO_ORDER_BY_ ON C1_SYSTEM_INFO (ORDER_BY_);
+--组织编号
+--drop index IF EXISTS idx_C1_SYSTEM_INFO_ORG_CODE;
+--create index IF NOT EXISTS idx_C1_SYSTEM_INFO_ORG_CODE ON C1_SYSTEM_INFO (ORG_CODE varchar_pattern_ops);
+--个人编号
+--drop index IF EXISTS idx_C1_SYSTEM_INFO_PERSONAL_CODE;
+--create index IF NOT EXISTS idx_C1_SYSTEM_INFO_PERSONAL_CODE ON C1_SYSTEM_INFO (PERSONAL_CODE varchar_pattern_ops);
+--个人标识
+--drop index IF EXISTS idx_C1_SYSTEM_INFO_PERSONAL_ID;
+--create index IF NOT EXISTS idx_C1_SYSTEM_INFO_PERSONAL_ID ON C1_SYSTEM_INFO (PERSONAL_ID varchar_pattern_ops);
+--站点编号
+--drop index IF EXISTS idx_C1_SYSTEM_INFO_SITE_CODE;
+--create index IF NOT EXISTS idx_C1_SYSTEM_INFO_SITE_CODE ON C1_SYSTEM_INFO (SITE_CODE varchar_pattern_ops);
+--状态编号(数据字典)
+--drop index IF EXISTS idx_C1_SYSTEM_INFO_STATE_CODE;
+--create index IF NOT EXISTS idx_C1_SYSTEM_INFO_STATE_CODE ON C1_SYSTEM_INFO (STATE_CODE varchar_pattern_ops);
+--系统信息编号
+--drop index IF EXISTS idx_C1_SYSTEM_INFO_SYSTEM_INFO_CODE;
+--create index IF NOT EXISTS idx_C1_SYSTEM_INFO_SYSTEM_INFO_CODE ON C1_SYSTEM_INFO (SYSTEM_INFO_CODE varchar_pattern_ops);
+--系统信息标识
+--drop index IF EXISTS idx_C1_SYSTEM_INFO_SYSTEM_INFO_ID;
+--create index IF NOT EXISTS idx_C1_SYSTEM_INFO_SYSTEM_INFO_ID ON C1_SYSTEM_INFO (SYSTEM_INFO_ID varchar_pattern_ops);
+
+-- 站点（C1_SITE）
+
+--业务代码
+--drop index IF EXISTS idx_C1_SITE_business_code;
+--create UNIQUE index IF NOT EXISTS idx_C1_SITE_business_code ON C1_SITE ("code");
+--批次编号
+--drop index IF EXISTS idx_C1_SITE_BATCH_NO;
+--create index IF NOT EXISTS idx_C1_SITE_BATCH_NO ON C1_SITE (BATCH_NO varchar_pattern_ops);
+--开始日期
+--drop index IF EXISTS idx_C1_SITE_BEGIN_DATE;
+--create index IF NOT EXISTS idx_C1_SITE_BEGIN_DATE ON C1_SITE (BEGIN_DATE);
+--创建人编号
+--drop index IF EXISTS idx_C1_SITE_CREATED_BY_CODE;
+--create index IF NOT EXISTS idx_C1_SITE_CREATED_BY_CODE ON C1_SITE (CREATED_BY_CODE varchar_pattern_ops);
+--创建人标识
+--drop index IF EXISTS idx_C1_SITE_CREATED_BY_ID;
+--create index IF NOT EXISTS idx_C1_SITE_CREATED_BY_ID ON C1_SITE (CREATED_BY_ID varchar_pattern_ops);
+--创建日期
+--drop index IF EXISTS idx_C1_SITE_CREATED_DATE;
+--create index IF NOT EXISTS idx_C1_SITE_CREATED_DATE ON C1_SITE (CREATED_DATE);
+--数据状态编号(数据字典)
+--drop index IF EXISTS idx_C1_SITE_DATA_STATE_CODE;
+--create index IF NOT EXISTS idx_C1_SITE_DATA_STATE_CODE ON C1_SITE (DATA_STATE_CODE varchar_pattern_ops);
+--部门编号
+--drop index IF EXISTS idx_C1_SITE_DEPARTMENT_CODE;
+--create index IF NOT EXISTS idx_C1_SITE_DEPARTMENT_CODE ON C1_SITE (DEPARTMENT_CODE varchar_pattern_ops);
+--结束日期
+--drop index IF EXISTS idx_C1_SITE_END_DATE;
+--create index IF NOT EXISTS idx_C1_SITE_END_DATE ON C1_SITE (END_DATE);
+--标记编号(数据字典：工作流、同步、生成、录入、审批)
+--drop index IF EXISTS idx_C1_SITE_FLAG_CODE;
+--create index IF NOT EXISTS idx_C1_SITE_FLAG_CODE ON C1_SITE (FLAG_CODE varchar_pattern_ops);
+--ftp ip
+--drop index IF EXISTS idx_C1_SITE_FTP_IP;
+--create index IF NOT EXISTS idx_C1_SITE_FTP_IP ON C1_SITE (FTP_IP varchar_pattern_ops);
+--ftp 密码
+--drop index IF EXISTS idx_C1_SITE_FTP_PASSWORD;
+--create index IF NOT EXISTS idx_C1_SITE_FTP_PASSWORD ON C1_SITE (FTP_PASSWORD varchar_pattern_ops);
+--ftp端口
+--drop index IF EXISTS idx_C1_SITE_FTP_PORT;
+--create index IF NOT EXISTS idx_C1_SITE_FTP_PORT ON C1_SITE (FTP_PORT varchar_pattern_ops);
+--ftp 用户名
+--drop index IF EXISTS idx_C1_SITE_FTP_USERNAME;
+--create index IF NOT EXISTS idx_C1_SITE_FTP_USERNAME ON C1_SITE (FTP_USERNAME varchar_pattern_ops);
+--最后修改人编号
+--drop index IF EXISTS idx_C1_SITE_LAST_MODIFIED_BY_CODE;
+--create index IF NOT EXISTS idx_C1_SITE_LAST_MODIFIED_BY_CODE ON C1_SITE (LAST_MODIFIED_BY_CODE varchar_pattern_ops);
+--最后修改人标识
+--drop index IF EXISTS idx_C1_SITE_LAST_MODIFIED_BY_ID;
+--create index IF NOT EXISTS idx_C1_SITE_LAST_MODIFIED_BY_ID ON C1_SITE (LAST_MODIFIED_BY_ID varchar_pattern_ops);
+--最后修改日期
+--drop index IF EXISTS idx_C1_SITE_LAST_MODIFIED_DATE;
+--create index IF NOT EXISTS idx_C1_SITE_LAST_MODIFIED_DATE ON C1_SITE (LAST_MODIFIED_DATE);
+--纬度
+--drop index IF EXISTS idx_C1_SITE_LATITUDE;
+--create index IF NOT EXISTS idx_C1_SITE_LATITUDE ON C1_SITE (LATITUDE varchar_pattern_ops);
+--经度
+--drop index IF EXISTS idx_C1_SITE_LONGITUDE;
+--create index IF NOT EXISTS idx_C1_SITE_LONGITUDE ON C1_SITE (LONGITUDE varchar_pattern_ops);
+--名称
+--drop index IF EXISTS idx_C1_SITE_NAME;
+--create index IF NOT EXISTS idx_C1_SITE_NAME ON C1_SITE (NAME varchar_pattern_ops);
+--排序
+--drop index IF EXISTS idx_C1_SITE_ORDER_BY_;
+--create index IF NOT EXISTS idx_C1_SITE_ORDER_BY_ ON C1_SITE (ORDER_BY_);
+--组织编号
+--drop index IF EXISTS idx_C1_SITE_ORG_CODE;
+--create index IF NOT EXISTS idx_C1_SITE_ORG_CODE ON C1_SITE (ORG_CODE varchar_pattern_ops);
+--父级编号
+--drop index IF EXISTS idx_C1_SITE_PARENT_CODE;
+--create index IF NOT EXISTS idx_C1_SITE_PARENT_CODE ON C1_SITE (PARENT_CODE varchar_pattern_ops);
+--父级标识
+--drop index IF EXISTS idx_C1_SITE_PARENT_ID;
+--create index IF NOT EXISTS idx_C1_SITE_PARENT_ID ON C1_SITE (PARENT_ID varchar_pattern_ops);
+--父级树编号
+--drop index IF EXISTS idx_C1_SITE_PARENT_TREE_CODE;
+--create index IF NOT EXISTS idx_C1_SITE_PARENT_TREE_CODE ON C1_SITE (PARENT_TREE_CODE varchar_pattern_ops);
+--父级树标识
+--drop index IF EXISTS idx_C1_SITE_PARENT_TREE_ID;
+--create index IF NOT EXISTS idx_C1_SITE_PARENT_TREE_ID ON C1_SITE (PARENT_TREE_ID varchar_pattern_ops);
+--父级树名称
+--drop index IF EXISTS idx_C1_SITE_PARENT_TREE_NAME;
+--create index IF NOT EXISTS idx_C1_SITE_PARENT_TREE_NAME ON C1_SITE (PARENT_TREE_NAME varchar_pattern_ops);
+--个人编号
+--drop index IF EXISTS idx_C1_SITE_PERSONAL_CODE;
+--create index IF NOT EXISTS idx_C1_SITE_PERSONAL_CODE ON C1_SITE (PERSONAL_CODE varchar_pattern_ops);
+--个人标识
+--drop index IF EXISTS idx_C1_SITE_PERSONAL_ID;
+--create index IF NOT EXISTS idx_C1_SITE_PERSONAL_ID ON C1_SITE (PERSONAL_ID varchar_pattern_ops);
+--行政编码
+--drop index IF EXISTS idx_C1_SITE_POSTAL_CODE;
+--create index IF NOT EXISTS idx_C1_SITE_POSTAL_CODE ON C1_SITE (POSTAL_CODE varchar_pattern_ops);
+--站点编号
+--drop index IF EXISTS idx_C1_SITE_SITE_CODE;
+--create index IF NOT EXISTS idx_C1_SITE_SITE_CODE ON C1_SITE (SITE_CODE varchar_pattern_ops);
+--站点标识
+--drop index IF EXISTS idx_C1_SITE_SITE_ID;
+--create index IF NOT EXISTS idx_C1_SITE_SITE_ID ON C1_SITE (SITE_ID varchar_pattern_ops);
+--状态编号(数据字典)
+--drop index IF EXISTS idx_C1_SITE_STATE_CODE;
+--create index IF NOT EXISTS idx_C1_SITE_STATE_CODE ON C1_SITE (STATE_CODE varchar_pattern_ops);
+--系统信息编号
+--drop index IF EXISTS idx_C1_SITE_SYSTEM_INFO_CODE;
+--create index IF NOT EXISTS idx_C1_SITE_SYSTEM_INFO_CODE ON C1_SITE (SYSTEM_INFO_CODE varchar_pattern_ops);
+--系统信息标识
+--drop index IF EXISTS idx_C1_SITE_SYSTEM_INFO_ID;
+--create index IF NOT EXISTS idx_C1_SITE_SYSTEM_INFO_ID ON C1_SITE (SYSTEM_INFO_ID varchar_pattern_ops);
+
+-- 变量（C1_VARIABLE）
+
+--业务代码
+--drop index IF EXISTS idx_C1_VARIABLE_business_code;
+--create UNIQUE index IF NOT EXISTS idx_C1_VARIABLE_business_code ON C1_VARIABLE ("code");
+--批次编号
+--drop index IF EXISTS idx_C1_VARIABLE_BATCH_NO;
+--create index IF NOT EXISTS idx_C1_VARIABLE_BATCH_NO ON C1_VARIABLE (BATCH_NO varchar_pattern_ops);
+--开始日期
+--drop index IF EXISTS idx_C1_VARIABLE_BEGIN_DATE;
+--create index IF NOT EXISTS idx_C1_VARIABLE_BEGIN_DATE ON C1_VARIABLE (BEGIN_DATE);
+--创建人编号
+--drop index IF EXISTS idx_C1_VARIABLE_CREATED_BY_CODE;
+--create index IF NOT EXISTS idx_C1_VARIABLE_CREATED_BY_CODE ON C1_VARIABLE (CREATED_BY_CODE varchar_pattern_ops);
+--创建人标识
+--drop index IF EXISTS idx_C1_VARIABLE_CREATED_BY_ID;
+--create index IF NOT EXISTS idx_C1_VARIABLE_CREATED_BY_ID ON C1_VARIABLE (CREATED_BY_ID varchar_pattern_ops);
+--创建日期
+--drop index IF EXISTS idx_C1_VARIABLE_CREATED_DATE;
+--create index IF NOT EXISTS idx_C1_VARIABLE_CREATED_DATE ON C1_VARIABLE (CREATED_DATE);
+--数据状态编号(数据字典)
+--drop index IF EXISTS idx_C1_VARIABLE_DATA_STATE_CODE;
+--create index IF NOT EXISTS idx_C1_VARIABLE_DATA_STATE_CODE ON C1_VARIABLE (DATA_STATE_CODE varchar_pattern_ops);
+--部门编号
+--drop index IF EXISTS idx_C1_VARIABLE_DEPARTMENT_CODE;
+--create index IF NOT EXISTS idx_C1_VARIABLE_DEPARTMENT_CODE ON C1_VARIABLE (DEPARTMENT_CODE varchar_pattern_ops);
+--结束日期
+--drop index IF EXISTS idx_C1_VARIABLE_END_DATE;
+--create index IF NOT EXISTS idx_C1_VARIABLE_END_DATE ON C1_VARIABLE (END_DATE);
+--标记编号(数据字典：工作流、同步、生成、录入、审批)
+--drop index IF EXISTS idx_C1_VARIABLE_FLAG_CODE;
+--create index IF NOT EXISTS idx_C1_VARIABLE_FLAG_CODE ON C1_VARIABLE (FLAG_CODE varchar_pattern_ops);
+--最后修改人编号
+--drop index IF EXISTS idx_C1_VARIABLE_LAST_MODIFIED_BY_CODE;
+--create index IF NOT EXISTS idx_C1_VARIABLE_LAST_MODIFIED_BY_CODE ON C1_VARIABLE (LAST_MODIFIED_BY_CODE varchar_pattern_ops);
+--最后修改人标识
+--drop index IF EXISTS idx_C1_VARIABLE_LAST_MODIFIED_BY_ID;
+--create index IF NOT EXISTS idx_C1_VARIABLE_LAST_MODIFIED_BY_ID ON C1_VARIABLE (LAST_MODIFIED_BY_ID varchar_pattern_ops);
+--最后修改日期
+--drop index IF EXISTS idx_C1_VARIABLE_LAST_MODIFIED_DATE;
+--create index IF NOT EXISTS idx_C1_VARIABLE_LAST_MODIFIED_DATE ON C1_VARIABLE (LAST_MODIFIED_DATE);
+--排序
+--drop index IF EXISTS idx_C1_VARIABLE_ORDER_BY_;
+--create index IF NOT EXISTS idx_C1_VARIABLE_ORDER_BY_ ON C1_VARIABLE (ORDER_BY_);
+--组织编号
+--drop index IF EXISTS idx_C1_VARIABLE_ORG_CODE;
+--create index IF NOT EXISTS idx_C1_VARIABLE_ORG_CODE ON C1_VARIABLE (ORG_CODE varchar_pattern_ops);
+--个人编号
+--drop index IF EXISTS idx_C1_VARIABLE_PERSONAL_CODE;
+--create index IF NOT EXISTS idx_C1_VARIABLE_PERSONAL_CODE ON C1_VARIABLE (PERSONAL_CODE varchar_pattern_ops);
+--个人标识
+--drop index IF EXISTS idx_C1_VARIABLE_PERSONAL_ID;
+--create index IF NOT EXISTS idx_C1_VARIABLE_PERSONAL_ID ON C1_VARIABLE (PERSONAL_ID varchar_pattern_ops);
+--站点编号
+--drop index IF EXISTS idx_C1_VARIABLE_SITE_CODE;
+--create index IF NOT EXISTS idx_C1_VARIABLE_SITE_CODE ON C1_VARIABLE (SITE_CODE varchar_pattern_ops);
+--状态编号(数据字典)
+--drop index IF EXISTS idx_C1_VARIABLE_STATE_CODE;
+--create index IF NOT EXISTS idx_C1_VARIABLE_STATE_CODE ON C1_VARIABLE (STATE_CODE varchar_pattern_ops);
+--系统信息编号
+--drop index IF EXISTS idx_C1_VARIABLE_SYSTEM_INFO_CODE;
+--create index IF NOT EXISTS idx_C1_VARIABLE_SYSTEM_INFO_CODE ON C1_VARIABLE (SYSTEM_INFO_CODE varchar_pattern_ops);
+--变量编号
+--drop index IF EXISTS idx_C1_VARIABLE_VARIABLE_CODE;
+--create index IF NOT EXISTS idx_C1_VARIABLE_VARIABLE_CODE ON C1_VARIABLE (VARIABLE_CODE varchar_pattern_ops);
+--变量标识
+--drop index IF EXISTS idx_C1_VARIABLE_VARIABLE_ID;
+--create index IF NOT EXISTS idx_C1_VARIABLE_VARIABLE_ID ON C1_VARIABLE (VARIABLE_ID varchar_pattern_ops);
+
+
+
+
+ALTER TABLE "C1_NAVIGATION" ALTER COLUMN "json_data" TYPE jsonb;
+
+--- sql end ---
+
+ALTER TABLE "C1_DICTIONARY_TYPE" ALTER COLUMN "json_data" TYPE jsonb;
+
+--- sql end ---
+
+ALTER TABLE "C1_DICTIONARY" ALTER COLUMN "json_data" TYPE jsonb;
+
+--- sql end ---
+
+ALTER TABLE "C1_DICTIONARY_ITEM" ALTER COLUMN "json_data" TYPE jsonb;
+
+--- sql end ---
+
+ALTER TABLE "C1_I18N_INFO" ALTER COLUMN "json_data" TYPE jsonb;
+
+--- sql end ---
+
+ALTER TABLE "C1_SYSTEM_INFO" ALTER COLUMN "json_data" TYPE jsonb;
+
+--- sql end ---
+
+ALTER TABLE "C1_SITE" ALTER COLUMN "json_data" TYPE jsonb;
+
+--- sql end ---
+
+ALTER TABLE "C1_VARIABLE" ALTER COLUMN "json_data" TYPE jsonb;
+
+--- sql end ---
+
+
+

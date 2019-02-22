@@ -1,0 +1,2 @@
+UPDATE C1_SITE SET END_DATE = SYSDATE, DATA_STATE_CODE = '0' WHERE
+INSTR(','||:siteIds||',', ','||SITE_ID||',') > 0

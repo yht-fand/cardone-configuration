@@ -1,0 +1,2 @@
+DELETE FROM C1_DICTIONARY_ITEM WHERE
+INSTR(','||:dictionaryItemIds||',', ','||DICTIONARY_ITEM_ID||',') > 0

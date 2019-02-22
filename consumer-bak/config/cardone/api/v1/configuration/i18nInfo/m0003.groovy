@@ -82,34 +82,34 @@ class m0003 implements java.io.Serializable {
     def output(output) {
         def newOutput = [:]
 
-		newOutput?.batchNo = output?.batch_no
-		newOutput?.beginDate = output?.begin_date
-		newOutput?.content = output?.content
-		newOutput?.createdByCode = output?.created_by_code
-		newOutput?.createdById = output?.created_by_id
-		newOutput?.createdDate = output?.created_date
-		newOutput?.dataStateCode = output?.data_state_code
-		newOutput?.departmentCode = output?.department_code
-		newOutput?.endDate = output?.end_date
-		newOutput?.flagCode = output?.flag_code
-		newOutput?.flagObjectCode = output?.flag_object_code
-		newOutput?.i18nInfoCode = output?.i18n_info_code
-		newOutput?.i18nInfoId = output?.i18n_info_id
-		newOutput?.jsonData = output?.json_data
-		newOutput?.language = output?.language
-		newOutput?.lastModifiedByCode = output?.last_modified_by_code
-		newOutput?.lastModifiedById = output?.last_modified_by_id
-		newOutput?.lastModifiedDate = output?.last_modified_date
-		newOutput?.orderBy = output?.order_by_
-		newOutput?.orgCode = output?.org_code
-		newOutput?.personalCode = output?.personal_code
-		newOutput?.personalId = output?.personal_id
-		newOutput?.siteCode = output?.site_code
-		newOutput?.siteId = output?.site_id
-		newOutput?.stateCode = output?.state_code
-		newOutput?.systemInfoCode = output?.system_info_code
-		newOutput?.typeCode = output?.type_code
-		newOutput?.version = output?.version_
+		newOutput?.batchNo = output?.BATCH_NO
+		newOutput?.beginDate = output?.BEGIN_DATE
+		newOutput?.content = output?.CONTENT
+		newOutput?.createdByCode = output?.CREATED_BY_CODE
+		newOutput?.createdById = output?.CREATED_BY_ID
+		newOutput?.createdDate = output?.CREATED_DATE
+		newOutput?.dataStateCode = output?.DATA_STATE_CODE
+		newOutput?.departmentCode = output?.DEPARTMENT_CODE
+		newOutput?.endDate = output?.END_DATE
+		newOutput?.flagCode = output?.FLAG_CODE
+		newOutput?.flagObjectCode = output?.FLAG_OBJECT_CODE
+		newOutput?.i18nInfoCode = output?.I18N_INFO_CODE
+		newOutput?.i18nInfoId = output?.I18N_INFO_ID
+		newOutput?.jsonData = output?.JSON_DATA
+		newOutput?.language = output?.LANGUAGE
+		newOutput?.lastModifiedByCode = output?.LAST_MODIFIED_BY_CODE
+		newOutput?.lastModifiedById = output?.LAST_MODIFIED_BY_ID
+		newOutput?.lastModifiedDate = output?.LAST_MODIFIED_DATE
+		newOutput?.orderBy = output?.ORDER_BY_
+		newOutput?.orgCode = output?.ORG_CODE
+		newOutput?.personalCode = output?.PERSONAL_CODE
+		newOutput?.personalId = output?.PERSONAL_ID
+		newOutput?.siteCode = output?.SITE_CODE
+		newOutput?.siteId = output?.SITE_ID
+		newOutput?.stateCode = output?.STATE_CODE
+		newOutput?.systemInfoCode = output?.SYSTEM_INFO_CODE
+		newOutput?.typeCode = output?.TYPE_CODE
+		newOutput?.version = output?.VERSION_
 
         newOutput
     }
