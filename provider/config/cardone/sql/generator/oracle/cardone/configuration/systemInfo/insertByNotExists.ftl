@@ -213,7 +213,7 @@ ${prefixName?string('  ', ', ')}:insert_systemInfoId_value
 ${prefixName?string('  ', ', ')}:insert_version_value
 <#assign prefixName = false>
 </#if>
-WHERE NOT EXISTS (SELECT 1 FROM C1_SYSTEM_INFO E
+FROM DUAL WHERE NOT EXISTS (SELECT 1 FROM C1_SYSTEM_INFO E
 <#assign prefixName = true>
 <#if (where_and_eq_batchNo??)>
 <#if (where_and_eq_batchNo_value??)>
