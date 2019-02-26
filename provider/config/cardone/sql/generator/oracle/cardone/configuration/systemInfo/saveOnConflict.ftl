@@ -1,5 +1,6 @@
 MERGE INTO C1_SYSTEM_INFO A USING
-(<#assign prefixName = true>
+(SELECT
+<#assign prefixName = true>
 <#if (index_batchNo??)>
 ${prefixName?string('', ', ')} :index_batchNo_value AS BATCH_NO
 <#assign prefixName = false>
@@ -104,7 +105,7 @@ ${prefixName?string('', ', ')} :index_systemInfoId_value AS SYSTEM_INFO_ID
 ${prefixName?string('', ', ')} :index_version_value AS VERSION_
 <#assign prefixName = false>
 </#if>
- from dual)B
+ FROM DUAL) B
 ON (
 <#assign prefixName = true>
 <#if (index_batchNo??)>

@@ -1,5 +1,6 @@
 MERGE INTO C1_SITE A USING
-(<#assign prefixName = true>
+(SELECT
+<#assign prefixName = true>
 <#if (index_batchNo??)>
 ${prefixName?string('', ', ')} :index_batchNo_value AS BATCH_NO
 <#assign prefixName = false>
@@ -164,7 +165,7 @@ ${prefixName?string('', ', ')} :index_url_value AS URL
 ${prefixName?string('', ', ')} :index_version_value AS VERSION_
 <#assign prefixName = false>
 </#if>
- from dual)B
+ FROM DUAL) B
 ON (
 <#assign prefixName = true>
 <#if (index_batchNo??)>
@@ -332,171 +333,338 @@ ${prefixName?string('', ', ')}A.VERSION_ = B.VERSION_
 <#assign prefixName = false>
 </#if>
 )
-WHEN MATCHED THEN
-UPDATE SET
-<#assign prefixName = true>
-<#if (update_batchNo??)>
-${prefixName?string('', ', ')}A.BATCH_NO = :update_batchNo_value
+WHEN NOT MATCHED THEN
+(<#assign prefixName = true>
+<#if (insert_batchNo??) && (insert_batchNo_value??)>
+${prefixName?string('  ', ', ')}A.BATCH_NO
 <#assign prefixName = false>
 </#if>
-<#if (update_beginDate??)>
-${prefixName?string('', ', ')}A.BEGIN_DATE = :update_beginDate_value
+<#if (insert_beginDate??) && (insert_beginDate_value??)>
+${prefixName?string('  ', ', ')}A.BEGIN_DATE
 <#assign prefixName = false>
 </#if>
-<#if (update_content??)>
-${prefixName?string('', ', ')}A.CONTENT = :update_content_value
+<#if (insert_content??) && (insert_content_value??)>
+${prefixName?string('  ', ', ')}A.CONTENT
 <#assign prefixName = false>
 </#if>
-<#if (update_createdByCode??)>
-${prefixName?string('', ', ')}A.CREATED_BY_CODE = :update_createdByCode_value
+<#if (insert_createdByCode??) && (insert_createdByCode_value??)>
+${prefixName?string('  ', ', ')}A.CREATED_BY_CODE
 <#assign prefixName = false>
 </#if>
-<#if (update_createdById??)>
-${prefixName?string('', ', ')}A.CREATED_BY_ID = :update_createdById_value
+<#if (insert_createdById??) && (insert_createdById_value??)>
+${prefixName?string('  ', ', ')}A.CREATED_BY_ID
 <#assign prefixName = false>
 </#if>
-<#if (update_createdDate??)>
-${prefixName?string('', ', ')}A.CREATED_DATE = :update_createdDate_value
+<#if (insert_createdDate??) && (insert_createdDate_value??)>
+${prefixName?string('  ', ', ')}A.CREATED_DATE
 <#assign prefixName = false>
 </#if>
-<#if (update_dataStateCode??)>
-${prefixName?string('', ', ')}A.DATA_STATE_CODE = :update_dataStateCode_value
+<#if (insert_dataStateCode??) && (insert_dataStateCode_value??)>
+${prefixName?string('  ', ', ')}A.DATA_STATE_CODE
 <#assign prefixName = false>
 </#if>
-<#if (update_departmentCode??)>
-${prefixName?string('', ', ')}A.DEPARTMENT_CODE = :update_departmentCode_value
+<#if (insert_departmentCode??) && (insert_departmentCode_value??)>
+${prefixName?string('  ', ', ')}A.DEPARTMENT_CODE
 <#assign prefixName = false>
 </#if>
-<#if (update_endDate??)>
-${prefixName?string('', ', ')}A.END_DATE = :update_endDate_value
+<#if (insert_endDate??) && (insert_endDate_value??)>
+${prefixName?string('  ', ', ')}A.END_DATE
 <#assign prefixName = false>
 </#if>
-<#if (update_explain??)>
-${prefixName?string('', ', ')}A.EXPLAIN_ = :update_explain_value
+<#if (insert_explain??) && (insert_explain_value??)>
+${prefixName?string('  ', ', ')}A.EXPLAIN_
 <#assign prefixName = false>
 </#if>
-<#if (update_flagCode??)>
-${prefixName?string('', ', ')}A.FLAG_CODE = :update_flagCode_value
+<#if (insert_flagCode??) && (insert_flagCode_value??)>
+${prefixName?string('  ', ', ')}A.FLAG_CODE
 <#assign prefixName = false>
 </#if>
-<#if (update_flagObjectCode??)>
-${prefixName?string('', ', ')}A.FLAG_OBJECT_CODE = :update_flagObjectCode_value
+<#if (insert_flagObjectCode??) && (insert_flagObjectCode_value??)>
+${prefixName?string('  ', ', ')}A.FLAG_OBJECT_CODE
 <#assign prefixName = false>
 </#if>
-<#if (update_ftpIp??)>
-${prefixName?string('', ', ')}A.FTP_IP = :update_ftpIp_value
+<#if (insert_ftpIp??) && (insert_ftpIp_value??)>
+${prefixName?string('  ', ', ')}A.FTP_IP
 <#assign prefixName = false>
 </#if>
-<#if (update_ftpPassword??)>
-${prefixName?string('', ', ')}A.FTP_PASSWORD = :update_ftpPassword_value
+<#if (insert_ftpPassword??) && (insert_ftpPassword_value??)>
+${prefixName?string('  ', ', ')}A.FTP_PASSWORD
 <#assign prefixName = false>
 </#if>
-<#if (update_ftpPort??)>
-${prefixName?string('', ', ')}A.FTP_PORT = :update_ftpPort_value
+<#if (insert_ftpPort??) && (insert_ftpPort_value??)>
+${prefixName?string('  ', ', ')}A.FTP_PORT
 <#assign prefixName = false>
 </#if>
-<#if (update_ftpUsername??)>
-${prefixName?string('', ', ')}A.FTP_USERNAME = :update_ftpUsername_value
+<#if (insert_ftpUsername??) && (insert_ftpUsername_value??)>
+${prefixName?string('  ', ', ')}A.FTP_USERNAME
 <#assign prefixName = false>
 </#if>
-<#if (update_jsonData??)>
-${prefixName?string('', ', ')}A.JSON_DATA = :update_jsonData_value
+<#if (insert_jsonData??) && (insert_jsonData_value??)>
+${prefixName?string('  ', ', ')}A.JSON_DATA
 <#assign prefixName = false>
 </#if>
-<#if (update_lastModifiedByCode??)>
-${prefixName?string('', ', ')}A.LAST_MODIFIED_BY_CODE = :update_lastModifiedByCode_value
+<#if (insert_lastModifiedByCode??) && (insert_lastModifiedByCode_value??)>
+${prefixName?string('  ', ', ')}A.LAST_MODIFIED_BY_CODE
 <#assign prefixName = false>
 </#if>
-<#if (update_lastModifiedById??)>
-${prefixName?string('', ', ')}A.LAST_MODIFIED_BY_ID = :update_lastModifiedById_value
+<#if (insert_lastModifiedById??) && (insert_lastModifiedById_value??)>
+${prefixName?string('  ', ', ')}A.LAST_MODIFIED_BY_ID
 <#assign prefixName = false>
 </#if>
-<#if (update_lastModifiedDate??)>
-${prefixName?string('', ', ')}A.LAST_MODIFIED_DATE = :update_lastModifiedDate_value
+<#if (insert_lastModifiedDate??) && (insert_lastModifiedDate_value??)>
+${prefixName?string('  ', ', ')}A.LAST_MODIFIED_DATE
 <#assign prefixName = false>
 </#if>
-<#if (update_latitude??)>
-${prefixName?string('', ', ')}A.LATITUDE = :update_latitude_value
+<#if (insert_latitude??) && (insert_latitude_value??)>
+${prefixName?string('  ', ', ')}A.LATITUDE
 <#assign prefixName = false>
 </#if>
-<#if (update_longitude??)>
-${prefixName?string('', ', ')}A.LONGITUDE = :update_longitude_value
+<#if (insert_longitude??) && (insert_longitude_value??)>
+${prefixName?string('  ', ', ')}A.LONGITUDE
 <#assign prefixName = false>
 </#if>
-<#if (update_name??)>
-${prefixName?string('', ', ')}A.NAME = :update_name_value
+<#if (insert_name??) && (insert_name_value??)>
+${prefixName?string('  ', ', ')}A.NAME
 <#assign prefixName = false>
 </#if>
-<#if (update_orderBy??)>
-${prefixName?string('', ', ')}A.ORDER_BY_ = :update_orderBy_value
+<#if (insert_orderBy??) && (insert_orderBy_value??)>
+${prefixName?string('  ', ', ')}A.ORDER_BY_
 <#assign prefixName = false>
 </#if>
-<#if (update_orgCode??)>
-${prefixName?string('', ', ')}A.ORG_CODE = :update_orgCode_value
+<#if (insert_orgCode??) && (insert_orgCode_value??)>
+${prefixName?string('  ', ', ')}A.ORG_CODE
 <#assign prefixName = false>
 </#if>
-<#if (update_parentCode??)>
-${prefixName?string('', ', ')}A.PARENT_CODE = :update_parentCode_value
+<#if (insert_parentCode??) && (insert_parentCode_value??)>
+${prefixName?string('  ', ', ')}A.PARENT_CODE
 <#assign prefixName = false>
 </#if>
-<#if (update_parentId??)>
-${prefixName?string('', ', ')}A.PARENT_ID = :update_parentId_value
+<#if (insert_parentId??) && (insert_parentId_value??)>
+${prefixName?string('  ', ', ')}A.PARENT_ID
 <#assign prefixName = false>
 </#if>
-<#if (update_parentTreeCode??)>
-${prefixName?string('', ', ')}A.PARENT_TREE_CODE = :update_parentTreeCode_value
+<#if (insert_parentTreeCode??) && (insert_parentTreeCode_value??)>
+${prefixName?string('  ', ', ')}A.PARENT_TREE_CODE
 <#assign prefixName = false>
 </#if>
-<#if (update_parentTreeId??)>
-${prefixName?string('', ', ')}A.PARENT_TREE_ID = :update_parentTreeId_value
+<#if (insert_parentTreeId??) && (insert_parentTreeId_value??)>
+${prefixName?string('  ', ', ')}A.PARENT_TREE_ID
 <#assign prefixName = false>
 </#if>
-<#if (update_parentTreeName??)>
-${prefixName?string('', ', ')}A.PARENT_TREE_NAME = :update_parentTreeName_value
+<#if (insert_parentTreeName??) && (insert_parentTreeName_value??)>
+${prefixName?string('  ', ', ')}A.PARENT_TREE_NAME
 <#assign prefixName = false>
 </#if>
-<#if (update_personalCode??)>
-${prefixName?string('', ', ')}A.PERSONAL_CODE = :update_personalCode_value
+<#if (insert_personalCode??) && (insert_personalCode_value??)>
+${prefixName?string('  ', ', ')}A.PERSONAL_CODE
 <#assign prefixName = false>
 </#if>
-<#if (update_personalId??)>
-${prefixName?string('', ', ')}A.PERSONAL_ID = :update_personalId_value
+<#if (insert_personalId??) && (insert_personalId_value??)>
+${prefixName?string('  ', ', ')}A.PERSONAL_ID
 <#assign prefixName = false>
 </#if>
-<#if (update_postalCode??)>
-${prefixName?string('', ', ')}A.POSTAL_CODE = :update_postalCode_value
+<#if (insert_postalCode??) && (insert_postalCode_value??)>
+${prefixName?string('  ', ', ')}A.POSTAL_CODE
 <#assign prefixName = false>
 </#if>
-<#if (update_remark??)>
-${prefixName?string('', ', ')}A.REMARK = :update_remark_value
+<#if (insert_remark??) && (insert_remark_value??)>
+${prefixName?string('  ', ', ')}A.REMARK
 <#assign prefixName = false>
 </#if>
-<#if (update_siteCode??)>
-${prefixName?string('', ', ')}A.SITE_CODE = :update_siteCode_value
+<#if (insert_siteCode??) && (insert_siteCode_value??)>
+${prefixName?string('  ', ', ')}A.SITE_CODE
 <#assign prefixName = false>
 </#if>
-<#if (update_siteId??)>
-${prefixName?string('', ', ')}A.SITE_ID = :update_siteId_value
+<#if (insert_siteId??) && (insert_siteId_value??)>
+${prefixName?string('  ', ', ')}A.SITE_ID
 <#assign prefixName = false>
 </#if>
-<#if (update_stateCode??)>
-${prefixName?string('', ', ')}A.STATE_CODE = :update_stateCode_value
+<#if (insert_stateCode??) && (insert_stateCode_value??)>
+${prefixName?string('  ', ', ')}A.STATE_CODE
 <#assign prefixName = false>
 </#if>
-<#if (update_systemInfoCode??)>
-${prefixName?string('', ', ')}A.SYSTEM_INFO_CODE = :update_systemInfoCode_value
+<#if (insert_systemInfoCode??) && (insert_systemInfoCode_value??)>
+${prefixName?string('  ', ', ')}A.SYSTEM_INFO_CODE
 <#assign prefixName = false>
 </#if>
-<#if (update_systemInfoId??)>
-${prefixName?string('', ', ')}A.SYSTEM_INFO_ID = :update_systemInfoId_value
+<#if (insert_systemInfoId??) && (insert_systemInfoId_value??)>
+${prefixName?string('  ', ', ')}A.SYSTEM_INFO_ID
 <#assign prefixName = false>
 </#if>
-<#if (update_url??)>
-${prefixName?string('', ', ')}A.URL = :update_url_value
+<#if (insert_url??) && (insert_url_value??)>
+${prefixName?string('  ', ', ')}A.URL
 <#assign prefixName = false>
 </#if>
-<#if (update_version??)>
-${prefixName?string('', ', ')}A.VERSION_ = :update_version_value
+<#if (insert_version??) && (insert_version_value??)>
+${prefixName?string('  ', ', ')}A.VERSION_
 <#assign prefixName = false>
 </#if>
+)
+VALUES
+(<#assign prefixName = true>
+<#if (insert_batchNo??) && (insert_batchNo_value??)>
+${prefixName?string('  ', ', ')}:insert_batchNo_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_beginDate??) && (insert_beginDate_value??)>
+${prefixName?string('  ', ', ')}:insert_beginDate_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_content??) && (insert_content_value??)>
+${prefixName?string('  ', ', ')}:insert_content_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_createdByCode??) && (insert_createdByCode_value??)>
+${prefixName?string('  ', ', ')}:insert_createdByCode_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_createdById??) && (insert_createdById_value??)>
+${prefixName?string('  ', ', ')}:insert_createdById_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_createdDate??) && (insert_createdDate_value??)>
+${prefixName?string('  ', ', ')}:insert_createdDate_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_dataStateCode??) && (insert_dataStateCode_value??)>
+${prefixName?string('  ', ', ')}:insert_dataStateCode_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_departmentCode??) && (insert_departmentCode_value??)>
+${prefixName?string('  ', ', ')}:insert_departmentCode_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_endDate??) && (insert_endDate_value??)>
+${prefixName?string('  ', ', ')}:insert_endDate_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_explain??) && (insert_explain_value??)>
+${prefixName?string('  ', ', ')}:insert_explain_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_flagCode??) && (insert_flagCode_value??)>
+${prefixName?string('  ', ', ')}:insert_flagCode_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_flagObjectCode??) && (insert_flagObjectCode_value??)>
+${prefixName?string('  ', ', ')}:insert_flagObjectCode_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_ftpIp??) && (insert_ftpIp_value??)>
+${prefixName?string('  ', ', ')}:insert_ftpIp_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_ftpPassword??) && (insert_ftpPassword_value??)>
+${prefixName?string('  ', ', ')}:insert_ftpPassword_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_ftpPort??) && (insert_ftpPort_value??)>
+${prefixName?string('  ', ', ')}:insert_ftpPort_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_ftpUsername??) && (insert_ftpUsername_value??)>
+${prefixName?string('  ', ', ')}:insert_ftpUsername_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_jsonData??) && (insert_jsonData_value??)>
+${prefixName?string('  ', ', ')}:insert_jsonData_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_lastModifiedByCode??) && (insert_lastModifiedByCode_value??)>
+${prefixName?string('  ', ', ')}:insert_lastModifiedByCode_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_lastModifiedById??) && (insert_lastModifiedById_value??)>
+${prefixName?string('  ', ', ')}:insert_lastModifiedById_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_lastModifiedDate??) && (insert_lastModifiedDate_value??)>
+${prefixName?string('  ', ', ')}:insert_lastModifiedDate_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_latitude??) && (insert_latitude_value??)>
+${prefixName?string('  ', ', ')}:insert_latitude_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_longitude??) && (insert_longitude_value??)>
+${prefixName?string('  ', ', ')}:insert_longitude_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_name??) && (insert_name_value??)>
+${prefixName?string('  ', ', ')}:insert_name_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_orderBy??) && (insert_orderBy_value??)>
+${prefixName?string('  ', ', ')}:insert_orderBy_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_orgCode??) && (insert_orgCode_value??)>
+${prefixName?string('  ', ', ')}:insert_orgCode_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_parentCode??) && (insert_parentCode_value??)>
+${prefixName?string('  ', ', ')}:insert_parentCode_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_parentId??) && (insert_parentId_value??)>
+${prefixName?string('  ', ', ')}:insert_parentId_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_parentTreeCode??) && (insert_parentTreeCode_value??)>
+${prefixName?string('  ', ', ')}:insert_parentTreeCode_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_parentTreeId??) && (insert_parentTreeId_value??)>
+${prefixName?string('  ', ', ')}:insert_parentTreeId_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_parentTreeName??) && (insert_parentTreeName_value??)>
+${prefixName?string('  ', ', ')}:insert_parentTreeName_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_personalCode??) && (insert_personalCode_value??)>
+${prefixName?string('  ', ', ')}:insert_personalCode_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_personalId??) && (insert_personalId_value??)>
+${prefixName?string('  ', ', ')}:insert_personalId_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_postalCode??) && (insert_postalCode_value??)>
+${prefixName?string('  ', ', ')}:insert_postalCode_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_remark??) && (insert_remark_value??)>
+${prefixName?string('  ', ', ')}:insert_remark_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_siteCode??) && (insert_siteCode_value??)>
+${prefixName?string('  ', ', ')}:insert_siteCode_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_siteId??) && (insert_siteId_value??)>
+${prefixName?string('  ', ', ')}:insert_siteId_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_stateCode??) && (insert_stateCode_value??)>
+${prefixName?string('  ', ', ')}:insert_stateCode_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_systemInfoCode??) && (insert_systemInfoCode_value??)>
+${prefixName?string('  ', ', ')}:insert_systemInfoCode_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_systemInfoId??) && (insert_systemInfoId_value??)>
+${prefixName?string('  ', ', ')}:insert_systemInfoId_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_url??) && (insert_url_value??)>
+${prefixName?string('  ', ', ')}:insert_url_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_version??) && (insert_version_value??)>
+${prefixName?string('  ', ', ')}:insert_version_value
+<#assign prefixName = false>
+</#if>
+)
 
