@@ -83,7 +83,8 @@ class GenerateNavigationFileAction implements Action0 {
                             name           : name,
                             parent_id      : it.parent_id,
                             parent_code    : it.parent_code,
-                            url            : it.url
+                            url            : it.url,
+                            icon_style     : it.icon_style
                     ])
                 }
 
