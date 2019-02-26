@@ -2,167 +2,167 @@ MERGE INTO C1_SITE A USING
 (SELECT
 <#assign prefixName = true>
 <#if (index_batchNo??)>
-${prefixName?string('', ', ')} :index_batchNo_value AS BATCH_NO
+${prefixName?string('', 'AND ')} :index_batchNo_value AS BATCH_NO
 <#assign prefixName = false>
 </#if>
 <#if (index_beginDate??)>
-${prefixName?string('', ', ')} :index_beginDate_value AS BEGIN_DATE
+${prefixName?string('', 'AND ')} :index_beginDate_value AS BEGIN_DATE
 <#assign prefixName = false>
 </#if>
 <#if (index_content??)>
-${prefixName?string('', ', ')} :index_content_value AS CONTENT
+${prefixName?string('', 'AND ')} :index_content_value AS CONTENT
 <#assign prefixName = false>
 </#if>
 <#if (index_createdByCode??)>
-${prefixName?string('', ', ')} :index_createdByCode_value AS CREATED_BY_CODE
+${prefixName?string('', 'AND ')} :index_createdByCode_value AS CREATED_BY_CODE
 <#assign prefixName = false>
 </#if>
 <#if (index_createdById??)>
-${prefixName?string('', ', ')} :index_createdById_value AS CREATED_BY_ID
+${prefixName?string('', 'AND ')} :index_createdById_value AS CREATED_BY_ID
 <#assign prefixName = false>
 </#if>
 <#if (index_createdDate??)>
-${prefixName?string('', ', ')} :index_createdDate_value AS CREATED_DATE
+${prefixName?string('', 'AND ')} :index_createdDate_value AS CREATED_DATE
 <#assign prefixName = false>
 </#if>
 <#if (index_dataStateCode??)>
-${prefixName?string('', ', ')} :index_dataStateCode_value AS DATA_STATE_CODE
+${prefixName?string('', 'AND ')} :index_dataStateCode_value AS DATA_STATE_CODE
 <#assign prefixName = false>
 </#if>
 <#if (index_departmentCode??)>
-${prefixName?string('', ', ')} :index_departmentCode_value AS DEPARTMENT_CODE
+${prefixName?string('', 'AND ')} :index_departmentCode_value AS DEPARTMENT_CODE
 <#assign prefixName = false>
 </#if>
 <#if (index_endDate??)>
-${prefixName?string('', ', ')} :index_endDate_value AS END_DATE
+${prefixName?string('', 'AND ')} :index_endDate_value AS END_DATE
 <#assign prefixName = false>
 </#if>
 <#if (index_explain??)>
-${prefixName?string('', ', ')} :index_explain_value AS EXPLAIN_
+${prefixName?string('', 'AND ')} :index_explain_value AS EXPLAIN_
 <#assign prefixName = false>
 </#if>
 <#if (index_flagCode??)>
-${prefixName?string('', ', ')} :index_flagCode_value AS FLAG_CODE
+${prefixName?string('', 'AND ')} :index_flagCode_value AS FLAG_CODE
 <#assign prefixName = false>
 </#if>
 <#if (index_flagObjectCode??)>
-${prefixName?string('', ', ')} :index_flagObjectCode_value AS FLAG_OBJECT_CODE
+${prefixName?string('', 'AND ')} :index_flagObjectCode_value AS FLAG_OBJECT_CODE
 <#assign prefixName = false>
 </#if>
 <#if (index_ftpIp??)>
-${prefixName?string('', ', ')} :index_ftpIp_value AS FTP_IP
+${prefixName?string('', 'AND ')} :index_ftpIp_value AS FTP_IP
 <#assign prefixName = false>
 </#if>
 <#if (index_ftpPassword??)>
-${prefixName?string('', ', ')} :index_ftpPassword_value AS FTP_PASSWORD
+${prefixName?string('', 'AND ')} :index_ftpPassword_value AS FTP_PASSWORD
 <#assign prefixName = false>
 </#if>
 <#if (index_ftpPort??)>
-${prefixName?string('', ', ')} :index_ftpPort_value AS FTP_PORT
+${prefixName?string('', 'AND ')} :index_ftpPort_value AS FTP_PORT
 <#assign prefixName = false>
 </#if>
 <#if (index_ftpUsername??)>
-${prefixName?string('', ', ')} :index_ftpUsername_value AS FTP_USERNAME
+${prefixName?string('', 'AND ')} :index_ftpUsername_value AS FTP_USERNAME
 <#assign prefixName = false>
 </#if>
 <#if (index_jsonData??)>
-${prefixName?string('', ', ')} :index_jsonData_value AS JSON_DATA
+${prefixName?string('', 'AND ')} :index_jsonData_value AS JSON_DATA
 <#assign prefixName = false>
 </#if>
 <#if (index_lastModifiedByCode??)>
-${prefixName?string('', ', ')} :index_lastModifiedByCode_value AS LAST_MODIFIED_BY_CODE
+${prefixName?string('', 'AND ')} :index_lastModifiedByCode_value AS LAST_MODIFIED_BY_CODE
 <#assign prefixName = false>
 </#if>
 <#if (index_lastModifiedById??)>
-${prefixName?string('', ', ')} :index_lastModifiedById_value AS LAST_MODIFIED_BY_ID
+${prefixName?string('', 'AND ')} :index_lastModifiedById_value AS LAST_MODIFIED_BY_ID
 <#assign prefixName = false>
 </#if>
 <#if (index_lastModifiedDate??)>
-${prefixName?string('', ', ')} :index_lastModifiedDate_value AS LAST_MODIFIED_DATE
+${prefixName?string('', 'AND ')} :index_lastModifiedDate_value AS LAST_MODIFIED_DATE
 <#assign prefixName = false>
 </#if>
 <#if (index_latitude??)>
-${prefixName?string('', ', ')} :index_latitude_value AS LATITUDE
+${prefixName?string('', 'AND ')} :index_latitude_value AS LATITUDE
 <#assign prefixName = false>
 </#if>
 <#if (index_longitude??)>
-${prefixName?string('', ', ')} :index_longitude_value AS LONGITUDE
+${prefixName?string('', 'AND ')} :index_longitude_value AS LONGITUDE
 <#assign prefixName = false>
 </#if>
 <#if (index_name??)>
-${prefixName?string('', ', ')} :index_name_value AS NAME
+${prefixName?string('', 'AND ')} :index_name_value AS NAME
 <#assign prefixName = false>
 </#if>
 <#if (index_orderBy??)>
-${prefixName?string('', ', ')} :index_orderBy_value AS ORDER_BY_
+${prefixName?string('', 'AND ')} :index_orderBy_value AS ORDER_BY_
 <#assign prefixName = false>
 </#if>
 <#if (index_orgCode??)>
-${prefixName?string('', ', ')} :index_orgCode_value AS ORG_CODE
+${prefixName?string('', 'AND ')} :index_orgCode_value AS ORG_CODE
 <#assign prefixName = false>
 </#if>
 <#if (index_parentCode??)>
-${prefixName?string('', ', ')} :index_parentCode_value AS PARENT_CODE
+${prefixName?string('', 'AND ')} :index_parentCode_value AS PARENT_CODE
 <#assign prefixName = false>
 </#if>
 <#if (index_parentId??)>
-${prefixName?string('', ', ')} :index_parentId_value AS PARENT_ID
+${prefixName?string('', 'AND ')} :index_parentId_value AS PARENT_ID
 <#assign prefixName = false>
 </#if>
 <#if (index_parentTreeCode??)>
-${prefixName?string('', ', ')} :index_parentTreeCode_value AS PARENT_TREE_CODE
+${prefixName?string('', 'AND ')} :index_parentTreeCode_value AS PARENT_TREE_CODE
 <#assign prefixName = false>
 </#if>
 <#if (index_parentTreeId??)>
-${prefixName?string('', ', ')} :index_parentTreeId_value AS PARENT_TREE_ID
+${prefixName?string('', 'AND ')} :index_parentTreeId_value AS PARENT_TREE_ID
 <#assign prefixName = false>
 </#if>
 <#if (index_parentTreeName??)>
-${prefixName?string('', ', ')} :index_parentTreeName_value AS PARENT_TREE_NAME
+${prefixName?string('', 'AND ')} :index_parentTreeName_value AS PARENT_TREE_NAME
 <#assign prefixName = false>
 </#if>
 <#if (index_personalCode??)>
-${prefixName?string('', ', ')} :index_personalCode_value AS PERSONAL_CODE
+${prefixName?string('', 'AND ')} :index_personalCode_value AS PERSONAL_CODE
 <#assign prefixName = false>
 </#if>
 <#if (index_personalId??)>
-${prefixName?string('', ', ')} :index_personalId_value AS PERSONAL_ID
+${prefixName?string('', 'AND ')} :index_personalId_value AS PERSONAL_ID
 <#assign prefixName = false>
 </#if>
 <#if (index_postalCode??)>
-${prefixName?string('', ', ')} :index_postalCode_value AS POSTAL_CODE
+${prefixName?string('', 'AND ')} :index_postalCode_value AS POSTAL_CODE
 <#assign prefixName = false>
 </#if>
 <#if (index_remark??)>
-${prefixName?string('', ', ')} :index_remark_value AS REMARK
+${prefixName?string('', 'AND ')} :index_remark_value AS REMARK
 <#assign prefixName = false>
 </#if>
 <#if (index_siteCode??)>
-${prefixName?string('', ', ')} :index_siteCode_value AS SITE_CODE
+${prefixName?string('', 'AND ')} :index_siteCode_value AS SITE_CODE
 <#assign prefixName = false>
 </#if>
 <#if (index_siteId??)>
-${prefixName?string('', ', ')} :index_siteId_value AS SITE_ID
+${prefixName?string('', 'AND ')} :index_siteId_value AS SITE_ID
 <#assign prefixName = false>
 </#if>
 <#if (index_stateCode??)>
-${prefixName?string('', ', ')} :index_stateCode_value AS STATE_CODE
+${prefixName?string('', 'AND ')} :index_stateCode_value AS STATE_CODE
 <#assign prefixName = false>
 </#if>
 <#if (index_systemInfoCode??)>
-${prefixName?string('', ', ')} :index_systemInfoCode_value AS SYSTEM_INFO_CODE
+${prefixName?string('', 'AND ')} :index_systemInfoCode_value AS SYSTEM_INFO_CODE
 <#assign prefixName = false>
 </#if>
 <#if (index_systemInfoId??)>
-${prefixName?string('', ', ')} :index_systemInfoId_value AS SYSTEM_INFO_ID
+${prefixName?string('', 'AND ')} :index_systemInfoId_value AS SYSTEM_INFO_ID
 <#assign prefixName = false>
 </#if>
 <#if (index_url??)>
-${prefixName?string('', ', ')} :index_url_value AS URL
+${prefixName?string('', 'AND ')} :index_url_value AS URL
 <#assign prefixName = false>
 </#if>
 <#if (index_version??)>
-${prefixName?string('', ', ')} :index_version_value AS VERSION_
+${prefixName?string('', 'AND ')} :index_version_value AS VERSION_
 <#assign prefixName = false>
 </#if>
  FROM DUAL) B
